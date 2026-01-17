@@ -8,11 +8,11 @@ import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { href: "/", label: "Home" },
+  { href: "/sensory-friendly", label: "Autism & Sensory", highlight: true },
   { href: "/services", label: "Services" },
-  { href: "/sensory-friendly", label: "Sensory-Friendly" },
-  { href: "/book", label: "Book Now" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/about", label: "About" },
+  { href: "/shop", label: "Shop" },
+  { href: "/coming-soon", label: "Grand Opening", highlight: true },
+  { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -43,7 +43,11 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 rounded-full text-gray-700 hover:text-[#9B5DE5] hover:bg-purple-50 transition-all font-medium"
+                className={`px-4 py-2 rounded-full transition-all font-medium ${
+                  link.highlight
+                    ? "bg-gradient-to-r from-[#9B5DE5]/10 to-[#00F5D4]/10 text-[#9B5DE5] border border-[#9B5DE5]/30 hover:from-[#9B5DE5]/20 hover:to-[#00F5D4]/20"
+                    : "text-gray-700 hover:text-[#9B5DE5] hover:bg-purple-50"
+                }`}
               >
                 {link.label}
               </Link>

@@ -6,7 +6,8 @@ import Link from "next/link";
 import {
   Scissors, Star, Heart, Sparkles, Car, Calendar,
   CheckCircle2, Phone, MapPin, Clock, Shield,
-  Smile, Music, Gamepad2, Baby, PartyPopper, ChevronRight
+  Smile, Music, Gamepad2, Baby, PartyPopper, ChevronRight,
+  ShoppingBag, Crown, Users, Brain, Headphones, Volume2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -181,6 +182,131 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* AUTISM & SENSORY-FRIENDLY SECTION - FEATURED */}
+      <section className="py-24 bg-gradient-to-b from-[#9B5DE5]/10 via-[#00F5D4]/5 to-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-64 h-64 bg-[#9B5DE5] rounded-full blur-3xl" />
+          <div className="absolute bottom-20 right-10 w-48 h-48 bg-[#00F5D4] rounded-full blur-3xl" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Badge className="bg-[#00F5D4]/20 text-[#00F5D4] border-[#00F5D4]/30 mb-4 px-4 py-2">
+              <Brain className="w-4 h-4 mr-2" />
+              Our Specialty
+            </Badge>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+              <span className="gradient-text">Autism & Sensory-Friendly</span> Haircuts
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Slayer Kid Cuts is Henderson&apos;s trusted destination for children with autism, ADHD, sensory processing differences, and anxiety. We don&apos;t just accommodate - we specialize.
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { icon: Headphones, title: "Noise-Canceling Headphones", desc: "Block out clippers and salon noise" },
+                  { icon: Volume2, title: "Quiet Clippers", desc: "Whisper-quiet professional tools" },
+                  { icon: Clock, title: "No Time Pressure", desc: "Take breaks whenever needed" },
+                  { icon: Shield, title: "Certified Training", desc: "Specialized sensory techniques" },
+                ].map((item, index) => (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <Card className="h-full border-2 border-[#00F5D4]/20 hover:border-[#00F5D4]/50 transition-colors">
+                      <CardContent className="p-4">
+                        <item.icon className="w-8 h-8 text-[#00F5D4] mb-2" />
+                        <h4 className="font-bold text-sm">{item.title}</h4>
+                        <p className="text-xs text-gray-600">{item.desc}</p>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 shadow-lg border-l-4 border-[#9B5DE5]">
+                <p className="text-gray-600 italic mb-4">
+                  &quot;My son with autism had never completed a full haircut before Slayer. She spent 45 minutes just letting him explore the tools before even starting. Now he asks to go back!&quot;
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="flex -space-x-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                  <span className="text-sm font-medium text-gray-700">- Amanda R., Henderson</span>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#9B5DE5] to-[#00F5D4] rounded-3xl rotate-3 opacity-20" />
+                <Image
+                  src="https://images.unsplash.com/photo-1560439514-4e9645039924?w=600&h=500&fit=crop"
+                  alt="Sensory-friendly haircut for child with autism"
+                  width={600}
+                  height={500}
+                  className="relative rounded-3xl shadow-2xl"
+                />
+              </div>
+
+              <motion.div
+                className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4"
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-[#00F5D4]/20 flex items-center justify-center">
+                    <Brain className="w-6 h-6 text-[#00F5D4]" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-gray-900">500+</p>
+                    <p className="text-sm text-gray-500">Special needs haircuts</p>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Link href="/sensory-friendly">
+              <Button size="lg" className="bg-gradient-to-r from-[#9B5DE5] to-[#00F5D4] text-white rounded-full px-10 py-6 text-lg shadow-xl hover:shadow-2xl transition-shadow">
+                <Brain className="w-5 h-5 mr-2" />
+                Learn About Our Sensory-Friendly Services
+                <ChevronRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -201,54 +327,70 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 icon: Scissors,
                 title: "Kids Haircuts",
-                description: "Expert cuts in fun themed chairs with TVs and games to keep kids entertained!",
+                description: "Expert cuts with TVs and games!",
                 price: "From $25",
                 color: "#FF6B9D",
                 image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=400&h=300&fit=crop"
               },
               {
                 icon: Baby,
-                title: "First Haircut Package",
-                description: "Capture the milestone! Includes certificate, lock of hair keepsake, and photo.",
+                title: "First Haircut",
+                description: "Certificate & keepsake included",
                 price: "$35",
                 color: "#9B5DE5",
                 image: "https://images.unsplash.com/photo-1519699047748-de8e44e9dee9?w=400&h=300&fit=crop"
               },
               {
-                icon: Car,
-                title: "Mobile Home Visits",
-                description: "We bring the salon to you! Perfect for anxious kids or busy families.",
-                price: "From $40",
+                icon: Users,
+                title: "Mom & Dad Cuts",
+                description: "While the kids play, parents get pampered too!",
+                price: "From $30",
                 color: "#00BBF9",
+                image: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=400&h=300&fit=crop"
+              },
+              {
+                icon: Crown,
+                title: "VIP Home Service",
+                description: "Premium mobile service for the whole family",
+                price: "From $150",
+                color: "#FEE440",
+                image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=300&fit=crop"
+              },
+              {
+                icon: Car,
+                title: "Mobile Visits",
+                description: "We bring the salon to you!",
+                price: "From $40",
+                color: "#00F5D4",
                 image: "https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?w=400&h=300&fit=crop"
               },
               {
                 icon: Sparkles,
-                title: "Hair Tinsel & Fun Styles",
-                description: "Add some sparkle! Temporary color, tinsel, and creative styles kids love.",
+                title: "Hair Tinsel & Styles",
+                description: "Sparkle, temp color & fun!",
                 price: "From $10",
-                color: "#FEE440",
+                color: "#F15BB5",
                 image: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=400&h=300&fit=crop"
               },
               {
                 icon: Shield,
-                title: "Special Needs Friendly",
-                description: "Trained to work with children who need extra patience and care.",
-                price: "No extra cost",
-                color: "#00F5D4",
+                title: "Sensory-Friendly",
+                description: "Specialized for special needs",
+                price: "Same price",
+                color: "#9B5DE5",
                 image: "https://images.unsplash.com/photo-1560439514-4e9645039924?w=400&h=300&fit=crop"
               },
               {
                 icon: PartyPopper,
                 title: "Birthday Parties",
-                description: "Host a glamorous hair party! Styling, tinsel, and fun for the whole group.",
-                price: "Custom quote",
-                color: "#F15BB5",
+                description: "Glamorous group styling!",
+                price: "Custom",
+                color: "#FF6B9D",
                 image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&h=300&fit=crop"
               },
             ].map((service, index) => (
@@ -594,6 +736,99 @@ export default function HomePage() {
               </motion.div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Shop Preview Section */}
+      <section className="py-24 bg-gradient-to-b from-white to-[#FF6B9D]/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Badge className="bg-[#FF6B9D]/10 text-[#FF6B9D] border-[#FF6B9D]/20 mb-4">
+              <ShoppingBag className="w-4 h-4 mr-2" />
+              Slayer Shop
+            </Badge>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+              Take the Fun <span className="gradient-text">Home!</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Kid-friendly hair products, sensory tools, and fun accessories - all curated by Slayer!
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {[
+              {
+                title: "Kids Hair Care",
+                description: "Gentle shampoos, detanglers & styling products made for kids",
+                image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=300&h=300&fit=crop",
+                badge: "Best Sellers"
+              },
+              {
+                title: "Sensory Tools",
+                description: "Fidget toys, weighted blankets & calming accessories",
+                image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop",
+                badge: "For Autism"
+              },
+              {
+                title: "Fun Accessories",
+                description: "Hair tinsel kits, clips, bows & sparkly hair gems",
+                image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=300&h=300&fit=crop",
+                badge: "Popular"
+              },
+              {
+                title: "Gift Sets",
+                description: "Perfect presents for birthdays & special occasions",
+                image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=300&h=300&fit=crop",
+                badge: "Gift Ideas"
+              },
+            ].map((product, index) => (
+              <motion.div
+                key={product.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-300 h-full">
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={product.image}
+                      alt={product.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <Badge className="absolute top-4 left-4 bg-white/90 text-[#9B5DE5] font-medium">
+                      {product.badge}
+                    </Badge>
+                  </div>
+                  <CardContent className="p-5">
+                    <h3 className="text-lg font-bold mb-2">{product.title}</h3>
+                    <p className="text-sm text-gray-600">{product.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+          >
+            <Link href="/shop">
+              <Button size="lg" className="bg-gradient-to-r from-[#FF6B9D] via-[#9B5DE5] to-[#00BBF9] text-white rounded-full px-10 shadow-lg animate-gradient-x">
+                <ShoppingBag className="w-5 h-5 mr-2" />
+                Browse the Shop
+                <ChevronRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+          </motion.div>
         </div>
       </section>
 

@@ -3,12 +3,32 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Scissors, Baby, Car, Sparkles, Shield, PartyPopper, CheckCircle2, Calendar, ChevronRight } from "lucide-react";
+import { Scissors, Baby, Car, Sparkles, Shield, PartyPopper, CheckCircle2, Calendar, ChevronRight, Users, Crown, Brain } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const services = [
+  {
+    id: "sensory-friendly",
+    icon: Brain,
+    title: "Autism & Sensory-Friendly",
+    tagline: "Our specialty - certified & caring",
+    price: "Same as regular cuts",
+    duration: "As needed",
+    color: "#00F5D4",
+    image: "https://images.unsplash.com/photo-1560439514-4e9645039924?w=800&h=500&fit=crop",
+    description: "Slayer Kid Cuts specializes in working with children who have autism, ADHD, sensory processing differences, and anxiety. We don't just accommodate - we've built our entire approach around making haircuts accessible for every child.",
+    includes: [
+      "Noise-canceling headphones available",
+      "Whisper-quiet clippers",
+      "Weighted lap pads for calming",
+      "Visual timers to reduce uncertainty",
+      "No time pressure - take breaks as needed",
+      "Certified sensory-friendly techniques",
+    ],
+    featured: true,
+  },
   {
     id: "kids-haircuts",
     icon: Scissors,
@@ -46,21 +66,21 @@ const services = [
     ],
   },
   {
-    id: "mobile-visits",
-    icon: Car,
-    title: "Mobile Home Visits",
-    tagline: "We bring the salon to you!",
-    price: "From $40",
-    duration: "45 minutes",
+    id: "mom-dad-cuts",
+    icon: Users,
+    title: "Mom & Dad Haircuts",
+    tagline: "Parents get pampered too!",
+    price: "From $30",
+    duration: "30-45 minutes",
     color: "#00BBF9",
-    image: "https://images.unsplash.com/photo-1621607512214-68297480165e?w=800&h=500&fit=crop",
-    description: "Can't make it to the salon? No problem! Our mobile service brings the full Slayer Kid Cuts experience right to your home. Perfect for anxious children or busy families.",
+    image: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&h=500&fit=crop",
+    description: "While your kids enjoy their haircut experience, why not get yours done too? We offer full adult haircut services for parents. Book the whole family and make it a fun outing!",
     includes: [
-      "Full haircut service at your home",
-      "All professional equipment provided",
-      "Same great experience",
-      "Flexible scheduling",
-      "Available across Henderson & Las Vegas",
+      "Professional adult haircut",
+      "Consultation & styling",
+      "Hot towel service",
+      "Book with kids or solo",
+      "Men's & women's cuts available",
     ],
   },
   {
@@ -70,7 +90,7 @@ const services = [
     tagline: "Add some sparkle and pizzazz",
     price: "From $10",
     duration: "15-30 minutes",
-    color: "#FEE440",
+    color: "#F15BB5",
     image: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&h=500&fit=crop",
     description: "Want to add some extra fun? Our hair tinsel and creative styling options let kids express their personality with sparkle, temporary color, and fun styles!",
     includes: [
@@ -82,31 +102,13 @@ const services = [
     ],
   },
   {
-    id: "special-needs",
-    icon: Shield,
-    title: "Special Needs Friendly",
-    tagline: "Patient, understanding, caring",
-    price: "No extra cost",
-    duration: "As needed",
-    color: "#00F5D4",
-    image: "https://images.unsplash.com/photo-1560439514-4e9645039924?w=800&h=500&fit=crop",
-    description: "Every child deserves to feel comfortable during their haircut. Slayer is specially trained to work with children who have sensory sensitivities, autism, ADHD, or other special needs.",
-    includes: [
-      "Quieter, calmer environment",
-      "Extra time and patience",
-      "Sensory-friendly tools available",
-      "Parent can stay close",
-      "Flexible scheduling for quieter times",
-    ],
-  },
-  {
     id: "birthday-parties",
     icon: PartyPopper,
     title: "Birthday Parties",
     tagline: "A glamorous celebration",
     price: "Custom quote",
     duration: "2-3 hours",
-    color: "#F15BB5",
+    color: "#FF6B9D",
     image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&h=500&fit=crop",
     description: "Make their birthday unforgettable! Our birthday party packages include hair styling, tinsel, temporary color, and tons of fun for the birthday child and their friends.",
     includes: [
@@ -251,8 +253,8 @@ export default function ServicesPage() {
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.slice(0, 6).map((service) => (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service) => (
               <motion.div
                 key={service.id}
                 initial={{ opacity: 0, y: 20 }}

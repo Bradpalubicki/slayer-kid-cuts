@@ -1,0 +1,475 @@
+================================================================================
+           SLAYER KID CUTS - VISUAL PRESENTATION GUIDE
+
+           Use this with Canva, Google Slides, or PowerPoint
+           Each slide includes: Content + Photo suggestions
+================================================================================
+
+
+================================================================================
+SLIDE 1: TITLE SLIDE
+================================================================================
+BACKGROUND: Dark purple/blue gradient or fun colorful pattern
+
+CONTENT:
+   [LOGO: Scissors icon in colorful circle]
+
+   SLAYER KID CUTS
+   "Where Haircuts Are Fun!"
+
+   Henderson & Las Vegas's Premier Kids Hair Salon
+
+   slayer-kid-cuts.vercel.app
+
+PHOTO: Happy kid in salon chair getting haircut, smiling
+STYLE: Large centered text, playful fonts, gradient colors (pink/purple/teal)
+
+
+================================================================================
+SLIDE 2: THE PROBLEM
+================================================================================
+BACKGROUND: Light gray or white
+
+CONTENT:
+   THE CHALLENGE PARENTS FACE
+
+   [Icon: Sad face] 70% of kids have haircut anxiety
+   [Icon: X] Kids with autism can't use regular salons
+   [Icon: Clock] Busy families can't coordinate schedules
+   [Icon: Person] Parents need cuts too but can't leave kids
+
+PHOTO: Stock photo of stressed child crying during haircut OR parent looking frustrated
+STYLE: Problem icons in red, clean layout
+
+
+================================================================================
+SLIDE 3: THE SOLUTION
+================================================================================
+BACKGROUND: Bright, colorful gradient (pink to purple to teal)
+
+CONTENT:
+   INTRODUCING SLAYER KID CUTS
+
+   A salon that makes haircuts FUN!
+
+   [Checkmark] Entertainment at every station
+   [Checkmark] Themed chairs kids love
+   [Checkmark] Autism & sensory-friendly specialist
+   [Checkmark] Mobile service - we come to you!
+   [Checkmark] Mom & Dad can get cuts too!
+
+PHOTO: Bright salon interior with fun chairs, TVs, colorful decor
+       OR happy child in race car/princess themed chair
+STYLE: Checkmarks in teal green, energetic feel
+
+
+================================================================================
+SLIDE 4: AUTISM & SENSORY-FRIENDLY (MOST IMPORTANT!)
+================================================================================
+BACKGROUND: Teal/mint gradient - calming colors
+
+CONTENT:
+   OUR SPECIALTY
+   AUTISM & SENSORY-FRIENDLY HAIRCUTS
+
+   [Icon: Headphones] Noise-canceling headphones
+   [Icon: Volume off] Whisper-quiet clippers
+   [Icon: Timer] Visual timers
+   [Icon: Heart] Weighted lap pads
+   [Icon: Pause] Take breaks anytime
+
+   "500+ special needs haircuts completed"
+
+   TESTIMONIAL:
+   "My son with autism had never completed a haircut before Slayer.
+   Now he asks to go back!" - Amanda R., Henderson
+
+PHOTOS:
+   - Calm child wearing headphones during haircut
+   - Weighted lap pad
+   - Visual timer
+   - Stylist being gentle with child
+STYLE: Calming colors, professional but warm
+
+
+================================================================================
+SLIDE 5: SERVICES MENU
+================================================================================
+BACKGROUND: White with colorful accents
+
+CONTENT:
+   SERVICES FOR THE WHOLE FAMILY
+
+   [Grid of 8 service cards:]
+
+   KIDS HAIRCUT        $25     Fun cut with entertainment
+   FIRST HAIRCUT       $35     Certificate + keepsake
+   SENSORY-FRIENDLY    $30     Extra patience & care
+   MOM HAIRCUT         $35     Women's styling
+   DAD HAIRCUT         $30     Men's cuts
+   MOBILE VISIT        $40+    We come to you
+   VIP HOME SERVICE    $150    Up to 4 cuts at home
+   BIRTHDAY PARTIES    Custom  Group styling fun!
+
+PHOTOS: Small icons for each service (scissors, baby, brain, car, crown, etc.)
+STYLE: Clean card layout, each service has an icon and color accent
+
+
+================================================================================
+SLIDE 6: THE WEBSITE - HOMEPAGE
+================================================================================
+BACKGROUND: Show actual screenshot
+
+CONTENT:
+   MILLION DOLLAR WEBSITE
+
+   [Large screenshot of homepage]
+
+   Features:
+   - Autism section featured FIRST (after hero)
+   - Modern animations
+   - Mobile responsive
+   - Fast loading
+
+PHOTO: Full screenshot of slayer-kid-cuts.vercel.app homepage
+STYLE: Browser mockup frame around screenshot
+
+
+================================================================================
+SLIDE 7: THE WEBSITE - BOOKING PAGE
+================================================================================
+BACKGROUND: Show actual screenshot
+
+CONTENT:
+   MULTI-PERSON BOOKING SYSTEM
+
+   [Screenshot of /book page]
+
+   - Book multiple kids at once
+   - Add Mom & Dad to appointment
+   - Select add-ons (tinsel, color, braids)
+   - Special needs checkbox
+   - Choose salon or mobile
+   - Instant SMS confirmation
+
+PHOTO: Screenshot of the booking page showing the form
+STYLE: Annotated screenshot with arrows pointing to features
+
+
+================================================================================
+SLIDE 8: THE WEBSITE - SHOP PAGE
+================================================================================
+BACKGROUND: Show actual screenshot
+
+CONTENT:
+   E-COMMERCE SHOP
+   New Revenue Stream!
+
+   [Screenshot of /shop page]
+
+   Product Categories:
+   1. Kids Hair Care - shampoos, detanglers
+   2. Sensory Tools - headphones, fidgets, weighted pads
+   3. Fun Accessories - tinsel, gems, clips
+   4. Gift Sets - first haircut box, bundles
+
+   14 Products Ready to Sell!
+
+PHOTO: Screenshot of the shop page with product grid
+STYLE: Clean, e-commerce feel
+
+
+================================================================================
+SLIDE 9: THE WEBSITE - ADMIN DASHBOARD
+================================================================================
+BACKGROUND: Show actual screenshot
+
+CONTENT:
+   ANALYTICS DASHBOARD
+
+   [Screenshot of /admin page]
+
+   Track Everything:
+   - Total bookings & revenue
+   - Top stylists leaderboard
+   - Service breakdown
+   - Today's schedule
+   - At-risk clients (churn prediction)
+
+PHOTO: Screenshot of admin dashboard with charts and metrics
+STYLE: Data-focused, professional
+
+
+================================================================================
+SLIDE 10: RETENTION SYSTEM
+================================================================================
+BACKGROUND: Light blue/purple gradient
+
+CONTENT:
+   AI-POWERED RETENTION
+
+   "Kids who don't return = Lost revenue"
+
+   CHURN PREDICTION ALGORITHM:
+
+   [Yellow dot] 60-70% Risk -> Send reminder SMS
+   [Orange dot] 70-85% Risk -> Send special offer
+   [Red dot]    85%+ Risk   -> Personal phone call
+
+   ONE-CLICK OUTREACH:
+   [SMS Button] [Email Button] [Call Button]
+
+PHOTO: Screenshot of the at-risk clients table from admin dashboard
+STYLE: Warning colors for risk levels, action buttons visible
+
+
+================================================================================
+SLIDE 11: COMPLETE SITE MAP
+================================================================================
+BACKGROUND: White
+
+CONTENT:
+   WHAT'S IN THE WEBSITE
+   17 Total Routes
+
+   PUBLIC PAGES:
+   /                         Homepage (autism featured)
+   /sensory-friendly         Dedicated autism page
+   /services                 All 8 services
+   /shop                     14 products for sale
+   /book                     Multi-person booking
+   /gallery                  Photo gallery
+   /about                    About Slayer
+   /contact                  Contact form
+   /kids-haircuts-henderson-nv   SEO landing page
+
+   ADMIN:
+   /admin                    Analytics dashboard
+
+   APIs:
+   /api/book                 Booking submissions
+   /api/contact              Contact form
+   /api/analytics            Dashboard data
+   /api/reminder             SMS reminders
+
+STYLE: Clean list format, organized by category
+
+
+================================================================================
+SLIDE 12: REVENUE POTENTIAL
+================================================================================
+BACKGROUND: Green money gradient or white with green accents
+
+CONTENT:
+   REVENUE STREAMS
+
+   [Table format:]
+
+   Source                    Monthly Potential
+   ------------------------------------------------
+   Kids Haircuts (200/mo)    $5,600
+   Parent Haircuts (50/mo)   $1,600
+   VIP Home Service (20/mo)  $3,000
+   Add-ons                   $500
+   Product Sales             $1,000+
+   ------------------------------------------------
+   TOTAL                     $11,700+/month
+                             $140,000+/year
+
+PHOTO: Money/growth chart graphic
+STYLE: Bold numbers, green highlights for totals
+
+
+================================================================================
+SLIDE 13: TECHNOLOGY
+================================================================================
+BACKGROUND: Dark tech-style background
+
+CONTENT:
+   BUILT WITH MODERN TECH
+
+   [Tech logos in grid:]
+
+   Next.js 16      React 19       TypeScript
+   Tailwind CSS    Framer Motion  Vercel
+   Twilio          Slack          shadcn/ui
+
+   PERFORMANCE:
+   - Static generation = Fast loading
+   - Edge network = Global speed
+   - Mobile-first = Works everywhere
+
+PHOTO: Tech company logos or code screenshot
+STYLE: Dark mode, modern tech aesthetic
+
+
+================================================================================
+SLIDE 14: COMPETITIVE ADVANTAGE
+================================================================================
+BACKGROUND: Split screen - green vs red
+
+CONTENT:
+   WHY WE WIN
+
+   SLAYER KID CUTS          vs    TRADITIONAL SALONS
+
+   [Check] Autism certified        [X] No training
+   [Check] Entertainment           [X] Boring
+   [Check] Mobile service          [X] Location only
+   [Check] Parents welcome         [X] Kids OR adults
+   [Check] Online booking          [X] Phone only
+   [Check] Retention tracking      [X] Hope & pray
+   [Check] Products for sale       [X] Haircuts only
+
+STYLE: Two-column comparison, green checks vs red X's
+
+
+================================================================================
+SLIDE 15: LIVE DEMO
+================================================================================
+BACKGROUND: Colorful, exciting
+
+CONTENT:
+   SEE IT LIVE!
+
+   [Large URL:]
+   slayer-kid-cuts.vercel.app
+
+   [QR code pointing to website]
+
+   PAGES TO EXPLORE:
+   - Homepage (scroll to see autism section)
+   - /sensory-friendly
+   - /shop
+   - /book (try the booking flow!)
+   - /admin (see the dashboard)
+
+PHOTO: QR code + phone mockup showing website
+STYLE: Call-to-action, exciting colors
+
+
+================================================================================
+SLIDE 16: ROADMAP
+================================================================================
+BACKGROUND: Timeline graphic
+
+CONTENT:
+   ROADMAP
+
+   PHASE 1 - COMPLETE [Checkmark]
+   - Website launch
+   - Booking system
+   - Shop catalog
+   - Analytics dashboard
+
+   PHASE 2 - NEXT
+   - Full e-commerce checkout
+   - Stylist selection
+   - Membership program
+
+   PHASE 3 - FUTURE
+   - Mobile app
+   - Loyalty rewards
+   - Franchise toolkit
+
+STYLE: Timeline or roadmap visual, phases clearly marked
+
+
+================================================================================
+SLIDE 17: NEXT STEPS
+================================================================================
+BACKGROUND: Gradient with CTA feel
+
+CONTENT:
+   READY TO LAUNCH?
+
+   NEXT STEPS:
+
+   1. Review the live site
+   2. Add real address & phone number
+   3. Connect Twilio for SMS
+   4. Set up Slack notifications
+   5. Start marketing!
+
+   [Big button:] VIEW LIVE SITE
+   slayer-kid-cuts.vercel.app
+
+STYLE: Action-oriented, clear numbered steps
+
+
+================================================================================
+SLIDE 18: THANK YOU
+================================================================================
+BACKGROUND: Same as title slide
+
+CONTENT:
+   [Logo]
+
+   SLAYER KID CUTS
+   Where Haircuts Are Fun!
+
+   Henderson, Nevada
+   slayer-kid-cuts.vercel.app
+
+   Questions?
+
+   ---
+   Built by NuStack Digital Ventures
+
+PHOTO: Happy kids with fresh haircuts, smiling
+STYLE: Warm, closing feel, contact info visible
+
+
+================================================================================
+                         PHOTO/SCREENSHOT CHECKLIST
+================================================================================
+
+SCREENSHOTS TO CAPTURE (from slayer-kid-cuts.vercel.app):
+
+[ ] Homepage - full page (scroll capture)
+[ ] Homepage - autism section close-up
+[ ] /sensory-friendly page
+[ ] /services page
+[ ] /shop page - product grid
+[ ] /book page - booking form
+[ ] /admin dashboard - full view
+[ ] /admin - at-risk clients table
+
+STOCK PHOTOS TO FIND (Unsplash, Pexels, Shutterstock):
+
+[ ] Happy child getting haircut in fun chair
+[ ] Child wearing headphones (calming)
+[ ] Parent and child in salon together
+[ ] Salon interior with colorful decor
+[ ] Sensory tools (fidgets, weighted items)
+[ ] Hair products for kids
+[ ] Family getting haircuts together
+[ ] Mobile stylist at home
+
+COLOR PALETTE:
+- Pink: #FF6B9D
+- Purple: #9B5DE5
+- Blue: #00BBF9
+- Teal: #00F5D4
+- Yellow: #FEE440
+
+
+================================================================================
+                         CANVA / GOOGLE SLIDES TIPS
+================================================================================
+
+1. Go to canva.com or slides.google.com
+2. Search for "pitch deck" or "business presentation" template
+3. Choose one with modern, colorful style
+4. Copy content from each slide above
+5. Add screenshots from the live website
+6. Add stock photos where indicated
+7. Use the color palette above for consistency
+
+RECOMMENDED CANVA TEMPLATES:
+- "Colorful Pitch Deck"
+- "Modern Business Presentation"
+- "Startup Pitch Deck"
+- "Gradient Business Proposal"
+
+================================================================================

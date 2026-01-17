@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Calendar as CalendarIcon, Clock, User, Phone, Mail, MessageSquare, Car, Home, Scissors, CheckCircle2, ChevronRight, ChevronLeft, Sparkles, Plus, Trash2, Heart, Shield, Baby } from "lucide-react";
+import { Calendar as CalendarIcon, Clock, User, Phone, Mail, MessageSquare, Car, Home, Scissors, CheckCircle2, ChevronRight, ChevronLeft, Sparkles, Plus, Trash2, Heart, Shield, Baby, Users, Crown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -50,7 +50,8 @@ const services: ServiceType[] = [
   { id: "kids-cut", name: "Kids Haircut", duration: "30 min", price: "$25", priceNum: 25, description: "Standard haircut for children", icon: Scissors },
   { id: "first-cut", name: "First Haircut Package", duration: "45 min", price: "$35", priceNum: 35, description: "Includes certificate & keepsake", icon: Baby },
   { id: "sensory-friendly", name: "Sensory-Friendly Cut", duration: "45 min", price: "$30", priceNum: 30, description: "Extra patience for sensitive kids", icon: Shield },
-  { id: "mobile-cut", name: "Mobile Home Visit", duration: "45 min", price: "$40", priceNum: 40, description: "We come to your home!", icon: Car },
+  { id: "mom-cut", name: "Mom Haircut", duration: "45 min", price: "$35", priceNum: 35, description: "Adult women's haircut", icon: Users },
+  { id: "dad-cut", name: "Dad Haircut", duration: "30 min", price: "$30", priceNum: 30, description: "Adult men's haircut", icon: Users },
 ];
 
 const addOns: AddOnType[] = [
