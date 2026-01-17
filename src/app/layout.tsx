@@ -42,15 +42,14 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "HairSalon",
               name: "Slayer Kid Cuts",
-              description: "Kids haircuts in Henderson, NV. Fun salon experience and mobile home visits.",
+              description: "Henderson's sensory-friendly kids hair salon, purpose-built for children with autism, sensory processing differences, and anxiety. Featuring private sensory suite with separate entrance.",
               url: "https://slayerkidcuts.com",
               telephone: "+1-702-555-1234",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "1234 Fun Street, Suite 100",
+                streetAddress: "Coming Soon",
                 addressLocality: "Henderson",
                 addressRegion: "NV",
-                postalCode: "89014",
                 addressCountry: "US",
               },
               geo: {
@@ -83,6 +82,100 @@ export default function RootLayout({
                 "@type": "AggregateRating",
                 ratingValue: "4.9",
                 reviewCount: "247",
+              },
+              amenityFeature: [
+                {
+                  "@type": "LocationFeatureSpecification",
+                  name: "Private Sensory Suite",
+                  value: true,
+                },
+                {
+                  "@type": "LocationFeatureSpecification",
+                  name: "Private Entrance",
+                  value: true,
+                },
+                {
+                  "@type": "LocationFeatureSpecification",
+                  name: "Wait-in-Car Service",
+                  value: true,
+                },
+                {
+                  "@type": "LocationFeatureSpecification",
+                  name: "Adjustable Lighting",
+                  value: true,
+                },
+                {
+                  "@type": "LocationFeatureSpecification",
+                  name: "Noise-Canceling Headphones Available",
+                  value: true,
+                },
+                {
+                  "@type": "LocationFeatureSpecification",
+                  name: "Weighted Blankets Available",
+                  value: true,
+                },
+                {
+                  "@type": "LocationFeatureSpecification",
+                  name: "Sensory-Friendly Environment",
+                  value: true,
+                },
+                {
+                  "@type": "LocationFeatureSpecification",
+                  name: "Visual Timers",
+                  value: true,
+                },
+                {
+                  "@type": "LocationFeatureSpecification",
+                  name: "Quiet Clippers",
+                  value: true,
+                },
+              ],
+              specialties: [
+                "Kids Haircuts",
+                "Autism-Friendly Haircuts",
+                "Sensory-Friendly Services",
+                "First Haircuts",
+                "Special Needs Hair Services",
+                "Private Suite Appointments",
+                "Anxiety-Friendly Haircuts",
+              ],
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                name: "Kids Hair Services",
+                itemListElement: [
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Kids Haircut",
+                      description: "Fun haircut experience with entertainment",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Sensory-Friendly Haircut",
+                      description: "Specialized haircut for children with autism and sensory differences",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "First Haircut Package",
+                      description: "Special first haircut with certificate and keepsake",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      name: "Private Suite Appointment",
+                      description: "Complete privacy in dedicated sensory suite with private entrance",
+                    },
+                  },
+                ],
               },
             }),
           }}

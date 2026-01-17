@@ -8,12 +8,13 @@ import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/sensory-friendly", label: "Autism & Sensory", highlight: true },
+  { href: "/our-space", label: "Our Space" },
+  { href: "/sensory-friendly", label: "Sensory-Friendly", highlight: true },
   { href: "/services", label: "Services" },
+  { href: "/prepare", label: "Prepare" },
   { href: "/shop", label: "Shop" },
-  { href: "/coming-soon", label: "Grand Opening", highlight: true },
   { href: "/faq", label: "FAQ" },
-  { href: "/contact", label: "Contact" },
+  { href: "/coming-soon", label: "Grand Opening", highlight: true },
 ];
 
 export function Navigation() {

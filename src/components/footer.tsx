@@ -39,10 +39,11 @@ export function Footer() {
             <h4 className="font-bold text-lg mb-6">Quick Links</h4>
             <ul className="space-y-3">
               {[
-                { href: "/services", label: "Our Services" },
-                { href: "/book", label: "Book Appointment" },
-                { href: "/gallery", label: "Gallery" },
-                { href: "/about", label: "About Us" },
+                { href: "/our-space", label: "Our Space" },
+                { href: "/sensory-friendly", label: "Sensory-Friendly" },
+                { href: "/services", label: "Services" },
+                { href: "/prepare", label: "Prepare for Visit" },
+                { href: "/faq", label: "FAQ" },
                 { href: "/contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.href}>
@@ -62,8 +63,8 @@ export function Footer() {
               {[
                 "Kids Haircuts",
                 "First Haircut Package",
-                "Mobile Home Visits",
-                "Special Needs Friendly",
+                "Private Sensory Suite",
+                "Sensory-Friendly Cuts",
                 "Birthday Parties",
                 "Hair Tinsel & Fun Styles",
               ].map((service) => (
@@ -119,6 +120,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
             <p>&copy; {new Date().getFullYear()} Slayer Kid Cuts. All rights reserved.</p>
             <div className="flex gap-6">
+              <Link href="/stylists" className="hover:text-white transition-colors">For Stylists</Link>
               <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
             </div>
