@@ -7,7 +7,8 @@ import {
   Scissors, Star, Heart, Sparkles, Car, Calendar,
   CheckCircle2, Phone, MapPin, Clock, Shield,
   Smile, Music, Gamepad2, Baby, PartyPopper, ChevronRight,
-  ShoppingBag, Crown, Users, Brain, Headphones, Volume2
+  ShoppingBag, Crown, Users, Brain, Headphones, Volume2,
+  MessageSquare, DoorOpen, Lightbulb, VolumeX, Timer
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -307,6 +308,170 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Slayer's Private Sensory Suite Section */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <Badge className="bg-[#9B5DE5]/10 text-[#9B5DE5] border-[#9B5DE5]/20 mb-4 px-4 py-2">
+              <DoorOpen className="w-4 h-4 mr-2" />
+              Private Experience
+            </Badge>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+              Slayer&apos;s <span className="gradient-text">Private Sensory Suite</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              For children who need the calmest possible experience, Slayer offers appointments in her private suite — completely separate from the main salon.
+            </p>
+          </motion.div>
+
+          {/* Wait in Car Process */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h3 className="text-2xl font-bold">A Different Kind of Arrival</h3>
+              <div className="space-y-4">
+                {[
+                  { icon: Car, title: "Text When You Arrive", desc: "Pull into our parking lot and text us. No need to come inside.", color: "#00BBF9" },
+                  { icon: Timer, title: "Wait in Your Car", desc: "Stay in your comfortable, familiar space while we prepare the suite.", color: "#9B5DE5" },
+                  { icon: MessageSquare, title: "We'll Text When Ready", desc: "When everything is set, we'll let you know. Walk straight in through Slayer's private entrance.", color: "#00F5D4" },
+                  { icon: DoorOpen, title: "Private Entrance", desc: "Your child never has to walk through the main salon or encounter unexpected triggers.", color: "#FF6B9D" },
+                ].map((item, index) => (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex gap-4 items-start"
+                  >
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ backgroundColor: `${item.color}20` }}
+                    >
+                      <item.icon className="w-6 h-6" style={{ color: item.color }} />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900">{item.title}</h4>
+                      <p className="text-gray-600">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h3 className="text-2xl font-bold">Inside the Suite</h3>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { icon: Users, title: "One-on-One Attention", desc: "Just Slayer, your child, and you" },
+                  { icon: Lightbulb, title: "Adjustable Lighting", desc: "Dimmed or brightened to preference" },
+                  { icon: VolumeX, title: "Sound Control", desc: "Quiet environment, no salon noise" },
+                  { icon: Heart, title: "Familiar Setup", desc: "Same space every visit" },
+                  { icon: Shield, title: "Sensory Tools Ready", desc: "Weighted blankets, fidgets, headphones" },
+                  { icon: Clock, title: "No Time Pressure", desc: "Your appointment is the only one" },
+                ].map((item, index) => (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                  >
+                    <Card className="h-full border-2 border-gray-100 hover:border-[#9B5DE5]/30 transition-colors">
+                      <CardContent className="p-4">
+                        <item.icon className="w-6 h-6 text-[#9B5DE5] mb-2" />
+                        <h4 className="font-bold text-sm">{item.title}</h4>
+                        <p className="text-xs text-gray-600">{item.desc}</p>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Ideal For */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-r from-[#9B5DE5]/10 to-[#00F5D4]/10 rounded-3xl p-8 mb-8"
+          >
+            <h3 className="text-xl font-bold mb-4 text-center">This Experience is Ideal For:</h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {[
+                "Children with autism or sensory differences",
+                "Kids with severe anxiety",
+                "Traumatic haircut experiences",
+                "First-time clients needing extra time",
+                "Any child who does better in calm spaces"
+              ].map((item) => (
+                <Badge key={item} className="bg-white text-gray-700 border-gray-200 px-4 py-2">
+                  <CheckCircle2 className="w-4 h-4 mr-2 text-[#00F5D4]" />
+                  {item}
+                </Badge>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Link href="/our-space">
+              <Button size="lg" className="bg-gradient-to-r from-[#9B5DE5] to-[#00F5D4] text-white rounded-full px-10 py-6 text-lg shadow-xl hover:shadow-2xl transition-shadow">
+                <DoorOpen className="w-5 h-5 mr-2" />
+                Learn More About Our Space
+                <ChevronRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Wait-in-Car Callout Banner */}
+      <section className="py-8 bg-gradient-to-r from-[#00BBF9] to-[#9B5DE5]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row items-center justify-between gap-6 text-white"
+          >
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center">
+                <Car className="w-7 h-7 text-white" />
+              </div>
+              <div>
+                <h3 className="font-bold text-lg">Wait-in-Car Service Available</h3>
+                <p className="text-white/90 text-sm">Text when you arrive, stay in your car, we&apos;ll text when Slayer&apos;s private suite is ready.</p>
+              </div>
+            </div>
+            <Link href="/our-space">
+              <Button size="lg" className="bg-white text-[#9B5DE5] hover:bg-white/90 rounded-full px-6 whitespace-nowrap">
+                Learn How It Works
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -352,22 +517,6 @@ export default function HomePage() {
                 price: "From $30",
                 color: "#00BBF9",
                 image: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=400&h=300&fit=crop"
-              },
-              {
-                icon: Crown,
-                title: "VIP Home Service",
-                description: "Premium mobile service for the whole family",
-                price: "From $150",
-                color: "#FEE440",
-                image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=300&fit=crop"
-              },
-              {
-                icon: Car,
-                title: "Mobile Visits",
-                description: "We bring the salon to you!",
-                price: "From $40",
-                color: "#00F5D4",
-                image: "https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?w=400&h=300&fit=crop"
               },
               {
                 icon: Sparkles,
@@ -482,9 +631,9 @@ export default function HomePage() {
                 color: "#9B5DE5"
               },
               {
-                icon: Car,
-                title: "Mobile Convenience",
-                description: "Can't make it in? We'll bring the fun to your living room!",
+                icon: DoorOpen,
+                title: "Private Sensory Suite",
+                description: "Separate entrance, wait-in-car service, complete calm.",
                 color: "#00BBF9"
               },
               {
@@ -668,73 +817,6 @@ export default function HomePage() {
                 </Card>
               </motion.div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Mobile Service Highlight */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative bg-gradient-to-r from-[#00BBF9] to-[#9B5DE5] rounded-[3rem] p-12 lg:p-20 overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full -translate-y-1/2 translate-x-1/2" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white rounded-full translate-y-1/2 -translate-x-1/2" />
-            </div>
-
-            <div className="relative grid lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="text-white space-y-6"
-              >
-                <Badge className="bg-white/20 text-white border-white/30">
-                  <Car className="w-4 h-4 mr-2" />
-                  Mobile Service
-                </Badge>
-                <h2 className="text-4xl sm:text-5xl font-bold">
-                  We Come To You!
-                </h2>
-                <p className="text-xl text-white/90">
-                  Can&apos;t make it to the salon? No problem! Our mobile haircut service brings all the fun to your doorstep.
-                </p>
-                <ul className="space-y-3">
-                  {[
-                    "Perfect for anxious kids",
-                    "Saves time for busy families",
-                    "Full salon experience at home",
-                    "All Henderson & Las Vegas area"
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#00F5D4]" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/book">
-                  <Button size="lg" className="bg-white text-[#9B5DE5] hover:bg-white/90 rounded-full px-8 shadow-lg">
-                    Book Mobile Visit
-                    <ChevronRight className="w-5 h-5 ml-2" />
-                  </Button>
-                </Link>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="relative"
-              >
-                <Image
-                  src="https://images.unsplash.com/photo-1621607512214-68297480165e?w=500&h=500&fit=crop"
-                  alt="Mobile haircut service"
-                  width={500}
-                  height={500}
-                  className="rounded-3xl shadow-2xl"
-                />
-              </motion.div>
-            </div>
           </div>
         </div>
       </section>
