@@ -138,11 +138,11 @@ async function sendSMSConfirmation(booking: BookingData, bookingId: string) {
   }
 
   const childrenNames = booking.children.map(c => c.name).join(", ");
-  const message = `Hi ${booking.parentName}! Your Slayer Kid Cuts appointment is confirmed! ✂️
+  const message = `Hi ${booking.parentName}! Your Little Roots Studio appointment is confirmed! ✂️
 
 📅 ${booking.date} at ${booking.time}
 👶 ${childrenNames}
-📍 ${booking.locationType === "salon" ? "1234 Fun Street, Henderson" : "Mobile visit to your home"}
+📍 ${booking.locationType === "salon" ? "1234 Fun Street, Las Vegas" : "Mobile visit to your home"}
 💰 Total: $${booking.total}
 
 Booking ID: ${bookingId}

@@ -45,7 +45,7 @@ export default function ContactPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <Badge className="bg-[#00BBF9]/10 text-[#00BBF9] border-[#00BBF9]/20 mb-4">
+          <Badge className="bg-[#A69080]/10 text-[#A69080] border-[#A69080]/20 mb-4">
             <MessageCircle className="w-4 h-4 mr-2" />
             Get In Touch
           </Badge>
@@ -68,12 +68,12 @@ export default function ContactPage() {
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#FF6B9D]/10 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-6 h-6 text-[#FF6B9D]" />
+                    <div className="w-12 h-12 rounded-xl bg-[#6B5B4F]/10 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-6 h-6 text-[#6B5B4F]" />
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-1">Call or Text</h3>
-                      <a href="tel:+17025551234" className="text-gray-600 hover:text-[#9B5DE5] transition-colors">
+                      <a href="tel:+17025551234" className="text-gray-600 hover:text-[#5B8A8A] transition-colors">
                         (702) 555-1234
                       </a>
                       <p className="text-sm text-gray-500 mt-1">
@@ -93,12 +93,12 @@ export default function ContactPage() {
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#9B5DE5]/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-6 h-6 text-[#9B5DE5]" />
+                    <div className="w-12 h-12 rounded-xl bg-[#5B8A8A]/10 flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-6 h-6 text-[#5B8A8A]" />
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-1">Email Us</h3>
-                      <a href="mailto:hello@slayerkidcuts.com" className="text-gray-600 hover:text-[#9B5DE5] transition-colors">
+                      <a href="mailto:hello@slayerkidcuts.com" className="text-gray-600 hover:text-[#5B8A8A] transition-colors">
                         hello@slayerkidcuts.com
                       </a>
                       <p className="text-sm text-gray-500 mt-1">
@@ -118,20 +118,20 @@ export default function ContactPage() {
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#00BBF9]/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-[#00BBF9]" />
+                    <div className="w-12 h-12 rounded-xl bg-[#A69080]/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-[#A69080]" />
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-1">Visit Us</h3>
                       <p className="text-gray-600">
                         1234 Fun Street, Suite 100<br />
-                        Henderson, NV 89014
+                        Las Vegas, NV 89014
                       </p>
                       <a
-                        href="https://maps.google.com/?q=Henderson+NV"
+                        href="https://maps.google.com/?q=Las Vegas+NV"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm text-[#9B5DE5] hover:underline mt-2 inline-block"
+                        className="text-sm text-[#5B8A8A] hover:underline mt-2 inline-block"
                       >
                         Get Directions →
                       </a>
@@ -149,8 +149,8 @@ export default function ContactPage() {
               <Card className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#00F5D4]/10 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-6 h-6 text-[#00F5D4]" />
+                    <div className="w-12 h-12 rounded-xl bg-[#7BA3A3]/10 flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-6 h-6 text-[#7BA3A3]" />
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-1">Hours</h3>
@@ -279,7 +279,7 @@ export default function ContactPage() {
                       <Button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full sm:w-auto bg-gradient-to-r from-[#FF6B9D] via-[#9B5DE5] to-[#00BBF9] text-white rounded-full px-8"
+                        className="w-full sm:w-auto bg-gradient-to-r from-[#6B5B4F] via-[#5B8A8A] to-[#A69080] text-white rounded-full px-8"
                       >
                         {isSubmitting ? (
                           <>
@@ -310,7 +310,7 @@ export default function ContactPage() {
         >
           <div className="rounded-3xl overflow-hidden shadow-xl h-[400px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103073.28897988795!2d-115.07382!3d36.0397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8d0f9c2f5f5f5%3A0x0!2sHenderson%2C%20NV!5e0!3m2!1sen!2sus!4v1621234567890!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103073.28897988795!2d-115.07382!3d36.0397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8d0f9c2f5f5f5%3A0x0!2sLas Vegas%2C%20NV!5e0!3m2!1sen!2sus!4v1621234567890!5m2!1sen!2sus"
               width="100%"
               height="100%"
               style={{ border: 0 }}

@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen pt-24 pb-16">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-b from-[#9B5DE5]/5 to-white">
+      <section className="py-16 bg-gradient-to-b from-[#5B8A8A]/5 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -20,7 +20,7 @@ export default function AboutPage() {
               animate={{ opacity: 1, x: 0 }}
               className="space-y-6"
             >
-              <Badge className="bg-[#FF6B9D]/10 text-[#FF6B9D] border-[#FF6B9D]/20">
+              <Badge className="bg-[#6B5B4F]/10 text-[#6B5B4F] border-[#6B5B4F]/20">
                 <Heart className="w-4 h-4 mr-2" />
                 Our Story
               </Badge>
@@ -28,7 +28,7 @@ export default function AboutPage() {
                 Making Haircuts <span className="gradient-text">Fun Again</span>
               </h1>
               <p className="text-xl text-gray-600">
-                Hi! I&apos;m Slayer, and I started this salon because I believe every kid deserves to love getting their haircut. No tears, no fears - just fun!
+                Hi! I&apos;m Carla, and I started this salon because I believe every kid deserves to love getting their haircut. No tears, no fears - just fun!
               </p>
               <div className="flex items-center gap-6 pt-4">
                 <div className="text-center">
@@ -54,7 +54,7 @@ export default function AboutPage() {
               <div className="absolute inset-0 gradient-hero rounded-3xl rotate-3 opacity-20" />
               <Image
                 src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=700&fit=crop"
-                alt="Slayer - Kids Hair Stylist"
+                alt="Carla - Kids Hair Stylist"
                 width={600}
                 height={700}
                 className="relative rounded-3xl shadow-2xl"
@@ -72,7 +72,7 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <Badge className="bg-[#9B5DE5]/10 text-[#9B5DE5] border-[#9B5DE5]/20 mb-6">
+            <Badge className="bg-[#5B8A8A]/10 text-[#5B8A8A] border-[#5B8A8A]/20 mb-6">
               Our Mission
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">
@@ -82,7 +82,7 @@ export default function AboutPage() {
               After years of cutting hair at traditional salons, I noticed something: kids were often scared, parents were stressed, and haircuts felt like a chore. I knew there had to be a better way.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed mt-4">
-              That&apos;s why I created Slayer Kid Cuts - a place where kids actually WANT to come. With themed chairs, entertainment at every station, and endless patience, we&apos;ve turned haircuts from something kids dread into something they ask for.
+              That&apos;s why I created Little Roots Studio - a place where kids actually WANT to come. With themed chairs, entertainment at every station, and endless patience, we&apos;ve turned haircuts from something kids dread into something they ask for.
             </p>
           </motion.div>
         </div>
@@ -108,25 +108,25 @@ export default function AboutPage() {
                 icon: Heart,
                 title: "Patience First",
                 description: "Every child moves at their own pace. We never rush and always listen.",
-                color: "#FF6B9D"
+                color: "#6B5B4F"
               },
               {
                 icon: Sparkles,
                 title: "Fun Always",
                 description: "From themed chairs to games and treats, we make every visit a celebration.",
-                color: "#9B5DE5"
+                color: "#5B8A8A"
               },
               {
                 icon: Users,
                 title: "Inclusive Care",
                 description: "Special needs, sensory sensitivities, or just shy? We welcome all kids.",
-                color: "#00BBF9"
+                color: "#A69080"
               },
               {
                 icon: Award,
                 title: "Quality Results",
                 description: "Fun doesn't mean compromise. Every cut is professional and stylish.",
-                color: "#00F5D4"
+                color: "#7BA3A3"
               },
             ].map((value, index) => (
               <motion.div
@@ -154,7 +154,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* About Slayer */}
+      {/* About Carla */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -179,7 +179,7 @@ export default function AboutPage() {
               className="space-y-6"
             >
               <h2 className="text-3xl sm:text-4xl font-bold">
-                Meet <span className="gradient-text">Slayer</span>
+                Meet <span className="gradient-text">Carla</span>
               </h2>
               <p className="text-gray-600">
                 With over a decade of experience in children&apos;s hair styling, I&apos;ve had the joy of giving thousands of kids their perfect cuts. But what I love most isn&apos;t the cutting - it&apos;s the connections.
@@ -197,7 +197,7 @@ export default function AboutPage() {
                   "Pediatric First Aid Certified"
                 ].map((cert) => (
                   <div key={cert} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#00F5D4]" />
+                    <CheckCircle2 className="w-5 h-5 text-[#7BA3A3]" />
                     <span className="text-gray-700">{cert}</span>
                   </div>
                 ))}
@@ -208,7 +208,7 @@ export default function AboutPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gradient-to-b from-[#9B5DE5]/5 to-white">
+      <section className="py-20 bg-gradient-to-b from-[#5B8A8A]/5 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -224,12 +224,12 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               {
-                text: "Slayer has a gift. My daughter has autism and has never let anyone touch her hair. After one visit, she now asks when she can go back. Truly magical.",
+                text: "Carla has a gift. My daughter has autism and has never let anyone touch her hair. After one visit, she now asks when she can go back. Truly magical.",
                 name: "Amanda R.",
                 child: "Mom of Emma, 6"
               },
               {
-                text: "We've tried every kids salon in Vegas. Nothing compares. The mobile service is incredible - Slayer comes to us and my twins actually behave!",
+                text: "We've tried every kids salon in Vegas. Nothing compares. The mobile service is incredible - Carla comes to us and my twins actually behave!",
                 name: "David M.",
                 child: "Dad of twins, 4"
               }
@@ -274,10 +274,10 @@ export default function AboutPage() {
               Ready to See the Difference?
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Book an appointment and experience why families across Henderson love Slayer Kid Cuts.
+              Book an appointment and experience why families across Las Vegas love Little Roots Studio.
             </p>
             <Link href="/book">
-              <Button size="lg" className="bg-white text-[#9B5DE5] hover:bg-white/90 rounded-full px-8">
+              <Button size="lg" className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8">
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Your First Visit
               </Button>

@@ -11,7 +11,7 @@ const faqCategories = [
   {
     name: "Sensory & Special Needs",
     icon: Brain,
-    color: "#00F5D4",
+    color: "#7BA3A3",
     questions: [
       {
         q: "What makes your salon sensory-friendly?",
@@ -38,7 +38,7 @@ const faqCategories = [
   {
     name: "Appointments & Booking",
     icon: Calendar,
-    color: "#9B5DE5",
+    color: "#5B8A8A",
     questions: [
       {
         q: "How do I book an appointment?",
@@ -61,7 +61,7 @@ const faqCategories = [
   {
     name: "Services & Pricing",
     icon: DollarSign,
-    color: "#FF6B9D",
+    color: "#6B5B4F",
     questions: [
       {
         q: "How much does a kids haircut cost?",
@@ -84,7 +84,7 @@ const faqCategories = [
   {
     name: "The Experience",
     icon: Scissors,
-    color: "#00BBF9",
+    color: "#A69080",
     questions: [
       {
         q: "What entertainment do you have for kids?",
@@ -107,11 +107,11 @@ const faqCategories = [
   {
     name: "Location & Hours",
     icon: MapPin,
-    color: "#FEE440",
+    color: "#D4E5E5",
     questions: [
       {
         q: "Where are you located?",
-        a: "We're coming soon to Henderson, Nevada! Sign up for our newsletter on our Grand Opening page to be the first to know our exact location."
+        a: "We're coming soon to Las Vegas, Nevada! Sign up for our newsletter on our Grand Opening page to be the first to know our exact location."
       },
       {
         q: "What are your hours?",
@@ -143,14 +143,14 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen pt-24 pb-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-[#9B5DE5]/5 to-white py-16">
+      <section className="bg-gradient-to-b from-[#5B8A8A]/5 to-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <Badge className="bg-[#9B5DE5]/10 text-[#9B5DE5] border-[#9B5DE5]/20 mb-4">
+            <Badge className="bg-[#5B8A8A]/10 text-[#5B8A8A] border-[#5B8A8A]/20 mb-4">
               <HelpCircle className="w-4 h-4 mr-2" />
               Frequently Asked Questions
             </Badge>
@@ -246,13 +246,13 @@ export default function FAQPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <Button size="lg" className="bg-white text-[#9B5DE5] hover:bg-white/90 rounded-full px-8">
+                <Button size="lg" className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8">
                   <Phone className="w-5 h-5 mr-2" />
                   Contact Us
                 </Button>
               </Link>
               <Link href="/coming-soon">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#9B5DE5] rounded-full px-8">
+                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#5B8A8A] rounded-full px-8">
                   <Gift className="w-5 h-5 mr-2" />
                   Grand Opening Info
                 </Button>

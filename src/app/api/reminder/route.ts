@@ -28,14 +28,14 @@ async function sendSMSReminder(appointment: Appointment, hoursUntil: number) {
 
   const timeWord = hoursUntil === 24 ? "tomorrow" : "in 2 hours";
   const location = appointment.locationType === "salon"
-    ? "at our salon (1234 Fun Street, Henderson)"
+    ? "at our salon (1234 Fun Street, Las Vegas)"
     : `at your home${appointment.address ? ` (${appointment.address})` : ""}`;
 
   const message = `Hi ${appointment.parentName}! Reminder: ${appointment.childName}'s haircut is ${timeWord} at ${appointment.time} ${location}.
 
 Reply CONFIRM to confirm, RESCHEDULE to change, or CANCEL to cancel.
 
-See you soon! - Slayer Kid Cuts`;
+See you soon! - Little Roots Studio`;
 
   try {
     await fetch(

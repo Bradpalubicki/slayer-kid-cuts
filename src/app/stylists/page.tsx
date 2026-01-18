@@ -16,14 +16,14 @@ export default function StylistsPage() {
   return (
     <div className="min-h-screen pt-24 pb-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-[#9B5DE5]/5 to-white py-16">
+      <section className="bg-gradient-to-b from-[#5B8A8A]/5 to-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <Badge className="bg-[#9B5DE5]/10 text-[#9B5DE5] border-[#9B5DE5]/20 mb-4">
+            <Badge className="bg-[#5B8A8A]/10 text-[#5B8A8A] border-[#5B8A8A]/20 mb-4">
               <Scissors className="w-4 h-4 mr-2" />
               For Stylists
             </Badge>
@@ -31,7 +31,7 @@ export default function StylistsPage() {
               Booth Rental <span className="gradient-text">Opportunities</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Join Henderson&apos;s premier family-friendly salon! We&apos;re looking for experienced
+              Join Las Vegas&apos;s premier family-friendly salon! We&apos;re looking for experienced
               stylists who love working with kids and families.
             </p>
           </motion.div>
@@ -49,15 +49,15 @@ export default function StylistsPage() {
           >
             <div className="space-y-6">
               <h2 className="text-3xl sm:text-4xl font-bold">
-                Build Your Business at Slayer Kid Cuts
+                Build Your Business at Little Roots Studio
               </h2>
               <p className="text-lg text-gray-600">
-                We&apos;re creating something special in Henderson — a kid-focused salon that families
+                We&apos;re creating something special in Las Vegas — a kid-focused salon that families
                 love to visit. Whether you specialize in kids, adults, or both, there&apos;s a place
                 for you here.
               </p>
               <p className="text-lg text-gray-600">
-                Benefit from Slayer&apos;s reputation as Henderson&apos;s sensory-friendly specialist
+                Benefit from Carla&apos;s reputation as Las Vegas&apos;s sensory-friendly specialist
                 while running your own independent practice.
               </p>
               <div className="space-y-3">
@@ -69,7 +69,7 @@ export default function StylistsPage() {
                   "Shared reception and amenities",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#00F5D4] flex-shrink-0" />
+                    <CheckCircle2 className="w-5 h-5 text-[#7BA3A3] flex-shrink-0" />
                     <span className="text-gray-700">{item}</span>
                   </div>
                 ))}
@@ -104,7 +104,7 @@ export default function StylistsPage() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <Badge className="bg-[#00BBF9]/10 text-[#00BBF9] border-[#00BBF9]/20 mb-4">
+            <Badge className="bg-[#A69080]/10 text-[#A69080] border-[#A69080]/20 mb-4">
               <Building2 className="w-4 h-4 mr-2" />
               The Space
             </Badge>
@@ -114,26 +114,26 @@ export default function StylistsPage() {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {/* Slayer's Suite */}
+            {/* Carla's Suite */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full border-2 border-[#00F5D4]/30 bg-[#00F5D4]/5">
+              <Card className="h-full border-2 border-[#7BA3A3]/30 bg-[#7BA3A3]/5">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#00F5D4]/20 flex items-center justify-center">
-                      <Brain className="w-6 h-6 text-[#00F5D4]" />
+                    <div className="w-12 h-12 rounded-xl bg-[#7BA3A3]/20 flex items-center justify-center">
+                      <Brain className="w-6 h-6 text-[#7BA3A3]" />
                     </div>
-                    <h3 className="text-xl font-bold">Slayer&apos;s Private Sensory Suite</h3>
+                    <h3 className="text-xl font-bold">Carla&apos;s Private Sensory Suite</h3>
                   </div>
                   <p className="text-gray-600 mb-4">
-                    Slayer&apos;s dedicated space for her sensory-friendly clients. Features a private
+                    Carla&apos;s dedicated space for her sensory-friendly clients. Features a private
                     entrance and is designed specifically for children with autism and anxiety.
                   </p>
-                  <Badge className="bg-white text-[#00F5D4] border-[#00F5D4]/30">
-                    Not available for rent — Slayer&apos;s dedicated suite
+                  <Badge className="bg-white text-[#7BA3A3] border-[#7BA3A3]/30">
+                    Not available for rent — Carla&apos;s dedicated suite
                   </Badge>
                 </CardContent>
               </Card>
@@ -145,11 +145,11 @@ export default function StylistsPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full border-2 border-[#9B5DE5]/30 bg-[#9B5DE5]/5">
+              <Card className="h-full border-2 border-[#5B8A8A]/30 bg-[#5B8A8A]/5">
                 <CardContent className="p-8">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#9B5DE5]/20 flex items-center justify-center">
-                      <Scissors className="w-6 h-6 text-[#9B5DE5]" />
+                    <div className="w-12 h-12 rounded-xl bg-[#5B8A8A]/20 flex items-center justify-center">
+                      <Scissors className="w-6 h-6 text-[#5B8A8A]" />
                     </div>
                     <h3 className="text-xl font-bold">Main Salon (Your Space)</h3>
                   </div>
@@ -166,7 +166,7 @@ export default function StylistsPage() {
                       "Break room",
                     ].map((item) => (
                       <div key={item} className="flex items-center gap-2 text-gray-700">
-                        <CheckCircle2 className="w-4 h-4 text-[#9B5DE5]" />
+                        <CheckCircle2 className="w-4 h-4 text-[#5B8A8A]" />
                         <span>{item}</span>
                       </div>
                     ))}
@@ -183,7 +183,7 @@ export default function StylistsPage() {
             className="text-center"
           >
             <Link href="/our-space">
-              <Button size="lg" variant="outline" className="rounded-full px-8 border-2 border-[#9B5DE5] text-[#9B5DE5] hover:bg-[#9B5DE5] hover:text-white">
+              <Button size="lg" variant="outline" className="rounded-full px-8 border-2 border-[#5B8A8A] text-[#5B8A8A] hover:bg-[#5B8A8A] hover:text-white">
                 View Full Floor Plan
                 <ChevronRight className="w-5 h-5 ml-2" />
               </Button>
@@ -212,25 +212,25 @@ export default function StylistsPage() {
                 icon: Building2,
                 title: "Your Station",
                 items: ["Private suite or open chair", "Styling chair", "Mirror", "Storage cabinet"],
-                color: "#9B5DE5"
+                color: "#5B8A8A"
               },
               {
                 icon: Sparkles,
                 title: "Shared Amenities",
                 items: ["Reception desk", "Waiting area", "Shampoo stations", "Laundry facilities"],
-                color: "#00BBF9"
+                color: "#A69080"
               },
               {
                 icon: DollarSign,
                 title: "Business Support",
                 items: ["Appointment scheduling", "Card processing available", "Built-in foot traffic", "Marketing exposure"],
-                color: "#00F5D4"
+                color: "#7BA3A3"
               },
               {
                 icon: Heart,
                 title: "Family-Friendly",
                 items: ["Kid-friendly environment", "Play area for children", "Themed chairs available", "Entertainment systems"],
-                color: "#FF6B9D"
+                color: "#6B5B4F"
               },
             ].map((category, index) => (
               <motion.div
@@ -274,7 +274,7 @@ export default function StylistsPage() {
             viewport={{ once: true }}
             className="mb-12 text-center"
           >
-            <Badge className="bg-[#FEE440]/20 text-yellow-700 border-[#FEE440]/30 mb-4">
+            <Badge className="bg-[#D4E5E5]/20 text-yellow-700 border-[#D4E5E5]/30 mb-4">
               <DollarSign className="w-4 h-4 mr-2" />
               Rental Options
             </Badge>
@@ -289,7 +289,7 @@ export default function StylistsPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full border-2 border-[#00BBF9]/30">
+              <Card className="h-full border-2 border-[#A69080]/30">
                 <CardContent className="p-8">
                   <div className="text-center mb-6">
                     <h3 className="text-2xl font-bold mb-2">Private Suite</h3>
@@ -304,14 +304,14 @@ export default function StylistsPage() {
                       "Great for building clientele",
                     ].map((item) => (
                       <div key={item} className="flex items-center gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-[#00BBF9] flex-shrink-0" />
+                        <CheckCircle2 className="w-5 h-5 text-[#A69080] flex-shrink-0" />
                         <span className="text-gray-700">{item}</span>
                       </div>
                     ))}
                   </div>
                   <div className="mt-8 text-center">
                     <p className="text-sm text-gray-500 mb-2">Starting at</p>
-                    <p className="text-4xl font-bold text-[#00BBF9]">Contact Us</p>
+                    <p className="text-4xl font-bold text-[#A69080]">Contact Us</p>
                     <p className="text-sm text-gray-500">for pricing</p>
                   </div>
                 </CardContent>
@@ -323,7 +323,7 @@ export default function StylistsPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <Card className="h-full border-2 border-[#FF6B9D]/30">
+              <Card className="h-full border-2 border-[#6B5B4F]/30">
                 <CardContent className="p-8">
                   <div className="text-center mb-6">
                     <h3 className="text-2xl font-bold mb-2">Open Floor Chair</h3>
@@ -338,14 +338,14 @@ export default function StylistsPage() {
                       "Perfect for walk-ins",
                     ].map((item) => (
                       <div key={item} className="flex items-center gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-[#FF6B9D] flex-shrink-0" />
+                        <CheckCircle2 className="w-5 h-5 text-[#6B5B4F] flex-shrink-0" />
                         <span className="text-gray-700">{item}</span>
                       </div>
                     ))}
                   </div>
                   <div className="mt-8 text-center">
                     <p className="text-sm text-gray-500 mb-2">Starting at</p>
-                    <p className="text-4xl font-bold text-[#FF6B9D]">Contact Us</p>
+                    <p className="text-4xl font-bold text-[#6B5B4F]">Contact Us</p>
                     <p className="text-sm text-gray-500">for pricing</p>
                   </div>
                 </CardContent>
@@ -385,11 +385,11 @@ export default function StylistsPage() {
                 viewport={{ once: true }}
                 className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl"
               >
-                <item.icon className="w-6 h-6 text-[#9B5DE5] flex-shrink-0" />
+                <item.icon className="w-6 h-6 text-[#5B8A8A] flex-shrink-0" />
                 <div>
                   <p className="text-gray-700">{item.text}</p>
                   {item.required && (
-                    <Badge className="mt-2 bg-[#00F5D4]/10 text-[#00F5D4] border-[#00F5D4]/20 text-xs">
+                    <Badge className="mt-2 bg-[#7BA3A3]/10 text-[#7BA3A3] border-[#7BA3A3]/20 text-xs">
                       Required
                     </Badge>
                   )}
@@ -418,13 +418,13 @@ export default function StylistsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <Button size="lg" className="bg-white text-[#9B5DE5] hover:bg-white/90 rounded-full px-8">
+                <Button size="lg" className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8">
                   <Mail className="w-5 h-5 mr-2" />
                   Contact Us
                 </Button>
               </Link>
               <a href="tel:+17025551234">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#9B5DE5] rounded-full px-8">
+                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#5B8A8A] rounded-full px-8">
                   <Phone className="w-5 h-5 mr-2" />
                   Call Now
                 </Button>

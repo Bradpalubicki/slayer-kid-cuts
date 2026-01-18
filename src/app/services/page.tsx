@@ -16,9 +16,9 @@ const services = [
     tagline: "Our specialty - certified & caring",
     price: "Same as regular cuts",
     duration: "As needed",
-    color: "#00F5D4",
+    color: "#7BA3A3",
     image: "https://images.unsplash.com/photo-1560439514-4e9645039924?w=800&h=500&fit=crop",
-    description: "Slayer Kid Cuts specializes in working with children who have autism, ADHD, sensory processing differences, and anxiety. We don't just accommodate - we've built our entire approach around making haircuts accessible for every child.",
+    description: "Little Roots Studio specializes in working with children who have autism, ADHD, sensory processing differences, and anxiety. We don't just accommodate - we've built our entire approach around making haircuts accessible for every child.",
     includes: [
       "Noise-canceling headphones available",
       "Whisper-quiet clippers",
@@ -36,7 +36,7 @@ const services = [
     tagline: "Expert cuts that make kids smile",
     price: "From $25",
     duration: "30 minutes",
-    color: "#FF6B9D",
+    color: "#6B5B4F",
     image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&h=500&fit=crop",
     description: "Our signature kids haircuts are designed to be a fun, stress-free experience. Each station features a TV with cartoons, tablets with games, and themed chairs to keep your little one entertained.",
     includes: [
@@ -54,7 +54,7 @@ const services = [
     tagline: "Capture the milestone forever",
     price: "$35",
     duration: "45 minutes",
-    color: "#9B5DE5",
+    color: "#5B8A8A",
     image: "https://images.unsplash.com/photo-1519699047748-de8e44e9dee9?w=800&h=500&fit=crop",
     description: "Your baby's first haircut is a special milestone! Our First Haircut Package celebrates this moment with keepsakes you'll treasure forever.",
     includes: [
@@ -72,7 +72,7 @@ const services = [
     tagline: "Parents get pampered too!",
     price: "From $30",
     duration: "30-45 minutes",
-    color: "#00BBF9",
+    color: "#A69080",
     image: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&h=500&fit=crop",
     description: "While your kids enjoy their haircut experience, why not get yours done too? We offer full adult haircut services for parents. Book the whole family and make it a fun outing!",
     includes: [
@@ -108,7 +108,7 @@ const services = [
     tagline: "A glamorous celebration",
     price: "Custom quote",
     duration: "2-3 hours",
-    color: "#FF6B9D",
+    color: "#6B5B4F",
     image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&h=500&fit=crop",
     description: "Make their birthday unforgettable! Our birthday party packages include hair styling, tinsel, temporary color, and tons of fun for the birthday child and their friends.",
     includes: [
@@ -125,14 +125,14 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen pt-24 pb-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-[#9B5DE5]/5 to-white py-16">
+      <section className="bg-gradient-to-b from-[#5B8A8A]/5 to-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center"
           >
-            <Badge className="bg-[#9B5DE5]/10 text-[#9B5DE5] border-[#9B5DE5]/20 mb-4">
+            <Badge className="bg-[#5B8A8A]/10 text-[#5B8A8A] border-[#5B8A8A]/20 mb-4">
               <Scissors className="w-4 h-4 mr-2" />
               Our Services
             </Badge>
@@ -163,7 +163,7 @@ export default function ServicesPage() {
               <div className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}>
                 <div
                   className="absolute inset-0 rounded-3xl -rotate-3 opacity-20"
-                  style={{ background: `linear-gradient(135deg, ${service.color}, #9B5DE5)` }}
+                  style={{ background: `linear-gradient(135deg, ${service.color}, #5B8A8A)` }}
                 />
                 <Image
                   src={service.image}
@@ -223,7 +223,7 @@ export default function ServicesPage() {
                     size="lg"
                     className="rounded-full px-8 text-white"
                     style={{
-                      background: `linear-gradient(135deg, ${service.color}, #9B5DE5)`,
+                      background: `linear-gradient(135deg, ${service.color}, #5B8A8A)`,
                     }}
                   >
                     <Calendar className="w-5 h-5 mr-2" />
@@ -280,7 +280,7 @@ export default function ServicesPage() {
                         {service.price}
                       </p>
                       <Link href="/book">
-                        <Button variant="ghost" size="sm" className="text-[#9B5DE5]">
+                        <Button variant="ghost" size="sm" className="text-[#5B8A8A]">
                           Book
                           <ChevronRight className="w-4 h-4 ml-1" />
                         </Button>
@@ -311,13 +311,13 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/book">
-                <Button size="lg" className="bg-white text-[#9B5DE5] hover:bg-white/90 rounded-full px-8">
+                <Button size="lg" className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8">
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Appointment
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#9B5DE5] rounded-full px-8">
+                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#5B8A8A] rounded-full px-8">
                   Contact Us
                 </Button>
               </Link>
