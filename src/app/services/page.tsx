@@ -29,6 +29,8 @@ const services = [
     color: "#7BA3A3",
     image:
       "https://images.unsplash.com/photo-1560439514-4e9645039924?w=800&h=500&fit=crop",
+    imageAlt:
+      "Autism-friendly haircut for child with sensory accommodations in Henderson NV",
     description:
       "Little Roots Studio specializes in working with children who have autism, ADHD, sensory processing differences, and anxiety. We don't just accommodate - we've built our entire approach around making haircuts accessible for every child.",
     includes: [
@@ -51,6 +53,8 @@ const services = [
     color: "#6B5B4F",
     image:
       "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&h=500&fit=crop",
+    imageAlt:
+      "Professional kids haircut at sensory-friendly salon Henderson Nevada",
     description:
       "Our signature kids haircuts are designed to be a fun, stress-free experience. Each station features a TV with cartoons, tablets with games, and themed chairs to keep your little one entertained.",
     includes: [
@@ -71,6 +75,8 @@ const services = [
     color: "#5B8A8A",
     image:
       "https://images.unsplash.com/photo-1519699047748-de8e44e9dee9?w=800&h=500&fit=crop",
+    imageAlt:
+      "Baby's first haircut experience with certificate at Little Roots Studio",
     description:
       "Your baby's first haircut is a special milestone! Our First Haircut Package celebrates this moment with keepsakes you'll treasure forever.",
     includes: [
@@ -91,6 +97,7 @@ const services = [
     color: "#A69080",
     image:
       "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&h=500&fit=crop",
+    imageAlt: "Parent haircut while kids get styled at family-friendly salon",
     description:
       "While your kids enjoy their haircut experience, why not get yours done too? We offer full adult haircut services for parents. Book the whole family and make it a fun outing!",
     includes: [
@@ -111,6 +118,8 @@ const services = [
     color: "#F15BB5",
     image:
       "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&h=500&fit=crop",
+    imageAlt:
+      "Kids hair tinsel and fun styling options at Henderson kids salon",
     description:
       "Want to add some extra fun? Our hair tinsel and creative styling options let kids express their personality with sparkle, temporary color, and fun styles!",
     includes: [
@@ -131,6 +140,8 @@ const services = [
     color: "#6B5B4F",
     image:
       "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&h=500&fit=crop",
+    imageAlt:
+      "Kids birthday party with hair styling at Little Roots Studio Henderson",
     description:
       "Make their birthday unforgettable! Our birthday party packages include hair styling, tinsel, temporary color, and tons of fun for the birthday child and their friends.",
     includes: [
@@ -195,7 +206,7 @@ export default function ServicesPage() {
                 />
                 <Image
                   src={service.image}
-                  alt={service.title}
+                  alt={service.imageAlt}
                   width={800}
                   height={500}
                   className="relative rounded-3xl shadow-2xl"

@@ -357,9 +357,21 @@ export default function Home() {
 
       {/* ========== HERO SECTION ========== */}
       <section
-        className="min-h-screen relative flex flex-col justify-center px-4 py-12 pt-32 bg-gradient-to-br from-sage via-sage-dark to-brown"
+        className="min-h-screen relative flex flex-col justify-center px-4 py-12 pt-32"
         aria-labelledby="hero-heading"
       >
+        {/* Background Image with Lighter Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80"
+            alt="Calm and peaceful salon environment with natural earth tones"
+            fill
+            className="object-cover"
+            priority
+            unoptimized
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-sage/40 via-sage/30 to-brown/50"></div>
+        </div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           {/* Breadcrumbs */}
           <div className="mb-6">
@@ -536,7 +548,7 @@ export default function Home() {
               <div className="h-52 relative">
                 <Image
                   src="https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?auto=format&fit=crop&w=600&q=80"
-                  alt="Happy child smiling during haircut"
+                  alt="Happy child smiling during sensory-friendly haircut in Henderson NV"
                   fill
                   className="object-cover"
                   unoptimized
@@ -561,7 +573,7 @@ export default function Home() {
               <div className="h-52 relative">
                 <Image
                   src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80"
-                  alt="Calm and peaceful salon interior with natural tones"
+                  alt="Calm children's hair salon private suite with natural earth tones"
                   fill
                   className="object-cover"
                   unoptimized
@@ -586,7 +598,7 @@ export default function Home() {
               <div className="h-52 relative">
                 <Image
                   src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=600&q=80"
-                  alt="Colorful sensory toys for children"
+                  alt="Sensory tools and fidget toys for autism-friendly haircuts"
                   fill
                   className="object-cover"
                   unoptimized
@@ -1270,7 +1282,7 @@ export default function Home() {
               <div className="aspect-square rounded-3xl overflow-hidden shadow-xl">
                 <Image
                   src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=600&q=80"
-                  alt="Carla, professional female hair stylist and owner of Little Roots Studio"
+                  alt="Carla, autism-trained kids hair stylist and owner of Little Roots Studio Henderson NV"
                   fill
                   className="object-cover"
                   unoptimized
