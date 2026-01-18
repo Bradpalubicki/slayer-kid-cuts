@@ -33,7 +33,7 @@ export default function AboutPage() {
                 Our Story
               </Badge>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
-                Making Haircuts <span className="gradient-text">Fun Again</span>
+                Meet <span className="gradient-text">Carla</span>
               </h1>
               <p className="text-xl text-gray-600">
                 Hi! I&apos;m Carla, and I started this salon because I believe
@@ -42,7 +42,7 @@ export default function AboutPage() {
               </p>
               <div className="flex items-center gap-6 pt-4">
                 <div className="text-center">
-                  <p className="text-3xl font-bold gradient-text">10+</p>
+                  <p className="text-3xl font-bold gradient-text">13+</p>
                   <p className="text-sm text-gray-500">Years Experience</p>
                 </div>
                 <div className="text-center">
