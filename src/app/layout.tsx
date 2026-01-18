@@ -101,7 +101,7 @@ const localBusinessSchema = {
     "@type": "OpeningHoursSpecification",
     description: "By appointment only. Opening Spring 2026.",
   },
-  image: "https://littleroots.studio/images/little-roots-logo.png",
+  image: "https://littleroots.studio/images/little-roots-logo.webp",
   sameAs: [],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
