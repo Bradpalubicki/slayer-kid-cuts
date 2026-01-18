@@ -306,34 +306,6 @@ function FAQAccordion() {
   );
 }
 
-// Breadcrumb Component
-function Breadcrumbs() {
-  return (
-    <nav aria-label="Breadcrumb" className="text-sm text-white/70">
-      <ol
-        className="flex items-center gap-2"
-        itemScope
-        itemType="https://schema.org/BreadcrumbList"
-      >
-        <li
-          itemProp="itemListElement"
-          itemScope
-          itemType="https://schema.org/ListItem"
-        >
-          <a
-            href="https://littleroots.studio"
-            itemProp="item"
-            className="hover:text-white transition-colors"
-          >
-            <span itemProp="name">Home</span>
-          </a>
-          <meta itemProp="position" content="1" />
-        </li>
-      </ol>
-    </nav>
-  );
-}
-
 export default function Home() {
   return (
     <main className="bg-cream">

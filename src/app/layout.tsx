@@ -8,11 +8,18 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://littleroots.studio"),
-  // Title: 58 chars (under 60 limit)
-  title: "Little Roots Studio | Sensory-Friendly Kids Haircuts Henderson",
+  // Title template allows pages to have unique titles
+  title: {
+    default: "Little Roots Studio | Sensory-Friendly Kids Haircuts Henderson",
+    template: "%s | Little Roots Studio",
+  },
   // Description: 136 chars (under 160 limit)
   description:
     "Henderson's first sensory-friendly kids hair salon. Autism-friendly haircuts, private suite, one family at a time. Opening Spring 2026.",
+  // Homepage canonical - pages will override with their own
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "sensory-friendly haircuts Henderson NV",
     "autism-friendly hair salon Las Vegas",
@@ -199,7 +206,6 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="canonical" href="https://littleroots.studio" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
