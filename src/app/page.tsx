@@ -5,34 +5,39 @@ import Image from "next/image";
 
 // Countdown Timer Component
 function CountdownTimer() {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
+  // Store target date in state so it's stable across renders
+  const [targetDate] = useState(() => {
+    const date = new Date();
+    date.setDate(date.getDate() + 60);
+    return date;
   });
 
-  useEffect(() => {
-    // Calculate 60 days from now
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 60);
+  // Calculate time left helper function
+  const calculateTimeLeft = (target: Date) => {
+    const now = new Date().getTime();
+    const distance = target.getTime() - now;
+    if (distance > 0) {
+      return {
+        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours: Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        ),
+        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((distance % (1000 * 60)) / 1000),
+      };
+    }
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  };
 
+  // Initialize with calculated values immediately
+  const [timeLeft, setTimeLeft] = useState(() => calculateTimeLeft(targetDate));
+
+  useEffect(() => {
     const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = targetDate.getTime() - now;
-      if (distance > 0) {
-        setTimeLeft({
-          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-          hours: Math.floor(
-            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-          ),
-          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((distance % (1000 * 60)) / 1000),
-        });
-      }
+      setTimeLeft(calculateTimeLeft(targetDate));
     }, 1000);
     return () => clearInterval(timer);
-  }, []);
+  }, [targetDate]);
 
   return (
     <div

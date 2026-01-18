@@ -1,0 +1,8 @@
+# Little Roots Studio - Sensory-Friendly Kids Hair Salon
+# https://littleroots.studio
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://littleroots.studio/sitemap.xml
