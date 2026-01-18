@@ -377,23 +377,18 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-br from-sage/40 via-sage/30 to-brown/50"></div>
         </div>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          {/* Breadcrumbs */}
-          <div className="mb-6">
-            <Breadcrumbs />
-          </div>
-
+        <div className="max-w-4xl mx-auto text-center relative z-10 pt-8">
           {/* Badge */}
           <div className="inline-block mb-6">
             <span className="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full text-sm font-semibold tracking-wide border border-white/30 animate-pulse">
-              ✨ OPENING SPRING 2025 • HENDERSON, NV ✨
+              ✨ OPENING SPRING 2026 • HENDERSON, NV ✨
             </span>
           </div>
 
           {/* Logo */}
           <div className="mb-6">
             <Image
-              src="/images/little-roots-logo.png"
+              src="/images/little-roots-logo.webp"
               alt="Little Roots Studio - Sensory-Friendly Kids Hair Salon"
               width={350}
               height={175}
