@@ -16,12 +16,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Slayer Kid Cuts | Kids Haircuts Henderson NV | Mobile & Salon",
-  description: "Award-winning kids haircuts in Henderson, NV! Fun, stress-free salon experience or mobile home visits. Special needs friendly. Book online 24/7.",
-  keywords: "kids haircuts Henderson NV, children haircuts, mobile haircuts, first haircut, special needs haircuts, kids salon",
+  title: "Slayer Kid Cuts | Coming Soon | Henderson's Kid-Friendly Hair Salon",
+  description: "Henderson's first salon designed for every kid — from wiggly to sensory-sensitive. Private suite with separate entrance. Coming soon!",
+  keywords: "kids haircuts Henderson NV, children haircuts, sensory-friendly haircuts, first haircut, autism friendly haircuts, kids salon",
   openGraph: {
-    title: "Slayer Kid Cuts | Where Haircuts Are Fun!",
-    description: "Making haircuts an adventure for kids in Henderson, NV. Fun salon or mobile home visits. Book online 24/7!",
+    title: "Slayer Kid Cuts | Coming Soon | Henderson's Kid-Friendly Hair Salon",
+    description: "Henderson's first salon designed for every kid — from wiggly to sensory-sensitive. Private suite with separate entrance. Coming soon!",
     type: "website",
     locale: "en_US",
   },
