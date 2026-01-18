@@ -337,17 +337,17 @@ export default function Home() {
         className="min-h-screen relative flex flex-col justify-center px-4 py-12 pt-32"
         aria-labelledby="hero-heading"
       >
-        {/* Background Image with Lighter Overlay */}
+        {/* Background Image with Calming Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80"
-            alt="Calm and peaceful salon environment with natural earth tones"
+            src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1920&q=80"
+            alt="Bright, calm hair salon with natural light and warm, welcoming atmosphere"
             fill
             className="object-cover"
             priority
             unoptimized
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-sage/40 via-sage/30 to-brown/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-sage/50 via-cream/30 to-seafoam/40"></div>
         </div>
         <div className="max-w-4xl mx-auto text-center relative z-10 pt-8">
           {/* Badge */}
