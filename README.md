@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌱 Little Roots Studio - Website Rebrand
 
-## Getting Started
+## Complete rebrand from "Slayer Kid Cuts" to "Little Roots Studio"
 
-First, run the development server:
+### Brand Colors (from logo)
+- **Sage Green**: #5B8A8A (primary)
+- **Warm Brown**: #6B5B4F (text)
+- **Cream**: #F8F6F3 (background)
+- **Seafoam**: #D4E5E5 (accents)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 📁 Files to Deploy
+
+### Step 1: Add Logo
+Save the Little Roots logo to:
+```
+C:\Users\Brad\slayer-kid-cuts\public\images\little-roots-logo.png
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Step 2: Replace Files
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| File | Location |
+|------|----------|
+| `page.tsx` | `C:\Users\Brad\slayer-kid-cuts\src\app\page.tsx` |
+| `globals.css` | `C:\Users\Brad\slayer-kid-cuts\src\app\globals.css` |
+| `layout.tsx` | `C:\Users\Brad\slayer-kid-cuts\src\app\layout.tsx` |
+| `tailwind.config.ts` | `C:\Users\Brad\slayer-kid-cuts\tailwind.config.ts` (root) |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Step 3: Build & Deploy
 
-## Learn More
+```bash
+cd C:\Users\Brad\slayer-kid-cuts
 
-To learn more about Next.js, take a look at the following resources:
+# Test the build
+npm run build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# If successful, deploy
+git add .
+git commit -m "Rebrand to Little Roots Studio - earth tones, new copy"
+git push origin main:master
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🎨 What Changed
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Visual
+- Earth-toned color palette (sage green, warm brown, cream)
+- Calming, organic design aesthetic
+- New logo placement
+- Softer, more inviting UI
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Copy
+- **13 years** experience (not 10+)
+- "First of its kind in Las Vegas"
+- Judgment-free, safe space messaging
+- "One family at a time" emphasis
+- Carla's personal story and passion
+- Autism-trained, trauma-informed badges
+
+### Sections
+1. Hero with countdown & waitlist
+2. "Why Little Roots?" comparison
+3. "Every Child Deserves a Calm Haircut" - who it's for
+4. "Intentionally Designed for Calm" - studio features
+5. "Meet Carla" - about section
+6. Final CTA with waitlist
+7. Footer
+
+---
+
+## 📝 To Do After Deploy
+
+1. **Domain**: ✅ Secured `littleroots.studio`
+2. **Waitlist**: Connect to Mailchimp/ConvertKit
+3. **OG Image**: Create `/images/little-roots-og.png` (1200x630)
+4. **Favicon**: Update to match new brand
+5. **Email**: Set up `hello@littleroots.studio`
+
+---
+
+## 💚 Key Messages for Marketing
+
+> "A sensory-friendly, judgment-free hair studio designed for children who need a little more patience, privacy, and care."
+
+> "This isn't just a salon. It's a safe space. A loving, one-on-one experience for every kiddo who needs a little extra care."
+
+> "The first of its kind in Las Vegas"
+
+> "One family at a time. Always."
