@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
@@ -47,7 +47,11 @@ export const metadata: Metadata = {
     description: 'The first sensory-friendly kids hair studio in Las Vegas. Where every child is met exactly where they are. 🌱',
     images: ['/images/little-roots-og.png'],
   },
-  viewport: 'width=device-width, initial-scale=1',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
   themeColor: '#5B8A8A',
 };
 

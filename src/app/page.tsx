@@ -3,6 +3,58 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
+// Hero images - calming photos of female stylists with children
+const heroImages = [
+  {
+    src: "https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?auto=format&fit=crop&w=2000&q=80",
+    alt: "Gentle haircut for a child in a calm setting"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?auto=format&fit=crop&w=2000&q=80",
+    alt: "Child getting a calm, patient haircut"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1596728325488-58c87691c9af?auto=format&fit=crop&w=2000&q=80",
+    alt: "Relaxed child during haircut experience"
+  }
+];
+
+// Rotating Hero Background Component
+function RotatingHeroBackground() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // Change every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <>
+      {heroImages.map((image, index) => (
+        <div
+          key={image.src}
+          className={`absolute inset-0 transition-opacity duration-1000 ${
+            index === currentIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            className="object-cover"
+            priority={index === 0}
+            unoptimized
+          />
+        </div>
+      ))}
+      <div className="absolute inset-0 bg-gradient-to-b from-brown/70 via-sage/60 to-brown/80"></div>
+    </>
+  );
+}
+
 // Countdown Timer Component
 function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState({
@@ -41,8 +93,8 @@ function CountdownTimer() {
         { value: timeLeft.seconds, label: 'Sec' },
       ].map((item) => (
         <div key={item.label} className="text-center">
-          <div className="bg-white/95 backdrop-blur-sm rounded-xl p-2 sm:p-4 shadow-lg min-w-[60px] sm:min-w-[80px]">
-            <span className="text-2xl sm:text-4xl font-bold text-sage">{item.value.toString().padStart(2, '0')}</span>
+          <div className="bg-white/95 backdrop-blur-sm rounded-xl p-2 sm:p-4 shadow-lg min-w-[55px] sm:min-w-[75px]">
+            <span className="text-xl sm:text-3xl font-bold text-sage">{item.value.toString().padStart(2, '0')}</span>
           </div>
           <span className="text-xs text-white/90 mt-1 block font-medium">{item.label}</span>
         </div>
@@ -162,26 +214,28 @@ function WaitlistForm() {
 export default function Home() {
   return (
     <main className="bg-cream">
-      {/* ========== HERO SECTION WITH BACKGROUND IMAGE ========== */}
-      <section className="min-h-screen relative flex flex-col justify-center px-4 py-12">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?auto=format&fit=crop&w=2000&q=80"
-            alt="Child getting a gentle haircut"
-            fill
-            className="object-cover"
-            priority
-            unoptimized
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-sage/80 via-sage/70 to-brown/80"></div>
+      {/* ========== COMING SOON TOP BANNER ========== */}
+      <div className="bg-gradient-to-r from-sage via-sage-dark to-sage text-white py-3 px-4 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2220%22 height=%2220%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22M0 0h20v20H0z%22 fill=%22none%22/%3E%3Ccircle cx=%2210%22 cy=%2210%22 r=%221%22 fill=%22white%22 fill-opacity=%220.1%22/%3E%3C/svg%3E')]"></div>
+        <div className="relative z-10 flex items-center justify-center gap-3 flex-wrap">
+          <span className="text-xl">🚀</span>
+          <span className="font-bold tracking-wide">COMING SOON</span>
+          <span className="hidden sm:inline">—</span>
+          <span className="text-white/90">Henderson&apos;s First Sensory-Friendly Kids Hair Studio</span>
+          <span className="text-xl">🌱</span>
         </div>
+      </div>
+
+      {/* ========== HERO SECTION WITH ROTATING BACKGROUND ========== */}
+      <section className="min-h-screen relative flex flex-col justify-center px-4 py-12">
+        {/* Rotating Background Images */}
+        <RotatingHeroBackground />
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          {/* Coming Soon Badge */}
+          {/* Badge */}
           <div className="inline-block mb-6">
-            <span className="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full text-sm font-semibold tracking-wide border border-white/30">
-              🌱 OPENING SPRING 2025 • HENDERSON, NV
+            <span className="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full text-sm font-semibold tracking-wide border border-white/30 animate-pulse">
+              ✨ OPENING SPRING 2025 • HENDERSON, NV ✨
             </span>
           </div>
 
@@ -192,31 +246,41 @@ export default function Home() {
               alt="Little Roots Studio"
               width={350}
               height={175}
-              className="mx-auto drop-shadow-lg"
+              className="mx-auto drop-shadow-2xl"
               priority
               unoptimized
             />
           </div>
 
           {/* Tagline */}
-          <p className="text-xl sm:text-2xl text-white mb-6 max-w-2xl mx-auto leading-relaxed font-light drop-shadow-md">
-            Henderson&apos;s First <strong>Sensory-Friendly</strong> Kids Hair Studio
-          </p>
+          <h1 className="text-2xl sm:text-3xl text-white mb-4 font-light drop-shadow-lg">
+            Sensory-Friendly Kids Hair Studio
+          </h1>
 
-          <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto">
-            Where every child is met with patience, privacy, and care. 
+          <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+            Where every child is met with <strong>patience</strong>, <strong>privacy</strong>, and <strong>care</strong>. 
             One family at a time. Always.
           </p>
 
           {/* Countdown */}
           <div className="mb-8">
-            <p className="text-white/80 text-sm mb-3">Opening in:</p>
+            <p className="text-white/80 text-sm mb-3 font-medium">🗓️ Opening in:</p>
             <CountdownTimer />
           </div>
 
           {/* Quick Waitlist */}
           <div className="max-w-xl mx-auto">
+            <p className="text-white/70 text-sm mb-3">Be first to book when we open:</p>
             <WaitlistForm />
+          </div>
+
+          {/* Message from Carla */}
+          <div className="mt-10 bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-lg mx-auto border border-white/20">
+            <p className="text-white/90 italic text-sm leading-relaxed">
+              &ldquo;After 13 years of working with children, I&apos;m finally creating the space I&apos;ve always dreamed of — 
+              where no child is rushed, no parent is judged, and every haircut is a positive experience.&rdquo;
+            </p>
+            <p className="text-white font-medium mt-3 text-sm">— Carla 💚</p>
           </div>
         </div>
 
@@ -234,9 +298,9 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Prizes */}
             <div className="text-center md:text-left">
-              <span className="bg-sage text-white text-xs font-bold px-3 py-1 rounded-full">WEEKLY GIVEAWAY</span>
+              <span className="bg-sage text-white text-xs font-bold px-4 py-1.5 rounded-full">🎉 WEEKLY GIVEAWAY</span>
               <h2 className="text-3xl sm:text-4xl font-bold text-brown mt-4 mb-4">
-                🎁 Win Free Prizes!
+                Win Free Prizes!
               </h2>
               <p className="text-brown/70 mb-6">
                 Enter once a week for a chance to win sensory tools, free haircuts, and more! 
@@ -244,19 +308,19 @@ export default function Home() {
               </p>
               
               <div className="bg-white rounded-2xl p-6 shadow-sm">
-                <p className="font-semibold text-brown mb-4">This Week&apos;s Prizes:</p>
+                <p className="font-semibold text-brown mb-4">🏆 This Week&apos;s Prizes:</p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">🥇</span>
-                    <span className="text-brown/80">FREE First Haircut (Value $45)</span>
+                    <span className="text-brown/80"><strong>FREE First Haircut</strong> ($45 value)</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">🥈</span>
-                    <span className="text-brown/80">Weighted Lap Pad ($40 value)</span>
+                    <span className="text-brown/80"><strong>Weighted Lap Pad</strong> ($40 value)</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-2xl">🥉</span>
-                    <span className="text-brown/80">Sensory Fidget Kit ($25 value)</span>
+                    <span className="text-brown/80"><strong>Sensory Fidget Kit</strong> ($25 value)</span>
                   </div>
                 </div>
               </div>
@@ -264,7 +328,7 @@ export default function Home() {
 
             {/* Entry Form */}
             <div className="bg-white rounded-3xl p-8 shadow-xl border border-sage/20">
-              <h3 className="text-xl font-bold text-brown mb-2 text-center">Enter to Win!</h3>
+              <h3 className="text-xl font-bold text-brown mb-2 text-center">🍀 Enter to Win!</h3>
               <p className="text-brown/60 text-sm mb-6 text-center">Plus get first access when we open</p>
               <GiveawayForm />
             </div>
@@ -272,7 +336,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ========== WHAT MAKES US DIFFERENT (with photos) ========== */}
+      {/* ========== WHY LITTLE ROOTS ========== */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
@@ -286,30 +350,30 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Card 1 */}
-            <div className="rounded-3xl overflow-hidden shadow-lg border border-sage/10 bg-white">
-              <div className="h-48 relative">
+            {/* Card 1 - Never Rushed */}
+            <div className="rounded-3xl overflow-hidden shadow-lg border border-sage/10 bg-white hover:shadow-xl transition-shadow">
+              <div className="h-52 relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=600&q=80"
-                  alt="Happy child smiling"
+                  src="https://images.unsplash.com/photo-1544776193-352d25ca82cd?auto=format&fit=crop&w=600&q=80"
+                  alt="Calm child smiling"
                   fill
                   className="object-cover"
                   unoptimized
                 />
               </div>
               <div className="p-6">
-                <div className="text-3xl mb-3">😊</div>
-                <h3 className="font-bold text-brown mb-2">Never Rushed</h3>
+                <div className="text-3xl mb-3">⏰</div>
+                <h3 className="font-bold text-brown text-lg mb-2">Never Rushed</h3>
                 <p className="text-brown/60 text-sm">Time for breaks, regulation, and trust-building. Your child sets the pace.</p>
               </div>
             </div>
 
-            {/* Card 2 */}
-            <div className="rounded-3xl overflow-hidden shadow-lg border border-sage/10 bg-white">
-              <div className="h-48 relative">
+            {/* Card 2 - Calm & Private */}
+            <div className="rounded-3xl overflow-hidden shadow-lg border border-sage/10 bg-white hover:shadow-xl transition-shadow">
+              <div className="h-52 relative">
                 <Image
                   src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80"
-                  alt="Calm salon environment"
+                  alt="Calm and peaceful salon interior"
                   fill
                   className="object-cover"
                   unoptimized
@@ -317,17 +381,17 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <div className="text-3xl mb-3">🌿</div>
-                <h3 className="font-bold text-brown mb-2">Calm & Private</h3>
+                <h3 className="font-bold text-brown text-lg mb-2">Calm & Private</h3>
                 <p className="text-brown/60 text-sm">Earth-toned, sensory-friendly space. One family at a time, always.</p>
               </div>
             </div>
 
-            {/* Card 3 */}
-            <div className="rounded-3xl overflow-hidden shadow-lg border border-sage/10 bg-white">
-              <div className="h-48 relative">
+            {/* Card 3 - Sensory Tools */}
+            <div className="rounded-3xl overflow-hidden shadow-lg border border-sage/10 bg-white hover:shadow-xl transition-shadow">
+              <div className="h-52 relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1587616211892-f743fcca64f9?auto=format&fit=crop&w=600&q=80"
-                  alt="Child playing with sensory toys"
+                  src="https://images.unsplash.com/photo-1566140967404-b8b3932483f5?auto=format&fit=crop&w=600&q=80"
+                  alt="Colorful sensory toys for children"
                   fill
                   className="object-cover"
                   unoptimized
@@ -335,7 +399,7 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <div className="text-3xl mb-3">🧸</div>
-                <h3 className="font-bold text-brown mb-2">Sensory Tools</h3>
+                <h3 className="font-bold text-brown text-lg mb-2">Sensory Tools</h3>
                 <p className="text-brown/60 text-sm">Fidgets, weighted lap pads, noise-canceling headphones — whatever helps.</p>
               </div>
             </div>
@@ -351,6 +415,7 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl font-bold text-brown mt-3 mb-4">
               What We Offer
             </h2>
+            <p className="text-brown/60 text-sm">* Pricing subject to change at opening</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -372,28 +437,28 @@ export default function Home() {
                     <p className="font-medium text-brown">First Haircut Experience</p>
                     <p className="text-sm text-brown/60">Certificate + photo included</p>
                   </div>
-                  <span className="text-sage font-bold">$45</span>
+                  <span className="text-sage font-bold text-lg">$45</span>
                 </div>
                 <div className="flex justify-between items-center py-3 border-b border-sage/10">
                   <div>
                     <p className="font-medium text-brown">Kids Haircut</p>
                     <p className="text-sm text-brown/60">Ages 0-12</p>
                   </div>
-                  <span className="text-sage font-bold">$35</span>
+                  <span className="text-sage font-bold text-lg">$35</span>
                 </div>
                 <div className="flex justify-between items-center py-3 border-b border-sage/10">
                   <div>
                     <p className="font-medium text-brown">Sensory-Adapted Cut</p>
                     <p className="text-sm text-brown/60">Extended time, extra patience</p>
                   </div>
-                  <span className="text-sage font-bold">$50</span>
+                  <span className="text-sage font-bold text-lg">$50</span>
                 </div>
                 <div className="flex justify-between items-center py-3">
                   <div>
                     <p className="font-medium text-brown">Teen Haircut</p>
                     <p className="text-sm text-brown/60">Ages 13-17</p>
                   </div>
-                  <span className="text-sage font-bold">$40</span>
+                  <span className="text-sage font-bold text-lg">$40</span>
                 </div>
               </div>
             </div>
@@ -416,36 +481,32 @@ export default function Home() {
                     <p className="font-medium text-brown">Fun Color Streak</p>
                     <p className="text-sm text-brown/60">Temporary, wash-out color</p>
                   </div>
-                  <span className="text-sage font-bold">$10</span>
+                  <span className="text-sage font-bold text-lg">$10</span>
                 </div>
                 <div className="flex justify-between items-center py-3 border-b border-sage/10">
                   <div>
                     <p className="font-medium text-brown">Glitter & Gems</p>
                     <p className="text-sm text-brown/60">Hair-safe sparkle</p>
                   </div>
-                  <span className="text-sage font-bold">$8</span>
+                  <span className="text-sage font-bold text-lg">$8</span>
                 </div>
                 <div className="flex justify-between items-center py-3 border-b border-sage/10">
                   <div>
                     <p className="font-medium text-brown">Braids & Styling</p>
                     <p className="text-sm text-brown/60">Simple styles</p>
                   </div>
-                  <span className="text-sage font-bold">$15+</span>
+                  <span className="text-sage font-bold text-lg">$15+</span>
                 </div>
                 <div className="flex justify-between items-center py-3">
                   <div>
                     <p className="font-medium text-brown">Buzz Cut</p>
                     <p className="text-sm text-brown/60">Quick & easy</p>
                   </div>
-                  <span className="text-sage font-bold">$25</span>
+                  <span className="text-sage font-bold text-lg">$25</span>
                 </div>
               </div>
             </div>
           </div>
-
-          <p className="text-center text-brown/60 text-sm mt-8">
-            * Prices are estimates and may vary. Final pricing available at opening.
-          </p>
         </div>
       </section>
 
@@ -458,111 +519,101 @@ export default function Home() {
               Designed for Calm
             </h2>
             <p className="text-brown/70 max-w-xl mx-auto">
-              Private suite, separate entrance, wait-in-car option
+              Private suite • Separate entrance • Wait-in-car option
             </p>
           </div>
 
           {/* Visual Floor Plan */}
-          <div className="bg-cream rounded-3xl p-8 shadow-inner">
+          <div className="bg-cream rounded-3xl p-6 sm:p-8 shadow-inner">
             <svg viewBox="0 0 800 450" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
               {/* Background */}
               <rect x="0" y="0" width="800" height="450" fill="#F8F6F3"/>
               
               {/* Parking Area */}
-              <rect x="50" y="20" width="700" height="80" rx="10" fill="#E5E5E5" stroke="#CCCCCC" strokeWidth="2"/>
-              <text x="400" y="55" textAnchor="middle" className="text-sm" fill="#666" fontWeight="600">🚗 PARKING</text>
-              <text x="400" y="80" textAnchor="middle" className="text-xs" fill="#888">Wait in your car — we&apos;ll text when ready!</text>
+              <rect x="50" y="20" width="700" height="80" rx="10" fill="#E8E8E8" stroke="#CCCCCC" strokeWidth="2"/>
+              <text x="400" y="50" textAnchor="middle" fill="#666" fontWeight="bold" fontSize="14">🚗 PARKING</text>
+              <text x="400" y="75" textAnchor="middle" fill="#888" fontSize="12">Wait in your car — we&apos;ll text when ready!</text>
               
               {/* Private Entrance Arrow */}
-              <path d="M200 100 L200 140" stroke="#5B8A8A" strokeWidth="3" markerEnd="url(#arrowhead)"/>
-              <text x="200" y="125" textAnchor="middle" className="text-xs" fill="#5B8A8A" fontWeight="600">PRIVATE</text>
+              <path d="M200 100 L200 145" stroke="#5B8A8A" strokeWidth="4" fill="none"/>
+              <polygon points="200,155 193,140 207,140" fill="#5B8A8A"/>
+              <text x="200" y="120" textAnchor="middle" fill="#5B8A8A" fontWeight="bold" fontSize="11">PRIVATE</text>
               
               {/* Main Entrance Arrow */}
-              <path d="M600 100 L600 140" stroke="#8B7355" strokeWidth="3" markerEnd="url(#arrowhead2)"/>
-              <text x="600" y="125" textAnchor="middle" className="text-xs" fill="#8B7355" fontWeight="600">MAIN</text>
-              
-              {/* Arrow markers */}
-              <defs>
-                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                  <polygon points="0 0, 10 3.5, 0 7" fill="#5B8A8A"/>
-                </marker>
-                <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                  <polygon points="0 0, 10 3.5, 0 7" fill="#8B7355"/>
-                </marker>
-              </defs>
+              <path d="M600 100 L600 145" stroke="#8B7355" strokeWidth="4" fill="none"/>
+              <polygon points="600,155 593,140 607,140" fill="#8B7355"/>
+              <text x="600" y="120" textAnchor="middle" fill="#8B7355" fontWeight="bold" fontSize="11">MAIN</text>
               
               {/* Private Sensory Suite */}
-              <rect x="50" y="150" width="320" height="250" rx="15" fill="#D4E5E5" stroke="#5B8A8A" strokeWidth="3"/>
-              <text x="210" y="185" textAnchor="middle" fill="#4A7373" fontWeight="bold" fontSize="16">🌙 PRIVATE SENSORY SUITE</text>
+              <rect x="50" y="160" width="340" height="240" rx="15" fill="#D4E5E5" stroke="#5B8A8A" strokeWidth="4"/>
+              <text x="220" y="195" textAnchor="middle" fill="#4A7373" fontWeight="bold" fontSize="16">🌙 PRIVATE SENSORY SUITE</text>
               
-              {/* Suite Interior */}
-              <rect x="80" y="210" width="80" height="60" rx="8" fill="#5B8A8A" opacity="0.3"/>
-              <text x="120" y="245" textAnchor="middle" fill="#4A7373" fontSize="11">Styling</text>
-              <text x="120" y="258" textAnchor="middle" fill="#4A7373" fontSize="11">Chair</text>
+              {/* Suite Interior Icons */}
+              <rect x="80" y="220" width="90" height="70" rx="10" fill="#5B8A8A" opacity="0.25"/>
+              <text x="125" y="255" textAnchor="middle" fill="#4A7373" fontSize="12" fontWeight="600">💇 Chair</text>
               
-              <rect x="180" y="210" width="60" height="50" rx="8" fill="#5B8A8A" opacity="0.2"/>
-              <text x="210" y="240" textAnchor="middle" fill="#4A7373" fontSize="10">📺 TV</text>
+              <rect x="190" y="220" width="70" height="55" rx="10" fill="#5B8A8A" opacity="0.2"/>
+              <text x="225" y="252" textAnchor="middle" fill="#4A7373" fontSize="11">📺 TV</text>
               
-              <rect x="260" y="210" width="80" height="60" rx="8" fill="#5B8A8A" opacity="0.3"/>
-              <text x="300" y="238" textAnchor="middle" fill="#4A7373" fontSize="10">Calm</text>
-              <text x="300" y="252" textAnchor="middle" fill="#4A7373" fontSize="10">Corner</text>
+              <rect x="280" y="220" width="90" height="70" rx="10" fill="#5B8A8A" opacity="0.25"/>
+              <text x="325" y="250" textAnchor="middle" fill="#4A7373" fontSize="11" fontWeight="600">🧘 Calm</text>
+              <text x="325" y="268" textAnchor="middle" fill="#4A7373" fontSize="11" fontWeight="600">Corner</text>
               
-              {/* Suite Features */}
-              <text x="210" y="300" textAnchor="middle" fill="#4A7373" fontSize="12">✓ Dimmable lights</text>
-              <text x="210" y="320" textAnchor="middle" fill="#4A7373" fontSize="12">✓ Weighted blankets</text>
-              <text x="210" y="340" textAnchor="middle" fill="#4A7373" fontSize="12">✓ Noise-canceling headphones</text>
-              <text x="210" y="360" textAnchor="middle" fill="#4A7373" fontSize="12">✓ Sensory toys available</text>
+              {/* Suite Features - Icons */}
+              <text x="120" y="320" textAnchor="middle" fill="#4A7373" fontSize="11">💡 Dim lights</text>
+              <text x="220" y="320" textAnchor="middle" fill="#4A7373" fontSize="11">🎧 Headphones</text>
+              <text x="320" y="320" textAnchor="middle" fill="#4A7373" fontSize="11">🧸 Sensory toys</text>
+              <text x="170" y="350" textAnchor="middle" fill="#4A7373" fontSize="11">🪨 Weighted items</text>
+              <text x="280" y="350" textAnchor="middle" fill="#4A7373" fontSize="11">🤫 Quiet & calm</text>
               
               {/* Dividing Wall */}
-              <rect x="385" y="150" width="30" height="250" fill="#999"/>
-              <text x="400" y="280" textAnchor="middle" fill="#fff" fontSize="10" transform="rotate(-90 400 280)">WALL</text>
+              <rect x="400" y="160" width="20" height="240" fill="#888"/>
               
               {/* Main Salon Area */}
-              <rect x="430" y="150" width="320" height="250" rx="15" fill="#FDF6E3" stroke="#8B7355" strokeWidth="3"/>
-              <text x="590" y="185" textAnchor="middle" fill="#6B5B4F" fontWeight="bold" fontSize="16">🎨 MAIN SALON</text>
+              <rect x="430" y="160" width="320" height="240" rx="15" fill="#FEF7E7" stroke="#8B7355" strokeWidth="4"/>
+              <text x="590" y="195" textAnchor="middle" fill="#6B5B4F" fontWeight="bold" fontSize="16">🎨 MAIN SALON</text>
               
-              {/* Main Interior */}
-              <rect x="460" y="210" width="80" height="60" rx="8" fill="#8B7355" opacity="0.2"/>
-              <text x="500" y="238" textAnchor="middle" fill="#6B5B4F" fontSize="10">Welcome</text>
-              <text x="500" y="252" textAnchor="middle" fill="#6B5B4F" fontSize="10">Area</text>
+              {/* Main Interior Icons */}
+              <rect x="460" y="220" width="80" height="55" rx="10" fill="#8B7355" opacity="0.2"/>
+              <text x="500" y="252" textAnchor="middle" fill="#6B5B4F" fontSize="11">🛋️ Welcome</text>
               
-              <rect x="560" y="210" width="80" height="60" rx="8" fill="#8B7355" opacity="0.3"/>
-              <text x="600" y="245" textAnchor="middle" fill="#6B5B4F" fontSize="11">Styling</text>
-              <text x="600" y="258" textAnchor="middle" fill="#6B5B4F" fontSize="11">Chair</text>
+              <rect x="555" y="220" width="90" height="70" rx="10" fill="#8B7355" opacity="0.25"/>
+              <text x="600" y="255" textAnchor="middle" fill="#6B5B4F" fontSize="12" fontWeight="600">💇 Chair</text>
               
-              <rect x="660" y="210" width="60" height="50" rx="8" fill="#8B7355" opacity="0.2"/>
-              <text x="690" y="240" textAnchor="middle" fill="#6B5B4F" fontSize="10">🎮 Games</text>
+              <rect x="660" y="220" width="70" height="55" rx="10" fill="#8B7355" opacity="0.2"/>
+              <text x="695" y="252" textAnchor="middle" fill="#6B5B4F" fontSize="11">🎮 Games</text>
               
-              {/* Main Features */}
-              <text x="590" y="300" textAnchor="middle" fill="#6B5B4F" fontSize="12">✓ Fun music & TV</text>
-              <text x="590" y="320" textAnchor="middle" fill="#6B5B4F" fontSize="12">✓ Treasure chest rewards</text>
-              <text x="590" y="340" textAnchor="middle" fill="#6B5B4F" fontSize="12">✓ Video games available</text>
-              <text x="590" y="360" textAnchor="middle" fill="#6B5B4F" fontSize="12">✓ Energetic & fun vibe</text>
+              {/* Main Features - Icons */}
+              <text x="500" y="320" textAnchor="middle" fill="#6B5B4F" fontSize="11">🎵 Fun music</text>
+              <text x="595" y="320" textAnchor="middle" fill="#6B5B4F" fontSize="11">📺 Shows & movies</text>
+              <text x="695" y="320" textAnchor="middle" fill="#6B5B4F" fontSize="11">🎁 Prizes!</text>
+              <text x="545" y="350" textAnchor="middle" fill="#6B5B4F" fontSize="11">⚡ Energetic vibe</text>
+              <text x="660" y="350" textAnchor="middle" fill="#6B5B4F" fontSize="11">🎉 Fun & social</text>
               
               {/* Legend */}
-              <rect x="50" y="415" width="20" height="20" rx="4" fill="#D4E5E5" stroke="#5B8A8A" strokeWidth="2"/>
-              <text x="80" y="430" fill="#4A7373" fontSize="12">Sensory Suite — quiet, calm, private entrance</text>
+              <rect x="50" y="415" width="24" height="24" rx="6" fill="#D4E5E5" stroke="#5B8A8A" strokeWidth="2"/>
+              <text x="82" y="432" fill="#4A7373" fontSize="12" fontWeight="500">Sensory Suite — quiet, calm, private entrance</text>
               
-              <rect x="430" y="415" width="20" height="20" rx="4" fill="#FDF6E3" stroke="#8B7355" strokeWidth="2"/>
-              <text x="460" y="430" fill="#6B5B4F" fontSize="12">Main Salon — fun, energetic, social</text>
+              <rect x="430" y="415" width="24" height="24" rx="6" fill="#FEF7E7" stroke="#8B7355" strokeWidth="2"/>
+              <text x="462" y="432" fill="#6B5B4F" fontSize="12" fontWeight="500">Main Salon — fun, energetic, social</text>
             </svg>
           </div>
 
           {/* Quick Info Cards */}
           <div className="grid sm:grid-cols-3 gap-4 mt-8">
-            <div className="bg-sage/10 rounded-2xl p-5 text-center">
-              <span className="text-3xl">🚗</span>
-              <p className="font-semibold text-brown mt-2">Wait in Car</p>
+            <div className="bg-sage/10 rounded-2xl p-5 text-center hover:bg-sage/20 transition-colors">
+              <span className="text-4xl">🚗</span>
+              <p className="font-bold text-brown mt-2">Wait in Car</p>
               <p className="text-sm text-brown/60">We text when ready</p>
             </div>
-            <div className="bg-sage/10 rounded-2xl p-5 text-center">
-              <span className="text-3xl">🚪</span>
-              <p className="font-semibold text-brown mt-2">Private Entrance</p>
+            <div className="bg-sage/10 rounded-2xl p-5 text-center hover:bg-sage/20 transition-colors">
+              <span className="text-4xl">🚪</span>
+              <p className="font-bold text-brown mt-2">Private Entrance</p>
               <p className="text-sm text-brown/60">Skip the lobby</p>
             </div>
-            <div className="bg-sage/10 rounded-2xl p-5 text-center">
-              <span className="text-3xl">👨‍👩‍👧</span>
-              <p className="font-semibold text-brown mt-2">One Family</p>
+            <div className="bg-sage/10 rounded-2xl p-5 text-center hover:bg-sage/20 transition-colors">
+              <span className="text-4xl">👨‍👩‍👧</span>
+              <p className="font-bold text-brown mt-2">One Family</p>
               <p className="text-sm text-brown/60">Your space, your time</p>
             </div>
           </div>
@@ -588,9 +639,9 @@ export default function Home() {
               { emoji: '🎧', title: 'Sensory Sensitive', desc: 'Sound, light & touch accommodations' },
               { emoji: '💔', title: 'Bad Past Experiences', desc: 'We help rebuild trust' },
             ].map((item) => (
-              <div key={item.title} className="bg-white rounded-2xl p-6 shadow-sm border border-sage/10 hover:shadow-md hover:border-sage/30 transition-all">
-                <div className="text-3xl mb-3">{item.emoji}</div>
-                <h3 className="font-semibold text-brown mb-2">{item.title}</h3>
+              <div key={item.title} className="bg-white rounded-2xl p-6 shadow-sm border border-sage/10 hover:shadow-lg hover:border-sage/30 transition-all">
+                <div className="text-4xl mb-3">{item.emoji}</div>
+                <h3 className="font-bold text-brown mb-2">{item.title}</h3>
                 <p className="text-brown/60 text-sm">{item.desc}</p>
               </div>
             ))}
@@ -606,15 +657,15 @@ export default function Home() {
             <div className="relative">
               <div className="aspect-square rounded-3xl overflow-hidden shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=600&q=80"
-                  alt="Carla - Little Roots Studio owner"
+                  src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=600&q=80"
+                  alt="Professional female hair stylist"
                   fill
                   className="object-cover"
                   unoptimized
                 />
               </div>
               <div className="absolute -bottom-4 -right-4 bg-sage text-white px-6 py-3 rounded-2xl shadow-lg">
-                <span className="font-bold">13+ Years</span>
+                <span className="font-bold text-lg">13+ Years</span>
                 <span className="text-white/80 text-sm block">with kids</span>
               </div>
             </div>
@@ -644,7 +695,7 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-2 mt-6">
                 {['Autism-Trained', 'Sensory-Aware', 'Trauma-Informed', 'Endlessly Patient'].map((badge) => (
-                  <span key={badge} className="bg-sage/15 text-sage-dark px-3 py-1 rounded-full text-sm font-medium">
+                  <span key={badge} className="bg-sage/15 text-sage-dark px-4 py-1.5 rounded-full text-sm font-medium">
                     {badge}
                   </span>
                 ))}
@@ -657,25 +708,26 @@ export default function Home() {
       {/* ========== COMING SOON FEATURES ========== */}
       <section className="py-16 px-4 bg-cream">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-brown mb-8">🚧 Coming Soon</h2>
+          <span className="text-sage font-medium text-sm tracking-wider uppercase">Stay Tuned</span>
+          <h2 className="text-2xl sm:text-3xl font-bold text-brown mt-3 mb-8">🚧 Coming Soon</h2>
           <div className="grid sm:grid-cols-3 gap-6">
-            <div className="bg-white/50 rounded-2xl p-6 border-2 border-dashed border-sage/30">
-              <span className="text-3xl">🎥</span>
-              <p className="font-medium text-brown mt-3">Virtual Studio Tour</p>
+            <div className="bg-white/80 rounded-2xl p-6 border-2 border-dashed border-sage/30 hover:border-sage/50 transition-colors">
+              <span className="text-4xl">🎥</span>
+              <p className="font-bold text-brown mt-3">Virtual Studio Tour</p>
               <p className="text-sm text-brown/50 mt-1">Video coming soon</p>
             </div>
-            <div className="bg-white/50 rounded-2xl p-6 border-2 border-dashed border-sage/30">
-              <span className="text-3xl">📅</span>
-              <p className="font-medium text-brown mt-3">Online Booking</p>
+            <div className="bg-white/80 rounded-2xl p-6 border-2 border-dashed border-sage/30 hover:border-sage/50 transition-colors">
+              <span className="text-4xl">📅</span>
+              <p className="font-bold text-brown mt-3">Online Booking</p>
               <p className="text-sm text-brown/50 mt-1">Available at opening</p>
             </div>
-            <div className="bg-white/50 rounded-2xl p-6 border-2 border-dashed border-sage/30">
-              <span className="text-3xl">📖</span>
-              <p className="font-medium text-brown mt-3">Prep Resources</p>
+            <div className="bg-white/80 rounded-2xl p-6 border-2 border-dashed border-sage/30 hover:border-sage/50 transition-colors">
+              <span className="text-4xl">📖</span>
+              <p className="font-bold text-brown mt-3">Prep Resources</p>
               <p className="text-sm text-brown/50 mt-1">Social stories & guides</p>
             </div>
           </div>
-          <p className="text-brown/60 text-sm mt-6">
+          <p className="text-brown/60 text-sm mt-8">
             ✨ Check back weekly for updates — and don&apos;t forget to enter our giveaway!
           </p>
         </div>
@@ -685,21 +737,21 @@ export default function Home() {
       <section className="py-20 px-4 bg-sage">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Be the First to Know
+            Don&apos;t Miss Out!
           </h2>
           <p className="text-white/90 text-lg mb-8">
-            Join our waitlist for opening day access + enter our weekly giveaway!
+            Join our waitlist for opening day access + enter to win this week&apos;s prizes!
           </p>
 
           <div className="bg-white rounded-3xl p-8 shadow-2xl">
             <GiveawayForm />
           </div>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-6 text-white/80 text-sm">
+          <div className="mt-8 flex flex-wrap justify-center gap-4 sm:gap-6 text-white/80 text-sm">
             <span>📍 Henderson, NV</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span>🌱 Spring 2025</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span>💚 One Family at a Time</span>
           </div>
         </div>
