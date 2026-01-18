@@ -218,8 +218,8 @@ export default function AutismFriendlyHaircutsPage() {
             >
               <div className="aspect-square rounded-3xl overflow-hidden shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=600&q=80"
-                  alt="Carla, autism-trained kids hair stylist"
+                  src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=600&q=80"
+                  alt="Carla, autism-trained kids hair stylist at Little Roots Studio"
                   fill
                   className="object-cover"
                 />

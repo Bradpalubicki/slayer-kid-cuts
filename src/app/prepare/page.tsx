@@ -480,8 +480,8 @@ export default function PreparePage() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#D4E5E5] to-[#6B5B4F] rounded-3xl rotate-3 opacity-20" />
               <Image
-                src="https://images.unsplash.com/photo-1519699047748-de8e44e9dee9?w=600&h=500&fit=crop"
-                alt="Baby's first haircut"
+                src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=600&h=500&fit=crop"
+                alt="Baby's first haircut milestone moment"
                 width={600}
                 height={500}
                 className="relative rounded-3xl shadow-2xl"

@@ -97,8 +97,8 @@ export default function StylistsPage() {
             >
               <div className="absolute inset-0 gradient-hero rounded-3xl rotate-3 opacity-20" />
               <Image
-                src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=500&fit=crop"
-                alt="Salon styling station"
+                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=500&fit=crop"
+                alt="Professional salon styling station"
                 width={600}
                 height={500}
                 className="relative rounded-3xl shadow-2xl"

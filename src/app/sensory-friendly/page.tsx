@@ -141,8 +141,8 @@ export default function SensoryFriendlyPage() {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-[#7BA3A3]/20 to-[#5B8A8A]/20 rounded-3xl rotate-3" />
               <Image
-                src="https://images.unsplash.com/photo-1560439514-4e9645039924?w=600&h=700&fit=crop"
-                alt="Gentle, patient haircut experience"
+                src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=600&h=700&fit=crop"
+                alt="Gentle, patient mother-child moment representing trauma-informed care"
                 width={600}
                 height={700}
                 className="relative rounded-3xl shadow-2xl"
@@ -316,8 +316,8 @@ export default function SensoryFriendlyPage() {
                 viewport={{ once: true }}
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1621607512214-68297480165e?w=500&h=400&fit=crop"
-                  alt="Mobile haircut service"
+                  src="https://images.unsplash.com/photo-1484665754804-74b091211472?w=500&h=400&fit=crop"
+                  alt="Comfortable home environment for mobile haircut service"
                   width={500}
                   height={400}
                   className="rounded-2xl shadow-xl"

@@ -89,8 +89,8 @@ export default function KidsHaircutsHendersonPage() {
               className="relative"
             >
               <Image
-                src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&h=600&fit=crop"
-                alt="Kids haircuts in Henderson NV"
+                src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=600&fit=crop"
+                alt="Sensory-friendly kids haircuts in Henderson NV"
                 width={600}
                 height={600}
                 className="rounded-3xl shadow-2xl"

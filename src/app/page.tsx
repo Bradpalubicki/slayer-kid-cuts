@@ -537,8 +537,8 @@ export default function Home() {
             <article className="rounded-3xl overflow-hidden shadow-lg border border-sage/10 bg-white hover:shadow-xl transition-shadow">
               <div className="h-52 relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?auto=format&fit=crop&w=600&q=80"
-                  alt="Happy child smiling during sensory-friendly haircut in Henderson NV"
+                  src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=600&q=80"
+                  alt="Mother gently comforting child, representing trauma-informed care"
                   fill
                   className="object-cover"
                   unoptimized
@@ -562,8 +562,8 @@ export default function Home() {
             <article className="rounded-3xl overflow-hidden shadow-lg border border-sage/10 bg-white hover:shadow-xl transition-shadow">
               <div className="h-52 relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=80"
-                  alt="Calm children's hair salon private suite with natural earth tones"
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
+                  alt="Peaceful, private room with soft natural lighting representing calm sanctuary"
                   fill
                   className="object-cover"
                   unoptimized
@@ -587,8 +587,8 @@ export default function Home() {
             <article className="rounded-3xl overflow-hidden shadow-lg border border-sage/10 bg-white hover:shadow-xl transition-shadow">
               <div className="h-52 relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=600&q=80"
-                  alt="Sensory tools and fidget toys for autism-friendly haircuts"
+                  src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=600&q=80"
+                  alt="Young child feeling calm and safe, representing autism-trained specialist care"
                   fill
                   className="object-cover"
                   unoptimized
@@ -936,7 +936,7 @@ export default function Home() {
             <div className="relative px-2 sm:px-0">
               <div className="aspect-square rounded-3xl overflow-hidden shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=600&q=80"
+                  src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=600&q=80"
                   alt="Carla, autism-trained kids hair stylist and owner of Little Roots Studio Henderson NV"
                   fill
                   className="object-cover"

@@ -63,8 +63,8 @@ export default function AboutPage() {
             >
               <div className="absolute inset-0 gradient-hero rounded-3xl rotate-3 opacity-20" />
               <Image
-                src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=700&fit=crop"
-                alt="Carla - Kids Hair Stylist"
+                src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=600&h=700&fit=crop"
+                alt="Carla - Autism-trained kids hair stylist at Little Roots Studio"
                 width={600}
                 height={700}
                 className="relative rounded-3xl shadow-2xl"
@@ -186,8 +186,8 @@ export default function AboutPage() {
               viewport={{ once: true }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&h=500&fit=crop"
-                alt="Happy child getting haircut"
+                src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=500&fit=crop"
+                alt="Calm, happy child in sensory-friendly environment"
                 width={600}
                 height={500}
                 className="rounded-3xl shadow-xl"

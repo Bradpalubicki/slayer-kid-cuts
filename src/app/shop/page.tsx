@@ -468,8 +468,8 @@ export default function ShopPage() {
               className="relative"
             >
               <Image
-                src="https://images.unsplash.com/photo-1560439514-4e9645039924?w=600&h=500&fit=crop"
-                alt="Sensory-friendly products for children"
+                src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=500&fit=crop"
+                alt="Calm child representing sensory-friendly care"
                 width={600}
                 height={500}
                 className="rounded-3xl shadow-2xl"
