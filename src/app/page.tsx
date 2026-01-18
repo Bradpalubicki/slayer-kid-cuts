@@ -256,12 +256,12 @@ function FAQAccordion() {
     {
       question: "Where is Little Roots Studio located?",
       answer:
-        "Little Roots Studio is located in Henderson, Nevada, serving families throughout the Las Vegas valley including Paradise, Boulder City, and surrounding areas. We're opening Spring 2025. Join our waitlist to be notified of our exact location and opening date.",
+        "Little Roots Studio is located in Henderson, Nevada, serving families throughout the Las Vegas valley including Paradise, Boulder City, and surrounding areas. We're opening Spring 2026. Join our waitlist to be notified of our exact location and opening date.",
     },
     {
       question: "How do I book an appointment?",
       answer:
-        "Online booking will be available when we open in Spring 2025. For now, join our waitlist at littleroots.studio to get first access to appointments and be notified as soon as booking opens.",
+        "Online booking will be available when we open in Spring 2026. For now, join our waitlist at littleroots.studio to get first access to appointments and be notified as soon as booking opens.",
     },
     {
       question: "What sensory tools do you have available?",
@@ -1492,7 +1492,7 @@ export default function Home() {
             <span className="hidden sm:inline" aria-hidden="true">
               •
             </span>
-            <span>🌱 Spring 2025</span>
+            <span>🌱 Spring 2026</span>
             <span className="hidden sm:inline" aria-hidden="true">
               •
             </span>

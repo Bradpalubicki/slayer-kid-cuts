@@ -8,10 +8,11 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://littleroots.studio"),
-  title:
-    "Little Roots Studio | Coming Soon | Sensory-Friendly Kids Hair Salon Henderson NV",
+  // Title: 58 chars (under 60 limit)
+  title: "Little Roots Studio | Sensory-Friendly Kids Haircuts Henderson",
+  // Description: 136 chars (under 160 limit)
   description:
-    "Henderson's first sensory-friendly, judgment-free hair studio designed for children. Specialized in autism-friendly haircuts, neurodivergent care, and kids who need extra patience. One family at a time. Coming Spring 2025.",
+    "Henderson's first sensory-friendly kids hair salon. Autism-friendly haircuts, private suite, one family at a time. Opening Spring 2026.",
   keywords: [
     "sensory-friendly haircuts Henderson NV",
     "autism-friendly hair salon Las Vegas",
@@ -35,10 +36,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://littleroots.studio",
     siteName: "Little Roots Studio",
-    title:
-      "Little Roots Studio | Sensory-Friendly Kids Hair Salon | Henderson NV",
+    // OG Title: 58 chars
+    title: "Little Roots Studio | Sensory-Friendly Kids Haircuts Henderson",
+    // OG Description: 136 chars
     description:
-      "The first sensory-friendly, judgment-free kids hair studio in Las Vegas. Autism-trained, trauma-informed, endlessly patient. One family at a time.",
+      "Henderson's first sensory-friendly kids hair salon. Autism-friendly haircuts, private suite, one family at a time. Opening Spring 2026.",
     images: [
       {
         url: "/images/little-roots-og.png",
@@ -50,9 +52,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Little Roots Studio | Coming Soon to Henderson NV",
+    // Twitter Title: 52 chars
+    title: "Little Roots Studio | Kids Haircuts Henderson NV",
+    // Twitter Description: 118 chars
     description:
-      "The first sensory-friendly kids hair studio in Las Vegas. Where every child is met exactly where they are. 🌱",
+      "Henderson's first sensory-friendly kids hair salon. One family at a time. Opening Spring 2026.",
     images: ["/images/little-roots-og.png"],
   },
 };
@@ -95,7 +99,7 @@ const localBusinessSchema = {
   priceRange: "$$",
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
-    description: "By appointment only. Opening Spring 2025.",
+    description: "By appointment only. Opening Spring 2026.",
   },
   image: "https://littleroots.studio/images/little-roots-logo.png",
   sameAs: [],
@@ -179,7 +183,7 @@ const faqSchema = {
       name: "Where is Little Roots Studio located?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Little Roots Studio is located in Henderson, Nevada, serving families throughout the Las Vegas valley including Paradise, Boulder City, and surrounding areas. We're opening Spring 2025.",
+        text: "Little Roots Studio is located in Henderson, Nevada, serving families throughout the Las Vegas valley including Paradise, Boulder City, and surrounding areas. We're opening Spring 2026.",
       },
     },
   ],
