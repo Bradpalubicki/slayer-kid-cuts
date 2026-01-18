@@ -41,7 +41,7 @@ function CountdownTimer() {
 
   return (
     <div
-      className="flex justify-center gap-2 sm:gap-4"
+      className="flex justify-center gap-2 sm:gap-3"
       role="timer"
       aria-label="Countdown to opening"
     >
@@ -52,15 +52,15 @@ function CountdownTimer() {
         { value: timeLeft.seconds, label: "Sec" },
       ].map((item) => (
         <div key={item.label} className="text-center">
-          <div className="bg-white/95 backdrop-blur-sm rounded-xl p-2 sm:p-4 shadow-lg min-w-[55px] sm:min-w-[75px]">
+          <div className="bg-sage/10 rounded-xl p-2 sm:p-3 min-w-[55px] sm:min-w-[70px] border border-sage/20">
             <span
-              className="text-xl sm:text-3xl font-bold text-sage"
+              className="text-xl sm:text-2xl font-bold text-sage"
               aria-label={`${item.value} ${item.label}`}
             >
               {item.value.toString().padStart(2, "0")}
             </span>
           </div>
-          <span className="text-xs text-white/90 mt-1 block font-medium">
+          <span className="text-xs text-brown/60 mt-1 block font-medium">
             {item.label}
           </span>
         </div>
@@ -175,51 +175,71 @@ function WaitlistForm() {
   if (submitted) {
     return (
       <div
-        className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 text-center"
+        className="bg-sage/20 rounded-2xl p-6 text-center border border-sage/30"
         role="alert"
       >
-        <p className="text-white font-semibold">🌱 You&apos;re on the list!</p>
+        <p className="text-sage-dark font-bold text-lg">🌱 You&apos;re on the list!</p>
+        <p className="text-brown/70 text-sm mt-2">We&apos;ll email you when booking opens.</p>
       </div>
     );
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col sm:flex-row gap-2"
-      aria-label="Waitlist signup form"
-    >
-      <label htmlFor="waitlist-name" className="sr-only">
-        Name
-      </label>
-      <input
-        id="waitlist-name"
-        type="text"
-        placeholder="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        required
-        className="flex-1 px-4 py-3 rounded-xl border-0 text-brown placeholder-brown/50 bg-white/95"
-      />
-      <label htmlFor="waitlist-email" className="sr-only">
-        Email
-      </label>
-      <input
-        id="waitlist-email"
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-        className="flex-1 px-4 py-3 rounded-xl border-0 text-brown placeholder-brown/50 bg-white/95"
-      />
-      <button
-        type="submit"
-        className="bg-brown hover:bg-brown-light text-white font-semibold px-6 py-3 rounded-xl transition-all"
+    <div className="space-y-4">
+      {/* Urgency text */}
+      <p className="text-sage-dark font-medium text-sm">
+        🌿 Join 50+ families already on our waitlist
+      </p>
+
+      {/* Incentive */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-2 text-sm">
+        <span className="text-amber-700 font-medium">✨ Waitlist members get early booking + 15% off first visit</span>
+      </div>
+
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-3"
+        aria-label="Waitlist signup form"
       >
-        Notify Me
-      </button>
-    </form>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <label htmlFor="waitlist-name" className="sr-only">
+            Name
+          </label>
+          <input
+            id="waitlist-name"
+            type="text"
+            placeholder="Your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            className="flex-1 px-4 py-3 rounded-xl border-2 border-sage/20 text-brown placeholder-brown/50 bg-white focus:border-sage focus:ring-2 focus:ring-sage/20 outline-none transition-all"
+          />
+          <label htmlFor="waitlist-email" className="sr-only">
+            Email
+          </label>
+          <input
+            id="waitlist-email"
+            type="email"
+            placeholder="Your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="flex-1 px-4 py-3 rounded-xl border-2 border-sage/20 text-brown placeholder-brown/50 bg-white focus:border-sage focus:ring-2 focus:ring-sage/20 outline-none transition-all"
+          />
+        </div>
+        <button
+          type="submit"
+          className="w-full bg-sage hover:bg-sage-dark text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg"
+        >
+          🌱 Join the Waitlist
+        </button>
+      </form>
+
+      {/* Trust line */}
+      <p className="text-brown/50 text-xs text-center">
+        🔒 We respect your privacy. Unsubscribe anytime.
+      </p>
+    </div>
   );
 }
 
@@ -309,32 +329,9 @@ function FAQAccordion() {
 export default function Home() {
   return (
     <main className="bg-cream">
-      {/* ========== COMING SOON TOP BANNER ========== */}
-      <div
-        className="bg-gradient-to-r from-sage via-sage-dark to-sage text-white py-3 px-4 text-center relative overflow-hidden"
-        role="banner"
-      >
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2220%22 height=%2220%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22M0 0h20v20H0z%22 fill=%22none%22/%3E%3Ccircle cx=%2210%22 cy=%2210%22 r=%221%22 fill=%22white%22 fill-opacity=%220.1%22/%3E%3C/svg%3E')]"></div>
-        <div className="relative z-10 flex items-center justify-center gap-3 flex-wrap">
-          <span className="text-xl" aria-hidden="true">
-            🚀
-          </span>
-          <span className="font-bold tracking-wide">COMING SOON</span>
-          <span className="hidden sm:inline" aria-hidden="true">
-            —
-          </span>
-          <span className="text-white/90">
-            Henderson&apos;s First Sensory-Friendly Kids Hair Studio
-          </span>
-          <span className="text-xl" aria-hidden="true">
-            🌱
-          </span>
-        </div>
-      </div>
-
       {/* ========== HERO SECTION ========== */}
       <section
-        className="min-h-screen relative flex flex-col justify-center px-4 py-8 pt-20 sm:py-12 sm:pt-32"
+        className="min-h-screen relative flex flex-col justify-center items-center px-4 py-8 pt-24 sm:py-12 sm:pt-32"
         aria-labelledby="hero-heading"
       >
         {/* Background Image with Calming Overlay */}
@@ -347,24 +344,34 @@ export default function Home() {
             priority
             unoptimized
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-sage/60 via-sage/40 to-brown/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-sage/50 via-sage/30 to-brown/40"></div>
         </div>
-        <div className="max-w-4xl mx-auto text-center relative z-10 pt-8">
-          {/* Badge */}
-          <div className="inline-block mb-4 sm:mb-6">
-            <span className="bg-white/20 backdrop-blur-sm text-white px-4 py-1.5 sm:px-6 sm:py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wide border border-white/30 animate-pulse">
+
+        {/* Frosted Card Container */}
+        <div
+          className="relative z-10 w-full max-w-[640px] mx-auto rounded-3xl p-8 sm:p-12"
+          style={{
+            background: "rgba(255, 253, 250, 0.92)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
+            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
+          }}
+        >
+          {/* Badge with Amber Gradient */}
+          <div className="text-center mb-6">
+            <span className="inline-block bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400 text-white px-5 py-2 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide shadow-md animate-pulse border border-amber-300">
               ✨ OPENING SPRING 2026 ✨
             </span>
           </div>
 
           {/* Logo */}
-          <div className="mb-6 px-4">
+          <div className="mb-6 text-center">
             <Image
               src="/images/little-roots-logo.webp"
               alt="Little Roots Studio - Sensory-Friendly Kids Hair Salon"
               width={350}
               height={175}
-              className="mx-auto drop-shadow-2xl w-[250px] sm:w-[350px] h-auto"
+              className="mx-auto w-[220px] sm:w-[300px] h-auto"
               priority
               unoptimized
             />
@@ -373,45 +380,40 @@ export default function Home() {
           {/* H1 - Primary Heading */}
           <h1
             id="hero-heading"
-            className="text-2xl sm:text-4xl text-white mb-4 font-bold drop-shadow-lg"
+            className="text-xl sm:text-3xl text-brown mb-3 font-bold text-center leading-tight"
           >
             Sensory-Friendly Kids Hair Salon in Henderson, NV
           </h1>
 
-          <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto leading-relaxed">
-            Where every child is met with <strong>patience</strong>,{" "}
-            <strong>privacy</strong>, and <strong>care</strong>. One family at a
-            time. Always.
+          <p className="text-brown/80 text-base sm:text-lg mb-6 text-center leading-relaxed">
+            Where every child is met with <strong className="text-sage-dark">patience</strong>,{" "}
+            <strong className="text-sage-dark">privacy</strong>, and <strong className="text-sage-dark">care</strong>. One family at a time.
           </p>
 
           {/* Countdown */}
-          <div className="mb-8">
-            <p className="text-white/80 text-sm mb-3 font-medium">
+          <div className="mb-6">
+            <p className="text-brown/70 text-sm mb-3 font-medium text-center">
               🗓️ Opening in:
             </p>
             <CountdownTimer />
           </div>
 
           {/* Waitlist */}
-          <div className="max-w-xl mx-auto">
-            <p className="text-white/70 text-sm mb-3">
-              Be first to book when we open:
-            </p>
+          <div className="mt-6">
             <WaitlistForm />
           </div>
+        </div>
 
-          {/* Message from Carla */}
-          <div className="mt-10 bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-lg mx-auto border border-white/20">
-            <p className="text-white/90 italic text-sm leading-relaxed">
-              &ldquo;After 13 years of working with children, I&apos;m finally
-              creating the space I&apos;ve always dreamed of — where no child is
-              rushed, no parent is judged, and every haircut is a positive
-              experience.&rdquo;
-            </p>
-            <p className="text-white font-medium mt-3 text-sm">
-              — Carla, Owner & Stylist 💚
-            </p>
-          </div>
+        {/* Message from Carla - Outside the card */}
+        <div className="relative z-10 mt-8 bg-white/20 backdrop-blur-sm rounded-2xl p-5 max-w-lg mx-auto border border-white/30">
+          <p className="text-white italic text-sm leading-relaxed text-center drop-shadow-sm">
+            &ldquo;After 13 years of working with children, I&apos;m finally
+            creating the space I&apos;ve always dreamed of — where no child is
+            rushed and every haircut is a positive experience.&rdquo;
+          </p>
+          <p className="text-white font-medium mt-3 text-sm text-center drop-shadow-sm">
+            — Carla, Owner & Stylist 💚
+          </p>
         </div>
 
         {/* Scroll indicator */}
