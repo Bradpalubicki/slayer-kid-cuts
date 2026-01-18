@@ -1,0 +1,191 @@
+name: Weekly Site Audit
+
+on:
+  schedule:
+    # Run at 9am UTC on Sunday and Monday
+    - cron: '0 9 * * 0,1'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run TypeScript check
+        id: typescript
+        run: |
+          if npx tsc --noEmit 2>&1 | tee ts-output.txt; then
+            echo "status=✅ Pass" >> $GITHUB_OUTPUT
+            echo "errors=0" >> $GITHUB_OUTPUT
+          else
+            echo "status=❌ Fail" >> $GITHUB_OUTPUT
+            echo "errors=$(grep -c 'error TS' ts-output.txt || echo '0')" >> $GITHUB_OUTPUT
+          fi
+        continue-on-error: true
+
+      - name: Run ESLint
+        id: lint
+        run: |
+          if npm run lint 2>&1 | tee lint-output.txt; then
+            echo "status=✅ Pass" >> $GITHUB_OUTPUT
+            echo "errors=0" >> $GITHUB_OUTPUT
+          else
+            echo "status=❌ Fail" >> $GITHUB_OUTPUT
+            echo "errors=$(grep -c 'error' lint-output.txt || echo '0')" >> $GITHUB_OUTPUT
+          fi
+        continue-on-error: true
+
+      - name: Run security audit
+        id: security
+        run: |
+          if npm audit --audit-level=high 2>&1 | tee security-output.txt; then
+            echo "status=✅ Pass" >> $GITHUB_OUTPUT
+            echo "vulnerabilities=0" >> $GITHUB_OUTPUT
+          else
+            echo "status=⚠️ Vulnerabilities found" >> $GITHUB_OUTPUT
+            echo "vulnerabilities=$(grep -oP '\d+ vulnerabilities' security-output.txt | head -1 || echo 'unknown')" >> $GITHUB_OUTPUT
+          fi
+        continue-on-error: true
+
+      - name: Run build
+        id: build
+        run: |
+          if npm run build 2>&1 | tee build-output.txt; then
+            echo "status=✅ Pass" >> $GITHUB_OUTPUT
+          else
+            echo "status=❌ Fail" >> $GITHUB_OUTPUT
+          fi
+        continue-on-error: true
+
+      - name: Check live site
+        id: site
+        run: |
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://littleroots.studio)
+          if [ "$HTTP_STATUS" = "200" ]; then
+            echo "status=✅ Live (HTTP $HTTP_STATUS)" >> $GITHUB_OUTPUT
+          else
+            echo "status=❌ Down (HTTP $HTTP_STATUS)" >> $GITHUB_OUTPUT
+          fi
+        continue-on-error: true
+
+      - name: Check sitemap
+        id: sitemap
+        run: |
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://littleroots.studio/sitemap.xml)
+          PAGE_COUNT=$(curl -s https://littleroots.studio/sitemap.xml | grep -c '<loc>' || echo '0')
+          echo "status=HTTP $HTTP_STATUS - $PAGE_COUNT pages" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
+      - name: Check key pages
+        id: pages
+        run: |
+          PAGES=("/" "/services" "/autism-friendly-haircuts" "/about" "/sensory-friendly")
+          RESULTS=""
+          for page in "${PAGES[@]}"; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" "https://littleroots.studio$page")
+            RESULTS="$RESULTS\n- $page: HTTP $STATUS"
+          done
+          echo "results<<EOF" >> $GITHUB_OUTPUT
+          echo -e "$RESULTS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+        continue-on-error: true
+
+      - name: Generate audit report
+        id: report
+        run: |
+          DATE=$(date +'%Y-%m-%d %H:%M UTC')
+          cat << EOF > audit-report.md
+          # 🔍 Weekly Site Audit Report
+
+          **Site:** https://littleroots.studio
+          **Date:** $DATE
+          **Triggered by:** ${{ github.event_name }}
+
+          ---
+
+          ## Quick Summary
+
+          | Check | Status |
+          |-------|--------|
+          | Site Live | ${{ steps.site.outputs.status }} |
+          | Build | ${{ steps.build.outputs.status }} |
+          | TypeScript | ${{ steps.typescript.outputs.status }} |
+          | ESLint | ${{ steps.lint.outputs.status }} |
+          | Security | ${{ steps.security.outputs.status }} |
+          | Sitemap | ${{ steps.sitemap.outputs.status }} |
+
+          ## Key Pages Status
+          ${{ steps.pages.outputs.results }}
+
+          ---
+
+          ## Action Required
+
+          EOF
+
+          # Check if any failures
+          if [[ "${{ steps.build.outputs.status }}" == *"Fail"* ]] || \
+             [[ "${{ steps.site.outputs.status }}" == *"Down"* ]] || \
+             [[ "${{ steps.typescript.outputs.status }}" == *"Fail"* ]]; then
+            echo "⚠️ **Critical issues detected - immediate attention required**" >> audit-report.md
+            echo "has_errors=true" >> $GITHUB_OUTPUT
+          else
+            echo "✅ All checks passed - no action required" >> audit-report.md
+            echo "has_errors=false" >> $GITHUB_OUTPUT
+          fi
+
+          cat audit-report.md
+
+      - name: Send email notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "🔍 Little Roots Studio - Weekly Audit Report"
+          body: file://audit-report.md
+          to: bradpalubicki@outlook.com
+          from: Little Roots Audit Bot
+          content_type: text/plain
+        continue-on-error: true
+
+      - name: Create issue if errors found
+        if: steps.report.outputs.has_errors == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('audit-report.md', 'utf8');
+
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🚨 Audit Failed - ${new Date().toISOString().split('T')[0]}`,
+              body: report,
+              labels: ['audit', 'automated', 'needs-attention']
+            });
+
+      - name: Upload audit artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-logs
+          path: |
+            ts-output.txt
+            lint-output.txt
+            security-output.txt
+            build-output.txt
+            audit-report.md
+          retention-days: 30
