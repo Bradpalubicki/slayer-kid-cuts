@@ -3,57 +3,6 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-// Hero images - calming photos of female stylists with children (happy, calm, no spiked hair)
-const heroImages = [
-  {
-    src: "https://images.unsplash.com/photo-1622287162716-f311baa1a2b8?auto=format&fit=crop&w=2000&q=80",
-    alt: "Female hair stylist giving gentle haircut to happy child"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=2000&q=80",
-    alt: "Happy smiling child with beautiful hair"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=2000&q=80",
-    alt: "Joyful child laughing - positive haircut experience"
-  }
-];
-
-// Rotating Hero Background Component
-function RotatingHeroBackground() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <>
-      {heroImages.map((image, index) => (
-        <div
-          key={image.src}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentIndex ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            className="object-cover"
-            priority={index === 0}
-            unoptimized
-          />
-        </div>
-      ))}
-      <div className="absolute inset-0 bg-gradient-to-b from-sage/40 via-sage/30 to-brown/50"></div>
-    </>
-  );
-}
-
 // Countdown Timer Component
 function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -321,8 +270,7 @@ export default function Home() {
       </div>
 
       {/* ========== HERO SECTION ========== */}
-      <section className="min-h-screen relative flex flex-col justify-center px-4 py-12" aria-labelledby="hero-heading">
-        <RotatingHeroBackground />
+      <section className="min-h-screen relative flex flex-col justify-center px-4 py-12 pt-32 bg-gradient-to-br from-sage via-sage-dark to-brown" aria-labelledby="hero-heading">
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           {/* Breadcrumbs */}
@@ -903,59 +851,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ========== FOOTER ========== */}
-      <footer className="bg-brown text-white/80 py-12 px-4" role="contentinfo">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            {/* Logo & Description */}
-            <div>
-              <Image
-                src="/images/little-roots-logo.png"
-                alt="Little Roots Studio"
-                width={160}
-                height={80}
-                className="brightness-0 invert opacity-80"
-                unoptimized
-              />
-              <p className="text-white/60 text-sm mt-3">
-                Henderson&apos;s first sensory-friendly kids hair studio. Where every child is met with patience, privacy, and care.
-              </p>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h3 className="font-bold text-white mb-4">Quick Links</h3>
-              <nav aria-label="Footer navigation">
-                <ul className="space-y-2 text-sm">
-                  <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
-                  <li><a href="#our-space" className="hover:text-white transition-colors">Our Space</a></li>
-                  <li><a href="#about" className="hover:text-white transition-colors">About Carla</a></li>
-                  <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
-                </ul>
-              </nav>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h3 className="font-bold text-white mb-4">Contact</h3>
-              <address className="not-italic text-sm space-y-2">
-                <p>
-                  <a href="mailto:hello@littleroots.studio" className="hover:text-white transition-colors">
-                    hello@littleroots.studio
-                  </a>
-                </p>
-                <p className="text-white/60">Henderson, NV</p>
-                <p className="text-white/40 text-xs mt-4">Opening Spring 2025</p>
-              </address>
-            </div>
-          </div>
-
-          <div className="border-t border-white/10 pt-8 text-center text-sm text-white/50">
-            <p>© {new Date().getFullYear()} Little Roots Studio. All rights reserved.</p>
-            <p className="mt-1">Made with 💚 for every child who needs a little extra care.</p>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }
