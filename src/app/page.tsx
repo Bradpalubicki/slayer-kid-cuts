@@ -334,7 +334,7 @@ export default function Home() {
 
       {/* ========== HERO SECTION ========== */}
       <section
-        className="min-h-screen relative flex flex-col justify-center px-4 py-12 pt-32"
+        className="min-h-screen relative flex flex-col justify-center px-4 py-8 pt-20 sm:py-12 sm:pt-32"
         aria-labelledby="hero-heading"
       >
         {/* Background Image with Calming Overlay */}
@@ -351,20 +351,20 @@ export default function Home() {
         </div>
         <div className="max-w-4xl mx-auto text-center relative z-10 pt-8">
           {/* Badge */}
-          <div className="inline-block mb-6">
-            <span className="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full text-sm font-semibold tracking-wide border border-white/30 animate-pulse">
-              ✨ OPENING SPRING 2026 • HENDERSON, NV ✨
+          <div className="inline-block mb-4 sm:mb-6">
+            <span className="bg-white/20 backdrop-blur-sm text-white px-4 py-1.5 sm:px-6 sm:py-2 rounded-full text-xs sm:text-sm font-semibold tracking-wide border border-white/30 animate-pulse">
+              ✨ OPENING SPRING 2026 ✨
             </span>
           </div>
 
           {/* Logo */}
-          <div className="mb-6">
+          <div className="mb-6 px-4">
             <Image
               src="/images/little-roots-logo.webp"
               alt="Little Roots Studio - Sensory-Friendly Kids Hair Salon"
               width={350}
               height={175}
-              className="mx-auto drop-shadow-2xl"
+              className="mx-auto drop-shadow-2xl w-[250px] sm:w-[350px] h-auto"
               priority
               unoptimized
             />
@@ -482,11 +482,11 @@ export default function Home() {
             </div>
 
             {/* Entry Form */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl border border-sage/20">
-              <h3 className="text-xl font-bold text-brown mb-2 text-center">
+            <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-xl border border-sage/20">
+              <h3 className="text-lg sm:text-xl font-bold text-brown mb-2 text-center">
                 🍀 Enter to Win!
               </h3>
-              <p className="text-brown/60 text-sm mb-6 text-center">
+              <p className="text-brown/60 text-xs sm:text-sm mb-4 sm:mb-6 text-center">
                 Plus get first access when we open
               </p>
               <GiveawayForm />
@@ -617,19 +617,19 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Haircut Services */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg border border-sage/20">
-              <div className="flex items-center gap-4 mb-6">
+            <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-lg border border-sage/20">
+              <div className="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
                 <div
-                  className="w-16 h-16 bg-sage/20 rounded-2xl flex items-center justify-center"
+                  className="w-12 h-12 sm:w-16 sm:h-16 bg-sage/20 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0"
                   aria-hidden="true"
                 >
-                  <span className="text-3xl">✂️</span>
+                  <span className="text-2xl sm:text-3xl">✂️</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-brown">
+                  <h3 className="text-lg sm:text-xl font-bold text-brown">
                     Haircut Services
                   </h3>
-                  <p className="text-sage text-sm font-medium">
+                  <p className="text-sage text-xs sm:text-sm font-medium">
                     Sensory-Friendly
                   </p>
                 </div>
@@ -676,19 +676,19 @@ export default function Home() {
             </div>
 
             {/* Add-Ons */}
-            <div className="bg-white rounded-3xl p-8 shadow-lg border border-sage/20">
-              <div className="flex items-center gap-4 mb-6">
+            <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-lg border border-sage/20">
+              <div className="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
                 <div
-                  className="w-16 h-16 bg-seafoam rounded-2xl flex items-center justify-center"
+                  className="w-12 h-12 sm:w-16 sm:h-16 bg-seafoam rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0"
                   aria-hidden="true"
                 >
-                  <span className="text-3xl">🌟</span>
+                  <span className="text-2xl sm:text-3xl">🌟</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-brown">
+                  <h3 className="text-lg sm:text-xl font-bold text-brown">
                     Add-Ons & Extras
                   </h3>
-                  <p className="text-sage text-sm font-medium">
+                  <p className="text-sage text-xs sm:text-sm font-medium">
                     Make It Special
                   </p>
                 </div>
@@ -755,13 +755,16 @@ export default function Home() {
 
           {/* Visual Floor Plan */}
           <div
-            className="bg-cream rounded-3xl p-6 sm:p-8 shadow-inner"
+            className="bg-cream rounded-3xl p-4 sm:p-8 shadow-inner overflow-x-auto"
             role="img"
             aria-label="Studio floor plan showing private sensory suite and main salon areas with separate entrances from parking"
           >
+            <p className="text-brown/60 text-xs text-center mb-3 sm:hidden">
+              👆 Scroll horizontally to see full floor plan
+            </p>
             <svg
               viewBox="0 0 800 450"
-              className="w-full h-auto"
+              className="w-full h-auto min-w-[600px] sm:min-w-0"
               xmlns="http://www.w3.org/2000/svg"
             >
               <title>Little Roots Studio Floor Plan</title>
@@ -1250,7 +1253,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Photo */}
-            <div className="relative">
+            <div className="relative px-2 sm:px-0">
               <div className="aspect-square rounded-3xl overflow-hidden shadow-xl">
                 <Image
                   src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=600&q=80"
@@ -1260,9 +1263,9 @@ export default function Home() {
                   unoptimized
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-sage text-white px-6 py-3 rounded-2xl shadow-lg">
-                <span className="font-bold text-lg">13+ Years</span>
-                <span className="text-white/80 text-sm block">with kids</span>
+              <div className="absolute -bottom-2 right-2 sm:-bottom-4 sm:-right-4 bg-sage text-white px-4 py-2 sm:px-6 sm:py-3 rounded-2xl shadow-lg">
+                <span className="font-bold text-base sm:text-lg">13+ Years</span>
+                <span className="text-white/80 text-xs sm:text-sm block">with kids</span>
               </div>
             </div>
 
@@ -1437,20 +1440,20 @@ export default function Home() {
       </section>
 
       {/* ========== FINAL CTA ========== */}
-      <section className="py-20 px-4 bg-sage" aria-labelledby="cta-heading">
+      <section className="py-12 sm:py-20 px-4 bg-sage" aria-labelledby="cta-heading">
         <div className="max-w-3xl mx-auto text-center">
           <h2
             id="cta-heading"
-            className="text-3xl sm:text-4xl font-bold text-white mb-4"
+            className="text-2xl sm:text-4xl font-bold text-white mb-3 sm:mb-4"
           >
             Don&apos;t Miss Out!
           </h2>
-          <p className="text-white/90 text-lg mb-8">
+          <p className="text-white/90 text-base sm:text-lg mb-6 sm:mb-8 px-2">
             Join our waitlist for opening day access + enter to win this
             week&apos;s prizes!
           </p>
 
-          <div className="bg-white rounded-3xl p-8 shadow-2xl">
+          <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-2xl">
             <GiveawayForm />
           </div>
 
