@@ -5,9 +5,19 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Gift, Star, Trophy, Heart, ChevronRight,
-  PartyPopper, Sparkles, Instagram, Facebook,
-  Leaf, Shield, Clock, Users
+  Gift,
+  Star,
+  Trophy,
+  Heart,
+  ChevronRight,
+  PartyPopper,
+  Sparkles,
+  Instagram,
+  Facebook,
+  Leaf,
+  Shield,
+  Clock,
+  Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -69,7 +79,9 @@ function CountdownTimer({ targetDate }: { targetDate: Date }) {
       if (distance > 0) {
         setTimeLeft({
           days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          hours: Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+          ),
           minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
           seconds: Math.floor((distance % (1000 * 60)) / 1000),
         });
@@ -149,7 +161,8 @@ export default function ComingSoonPage() {
 
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
               Las Vegas&apos;s first sensory-friendly, judgment-free hair studio
-              designed for children who need a little more patience, privacy, and care.
+              designed for children who need a little more patience, privacy,
+              and care.
             </p>
 
             {/* Countdown */}
@@ -179,7 +192,10 @@ export default function ComingSoonPage() {
                       required
                       className="bg-white/10 border-white/30 text-white placeholder:text-white/60 rounded-full"
                     />
-                    <Button type="submit" className="bg-white text-[#5B8A8A] hover:bg-[#D4E5E5] rounded-full px-6 font-semibold">
+                    <Button
+                      type="submit"
+                      className="bg-white text-[#5B8A8A] hover:bg-[#D4E5E5] rounded-full px-6 font-semibold"
+                    >
                       Join Waitlist
                     </Button>
                   </div>
@@ -187,8 +203,12 @@ export default function ComingSoonPage() {
               ) : (
                 <div className="bg-white/20 rounded-2xl p-6 text-white">
                   <Leaf className="w-10 h-10 mx-auto mb-3 text-[#D4E5E5]" />
-                  <p className="font-semibold text-lg">You&apos;re on the waitlist!</p>
-                  <p className="text-white/80">We&apos;ll be in touch when we open.</p>
+                  <p className="font-semibold text-lg">
+                    You&apos;re on the waitlist!
+                  </p>
+                  <p className="text-white/80">
+                    We&apos;ll be in touch when we open.
+                  </p>
                 </div>
               )}
             </div>
@@ -213,7 +233,8 @@ export default function ComingSoonPage() {
               Win <span className="text-[#5B8A8A]">Amazing Prizes!</span>
             </h2>
             <p className="text-xl text-[#8B7B6F] max-w-2xl mx-auto">
-              Be one of the first to join our waitlist and you could win FREE haircuts for up to a year!
+              Be one of the first to join our waitlist and you could win FREE
+              haircuts for up to a year!
             </p>
           </motion.div>
 
@@ -226,13 +247,18 @@ export default function ComingSoonPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className={`h-full border-2 ${index === 0 ? "border-[#5B8A8A] shadow-xl" : "border-[#E8E4DF]"}`}>
+                <Card
+                  className={`h-full border-2 ${index === 0 ? "border-[#5B8A8A] shadow-xl" : "border-[#E8E4DF]"}`}
+                >
                   <CardContent className="p-6 text-center">
                     <div
                       className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center"
                       style={{ backgroundColor: `${prize.color}15` }}
                     >
-                      <prize.icon className="w-8 h-8" style={{ color: prize.color }} />
+                      <prize.icon
+                        className="w-8 h-8"
+                        style={{ color: prize.color }}
+                      />
                     </div>
                     <Badge
                       className="mb-3"
@@ -244,9 +270,16 @@ export default function ComingSoonPage() {
                     >
                       {prize.place} Place
                     </Badge>
-                    <h3 className="font-bold text-lg mb-2 text-[#6B5B4F]">{prize.prize}</h3>
-                    <p className="text-sm text-[#8B7B6F] mb-3">{prize.description}</p>
-                    <p className="text-2xl font-bold" style={{ color: prize.color }}>
+                    <h3 className="font-bold text-lg mb-2 text-[#6B5B4F]">
+                      {prize.prize}
+                    </h3>
+                    <p className="text-sm text-[#8B7B6F] mb-3">
+                      {prize.description}
+                    </p>
+                    <p
+                      className="text-2xl font-bold"
+                      style={{ color: prize.color }}
+                    >
                       {prize.value} Value
                     </p>
                   </CardContent>
@@ -275,14 +308,15 @@ export default function ComingSoonPage() {
               </h2>
               <p className="text-lg text-[#8B7B6F]">
                 With 13 years of experience working with children of all kinds,
-                I&apos;m creating the space I always wished existed—a sensory-friendly,
-                judgment-free hair studio where every child feels welcome.
+                I&apos;m creating the space I always wished existed—a
+                sensory-friendly, judgment-free hair studio where every child
+                feels welcome.
               </p>
               <p className="text-[#8B7B6F]">
-                I&apos;ve worked with countless autistic children, kids with sensory
-                processing differences, and children who simply need more patience
-                and understanding. Little Roots Studio is my dream of creating a
-                truly inclusive space for all families.
+                I&apos;ve worked with countless autistic children, kids with
+                sensory processing differences, and children who simply need
+                more patience and understanding. Little Roots Studio is my dream
+                of creating a truly inclusive space for all families.
               </p>
               <div className="space-y-3">
                 {[
@@ -311,10 +345,12 @@ export default function ComingSoonPage() {
               </h3>
               <div className="space-y-4 text-[#8B7B6F]">
                 <p>
-                  <strong className="text-[#6B5B4F]">Location:</strong> Las Vegas, Nevada
+                  <strong className="text-[#6B5B4F]">Location:</strong> Las
+                  Vegas, Nevada
                 </p>
                 <p>
-                  <strong className="text-[#6B5B4F]">Opening:</strong> Coming Soon!
+                  <strong className="text-[#6B5B4F]">Opening:</strong> Coming
+                  Soon!
                 </p>
                 <p className="text-sm">
                   Exact address will be announced soon. Join our waitlist to be
@@ -323,12 +359,20 @@ export default function ComingSoonPage() {
               </div>
 
               <div className="mt-8 pt-6 border-t border-[#E8E4DF]">
-                <h4 className="font-semibold mb-4 text-[#6B5B4F]">Follow Our Journey:</h4>
+                <h4 className="font-semibold mb-4 text-[#6B5B4F]">
+                  Follow Our Journey:
+                </h4>
                 <div className="flex gap-4">
-                  <a href="#" className="w-10 h-10 rounded-full bg-[#5B8A8A] text-white flex items-center justify-center hover:bg-[#4A7272] transition-colors">
+                  <a
+                    href="#"
+                    className="w-10 h-10 rounded-full bg-[#5B8A8A] text-white flex items-center justify-center hover:bg-[#4A7272] transition-colors"
+                  >
                     <Instagram className="w-5 h-5" />
                   </a>
-                  <a href="#" className="w-10 h-10 rounded-full bg-[#5B8A8A] text-white flex items-center justify-center hover:bg-[#4A7272] transition-colors">
+                  <a
+                    href="#"
+                    className="w-10 h-10 rounded-full bg-[#5B8A8A] text-white flex items-center justify-center hover:bg-[#4A7272] transition-colors"
+                  >
                     <Facebook className="w-5 h-5" />
                   </a>
                 </div>
@@ -348,7 +392,8 @@ export default function ComingSoonPage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-[#6B5B4F] mb-4">
-              What Makes <span className="text-[#5B8A8A]">Little Roots</span> Different
+              What Makes <span className="text-[#5B8A8A]">Little Roots</span>{" "}
+              Different
             </h2>
           </motion.div>
 
@@ -367,7 +412,8 @@ export default function ComingSoonPage() {
               {
                 icon: Clock,
                 title: "Never Rushed",
-                description: "Take all the time you need. We work at your pace.",
+                description:
+                  "Take all the time you need. We work at your pace.",
               },
               {
                 icon: Users,
@@ -386,7 +432,9 @@ export default function ComingSoonPage() {
                 <div className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center bg-[#5B8A8A]/10">
                   <item.icon className="w-8 h-8 text-[#5B8A8A]" />
                 </div>
-                <h3 className="font-bold text-lg mb-2 text-[#6B5B4F]">{item.title}</h3>
+                <h3 className="font-bold text-lg mb-2 text-[#6B5B4F]">
+                  {item.title}
+                </h3>
                 <p className="text-[#8B7B6F] text-sm">{item.description}</p>
               </motion.div>
             ))}
@@ -408,23 +456,35 @@ export default function ComingSoonPage() {
               Explore What&apos;s Coming
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Take a look around our website to see our services, our sensory-friendly
-              approach, and everything Little Roots Studio will offer.
+              Take a look around our website to see our services, our
+              sensory-friendly approach, and everything Little Roots Studio will
+              offer.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/services">
-                <Button size="lg" className="bg-white text-[#5B8A8A] hover:bg-[#D4E5E5] rounded-full px-8 font-semibold">
+                <Button
+                  size="lg"
+                  className="bg-white text-[#5B8A8A] hover:bg-[#D4E5E5] rounded-full px-8 font-semibold"
+                >
                   View Services
                   <ChevronRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
               <Link href="/sensory-friendly">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#5B8A8A] rounded-full px-8">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#5B8A8A] rounded-full px-8"
+                >
                   Sensory-Friendly Info
                 </Button>
               </Link>
               <Link href="/our-space">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#5B8A8A] rounded-full px-8">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#5B8A8A] rounded-full px-8"
+                >
                   See Our Space
                 </Button>
               </Link>

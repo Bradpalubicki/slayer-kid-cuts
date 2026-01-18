@@ -27,9 +27,10 @@ async function sendSMSReminder(appointment: Appointment, hoursUntil: number) {
   }
 
   const timeWord = hoursUntil === 24 ? "tomorrow" : "in 2 hours";
-  const location = appointment.locationType === "salon"
-    ? "at our salon (1234 Fun Street, Las Vegas)"
-    : `at your home${appointment.address ? ` (${appointment.address})` : ""}`;
+  const location =
+    appointment.locationType === "salon"
+      ? "at our salon (1234 Fun Street, Las Vegas)"
+      : `at your home${appointment.address ? ` (${appointment.address})` : ""}`;
 
   const message = `Hi ${appointment.parentName}! Reminder: ${appointment.childName}'s haircut is ${timeWord} at ${appointment.time} ${location}.
 
@@ -51,7 +52,7 @@ See you soon! - Little Roots Studio`;
           From: twilioPhone,
           Body: message,
         }),
-      }
+      },
     );
   } catch (error) {
     console.error("Failed to send SMS reminder:", error);
@@ -104,7 +105,7 @@ export async function POST(request: NextRequest) {
     console.error("Reminder error:", error);
     return NextResponse.json(
       { error: "Failed to send reminders" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -120,6 +121,6 @@ export async function GET(request: NextRequest) {
       method: "POST",
       body: JSON.stringify({ type }),
       headers: request.headers,
-    })
+    }),
   );
 }

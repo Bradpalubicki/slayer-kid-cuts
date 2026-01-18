@@ -3,10 +3,26 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
-  DoorOpen, Car, MessageSquare, CheckCircle2, ChevronRight,
-  Lightbulb, VolumeX, Thermometer, Armchair, Tv, Brain,
-  Timer, Shield, MapPin, Phone, Mail, Scissors, Users, Baby,
-  Sparkles, Coffee, Droplets
+  DoorOpen,
+  Car,
+  MessageSquare,
+  CheckCircle2,
+  ChevronRight,
+  Lightbulb,
+  VolumeX,
+  Thermometer,
+  Armchair,
+  Tv,
+  Brain,
+  Timer,
+  Shield,
+  MapPin,
+  Phone,
+  Scissors,
+  Users,
+  Baby,
+  Sparkles,
+  Coffee,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -65,7 +81,9 @@ function SensorySuiteFloorPlan() {
 
         {/* Shampoo Sink */}
         <div className="bg-[#A69080]/10 rounded-xl p-4 border-2 border-[#A69080]/30">
-          <h4 className="font-bold text-[#A69080] mb-2">Private Shampoo Sink</h4>
+          <h4 className="font-bold text-[#A69080] mb-2">
+            Private Shampoo Sink
+          </h4>
           <div className="text-sm text-gray-600">
             <span>• Reclined washing option</span>
             <span className="ml-4">• Skip-the-wash option OK</span>
@@ -78,7 +96,9 @@ function SensorySuiteFloorPlan() {
 
         {/* Calm Corner */}
         <div className="bg-[#6B5B4F]/10 rounded-xl p-4 border-2 border-[#6B5B4F]/30">
-          <h4 className="font-bold text-[#6B5B4F] mb-2">Calm Corner / Break Space</h4>
+          <h4 className="font-bold text-[#6B5B4F] mb-2">
+            Calm Corner / Break Space
+          </h4>
           <div className="grid grid-cols-2 gap-2 text-sm text-gray-600">
             <span>• Bean bag / soft seating</span>
             <span>• Weighted blanket</span>
@@ -97,7 +117,9 @@ function SensorySuiteFloorPlan() {
           <DoorOpen className="w-8 h-8 text-[#7BA3A3]" />
           <div>
             <p className="font-bold text-[#7BA3A3]">Private Exit</p>
-            <p className="text-sm text-gray-600">Same as entrance - back to car</p>
+            <p className="text-sm text-gray-600">
+              Same as entrance - back to car
+            </p>
           </div>
         </div>
       </div>
@@ -120,7 +142,9 @@ function MainSalonFloorPlan() {
 
         {/* Reception & Waiting */}
         <div className="bg-white rounded-xl p-6 border-2 border-gray-200 shadow-sm">
-          <h4 className="font-bold text-gray-900 mb-3">Reception & Waiting Area</h4>
+          <h4 className="font-bold text-gray-900 mb-3">
+            Reception & Waiting Area
+          </h4>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {[
               { icon: Users, label: "Check-in desk" },
@@ -129,7 +153,10 @@ function MainSalonFloorPlan() {
               { icon: Sparkles, label: "Retail display" },
               { icon: Coffee, label: "Refreshments" },
             ].map((item) => (
-              <div key={item.label} className="flex items-center gap-2 text-sm text-gray-600">
+              <div
+                key={item.label}
+                className="flex items-center gap-2 text-sm text-gray-600"
+              >
                 <item.icon className="w-4 h-4 text-[#5B8A8A]" />
                 <span>{item.label}</span>
               </div>
@@ -139,10 +166,15 @@ function MainSalonFloorPlan() {
 
         {/* Open Styling Floor */}
         <div className="bg-[#6B5B4F]/10 rounded-xl p-6 border-2 border-[#6B5B4F]/30">
-          <h4 className="font-bold text-[#6B5B4F] mb-3">Open Styling Floor (4 Chairs)</h4>
+          <h4 className="font-bold text-[#6B5B4F] mb-3">
+            Open Styling Floor (4 Chairs)
+          </h4>
           <div className="grid grid-cols-4 gap-3 mb-4">
             {[1, 2, 3, 4].map((num) => (
-              <div key={num} className="bg-white rounded-lg p-3 text-center border border-gray-200">
+              <div
+                key={num}
+                className="bg-white rounded-lg p-3 text-center border border-gray-200"
+              >
                 <Scissors className="w-6 h-6 mx-auto text-[#6B5B4F] mb-1" />
                 <span className="text-xs text-gray-600">Chair {num}</span>
               </div>
@@ -158,10 +190,15 @@ function MainSalonFloorPlan() {
 
         {/* Private Suites */}
         <div className="bg-[#A69080]/10 rounded-xl p-6 border-2 border-[#A69080]/30">
-          <h4 className="font-bold text-[#A69080] mb-3">Private Suites (4 Suites)</h4>
+          <h4 className="font-bold text-[#A69080] mb-3">
+            Private Suites (4 Suites)
+          </h4>
           <div className="grid grid-cols-4 gap-3 mb-4">
             {[1, 2, 3, 4].map((num) => (
-              <div key={num} className="bg-white rounded-lg p-3 text-center border border-gray-200">
+              <div
+                key={num}
+                className="bg-white rounded-lg p-3 text-center border border-gray-200"
+              >
                 <DoorOpen className="w-5 h-5 mx-auto text-[#A69080] mb-1" />
                 <span className="text-xs text-gray-600">Suite {num}</span>
                 <p className="text-xs text-gray-400">w/Sink</p>
@@ -189,8 +226,9 @@ function MainSalonFloorPlan() {
         {/* Connection Note */}
         <div className="bg-[#5B8A8A]/10 rounded-xl p-4 border-l-4 border-[#5B8A8A]">
           <p className="text-sm text-gray-700">
-            <strong>Interior Door</strong> → Connects to Carla&apos;s Private Sensory Suite (staff access only).
-            Clients using the private suite never need to enter the main salon.
+            <strong>Interior Door</strong> → Connects to Carla&apos;s Private
+            Sensory Suite (staff access only). Clients using the private suite
+            never need to enter the main salon.
           </p>
         </div>
       </div>
@@ -214,11 +252,13 @@ export default function OurSpacePage() {
               Our Space
             </Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Designed for <span className="gradient-text">Sensory Comfort</span>
+              Designed for{" "}
+              <span className="gradient-text">Sensory Comfort</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Little Roots Studio was designed from the ground up with sensory-friendly experiences in mind.
-              Here&apos;s a look at our layout so you know exactly what to expect.
+              Little Roots Studio was designed from the ground up with
+              sensory-friendly experiences in mind. Here&apos;s a look at our
+              layout so you know exactly what to expect.
             </p>
           </motion.div>
         </div>
@@ -241,8 +281,11 @@ export default function OurSpacePage() {
               Complete Privacy & Calm
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl">
-              <strong>Location:</strong> Separate entrance on the side of the building<br />
-              <strong>Access:</strong> Private door directly from parking lot — no need to enter main salon
+              <strong>Location:</strong> Separate entrance on the side of the
+              building
+              <br />
+              <strong>Access:</strong> Private door directly from parking lot —
+              no need to enter main salon
             </p>
           </motion.div>
 
@@ -263,23 +306,74 @@ export default function OurSpacePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-6">Suite Features at a Glance</h3>
+              <h3 className="text-xl font-bold mb-6">
+                Suite Features at a Glance
+              </h3>
               <div className="space-y-3">
                 {[
-                  { icon: DoorOpen, feature: "Private Entrance", details: "Direct access from parking lot, no main salon exposure" },
-                  { icon: Lightbulb, feature: "Lighting", details: "Dimmable LED panels, no harsh fluorescents, natural light option" },
-                  { icon: VolumeX, feature: "Sound", details: "Soundproofed walls, white noise machine available, no background music" },
-                  { icon: Thermometer, feature: "Temperature", details: "Individual climate control" },
-                  { icon: Armchair, feature: "Seating", details: "Adjustable styling chair + parent seating + calm corner" },
-                  { icon: Tv, feature: "Entertainment", details: "Wall-mounted tablet, headphones, favorite shows welcome" },
-                  { icon: Brain, feature: "Sensory Tools", details: "Weighted lap pad, blanket, fidgets, noise-canceling headphones, chewy jewelry" },
-                  { icon: Timer, feature: "Visual Supports", details: "Posted schedule, \"first-then\" board, timer display" },
-                  { icon: Shield, feature: "Escape Option", details: "Break anytime in calm corner, or exit directly to car" },
+                  {
+                    icon: DoorOpen,
+                    feature: "Private Entrance",
+                    details:
+                      "Direct access from parking lot, no main salon exposure",
+                  },
+                  {
+                    icon: Lightbulb,
+                    feature: "Lighting",
+                    details:
+                      "Dimmable LED panels, no harsh fluorescents, natural light option",
+                  },
+                  {
+                    icon: VolumeX,
+                    feature: "Sound",
+                    details:
+                      "Soundproofed walls, white noise machine available, no background music",
+                  },
+                  {
+                    icon: Thermometer,
+                    feature: "Temperature",
+                    details: "Individual climate control",
+                  },
+                  {
+                    icon: Armchair,
+                    feature: "Seating",
+                    details:
+                      "Adjustable styling chair + parent seating + calm corner",
+                  },
+                  {
+                    icon: Tv,
+                    feature: "Entertainment",
+                    details:
+                      "Wall-mounted tablet, headphones, favorite shows welcome",
+                  },
+                  {
+                    icon: Brain,
+                    feature: "Sensory Tools",
+                    details:
+                      "Weighted lap pad, blanket, fidgets, noise-canceling headphones, chewy jewelry",
+                  },
+                  {
+                    icon: Timer,
+                    feature: "Visual Supports",
+                    details:
+                      'Posted schedule, "first-then" board, timer display',
+                  },
+                  {
+                    icon: Shield,
+                    feature: "Escape Option",
+                    details:
+                      "Break anytime in calm corner, or exit directly to car",
+                  },
                 ].map((item) => (
-                  <div key={item.feature} className="flex gap-4 p-4 bg-gray-50 rounded-xl">
+                  <div
+                    key={item.feature}
+                    className="flex gap-4 p-4 bg-gray-50 rounded-xl"
+                  >
                     <item.icon className="w-6 h-6 text-[#5B8A8A] flex-shrink-0" />
                     <div>
-                      <h4 className="font-bold text-gray-900">{item.feature}</h4>
+                      <h4 className="font-bold text-gray-900">
+                        {item.feature}
+                      </h4>
                       <p className="text-sm text-gray-600">{item.details}</p>
                     </div>
                   </div>
@@ -309,12 +403,42 @@ export default function OurSpacePage() {
 
           <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
             {[
-              { step: 1, icon: Car, title: "Drive & Park", desc: "Pull into our parking lot. Dedicated spots near Carla's private entrance." },
-              { step: 2, icon: MessageSquare, title: "Text Us", desc: "Send a quick text: \"We're here!\" Stay in your car where your child is comfortable." },
-              { step: 3, icon: Sparkles, title: "We Prepare", desc: "Carla sets up the suite exactly how your child likes it." },
-              { step: 4, icon: Phone, title: "You're Invited In", desc: "You'll receive a text: \"All ready! Come on in through the private door.\"" },
-              { step: 5, icon: DoorOpen, title: "Direct Entry", desc: "Walk straight from car to suite. No waiting room. No surprises." },
-              { step: 6, icon: CheckCircle2, title: "Private Exit", desc: "Leave directly through the same door. Back to your car in seconds." },
+              {
+                step: 1,
+                icon: Car,
+                title: "Drive & Park",
+                desc: "Pull into our parking lot. Dedicated spots near Carla's private entrance.",
+              },
+              {
+                step: 2,
+                icon: MessageSquare,
+                title: "Text Us",
+                desc: 'Send a quick text: "We\'re here!" Stay in your car where your child is comfortable.',
+              },
+              {
+                step: 3,
+                icon: Sparkles,
+                title: "We Prepare",
+                desc: "Carla sets up the suite exactly how your child likes it.",
+              },
+              {
+                step: 4,
+                icon: Phone,
+                title: "You're Invited In",
+                desc: 'You\'ll receive a text: "All ready! Come on in through the private door."',
+              },
+              {
+                step: 5,
+                icon: DoorOpen,
+                title: "Direct Entry",
+                desc: "Walk straight from car to suite. No waiting room. No surprises.",
+              },
+              {
+                step: 6,
+                icon: CheckCircle2,
+                title: "Private Exit",
+                desc: "Leave directly through the same door. Back to your car in seconds.",
+              },
             ].map((item) => (
               <motion.div
                 key={item.step}
@@ -343,7 +467,9 @@ export default function OurSpacePage() {
             className="mt-12 text-center bg-white/10 rounded-2xl p-6"
           >
             <p className="text-lg">
-              <strong>Total exposure to unfamiliar environments:</strong> Minimal<br />
+              <strong>Total exposure to unfamiliar environments:</strong>{" "}
+              Minimal
+              <br />
               <strong>Control over the experience:</strong> Maximum
             </p>
           </motion.div>
@@ -367,8 +493,9 @@ export default function OurSpacePage() {
               Fun & Kid-Friendly Environment
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl">
-              For families comfortable with a traditional salon environment, or when siblings
-              need haircuts too, our main salon offers a fun, kid-friendly experience.
+              For families comfortable with a traditional salon environment, or
+              when siblings need haircuts too, our main salon offers a fun,
+              kid-friendly experience.
             </p>
           </motion.div>
 
@@ -411,19 +538,57 @@ export default function OurSpacePage() {
               </thead>
               <tbody>
                 {[
-                  { condition: "Gets overwhelmed in busy environments", recommendation: "Private Sensory Suite", suite: true },
-                  { condition: "Has had traumatic haircut experiences", recommendation: "Private Sensory Suite", suite: true },
-                  { condition: "Needs a completely predictable routine", recommendation: "Private Sensory Suite", suite: true },
-                  { condition: "Does well with some activity around them", recommendation: "Main Salon", suite: false },
-                  { condition: "Enjoys watching other kids", recommendation: "Main Salon", suite: false },
-                  { condition: "Has siblings getting cuts at the same time", recommendation: "Main Salon (or both!)", suite: false },
-                  { condition: "Is trying a haircut for the first time", recommendation: "Private Sensory Suite (recommended)", suite: true },
-                  { condition: "Has graduated from needing full accommodation", recommendation: "Main Salon with Carla", suite: false },
+                  {
+                    condition: "Gets overwhelmed in busy environments",
+                    recommendation: "Private Sensory Suite",
+                    suite: true,
+                  },
+                  {
+                    condition: "Has had traumatic haircut experiences",
+                    recommendation: "Private Sensory Suite",
+                    suite: true,
+                  },
+                  {
+                    condition: "Needs a completely predictable routine",
+                    recommendation: "Private Sensory Suite",
+                    suite: true,
+                  },
+                  {
+                    condition: "Does well with some activity around them",
+                    recommendation: "Main Salon",
+                    suite: false,
+                  },
+                  {
+                    condition: "Enjoys watching other kids",
+                    recommendation: "Main Salon",
+                    suite: false,
+                  },
+                  {
+                    condition: "Has siblings getting cuts at the same time",
+                    recommendation: "Main Salon (or both!)",
+                    suite: false,
+                  },
+                  {
+                    condition: "Is trying a haircut for the first time",
+                    recommendation: "Private Sensory Suite (recommended)",
+                    suite: true,
+                  },
+                  {
+                    condition: "Has graduated from needing full accommodation",
+                    recommendation: "Main Salon with Carla",
+                    suite: false,
+                  },
                 ].map((row, index) => (
                   <tr key={index} className="border-b">
                     <td className="p-4 text-gray-700">{row.condition}</td>
                     <td className="p-4">
-                      <Badge className={row.suite ? "bg-[#7BA3A3]/10 text-[#7BA3A3] border-[#7BA3A3]/20" : "bg-[#6B5B4F]/10 text-[#6B5B4F] border-[#6B5B4F]/20"}>
+                      <Badge
+                        className={
+                          row.suite
+                            ? "bg-[#7BA3A3]/10 text-[#7BA3A3] border-[#7BA3A3]/20"
+                            : "bg-[#6B5B4F]/10 text-[#6B5B4F] border-[#6B5B4F]/20"
+                        }
+                      >
                         {row.recommendation}
                       </Badge>
                     </td>
@@ -440,10 +605,15 @@ export default function OurSpacePage() {
             className="text-center mt-8"
           >
             <p className="text-gray-600 mb-4">
-              Not sure? Contact us and we&apos;ll help you decide what&apos;s best for your child.
+              Not sure? Contact us and we&apos;ll help you decide what&apos;s
+              best for your child.
             </p>
             <Link href="/contact">
-              <Button size="lg" variant="outline" className="rounded-full px-8 border-2 border-[#5B8A8A] text-[#5B8A8A] hover:bg-[#5B8A8A] hover:text-white">
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full px-8 border-2 border-[#5B8A8A] text-[#5B8A8A] hover:bg-[#5B8A8A] hover:text-white"
+              >
                 Contact Us
                 <ChevronRight className="w-5 h-5 ml-2" />
               </Button>
@@ -468,7 +638,9 @@ export default function OurSpacePage() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">Photo Gallery</h3>
                   <p className="text-gray-600 mb-4">
-                    Coming Soon! We&apos;ll share photos of our space before we open so you can show your child exactly what they&apos;ll see.
+                    Coming Soon! We&apos;ll share photos of our space before we
+                    open so you can show your child exactly what they&apos;ll
+                    see.
                   </p>
                   <Link href="/coming-soon">
                     <Button className="rounded-full bg-[#5B8A8A] text-white">
@@ -492,7 +664,8 @@ export default function OurSpacePage() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">Virtual Tour</h3>
                   <p className="text-gray-600 mb-4">
-                    Coming Soon! A video walkthrough so your child can &quot;visit&quot; before their first appointment.
+                    Coming Soon! A video walkthrough so your child can
+                    &quot;visit&quot; before their first appointment.
                   </p>
                   <Link href="/coming-soon">
                     <Button className="rounded-full bg-[#7BA3A3] text-gray-900">
@@ -519,16 +692,24 @@ export default function OurSpacePage() {
               Ready to Visit?
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Join our waitlist to be notified when we open and get priority booking!
+              Join our waitlist to be notified when we open and get priority
+              booking!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/coming-soon">
-                <Button size="lg" className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8">
+                <Button
+                  size="lg"
+                  className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8"
+                >
                   Join the Waitlist
                 </Button>
               </Link>
               <Link href="/prepare">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#5B8A8A] rounded-full px-8">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#5B8A8A] rounded-full px-8"
+                >
                   Prepare for Your Visit
                 </Button>
               </Link>

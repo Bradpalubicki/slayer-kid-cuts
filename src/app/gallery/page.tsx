@@ -3,7 +3,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Camera, X, ChevronLeft, ChevronRight, Calendar, Sparkles } from "lucide-react";
+import {
+  Camera,
+  X,
+  ChevronLeft,
+  ChevronRight,
+  Calendar,
+  Sparkles,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -87,16 +94,19 @@ export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [activeTab, setActiveTab] = useState("all");
 
-  const filteredImages = activeTab === "all"
-    ? galleryImages
-    : galleryImages.filter((img) => img.category === activeTab);
+  const filteredImages =
+    activeTab === "all"
+      ? galleryImages
+      : galleryImages.filter((img) => img.category === activeTab);
 
   const openLightbox = (id: number) => setSelectedImage(id);
   const closeLightbox = () => setSelectedImage(null);
 
   const nextImage = () => {
     if (selectedImage !== null) {
-      const currentIndex = filteredImages.findIndex((img) => img.id === selectedImage);
+      const currentIndex = filteredImages.findIndex(
+        (img) => img.id === selectedImage,
+      );
       const nextIndex = (currentIndex + 1) % filteredImages.length;
       setSelectedImage(filteredImages[nextIndex].id);
     }
@@ -104,13 +114,18 @@ export default function GalleryPage() {
 
   const prevImage = () => {
     if (selectedImage !== null) {
-      const currentIndex = filteredImages.findIndex((img) => img.id === selectedImage);
-      const prevIndex = (currentIndex - 1 + filteredImages.length) % filteredImages.length;
+      const currentIndex = filteredImages.findIndex(
+        (img) => img.id === selectedImage,
+      );
+      const prevIndex =
+        (currentIndex - 1 + filteredImages.length) % filteredImages.length;
       setSelectedImage(filteredImages[prevIndex].id);
     }
   };
 
-  const selectedImageData = galleryImages.find((img) => img.id === selectedImage);
+  const selectedImageData = galleryImages.find(
+    (img) => img.id === selectedImage,
+  );
 
   return (
     <div className="min-h-screen pt-24 pb-16 bg-gradient-to-b from-gray-50 to-white">
@@ -125,7 +140,8 @@ export default function GalleryPage() {
             Happy Kids, <span className="gradient-text">Happy Styles</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Check out some of our favorite transformations! Every smile tells a story.
+            Check out some of our favorite transformations! Every smile tells a
+            story.
           </p>
         </div>
 
@@ -225,7 +241,9 @@ export default function GalleryPage() {
                 height={800}
                 className="rounded-2xl object-contain w-full h-auto max-h-[80vh]"
               />
-              <p className="text-white text-center mt-4">{selectedImageData.alt}</p>
+              <p className="text-white text-center mt-4">
+                {selectedImageData.alt}
+              </p>
             </div>
           </div>
         )}
@@ -238,10 +256,14 @@ export default function GalleryPage() {
               Want Your Child Featured?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Book an appointment and share your child&apos;s transformation with our community!
+              Book an appointment and share your child&apos;s transformation
+              with our community!
             </p>
             <Link href="/book">
-              <Button size="lg" className="bg-white text-[#9B5DE5] hover:bg-white/90 rounded-full px-8">
+              <Button
+                size="lg"
+                className="bg-white text-[#9B5DE5] hover:bg-white/90 rounded-full px-8"
+              >
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Appointment
               </Button>

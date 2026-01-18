@@ -4,9 +4,25 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  CheckCircle2, ChevronRight, Clock, Calendar, Car, DoorOpen,
-  MessageSquare, Brain, Heart, Shield, Star, Lightbulb,
-  VolumeX, Timer, Tv, Book, Camera, Gift, Sparkles, Phone
+  CheckCircle2,
+  ChevronRight,
+  Clock,
+  Calendar,
+  Car,
+  DoorOpen,
+  MessageSquare,
+  Brain,
+  Heart,
+  Shield,
+  Star,
+  Lightbulb,
+  Timer,
+  Tv,
+  Book,
+  Camera,
+  Gift,
+  Sparkles,
+  Phone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -31,8 +47,9 @@ export default function PreparePage() {
               Setting Up for <span className="gradient-text">Success</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A little preparation can make a big difference! Here&apos;s how to help your child
-              feel comfortable and confident before their haircut.
+              A little preparation can make a big difference! Here&apos;s how to
+              help your child feel comfortable and confident before their
+              haircut.
             </p>
           </motion.div>
         </div>
@@ -61,38 +78,44 @@ export default function PreparePage() {
               {
                 icon: Book,
                 title: "Read Social Stories",
-                description: "Use picture books or create a simple story about going to the salon. \"First we drive, then we go inside, then we sit in a special chair...\"",
-                color: "#5B8A8A"
+                description:
+                  'Use picture books or create a simple story about going to the salon. "First we drive, then we go inside, then we sit in a special chair..."',
+                color: "#5B8A8A",
               },
               {
                 icon: Tv,
                 title: "Watch Videos",
-                description: "Show your child videos of other kids getting haircuts. We can send you a video of Carla working if it helps!",
-                color: "#A69080"
+                description:
+                  "Show your child videos of other kids getting haircuts. We can send you a video of Carla working if it helps!",
+                color: "#A69080",
               },
               {
                 icon: Camera,
                 title: "Show Photos of Our Space",
-                description: "Visit our \"Our Space\" page to see the salon layout. Familiarity reduces anxiety about the unknown.",
-                color: "#6B5B4F"
+                description:
+                  'Visit our "Our Space" page to see the salon layout. Familiarity reduces anxiety about the unknown.',
+                color: "#6B5B4F",
               },
               {
                 icon: Sparkles,
-                title: "Play \"Haircut\"",
-                description: "Practice at home with pretend haircuts on stuffed animals or dolls. Let your child be the stylist too!",
-                color: "#7BA3A3"
+                title: 'Play "Haircut"',
+                description:
+                  "Practice at home with pretend haircuts on stuffed animals or dolls. Let your child be the stylist too!",
+                color: "#7BA3A3",
               },
               {
                 icon: Timer,
                 title: "Practice Sitting Still",
-                description: "Work up to sitting still for short periods while watching a favorite show. Start with 2-3 minutes.",
-                color: "#D4E5E5"
+                description:
+                  "Work up to sitting still for short periods while watching a favorite show. Start with 2-3 minutes.",
+                color: "#D4E5E5",
               },
               {
                 icon: Gift,
                 title: "Plan a Reward",
-                description: "Let your child know there's something to look forward to after — ice cream, park time, a small toy, etc.",
-                color: "#F15BB5"
+                description:
+                  "Let your child know there's something to look forward to after — ice cream, park time, a small toy, etc.",
+                color: "#F15BB5",
               },
             ].map((item, index) => (
               <motion.div
@@ -108,7 +131,10 @@ export default function PreparePage() {
                       className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
                       style={{ backgroundColor: `${item.color}20` }}
                     >
-                      <item.icon className="w-6 h-6" style={{ color: item.color }} />
+                      <item.icon
+                        className="w-6 h-6"
+                        style={{ color: item.color }}
+                      />
                     </div>
                     <h3 className="text-lg font-bold mb-2">{item.title}</h3>
                     <p className="text-gray-600">{item.description}</p>
@@ -137,7 +163,9 @@ export default function PreparePage() {
               Comfort Items Welcome!
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl">
-              Feel free to bring anything that helps your child feel comfortable. We have sensory tools available, but your child&apos;s own items may feel more familiar.
+              Feel free to bring anything that helps your child feel
+              comfortable. We have sensory tools available, but your
+              child&apos;s own items may feel more familiar.
             </p>
           </motion.div>
 
@@ -147,7 +175,9 @@ export default function PreparePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-4 text-[#7BA3A3]">We Provide:</h3>
+              <h3 className="text-xl font-bold mb-4 text-[#7BA3A3]">
+                We Provide:
+              </h3>
               <div className="space-y-3">
                 {[
                   "Noise-canceling headphones",
@@ -171,7 +201,9 @@ export default function PreparePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-4 text-[#5B8A8A]">You&apos;re Welcome to Bring:</h3>
+              <h3 className="text-xl font-bold mb-4 text-[#5B8A8A]">
+                You&apos;re Welcome to Bring:
+              </h3>
               <div className="space-y-3">
                 {[
                   "Their own headphones",
@@ -220,25 +252,25 @@ export default function PreparePage() {
                   "Avoid right before nap time or meal time",
                   "Morning appointments often work best",
                   "Allow extra travel time so you're not rushed",
-                ]
+                ],
               },
               {
                 title: "Getting Ready",
                 tips: [
                   "Dress in comfortable, easy-to-clean clothes",
                   "Avoid favorite shirts (hair can be itchy!)",
-                  "Use simple language: \"We're going to see Carla for a haircut\"",
+                  'Use simple language: "We\'re going to see Carla for a haircut"',
                   "Stay calm — kids pick up on our anxiety!",
-                ]
+                ],
               },
               {
                 title: "During the Visit",
                 tips: [
                   "Let Carla lead the interaction at first",
                   "It's OK to hold their hand or have them on your lap",
-                  "Celebrate small wins (\"You're doing great!\")",
+                  'Celebrate small wins ("You\'re doing great!")',
                   "If they need a break, we take a break",
-                ]
+                ],
               },
               {
                 title: "If Things Get Hard",
@@ -247,7 +279,7 @@ export default function PreparePage() {
                   "We can stop and try again another day",
                   "Partial haircuts are fine — we finish next time",
                   "There's no judgment here, ever",
-                ]
+                ],
               },
             ].map((section, index) => (
               <motion.div
@@ -293,7 +325,8 @@ export default function PreparePage() {
               Need the Calmest Experience?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              For children who need extra support, ask about booking Carla&apos;s Private Sensory Suite.
+              For children who need extra support, ask about booking
+              Carla&apos;s Private Sensory Suite.
             </p>
           </motion.div>
 
@@ -303,17 +336,43 @@ export default function PreparePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-4">What Makes It Different:</h3>
+              <h3 className="text-xl font-bold mb-4">
+                What Makes It Different:
+              </h3>
               <div className="space-y-3">
                 {[
-                  { icon: DoorOpen, text: "Private entrance — Walk directly from car to suite" },
-                  { icon: Car, text: "Wait in car — Text when you arrive, we'll text when ready" },
-                  { icon: Shield, text: "No waiting room — Skip the lobby entirely" },
-                  { icon: Heart, text: "Complete privacy — Just you, your child, and Carla" },
-                  { icon: Clock, text: "Same space every time — Builds familiarity and routine" },
-                  { icon: Lightbulb, text: "Controlled environment — You control lighting, sound, everything" },
-                  { icon: Brain, text: "Calm corner available — Break space if needed" },
-                  { icon: CheckCircle2, text: "Private exit — Leave directly when done" },
+                  {
+                    icon: DoorOpen,
+                    text: "Private entrance — Walk directly from car to suite",
+                  },
+                  {
+                    icon: Car,
+                    text: "Wait in car — Text when you arrive, we'll text when ready",
+                  },
+                  {
+                    icon: Shield,
+                    text: "No waiting room — Skip the lobby entirely",
+                  },
+                  {
+                    icon: Heart,
+                    text: "Complete privacy — Just you, your child, and Carla",
+                  },
+                  {
+                    icon: Clock,
+                    text: "Same space every time — Builds familiarity and routine",
+                  },
+                  {
+                    icon: Lightbulb,
+                    text: "Controlled environment — You control lighting, sound, everything",
+                  },
+                  {
+                    icon: Brain,
+                    text: "Calm corner available — Break space if needed",
+                  },
+                  {
+                    icon: CheckCircle2,
+                    text: "Private exit — Leave directly when done",
+                  },
                 ].map((item) => (
                   <div key={item.text} className="flex items-center gap-3">
                     <item.icon className="w-5 h-5 text-[#5B8A8A] flex-shrink-0" />
@@ -328,7 +387,9 @@ export default function PreparePage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-4">This Option is Ideal For:</h3>
+              <h3 className="text-xl font-bold mb-4">
+                This Option is Ideal For:
+              </h3>
               <div className="space-y-3">
                 {[
                   "First appointments for highly anxious children",
@@ -337,7 +398,10 @@ export default function PreparePage() {
                   "Gradual exposure therapy (just visit the space — no haircut required!)",
                   "Any situation where minimal stimulation is essential",
                 ].map((item) => (
-                  <div key={item} className="flex items-start gap-3 bg-white rounded-xl p-3">
+                  <div
+                    key={item}
+                    className="flex items-start gap-3 bg-white rounded-xl p-3"
+                  >
                     <CheckCircle2 className="w-5 h-5 text-[#7BA3A3] flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">{item}</span>
                   </div>
@@ -353,7 +417,10 @@ export default function PreparePage() {
             className="text-center"
           >
             <Link href="/our-space">
-              <Button size="lg" className="bg-gradient-to-r from-[#5B8A8A] to-[#7BA3A3] text-white rounded-full px-10 shadow-xl">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-[#5B8A8A] to-[#7BA3A3] text-white rounded-full px-10 shadow-xl"
+              >
                 <DoorOpen className="w-5 h-5 mr-2" />
                 Learn More About Our Space
                 <ChevronRight className="w-5 h-5 ml-2" />
@@ -382,7 +449,7 @@ export default function PreparePage() {
               </h2>
               <div className="space-y-4">
                 {[
-                  "Consider a \"practice visit\" first — just come see the space, no haircut",
+                  'Consider a "practice visit" first — just come see the space, no haircut',
                   "Bring a sibling or friend who's had haircuts before",
                   "Start with just a trim — we can always do more later",
                   "Our First Haircut Package includes a certificate and keepsake lock of hair",
@@ -395,7 +462,10 @@ export default function PreparePage() {
                 ))}
               </div>
               <Link href="/services#first-haircut">
-                <Button size="lg" className="rounded-full bg-[#D4E5E5] text-gray-900 hover:bg-[#D4E5E5]/90">
+                <Button
+                  size="lg"
+                  className="rounded-full bg-[#D4E5E5] text-gray-900 hover:bg-[#D4E5E5]/90"
+                >
                   Learn About First Haircut Package
                   <ChevronRight className="w-5 h-5 ml-2" />
                 </Button>
@@ -437,17 +507,25 @@ export default function PreparePage() {
               Still Have Questions?
             </h2>
             <p className="text-lg text-gray-600 mb-8 max-w-xl mx-auto">
-              We&apos;re happy to chat before your visit to answer any questions, discuss your child&apos;s needs, or help you prepare.
+              We&apos;re happy to chat before your visit to answer any
+              questions, discuss your child&apos;s needs, or help you prepare.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <Button size="lg" className="rounded-full bg-[#A69080] text-white">
+                <Button
+                  size="lg"
+                  className="rounded-full bg-[#A69080] text-white"
+                >
                   <MessageSquare className="w-5 h-5 mr-2" />
                   Contact Us
                 </Button>
               </Link>
               <Link href="/faq">
-                <Button size="lg" variant="outline" className="rounded-full border-2 border-[#5B8A8A] text-[#5B8A8A] hover:bg-[#5B8A8A] hover:text-white">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full border-2 border-[#5B8A8A] text-[#5B8A8A] hover:bg-[#5B8A8A] hover:text-white"
+                >
                   Read Our FAQ
                   <ChevronRight className="w-5 h-5 ml-2" />
                 </Button>
@@ -473,7 +551,10 @@ export default function PreparePage() {
               Join our waitlist for grand opening and get priority booking!
             </p>
             <Link href="/coming-soon">
-              <Button size="lg" className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8">
+              <Button
+                size="lg"
+                className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8"
+              >
                 Join the Waitlist
                 <ChevronRight className="w-5 h-5 ml-2" />
               </Button>

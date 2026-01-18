@@ -4,8 +4,19 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Shield, Heart, Clock, Volume2, Eye, Hand, Sparkles,
-  CheckCircle2, Calendar, Phone, Star, Headphones, Sun, Moon
+  Shield,
+  Heart,
+  Clock,
+  Volume2,
+  Eye,
+  Hand,
+  CheckCircle2,
+  Calendar,
+  Phone,
+  Star,
+  Headphones,
+  Sun,
+  Moon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,38 +26,44 @@ const accommodations = [
   {
     icon: Clock,
     title: "Extra Time & Patience",
-    description: "We never rush. Appointments can take as long as needed, with breaks whenever your child needs them.",
-    color: "#6B5B4F"
+    description:
+      "We never rush. Appointments can take as long as needed, with breaks whenever your child needs them.",
+    color: "#6B5B4F",
   },
   {
     icon: Volume2,
     title: "Noise Control",
-    description: "Quieter clippers available, noise-canceling headphones offered, and we can minimize background sounds.",
-    color: "#5B8A8A"
+    description:
+      "Quieter clippers available, noise-canceling headphones offered, and we can minimize background sounds.",
+    color: "#5B8A8A",
   },
   {
     icon: Eye,
     title: "Visual Supports",
-    description: "Social stories, visual schedules, and step-by-step picture guides to help your child know what to expect.",
-    color: "#A69080"
+    description:
+      "Social stories, visual schedules, and step-by-step picture guides to help your child know what to expect.",
+    color: "#A69080",
   },
   {
     icon: Hand,
     title: "Sensory Tools",
-    description: "Fidget toys, weighted lap pads, and textured items available to help with self-regulation.",
-    color: "#7BA3A3"
+    description:
+      "Fidget toys, weighted lap pads, and textured items available to help with self-regulation.",
+    color: "#7BA3A3",
   },
   {
     icon: Sun,
     title: "Lighting Options",
-    description: "Dimmable lights and natural lighting options. We can adjust to what's most comfortable.",
-    color: "#D4E5E5"
+    description:
+      "Dimmable lights and natural lighting options. We can adjust to what's most comfortable.",
+    color: "#D4E5E5",
   },
   {
     icon: Headphones,
     title: "Communication Flexibility",
-    description: "We follow your child's communication style - verbal, non-verbal, AAC devices, or any combination.",
-    color: "#F15BB5"
+    description:
+      "We follow your child's communication style - verbal, non-verbal, AAC devices, or any combination.",
+    color: "#F15BB5",
   },
 ];
 
@@ -76,28 +93,40 @@ export default function SensoryFriendlyPage() {
                 Sensory-Friendly Care
               </Badge>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                Every Child <span className="gradient-text">Deserves</span> a Great Haircut
+                Every Child <span className="gradient-text">Deserves</span> a
+                Great Haircut
               </h1>
               <p className="text-xl text-gray-600">
-                Specially trained in sensory-friendly haircuts for children with autism, ADHD, sensory processing differences, and anxiety. No judgement, just patience and understanding.
+                Specially trained in sensory-friendly haircuts for children with
+                autism, ADHD, sensory processing differences, and anxiety. No
+                judgement, just patience and understanding.
               </p>
 
               <div className="flex items-center gap-4 pt-4">
                 <div className="flex items-center gap-2">
                   <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-                  <span className="font-semibold">Certified Sensory-Friendly</span>
+                  <span className="font-semibold">
+                    Certified Sensory-Friendly
+                  </span>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link href="/book">
-                  <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-[#7BA3A3] to-[#5B8A8A] text-white border-0 rounded-full px-8 py-6 text-lg shadow-xl hover:shadow-2xl transition-shadow">
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto bg-gradient-to-r from-[#7BA3A3] to-[#5B8A8A] text-white border-0 rounded-full px-8 py-6 text-lg shadow-xl hover:shadow-2xl transition-shadow"
+                  >
                     <Calendar className="w-5 h-5 mr-2" />
                     Book Sensory-Friendly Cut
                   </Button>
                 </Link>
                 <a href="tel:+17025551234">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full px-8 py-6 text-lg border-2 border-[#7BA3A3] text-[#7BA3A3] hover:bg-[#7BA3A3] hover:text-white">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto rounded-full px-8 py-6 text-lg border-2 border-[#7BA3A3] text-[#7BA3A3] hover:bg-[#7BA3A3] hover:text-white"
+                  >
                     <Phone className="w-5 h-5 mr-2" />
                     Call to Discuss Needs
                   </Button>
@@ -129,7 +158,9 @@ export default function SensoryFriendlyPage() {
                   </div>
                   <div>
                     <p className="font-bold">100% Success Rate</p>
-                    <p className="text-sm text-gray-500">With sensory-friendly clients</p>
+                    <p className="text-sm text-gray-500">
+                      With sensory-friendly clients
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -152,15 +183,29 @@ export default function SensoryFriendlyPage() {
             </h2>
             <div className="bg-gray-50 rounded-3xl p-8 text-left">
               <p className="text-lg text-gray-600 mb-4">
-                &quot;I started offering sensory-friendly services because I saw too many kids leaving salons in tears. Traditional salons aren&apos;t designed for children who experience the world differently - the buzzing clippers, the unfamiliar touches, the bright lights, the overwhelming sounds.&quot;
+                &quot;I started offering sensory-friendly services because I saw
+                too many kids leaving salons in tears. Traditional salons
+                aren&apos;t designed for children who experience the world
+                differently - the buzzing clippers, the unfamiliar touches, the
+                bright lights, the overwhelming sounds.&quot;
               </p>
               <p className="text-lg text-gray-600 mb-4">
-                &quot;I&apos;ve taken specialized training in working with children on the autism spectrum and those with sensory processing differences. But more than any certification, I&apos;ve learned the most from the families I&apos;ve worked with. Every child is unique, and I adjust my approach for each one.&quot;
+                &quot;I&apos;ve taken specialized training in working with
+                children on the autism spectrum and those with sensory
+                processing differences. But more than any certification,
+                I&apos;ve learned the most from the families I&apos;ve worked
+                with. Every child is unique, and I adjust my approach for each
+                one.&quot;
               </p>
               <p className="text-lg text-gray-600">
-                &quot;My goal isn&apos;t just to get through a haircut - it&apos;s to help your child build positive associations with the experience. Many of my sensory-friendly clients now actually look forward to their appointments.&quot;
+                &quot;My goal isn&apos;t just to get through a haircut -
+                it&apos;s to help your child build positive associations with
+                the experience. Many of my sensory-friendly clients now actually
+                look forward to their appointments.&quot;
               </p>
-              <p className="text-right text-[#5B8A8A] font-bold mt-4">- Carla</p>
+              <p className="text-right text-[#5B8A8A] font-bold mt-4">
+                - Carla
+              </p>
             </div>
           </motion.div>
         </div>
@@ -182,7 +227,8 @@ export default function SensoryFriendlyPage() {
               Accommodations We <span className="gradient-text">Offer</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Every adjustment we make is designed to help your child feel safe and comfortable.
+              Every adjustment we make is designed to help your child feel safe
+              and comfortable.
             </p>
           </motion.div>
 
@@ -201,7 +247,10 @@ export default function SensoryFriendlyPage() {
                       className="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center"
                       style={{ backgroundColor: `${item.color}15` }}
                     >
-                      <item.icon className="w-8 h-8" style={{ color: item.color }} />
+                      <item.icon
+                        className="w-8 h-8"
+                        style={{ color: item.color }}
+                      />
                     </div>
                     <h3 className="text-xl font-bold mb-3">{item.title}</h3>
                     <p className="text-gray-600">{item.description}</p>
@@ -232,7 +281,10 @@ export default function SensoryFriendlyPage() {
                   Haircuts in Your Safe Space
                 </h2>
                 <p className="text-xl text-white/90">
-                  For many children with sensory needs, their home is their safest environment. Our mobile service brings the haircut to them - in their familiar surroundings, with their comfort items nearby.
+                  For many children with sensory needs, their home is their
+                  safest environment. Our mobile service brings the haircut to
+                  them - in their familiar surroundings, with their comfort
+                  items nearby.
                 </p>
                 <ul className="space-y-3">
                   {[
@@ -240,7 +292,7 @@ export default function SensoryFriendlyPage() {
                     "All their comfort items available",
                     "Siblings can be nearby for support",
                     "You control the lighting and sounds",
-                    "No waiting room anxiety"
+                    "No waiting room anxiety",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3">
                       <CheckCircle2 className="w-5 h-5 text-white" />
@@ -249,7 +301,10 @@ export default function SensoryFriendlyPage() {
                   ))}
                 </ul>
                 <Link href="/book">
-                  <Button size="lg" className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8 shadow-lg">
+                  <Button
+                    size="lg"
+                    className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8 shadow-lg"
+                  >
                     Book Mobile Visit
                   </Button>
                 </Link>
@@ -329,12 +384,12 @@ export default function SensoryFriendlyPage() {
               {
                 text: "My son has autism and hadn't had a haircut in over a year because of traumatic salon experiences. Carla changed everything. She let him explore the tools first, used the quietest clippers, and let him take breaks. He now asks when his next appointment is!",
                 name: "Amanda R.",
-                child: "Mom of Owen, 6 (ASD)"
+                child: "Mom of Owen, 6 (ASD)",
               },
               {
                 text: "The mobile visit option was a game-changer for us. My daughter with SPD was able to sit in her favorite spot, hold her comfort stuffie, and watch her favorite show. Carla was incredibly patient and followed all our cues. First successful haircut in 3 years!",
                 name: "Michael T.",
-                child: "Dad of Lily, 8 (SPD)"
+                child: "Dad of Lily, 8 (SPD)",
               },
             ].map((review, index) => (
               <motion.div
@@ -348,10 +403,15 @@ export default function SensoryFriendlyPage() {
                   <CardContent className="p-8">
                     <div className="flex gap-1 mb-4">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                        <Star
+                          key={i}
+                          className="w-5 h-5 text-yellow-400 fill-yellow-400"
+                        />
                       ))}
                     </div>
-                    <p className="text-gray-600 italic mb-6">&quot;{review.text}&quot;</p>
+                    <p className="text-gray-600 italic mb-6">
+                      &quot;{review.text}&quot;
+                    </p>
                     <div>
                       <p className="font-bold">{review.name}</p>
                       <p className="text-sm text-gray-500">{review.child}</p>
@@ -378,17 +438,26 @@ export default function SensoryFriendlyPage() {
               Let&apos;s Talk About Your Child
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Every child is different. I&apos;d love to hear about your child&apos;s specific needs before the appointment so I can prepare the perfect experience.
+              Every child is different. I&apos;d love to hear about your
+              child&apos;s specific needs before the appointment so I can
+              prepare the perfect experience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/book">
-                <Button size="lg" className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8">
+                <Button
+                  size="lg"
+                  className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8"
+                >
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Appointment
                 </Button>
               </Link>
               <a href="tel:+17025551234">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#5B8A8A] rounded-full px-8">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#5B8A8A] rounded-full px-8"
+                >
                   <Phone className="w-5 h-5 mr-2" />
                   Call to Chat First
                 </Button>

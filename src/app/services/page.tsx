@@ -3,7 +3,17 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Scissors, Baby, Car, Sparkles, Shield, PartyPopper, CheckCircle2, Calendar, ChevronRight, Users, Crown, Brain } from "lucide-react";
+import {
+  Scissors,
+  Baby,
+  Sparkles,
+  PartyPopper,
+  CheckCircle2,
+  Calendar,
+  ChevronRight,
+  Users,
+  Brain,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -17,8 +27,10 @@ const services = [
     price: "Same as regular cuts",
     duration: "As needed",
     color: "#7BA3A3",
-    image: "https://images.unsplash.com/photo-1560439514-4e9645039924?w=800&h=500&fit=crop",
-    description: "Little Roots Studio specializes in working with children who have autism, ADHD, sensory processing differences, and anxiety. We don't just accommodate - we've built our entire approach around making haircuts accessible for every child.",
+    image:
+      "https://images.unsplash.com/photo-1560439514-4e9645039924?w=800&h=500&fit=crop",
+    description:
+      "Little Roots Studio specializes in working with children who have autism, ADHD, sensory processing differences, and anxiety. We don't just accommodate - we've built our entire approach around making haircuts accessible for every child.",
     includes: [
       "Noise-canceling headphones available",
       "Whisper-quiet clippers",
@@ -37,8 +49,10 @@ const services = [
     price: "From $25",
     duration: "30 minutes",
     color: "#6B5B4F",
-    image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&h=500&fit=crop",
-    description: "Our signature kids haircuts are designed to be a fun, stress-free experience. Each station features a TV with cartoons, tablets with games, and themed chairs to keep your little one entertained.",
+    image:
+      "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&h=500&fit=crop",
+    description:
+      "Our signature kids haircuts are designed to be a fun, stress-free experience. Each station features a TV with cartoons, tablets with games, and themed chairs to keep your little one entertained.",
     includes: [
       "Consultation with stylist",
       "Fun themed styling chair",
@@ -55,8 +69,10 @@ const services = [
     price: "$35",
     duration: "45 minutes",
     color: "#5B8A8A",
-    image: "https://images.unsplash.com/photo-1519699047748-de8e44e9dee9?w=800&h=500&fit=crop",
-    description: "Your baby's first haircut is a special milestone! Our First Haircut Package celebrates this moment with keepsakes you'll treasure forever.",
+    image:
+      "https://images.unsplash.com/photo-1519699047748-de8e44e9dee9?w=800&h=500&fit=crop",
+    description:
+      "Your baby's first haircut is a special milestone! Our First Haircut Package celebrates this moment with keepsakes you'll treasure forever.",
     includes: [
       "Everything in Kids Haircut",
       "Official First Haircut Certificate",
@@ -73,8 +89,10 @@ const services = [
     price: "From $30",
     duration: "30-45 minutes",
     color: "#A69080",
-    image: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&h=500&fit=crop",
-    description: "While your kids enjoy their haircut experience, why not get yours done too? We offer full adult haircut services for parents. Book the whole family and make it a fun outing!",
+    image:
+      "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&h=500&fit=crop",
+    description:
+      "While your kids enjoy their haircut experience, why not get yours done too? We offer full adult haircut services for parents. Book the whole family and make it a fun outing!",
     includes: [
       "Professional adult haircut",
       "Consultation & styling",
@@ -91,8 +109,10 @@ const services = [
     price: "From $10",
     duration: "15-30 minutes",
     color: "#F15BB5",
-    image: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&h=500&fit=crop",
-    description: "Want to add some extra fun? Our hair tinsel and creative styling options let kids express their personality with sparkle, temporary color, and fun styles!",
+    image:
+      "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&h=500&fit=crop",
+    description:
+      "Want to add some extra fun? Our hair tinsel and creative styling options let kids express their personality with sparkle, temporary color, and fun styles!",
     includes: [
       "Hair tinsel application",
       "Temporary color streaks",
@@ -109,8 +129,10 @@ const services = [
     price: "Custom quote",
     duration: "2-3 hours",
     color: "#6B5B4F",
-    image: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&h=500&fit=crop",
-    description: "Make their birthday unforgettable! Our birthday party packages include hair styling, tinsel, temporary color, and tons of fun for the birthday child and their friends.",
+    image:
+      "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&h=500&fit=crop",
+    description:
+      "Make their birthday unforgettable! Our birthday party packages include hair styling, tinsel, temporary color, and tons of fun for the birthday child and their friends.",
     includes: [
       "Private party space",
       "Hair styling for all guests",
@@ -137,10 +159,12 @@ export default function ServicesPage() {
               Our Services
             </Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Haircuts That Make <span className="gradient-text">Kids Happy</span>
+              Haircuts That Make{" "}
+              <span className="gradient-text">Kids Happy</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From first haircuts to fun styles, we offer everything to make your child&apos;s haircut experience amazing!
+              From first haircuts to fun styles, we offer everything to make
+              your child&apos;s haircut experience amazing!
             </p>
           </motion.div>
         </div>
@@ -160,10 +184,14 @@ export default function ServicesPage() {
               }`}
             >
               {/* Image */}
-              <div className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+              <div
+                className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}
+              >
                 <div
                   className="absolute inset-0 rounded-3xl -rotate-3 opacity-20"
-                  style={{ background: `linear-gradient(135deg, ${service.color}, #5B8A8A)` }}
+                  style={{
+                    background: `linear-gradient(135deg, ${service.color}, #5B8A8A)`,
+                  }}
                 />
                 <Image
                   src={service.image}
@@ -181,20 +209,30 @@ export default function ServicesPage() {
                       className="w-12 h-12 rounded-xl flex items-center justify-center"
                       style={{ backgroundColor: `${service.color}20` }}
                     >
-                      <service.icon className="w-6 h-6" style={{ color: service.color }} />
+                      <service.icon
+                        className="w-6 h-6"
+                        style={{ color: service.color }}
+                      />
                     </div>
                     <div>
-                      <p className="font-bold text-2xl" style={{ color: service.color }}>
+                      <p
+                        className="font-bold text-2xl"
+                        style={{ color: service.color }}
+                      >
                         {service.price}
                       </p>
-                      <p className="text-sm text-gray-500">{service.duration}</p>
+                      <p className="text-sm text-gray-500">
+                        {service.duration}
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Content */}
-              <div className={`space-y-6 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+              <div
+                className={`space-y-6 ${index % 2 === 1 ? "lg:order-1" : ""}`}
+              >
                 <Badge
                   className="border"
                   style={{
@@ -205,14 +243,21 @@ export default function ServicesPage() {
                 >
                   {service.tagline}
                 </Badge>
-                <h2 className="text-3xl sm:text-4xl font-bold">{service.title}</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold">
+                  {service.title}
+                </h2>
                 <p className="text-lg text-gray-600">{service.description}</p>
 
                 <div className="space-y-3">
-                  <h3 className="font-semibold text-gray-900">What&apos;s Included:</h3>
+                  <h3 className="font-semibold text-gray-900">
+                    What&apos;s Included:
+                  </h3>
                   {service.includes.map((item) => (
                     <div key={item} className="flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 flex-shrink-0" style={{ color: service.color }} />
+                      <CheckCircle2
+                        className="w-5 h-5 flex-shrink-0"
+                        style={{ color: service.color }}
+                      />
                       <span className="text-gray-700">{item}</span>
                     </div>
                   ))}
@@ -268,19 +313,31 @@ export default function ServicesPage() {
                         className="w-12 h-12 rounded-xl flex items-center justify-center"
                         style={{ backgroundColor: `${service.color}15` }}
                       >
-                        <service.icon className="w-6 h-6" style={{ color: service.color }} />
+                        <service.icon
+                          className="w-6 h-6"
+                          style={{ color: service.color }}
+                        />
                       </div>
                       <div>
                         <h3 className="font-bold">{service.title}</h3>
-                        <p className="text-sm text-gray-500">{service.duration}</p>
+                        <p className="text-sm text-gray-500">
+                          {service.duration}
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-end justify-between">
-                      <p className="text-2xl font-bold" style={{ color: service.color }}>
+                      <p
+                        className="text-2xl font-bold"
+                        style={{ color: service.color }}
+                      >
                         {service.price}
                       </p>
                       <Link href="/book">
-                        <Button variant="ghost" size="sm" className="text-[#5B8A8A]">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="text-[#5B8A8A]"
+                        >
                           Book
                           <ChevronRight className="w-4 h-4 ml-1" />
                         </Button>
@@ -311,13 +368,20 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/book">
-                <Button size="lg" className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8">
+                <Button
+                  size="lg"
+                  className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8"
+                >
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Appointment
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#5B8A8A] rounded-full px-8">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#5B8A8A] rounded-full px-8"
+                >
                   Contact Us
                 </Button>
               </Link>

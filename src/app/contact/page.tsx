@@ -2,7 +2,15 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, Send, MessageCircle, CheckCircle2 } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Send,
+  MessageCircle,
+  CheckCircle2,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -21,7 +29,11 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -50,10 +62,12 @@ export default function ContactPage() {
             Get In Touch
           </Badge>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-            We&apos;d Love to <span className="gradient-text">Hear From You</span>
+            We&apos;d Love to{" "}
+            <span className="gradient-text">Hear From You</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Have a question? Need to reschedule? Just want to say hi? We&apos;re here for you!
+            Have a question? Need to reschedule? Just want to say hi? We&apos;re
+            here for you!
           </p>
         </motion.div>
 
@@ -73,7 +87,10 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-1">Call or Text</h3>
-                      <a href="tel:+17025551234" className="text-gray-600 hover:text-[#5B8A8A] transition-colors">
+                      <a
+                        href="tel:+17025551234"
+                        className="text-gray-600 hover:text-[#5B8A8A] transition-colors"
+                      >
                         (702) 555-1234
                       </a>
                       <p className="text-sm text-gray-500 mt-1">
@@ -98,7 +115,10 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-lg mb-1">Email Us</h3>
-                      <a href="mailto:hello@slayerkidcuts.com" className="text-gray-600 hover:text-[#5B8A8A] transition-colors">
+                      <a
+                        href="mailto:hello@slayerkidcuts.com"
+                        className="text-gray-600 hover:text-[#5B8A8A] transition-colors"
+                      >
                         hello@slayerkidcuts.com
                       </a>
                       <p className="text-sm text-gray-500 mt-1">
@@ -124,7 +144,8 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-bold text-lg mb-1">Visit Us</h3>
                       <p className="text-gray-600">
-                        1234 Fun Street, Suite 100<br />
+                        1234 Fun Street, Suite 100
+                        <br />
                         Las Vegas, NV 89014
                       </p>
                       <a
@@ -186,12 +207,19 @@ export default function ContactPage() {
                     </div>
                     <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
                     <p className="text-gray-600 mb-6">
-                      Thank you for reaching out! We&apos;ll get back to you within 24 hours.
+                      Thank you for reaching out! We&apos;ll get back to you
+                      within 24 hours.
                     </p>
                     <Button
                       onClick={() => {
                         setIsSubmitted(false);
-                        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+                        setFormData({
+                          name: "",
+                          email: "",
+                          phone: "",
+                          subject: "",
+                          message: "",
+                        });
                       }}
                       variant="outline"
                       className="rounded-full"
@@ -250,7 +278,9 @@ export default function ContactPage() {
                         >
                           <option value="">Select a topic...</option>
                           <option value="booking">Booking Question</option>
-                          <option value="reschedule">Reschedule Appointment</option>
+                          <option value="reschedule">
+                            Reschedule Appointment
+                          </option>
                           <option value="pricing">Pricing & Services</option>
                           <option value="mobile">Mobile Service Inquiry</option>
                           <option value="party">Birthday Party</option>
@@ -274,7 +304,8 @@ export default function ContactPage() {
 
                     <div className="flex flex-col sm:flex-row gap-4 items-center justify-between pt-4">
                       <p className="text-sm text-gray-500">
-                        We typically respond within a few hours during business hours.
+                        We typically respond within a few hours during business
+                        hours.
                       </p>
                       <Button
                         type="submit"
@@ -328,12 +359,20 @@ export default function ContactPage() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-2xl font-bold mb-6">
+            Frequently Asked Questions
+          </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { q: "How do I book?", a: "Use our online booking or text us!" },
-              { q: "Do you do walk-ins?", a: "Yes, but appointments are preferred" },
-              { q: "What ages do you serve?", a: "All kids from babies to teens!" },
+              {
+                q: "Do you do walk-ins?",
+                a: "Yes, but appointments are preferred",
+              },
+              {
+                q: "What ages do you serve?",
+                a: "All kids from babies to teens!",
+              },
               { q: "Cancellation policy?", a: "24 hours notice appreciated" },
             ].map((faq) => (
               <Card key={faq.q} className="text-left">

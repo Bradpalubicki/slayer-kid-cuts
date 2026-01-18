@@ -2,7 +2,25 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Calendar as CalendarIcon, Clock, User, Phone, Mail, MessageSquare, Car, Home, Scissors, CheckCircle2, ChevronRight, ChevronLeft, Sparkles, Plus, Trash2, Heart, Shield, Baby, Users, Crown } from "lucide-react";
+import {
+  Calendar as CalendarIcon,
+  User,
+  Phone,
+  Mail,
+  MessageSquare,
+  Car,
+  Home,
+  Scissors,
+  CheckCircle2,
+  ChevronRight,
+  ChevronLeft,
+  Sparkles,
+  Plus,
+  Trash2,
+  Shield,
+  Baby,
+  Users,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -47,18 +65,82 @@ type TimeSlot = {
 };
 
 const services: ServiceType[] = [
-  { id: "kids-cut", name: "Kids Haircut", duration: "30 min", price: "$25", priceNum: 25, description: "Standard haircut for children", icon: Scissors },
-  { id: "first-cut", name: "First Haircut Package", duration: "45 min", price: "$35", priceNum: 35, description: "Includes certificate & keepsake", icon: Baby },
-  { id: "sensory-friendly", name: "Sensory-Friendly Cut", duration: "45 min", price: "$30", priceNum: 30, description: "Extra patience for sensitive kids", icon: Shield },
-  { id: "mom-cut", name: "Mom Haircut", duration: "45 min", price: "$35", priceNum: 35, description: "Adult women's haircut", icon: Users },
-  { id: "dad-cut", name: "Dad Haircut", duration: "30 min", price: "$30", priceNum: 30, description: "Adult men's haircut", icon: Users },
+  {
+    id: "kids-cut",
+    name: "Kids Haircut",
+    duration: "30 min",
+    price: "$25",
+    priceNum: 25,
+    description: "Standard haircut for children",
+    icon: Scissors,
+  },
+  {
+    id: "first-cut",
+    name: "First Haircut Package",
+    duration: "45 min",
+    price: "$35",
+    priceNum: 35,
+    description: "Includes certificate & keepsake",
+    icon: Baby,
+  },
+  {
+    id: "sensory-friendly",
+    name: "Sensory-Friendly Cut",
+    duration: "45 min",
+    price: "$30",
+    priceNum: 30,
+    description: "Extra patience for sensitive kids",
+    icon: Shield,
+  },
+  {
+    id: "mom-cut",
+    name: "Mom Haircut",
+    duration: "45 min",
+    price: "$35",
+    priceNum: 35,
+    description: "Adult women's haircut",
+    icon: Users,
+  },
+  {
+    id: "dad-cut",
+    name: "Dad Haircut",
+    duration: "30 min",
+    price: "$30",
+    priceNum: 30,
+    description: "Adult men's haircut",
+    icon: Users,
+  },
 ];
 
 const addOns: AddOnType[] = [
-  { id: "tinsel", name: "Hair Tinsel", price: "$10", priceNum: 10, description: "Sparkly strands that last weeks" },
-  { id: "temp-color", name: "Temporary Color", price: "$8", priceNum: 8, description: "Fun wash-out color streaks" },
-  { id: "braids", name: "Braids/Styling", price: "$15", priceNum: 15, description: "Creative braids or updo" },
-  { id: "glitter", name: "Glitter Spray", price: "$5", priceNum: 5, description: "Magical sparkle finish" },
+  {
+    id: "tinsel",
+    name: "Hair Tinsel",
+    price: "$10",
+    priceNum: 10,
+    description: "Sparkly strands that last weeks",
+  },
+  {
+    id: "temp-color",
+    name: "Temporary Color",
+    price: "$8",
+    priceNum: 8,
+    description: "Fun wash-out color streaks",
+  },
+  {
+    id: "braids",
+    name: "Braids/Styling",
+    price: "$15",
+    priceNum: 15,
+    description: "Creative braids or updo",
+  },
+  {
+    id: "glitter",
+    name: "Glitter Spray",
+    price: "$5",
+    priceNum: 5,
+    description: "Magical sparkle finish",
+  },
 ];
 
 const generateTimeSlots = (): TimeSlot[] => {
@@ -106,14 +188,18 @@ export default function BookingPage() {
   const [isComplete, setIsComplete] = useState(false);
   const [bookingId, setBookingId] = useState<string | null>(null);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const updateChild = (childId: string, updates: Partial<ChildType>) => {
-    setChildren(children.map(child =>
-      child.id === childId ? { ...child, ...updates } : child
-    ));
+    setChildren(
+      children.map((child) =>
+        child.id === childId ? { ...child, ...updates } : child,
+      ),
+    );
   };
 
   const addChild = () => {
@@ -122,30 +208,32 @@ export default function BookingPage() {
 
   const removeChild = (childId: string) => {
     if (children.length > 1) {
-      setChildren(children.filter(child => child.id !== childId));
+      setChildren(children.filter((child) => child.id !== childId));
     }
   };
 
   const toggleAddOn = (childId: string, addOnId: string) => {
-    setChildren(children.map(child => {
-      if (child.id !== childId) return child;
-      const hasAddOn = child.addOns.includes(addOnId);
-      return {
-        ...child,
-        addOns: hasAddOn
-          ? child.addOns.filter(id => id !== addOnId)
-          : [...child.addOns, addOnId]
-      };
-    }));
+    setChildren(
+      children.map((child) => {
+        if (child.id !== childId) return child;
+        const hasAddOn = child.addOns.includes(addOnId);
+        return {
+          ...child,
+          addOns: hasAddOn
+            ? child.addOns.filter((id) => id !== addOnId)
+            : [...child.addOns, addOnId],
+        };
+      }),
+    );
   };
 
   const calculateTotal = () => {
     let total = 0;
-    children.forEach(child => {
-      const service = services.find(s => s.id === child.serviceId);
+    children.forEach((child) => {
+      const service = services.find((s) => s.id === child.serviceId);
       if (service) total += service.priceNum;
-      child.addOns.forEach(addOnId => {
-        const addOn = addOns.find(a => a.id === addOnId);
+      child.addOns.forEach((addOnId) => {
+        const addOn = addOns.find((a) => a.id === addOnId);
         if (addOn) total += addOn.priceNum;
       });
     });
@@ -161,11 +249,11 @@ export default function BookingPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          children: children.map(child => ({
+          children: children.map((child) => ({
             name: child.name,
             age: child.age,
-            service: services.find(s => s.id === child.serviceId),
-            addOns: child.addOns.map(id => addOns.find(a => a.id === id)),
+            service: services.find((s) => s.id === child.serviceId),
+            addOns: child.addOns.map((id) => addOns.find((a) => a.id === id)),
             specialNeeds: child.specialNeeds,
             specialNeedsNotes: child.specialNeedsNotes,
           })),
@@ -197,9 +285,15 @@ export default function BookingPage() {
   const nextStep = () => setStep(step + 1);
   const prevStep = () => setStep(step - 1);
 
-  const canProceedStep1 = children.every(child => child.name && child.age && child.serviceId);
+  const canProceedStep1 = children.every(
+    (child) => child.name && child.age && child.serviceId,
+  );
   const canProceedStep2 = selectedDate && selectedTime;
-  const canProceedStep3 = formData.parentName && formData.phone && formData.email && (locationType === "salon" || formData.address);
+  const canProceedStep3 =
+    formData.parentName &&
+    formData.phone &&
+    formData.email &&
+    (locationType === "salon" || formData.address);
 
   if (isComplete) {
     return (
@@ -218,26 +312,38 @@ export default function BookingPage() {
               We&apos;ve sent a confirmation to {formData.email}
             </p>
             {bookingId && (
-              <p className="text-sm text-gray-500 mb-8">Booking ID: {bookingId}</p>
+              <p className="text-sm text-gray-500 mb-8">
+                Booking ID: {bookingId}
+              </p>
             )}
 
             <Card className="text-left mb-8">
               <CardContent className="p-6 space-y-4">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Date & Time</span>
-                  <span className="font-semibold">{selectedDate?.toLocaleDateString()} at {selectedTime}</span>
+                  <span className="font-semibold">
+                    {selectedDate?.toLocaleDateString()} at {selectedTime}
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Location</span>
-                  <span className="font-semibold">{locationType === "salon" ? "Salon Visit" : "Mobile (Your Home)"}</span>
+                  <span className="font-semibold">
+                    {locationType === "salon"
+                      ? "Salon Visit"
+                      : "Mobile (Your Home)"}
+                  </span>
                 </div>
                 <div className="border-t pt-4">
                   <p className="text-gray-600 mb-2">Children:</p>
-                  {children.map(child => {
-                    const service = services.find(s => s.id === child.serviceId);
+                  {children.map((child) => {
+                    const service = services.find(
+                      (s) => s.id === child.serviceId,
+                    );
                     return (
                       <div key={child.id} className="flex justify-between py-1">
-                        <span className="font-semibold">{child.name} (age {child.age})</span>
+                        <span className="font-semibold">
+                          {child.name} (age {child.age})
+                        </span>
                         <span className="text-gray-600">{service?.name}</span>
                       </div>
                     );
@@ -245,7 +351,9 @@ export default function BookingPage() {
                 </div>
                 <div className="border-t pt-4 flex justify-between">
                   <span className="font-bold text-lg">Total</span>
-                  <span className="font-bold text-lg text-[#9B5DE5]">${calculateTotal()}</span>
+                  <span className="font-bold text-lg text-[#9B5DE5]">
+                    ${calculateTotal()}
+                  </span>
                 </div>
               </CardContent>
             </Card>
@@ -269,7 +377,7 @@ export default function BookingPage() {
             </div>
 
             <Button
-              onClick={() => window.location.href = "/"}
+              onClick={() => (window.location.href = "/")}
               className="bg-gradient-to-r from-[#FF6B9D] via-[#9B5DE5] to-[#00BBF9] text-white rounded-full px-8"
             >
               Back to Home
@@ -317,7 +425,9 @@ export default function BookingPage() {
               {s < 4 && (
                 <div
                   className={`w-16 sm:w-24 h-1 mx-2 rounded transition-all ${
-                    step > s ? "bg-gradient-to-r from-[#FF6B9D] to-[#9B5DE5]" : "bg-gray-200"
+                    step > s
+                      ? "bg-gradient-to-r from-[#FF6B9D] to-[#9B5DE5]"
+                      : "bg-gray-200"
                   }`}
                 />
               )}
@@ -335,8 +445,13 @@ export default function BookingPage() {
           {/* Step 1: Children & Services */}
           {step === 1 && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-center mb-4">Who&apos;s Getting a Haircut?</h2>
-              <p className="text-center text-gray-600 mb-8">Add all children who need haircuts - we love seeing the whole family!</p>
+              <h2 className="text-2xl font-bold text-center mb-4">
+                Who&apos;s Getting a Haircut?
+              </h2>
+              <p className="text-center text-gray-600 mb-8">
+                Add all children who need haircuts - we love seeing the whole
+                family!
+              </p>
 
               {/* Location Type */}
               <div className="flex gap-4 justify-center mb-8">
@@ -348,7 +463,9 @@ export default function BookingPage() {
                       : "border-gray-200 hover:border-gray-300"
                   }`}
                 >
-                  <Home className={`w-8 h-8 mx-auto mb-2 ${locationType === "salon" ? "text-[#9B5DE5]" : "text-gray-400"}`} />
+                  <Home
+                    className={`w-8 h-8 mx-auto mb-2 ${locationType === "salon" ? "text-[#9B5DE5]" : "text-gray-400"}`}
+                  />
                   <p className="font-semibold">Salon Visit</p>
                   <p className="text-sm text-gray-500">Come to us</p>
                 </button>
@@ -360,7 +477,9 @@ export default function BookingPage() {
                       : "border-gray-200 hover:border-gray-300"
                   }`}
                 >
-                  <Car className={`w-8 h-8 mx-auto mb-2 ${locationType === "mobile" ? "text-[#00BBF9]" : "text-gray-400"}`} />
+                  <Car
+                    className={`w-8 h-8 mx-auto mb-2 ${locationType === "mobile" ? "text-[#00BBF9]" : "text-gray-400"}`}
+                  />
                   <p className="font-semibold">Mobile Visit</p>
                   <p className="text-sm text-gray-500">We come to you (+$15)</p>
                 </button>
@@ -396,7 +515,9 @@ export default function BookingPage() {
                         <Label>Child&apos;s Name</Label>
                         <Input
                           value={child.name}
-                          onChange={(e) => updateChild(child.id, { name: e.target.value })}
+                          onChange={(e) =>
+                            updateChild(child.id, { name: e.target.value })
+                          }
                           placeholder="Enter name"
                         />
                       </div>
@@ -404,7 +525,9 @@ export default function BookingPage() {
                         <Label>Age</Label>
                         <Input
                           value={child.age}
-                          onChange={(e) => updateChild(child.id, { age: e.target.value })}
+                          onChange={(e) =>
+                            updateChild(child.id, { age: e.target.value })
+                          }
                           placeholder="e.g., 5"
                         />
                       </div>
@@ -417,7 +540,9 @@ export default function BookingPage() {
                         {services.map((service) => (
                           <button
                             key={service.id}
-                            onClick={() => updateChild(child.id, { serviceId: service.id })}
+                            onClick={() =>
+                              updateChild(child.id, { serviceId: service.id })
+                            }
                             className={`p-3 rounded-xl border-2 text-left transition-all ${
                               child.serviceId === service.id
                                 ? "border-[#9B5DE5] bg-[#9B5DE5]/5"
@@ -425,10 +550,16 @@ export default function BookingPage() {
                             }`}
                           >
                             <div className="flex items-center gap-3">
-                              <service.icon className={`w-5 h-5 ${child.serviceId === service.id ? "text-[#9B5DE5]" : "text-gray-400"}`} />
+                              <service.icon
+                                className={`w-5 h-5 ${child.serviceId === service.id ? "text-[#9B5DE5]" : "text-gray-400"}`}
+                              />
                               <div className="flex-1">
-                                <p className="font-semibold text-sm">{service.name}</p>
-                                <p className="text-xs text-gray-500">{service.price}</p>
+                                <p className="font-semibold text-sm">
+                                  {service.name}
+                                </p>
+                                <p className="text-xs text-gray-500">
+                                  {service.price}
+                                </p>
                               </div>
                             </div>
                           </button>
@@ -451,9 +582,13 @@ export default function BookingPage() {
                             }`}
                           >
                             <div className="flex items-center gap-2">
-                              <Sparkles className={`w-4 h-4 ${child.addOns.includes(addOn.id) ? "text-yellow-600" : "text-gray-400"}`} />
+                              <Sparkles
+                                className={`w-4 h-4 ${child.addOns.includes(addOn.id) ? "text-yellow-600" : "text-gray-400"}`}
+                              />
                               <span>{addOn.name}</span>
-                              <span className="ml-auto text-gray-500">{addOn.price}</span>
+                              <span className="ml-auto text-gray-500">
+                                {addOn.price}
+                              </span>
                             </div>
                           </button>
                         ))}
@@ -466,9 +601,14 @@ export default function BookingPage() {
                         <Checkbox
                           id={`special-${child.id}`}
                           checked={child.specialNeeds}
-                          onCheckedChange={(checked) => updateChild(child.id, { specialNeeds: !!checked })}
+                          onCheckedChange={(checked) =>
+                            updateChild(child.id, { specialNeeds: !!checked })
+                          }
                         />
-                        <Label htmlFor={`special-${child.id}`} className="flex items-center gap-2 cursor-pointer">
+                        <Label
+                          htmlFor={`special-${child.id}`}
+                          className="flex items-center gap-2 cursor-pointer"
+                        >
                           <Shield className="w-4 h-4 text-[#00F5D4]" />
                           <span>Sensory-friendly accommodations needed</span>
                         </Label>
@@ -477,11 +617,18 @@ export default function BookingPage() {
                         <div className="space-y-2">
                           <Textarea
                             value={child.specialNeedsNotes}
-                            onChange={(e) => updateChild(child.id, { specialNeedsNotes: e.target.value })}
+                            onChange={(e) =>
+                              updateChild(child.id, {
+                                specialNeedsNotes: e.target.value,
+                              })
+                            }
                             placeholder="Tell us about any sensory sensitivities, autism, ADHD, or other needs so we can prepare..."
                             className="text-sm"
                           />
-                          <Link href="/sensory-friendly" className="text-xs text-[#9B5DE5] hover:underline">
+                          <Link
+                            href="/sensory-friendly"
+                            className="text-xs text-[#9B5DE5] hover:underline"
+                          >
                             Learn about our sensory-friendly approach →
                           </Link>
                         </div>
@@ -506,10 +653,15 @@ export default function BookingPage() {
                 <CardContent className="p-4">
                   <div className="flex justify-between items-center">
                     <span className="font-semibold">Estimated Total:</span>
-                    <span className="text-2xl font-bold text-[#9B5DE5]">${calculateTotal()}</span>
+                    <span className="text-2xl font-bold text-[#9B5DE5]">
+                      ${calculateTotal()}
+                    </span>
                   </div>
                   <p className="text-sm text-gray-500 mt-1">
-                    {children.length} child{children.length > 1 ? "ren" : ""} • {locationType === "mobile" ? "Mobile visit (+$15)" : "Salon visit"}
+                    {children.length} child{children.length > 1 ? "ren" : ""} •{" "}
+                    {locationType === "mobile"
+                      ? "Mobile visit (+$15)"
+                      : "Salon visit"}
                   </p>
                 </CardContent>
               </Card>
@@ -530,7 +682,9 @@ export default function BookingPage() {
           {/* Step 2: Select Date & Time */}
           {step === 2 && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-center mb-8">Pick a Date & Time</h2>
+              <h2 className="text-2xl font-bold text-center mb-8">
+                Pick a Date & Time
+              </h2>
 
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Calendar */}
@@ -543,7 +697,9 @@ export default function BookingPage() {
                       mode="single"
                       selected={selectedDate}
                       onSelect={setSelectedDate}
-                      disabled={(date) => date < new Date() || date.getDay() === 0}
+                      disabled={(date) =>
+                        date < new Date() || date.getDay() === 0
+                      }
                       className="rounded-md border"
                     />
                   </CardContent>
@@ -566,8 +722,8 @@ export default function BookingPage() {
                               selectedTime === slot.time
                                 ? "bg-[#9B5DE5] text-white"
                                 : slot.available
-                                ? "bg-gray-100 hover:bg-gray-200 text-gray-700"
-                                : "bg-gray-50 text-gray-300 cursor-not-allowed"
+                                  ? "bg-gray-100 hover:bg-gray-200 text-gray-700"
+                                  : "bg-gray-50 text-gray-300 cursor-not-allowed"
                             }`}
                           >
                             {slot.time}
@@ -584,13 +740,17 @@ export default function BookingPage() {
               </div>
 
               <div className="flex justify-between pt-6">
-                <Button variant="outline" onClick={prevStep} className="rounded-full px-8">
+                <Button
+                  variant="outline"
+                  onClick={prevStep}
+                  className="rounded-full px-8"
+                >
                   <ChevronLeft className="w-5 h-5 mr-2" />
                   Back
                 </Button>
                 <Button
                   onClick={nextStep}
-                  disabled={!selectedDate || !selectedTime}
+                  disabled={!canProceedStep2}
                   className="bg-gradient-to-r from-[#FF6B9D] via-[#9B5DE5] to-[#00BBF9] text-white rounded-full px-8"
                 >
                   Continue
@@ -603,7 +763,9 @@ export default function BookingPage() {
           {/* Step 3: Contact Info */}
           {step === 3 && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-center mb-8">Your Contact Information</h2>
+              <h2 className="text-2xl font-bold text-center mb-8">
+                Your Contact Information
+              </h2>
 
               <Card>
                 <CardContent className="p-6 space-y-6">
@@ -689,7 +851,11 @@ export default function BookingPage() {
               </Card>
 
               <div className="flex justify-between pt-6">
-                <Button variant="outline" onClick={prevStep} className="rounded-full px-8">
+                <Button
+                  variant="outline"
+                  onClick={prevStep}
+                  className="rounded-full px-8"
+                >
                   <ChevronLeft className="w-5 h-5 mr-2" />
                   Back
                 </Button>
@@ -708,27 +874,41 @@ export default function BookingPage() {
           {/* Step 4: Review & Confirm */}
           {step === 4 && (
             <div className="space-y-6">
-              <h2 className="text-2xl font-bold text-center mb-8">Review Your Booking</h2>
+              <h2 className="text-2xl font-bold text-center mb-8">
+                Review Your Booking
+              </h2>
 
               <Card>
                 <CardContent className="p-6 space-y-6">
                   {/* Date, Time & Location */}
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div>
-                      <h3 className="font-semibold text-gray-500 mb-2">Date & Time</h3>
+                      <h3 className="font-semibold text-gray-500 mb-2">
+                        Date & Time
+                      </h3>
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-lg bg-[#FF6B9D]/10 flex items-center justify-center">
                           <CalendarIcon className="w-5 h-5 text-[#FF6B9D]" />
                         </div>
                         <div>
-                          <p className="font-bold">{selectedDate?.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" })}</p>
-                          <p className="text-sm text-gray-500">{selectedTime}</p>
+                          <p className="font-bold">
+                            {selectedDate?.toLocaleDateString("en-US", {
+                              weekday: "long",
+                              month: "long",
+                              day: "numeric",
+                            })}
+                          </p>
+                          <p className="text-sm text-gray-500">
+                            {selectedTime}
+                          </p>
                         </div>
                       </div>
                     </div>
 
                     <div>
-                      <h3 className="font-semibold text-gray-500 mb-2">Location</h3>
+                      <h3 className="font-semibold text-gray-500 mb-2">
+                        Location
+                      </h3>
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-lg bg-[#00BBF9]/10 flex items-center justify-center">
                           {locationType === "salon" ? (
@@ -738,9 +918,15 @@ export default function BookingPage() {
                           )}
                         </div>
                         <div>
-                          <p className="font-bold">{locationType === "salon" ? "Salon Visit" : "Mobile Visit"}</p>
+                          <p className="font-bold">
+                            {locationType === "salon"
+                              ? "Salon Visit"
+                              : "Mobile Visit"}
+                          </p>
                           <p className="text-sm text-gray-500">
-                            {locationType === "salon" ? "1234 Fun Street, Henderson, NV" : formData.address || "Your home"}
+                            {locationType === "salon"
+                              ? "1234 Fun Street, Henderson, NV"
+                              : formData.address || "Your home"}
                           </p>
                         </div>
                       </div>
@@ -749,13 +935,22 @@ export default function BookingPage() {
 
                   {/* Children Summary */}
                   <div className="border-t pt-6">
-                    <h3 className="font-semibold text-gray-500 mb-4">Children ({children.length})</h3>
+                    <h3 className="font-semibold text-gray-500 mb-4">
+                      Children ({children.length})
+                    </h3>
                     <div className="space-y-4">
                       {children.map((child, index) => {
-                        const service = services.find(s => s.id === child.serviceId);
-                        const childAddOns = child.addOns.map(id => addOns.find(a => a.id === id)).filter(Boolean);
+                        const service = services.find(
+                          (s) => s.id === child.serviceId,
+                        );
+                        const childAddOns = child.addOns
+                          .map((id) => addOns.find((a) => a.id === id))
+                          .filter(Boolean);
                         return (
-                          <div key={child.id} className="bg-gray-50 rounded-xl p-4">
+                          <div
+                            key={child.id}
+                            className="bg-gray-50 rounded-xl p-4"
+                          >
                             <div className="flex items-start justify-between">
                               <div className="flex items-center gap-3">
                                 <div className="w-8 h-8 rounded-full bg-[#9B5DE5]/10 flex items-center justify-center text-[#9B5DE5] font-bold text-sm">
@@ -763,17 +958,27 @@ export default function BookingPage() {
                                 </div>
                                 <div>
                                   <p className="font-bold">{child.name}</p>
-                                  <p className="text-sm text-gray-500">Age {child.age}</p>
+                                  <p className="text-sm text-gray-500">
+                                    Age {child.age}
+                                  </p>
                                 </div>
                               </div>
-                              <p className="font-bold text-[#9B5DE5]">{service?.price}</p>
+                              <p className="font-bold text-[#9B5DE5]">
+                                {service?.price}
+                              </p>
                             </div>
                             <div className="ml-11 mt-2">
-                              <p className="text-sm text-gray-600">{service?.name}</p>
+                              <p className="text-sm text-gray-600">
+                                {service?.name}
+                              </p>
                               {childAddOns.length > 0 && (
                                 <div className="flex flex-wrap gap-1 mt-2">
-                                  {childAddOns.map(addOn => (
-                                    <Badge key={addOn?.id} variant="secondary" className="text-xs">
+                                  {childAddOns.map((addOn) => (
+                                    <Badge
+                                      key={addOn?.id}
+                                      variant="secondary"
+                                      className="text-xs"
+                                    >
                                       + {addOn?.name} ({addOn?.price})
                                     </Badge>
                                   ))}
@@ -781,7 +986,8 @@ export default function BookingPage() {
                               )}
                               {child.specialNeeds && (
                                 <Badge className="mt-2 bg-[#00F5D4]/10 text-[#00F5D4] border-[#00F5D4]/20">
-                                  <Shield className="w-3 h-3 mr-1" /> Sensory-friendly
+                                  <Shield className="w-3 h-3 mr-1" />{" "}
+                                  Sensory-friendly
                                 </Badge>
                               )}
                             </div>
@@ -793,11 +999,22 @@ export default function BookingPage() {
 
                   {/* Contact Info */}
                   <div className="border-t pt-6">
-                    <h3 className="font-semibold text-gray-500 mb-2">Contact Information</h3>
+                    <h3 className="font-semibold text-gray-500 mb-2">
+                      Contact Information
+                    </h3>
                     <div className="grid sm:grid-cols-2 gap-2 text-sm">
-                      <p><span className="text-gray-500">Parent:</span> {formData.parentName}</p>
-                      <p><span className="text-gray-500">Phone:</span> {formData.phone}</p>
-                      <p><span className="text-gray-500">Email:</span> {formData.email}</p>
+                      <p>
+                        <span className="text-gray-500">Parent:</span>{" "}
+                        {formData.parentName}
+                      </p>
+                      <p>
+                        <span className="text-gray-500">Phone:</span>{" "}
+                        {formData.phone}
+                      </p>
+                      <p>
+                        <span className="text-gray-500">Email:</span>{" "}
+                        {formData.email}
+                      </p>
                     </div>
                     {formData.notes && (
                       <div className="mt-4">
@@ -813,24 +1030,34 @@ export default function BookingPage() {
                       <div>
                         <p className="font-bold text-lg">Total</p>
                         <p className="text-sm text-gray-500">
-                          {children.length} child{children.length > 1 ? "ren" : ""}
+                          {children.length} child
+                          {children.length > 1 ? "ren" : ""}
                           {locationType === "mobile" && " + mobile fee"}
                         </p>
                       </div>
-                      <p className="text-3xl font-bold text-[#9B5DE5]">${calculateTotal()}</p>
+                      <p className="text-3xl font-bold text-[#9B5DE5]">
+                        ${calculateTotal()}
+                      </p>
                     </div>
                   </div>
 
                   <div className="bg-[#FEE440]/10 rounded-xl p-4">
                     <p className="text-sm text-gray-700">
-                      <strong>Confirmation:</strong> You&apos;ll receive a text and email confirmation immediately after booking. We&apos;ll send a reminder 24 hours before your appointment.
+                      <strong>Confirmation:</strong> You&apos;ll receive a text
+                      and email confirmation immediately after booking.
+                      We&apos;ll send a reminder 24 hours before your
+                      appointment.
                     </p>
                   </div>
                 </CardContent>
               </Card>
 
               <div className="flex justify-between pt-6">
-                <Button variant="outline" onClick={prevStep} className="rounded-full px-8">
+                <Button
+                  variant="outline"
+                  onClick={prevStep}
+                  className="rounded-full px-8"
+                >
                   <ChevronLeft className="w-5 h-5 mr-2" />
                   Back
                 </Button>

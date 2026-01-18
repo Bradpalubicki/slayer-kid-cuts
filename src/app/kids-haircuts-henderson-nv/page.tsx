@@ -4,8 +4,16 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  MapPin, Star, Calendar, Phone, CheckCircle2, Car,
-  Scissors, Baby, Sparkles, Shield, Clock
+  MapPin,
+  Star,
+  Calendar,
+  Phone,
+  CheckCircle2,
+  Car,
+  Scissors,
+  Baby,
+  Shield,
+  Clock,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -28,17 +36,23 @@ export default function KidsHaircutsHendersonPage() {
                 Henderson, Nevada
               </Badge>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                Kids Haircuts in <span className="gradient-text">Henderson, NV</span>
+                Kids Haircuts in{" "}
+                <span className="gradient-text">Henderson, NV</span>
               </h1>
               <p className="text-xl text-gray-600">
-                Henderson&apos;s most fun kids hair salon! Slayer Kid Cuts makes haircuts an adventure with themed chairs, entertainment, and expert stylists who specialize in children.
+                Henderson&apos;s most fun kids hair salon! Slayer Kid Cuts makes
+                haircuts an adventure with themed chairs, entertainment, and
+                expert stylists who specialize in children.
               </p>
 
               <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
                   <div className="flex -space-x-1">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                      <Star
+                        key={i}
+                        className="w-5 h-5 text-yellow-400 fill-yellow-400"
+                      />
                     ))}
                   </div>
                   <span className="font-semibold">4.9</span>
@@ -48,13 +62,20 @@ export default function KidsHaircutsHendersonPage() {
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Link href="/book">
-                  <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-[#FF6B9D] via-[#9B5DE5] to-[#00BBF9] text-white border-0 rounded-full px-8 py-6 text-lg shadow-xl">
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto bg-gradient-to-r from-[#FF6B9D] via-[#9B5DE5] to-[#00BBF9] text-white border-0 rounded-full px-8 py-6 text-lg shadow-xl"
+                  >
                     <Calendar className="w-5 h-5 mr-2" />
                     Book Now
                   </Button>
                 </Link>
                 <a href="tel:+17025551234">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full px-8 py-6 text-lg border-2 border-[#9B5DE5] text-[#9B5DE5]">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto rounded-full px-8 py-6 text-lg border-2 border-[#9B5DE5] text-[#9B5DE5]"
+                  >
                     <Phone className="w-5 h-5 mr-2" />
                     (702) 555-1234
                   </Button>
@@ -89,19 +110,41 @@ export default function KidsHaircutsHendersonPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Kids Haircut Services in <span className="gradient-text">Henderson</span>
+              Kids Haircut Services in{" "}
+              <span className="gradient-text">Henderson</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From babies to teens, we offer expert haircuts designed to make kids smile.
+              From babies to teens, we offer expert haircuts designed to make
+              kids smile.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Scissors, title: "Kids Haircuts", price: "From $25", desc: "Expert cuts with entertainment" },
-              { icon: Baby, title: "First Haircuts", price: "$35", desc: "Certificate & keepsake included" },
-              { icon: Car, title: "Mobile Service", price: "From $40", desc: "We come to your Henderson home" },
-              { icon: Shield, title: "Sensory-Friendly", price: "$30", desc: "For children with special needs" },
+              {
+                icon: Scissors,
+                title: "Kids Haircuts",
+                price: "From $25",
+                desc: "Expert cuts with entertainment",
+              },
+              {
+                icon: Baby,
+                title: "First Haircuts",
+                price: "$35",
+                desc: "Certificate & keepsake included",
+              },
+              {
+                icon: Car,
+                title: "Mobile Service",
+                price: "From $40",
+                desc: "We come to your Henderson home",
+              },
+              {
+                icon: Shield,
+                title: "Sensory-Friendly",
+                price: "$30",
+                desc: "For children with special needs",
+              },
             ].map((service, index) => (
               <motion.div
                 key={service.title}
@@ -116,7 +159,9 @@ export default function KidsHaircutsHendersonPage() {
                       <service.icon className="w-7 h-7 text-[#9B5DE5]" />
                     </div>
                     <h3 className="font-bold text-lg mb-1">{service.title}</h3>
-                    <p className="text-[#9B5DE5] font-semibold mb-2">{service.price}</p>
+                    <p className="text-[#9B5DE5] font-semibold mb-2">
+                      {service.price}
+                    </p>
                     <p className="text-sm text-gray-600">{service.desc}</p>
                   </CardContent>
                 </Card>
@@ -136,7 +181,8 @@ export default function KidsHaircutsHendersonPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Why Henderson Parents Choose <span className="gradient-text">Slayer Kid Cuts</span>
+              Why Henderson Parents Choose{" "}
+              <span className="gradient-text">Slayer Kid Cuts</span>
             </h2>
           </motion.div>
 
@@ -195,7 +241,8 @@ export default function KidsHaircutsHendersonPage() {
               className="space-y-6"
             >
               <h2 className="text-3xl sm:text-4xl font-bold">
-                Visit Our Henderson <span className="gradient-text">Location</span>
+                Visit Our Henderson{" "}
+                <span className="gradient-text">Location</span>
               </h2>
 
               <div className="space-y-4">
@@ -222,13 +269,21 @@ export default function KidsHaircutsHendersonPage() {
                   <Phone className="w-6 h-6 text-[#9B5DE5] mt-1" />
                   <div>
                     <p className="font-bold">Contact</p>
-                    <a href="tel:+17025551234" className="text-[#9B5DE5] hover:underline">(702) 555-1234</a>
+                    <a
+                      href="tel:+17025551234"
+                      className="text-[#9B5DE5] hover:underline"
+                    >
+                      (702) 555-1234
+                    </a>
                   </div>
                 </div>
               </div>
 
               <Link href="/book">
-                <Button size="lg" className="bg-gradient-to-r from-[#FF6B9D] via-[#9B5DE5] to-[#00BBF9] text-white rounded-full px-8 shadow-lg">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-[#FF6B9D] via-[#9B5DE5] to-[#00BBF9] text-white rounded-full px-8 shadow-lg"
+                >
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Your Appointment
                 </Button>
@@ -256,19 +311,19 @@ export default function KidsHaircutsHendersonPage() {
             {[
               {
                 q: "What ages do you serve?",
-                a: "We cut hair for children of all ages, from babies having their first haircut to teenagers. Our expertise is making haircuts fun for kids who may be nervous or have had bad experiences at other salons."
+                a: "We cut hair for children of all ages, from babies having their first haircut to teenagers. Our expertise is making haircuts fun for kids who may be nervous or have had bad experiences at other salons.",
               },
               {
                 q: "Do you offer mobile haircuts in Henderson?",
-                a: "Yes! Our mobile service covers all of Henderson and the Las Vegas valley. We bring all our professional equipment to your home - perfect for kids who are more comfortable in their own environment."
+                a: "Yes! Our mobile service covers all of Henderson and the Las Vegas valley. We bring all our professional equipment to your home - perfect for kids who are more comfortable in their own environment.",
               },
               {
                 q: "Are you trained for special needs children?",
-                a: "Absolutely. Slayer is certified in sensory-friendly haircut techniques and has extensive experience working with children who have autism, ADHD, sensory processing differences, and anxiety."
+                a: "Absolutely. Slayer is certified in sensory-friendly haircut techniques and has extensive experience working with children who have autism, ADHD, sensory processing differences, and anxiety.",
               },
               {
                 q: "Do I need an appointment?",
-                a: "While we accept walk-ins when possible, appointments are strongly recommended to ensure we have time dedicated just for your child without rushing."
+                a: "While we accept walk-ins when possible, appointments are strongly recommended to ensure we have time dedicated just for your child without rushing.",
               },
             ].map((faq, index) => (
               <motion.div
@@ -303,17 +358,25 @@ export default function KidsHaircutsHendersonPage() {
               Ready for a Fun Haircut in Henderson?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Join hundreds of happy Henderson families who&apos;ve discovered the Slayer Kid Cuts difference!
+              Join hundreds of happy Henderson families who&apos;ve discovered
+              the Slayer Kid Cuts difference!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/book">
-                <Button size="lg" className="bg-white text-[#9B5DE5] hover:bg-white/90 rounded-full px-8">
+                <Button
+                  size="lg"
+                  className="bg-white text-[#9B5DE5] hover:bg-white/90 rounded-full px-8"
+                >
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Appointment
                 </Button>
               </Link>
               <a href="tel:+17025551234">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#9B5DE5] rounded-full px-8">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#9B5DE5] rounded-full px-8"
+                >
                   <Phone className="w-5 h-5 mr-2" />
                   Call Now
                 </Button>

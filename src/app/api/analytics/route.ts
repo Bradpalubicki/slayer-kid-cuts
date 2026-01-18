@@ -32,7 +32,11 @@ interface ServiceStats {
 // In production, these would query your database
 // This is a mock implementation showing the data structure
 
-function calculateChurnRisk(daysSinceLastVisit: number, avgDaysBetweenVisits: number, totalVisits: number): number {
+function calculateChurnRisk(
+  daysSinceLastVisit: number,
+  avgDaysBetweenVisits: number,
+  totalVisits: number,
+): number {
   // Simple churn prediction algorithm
   // Risk increases as days since last visit exceeds typical interval
   const daysOverdue = daysSinceLastVisit - avgDaysBetweenVisits;
@@ -40,7 +44,7 @@ function calculateChurnRisk(daysSinceLastVisit: number, avgDaysBetweenVisits: nu
   if (daysOverdue <= 0) return 10; // Not overdue
 
   // Base risk calculation
-  let risk = Math.min(95, 30 + (daysOverdue * 1.5));
+  let risk = Math.min(95, 30 + daysOverdue * 1.5);
 
   // Adjust based on loyalty (total visits)
   if (totalVisits > 10) risk -= 15;
@@ -50,7 +54,10 @@ function calculateChurnRisk(daysSinceLastVisit: number, avgDaysBetweenVisits: nu
   return Math.max(10, Math.min(95, Math.round(risk)));
 }
 
-function predictNextAppointment(lastVisit: Date, avgDaysBetweenVisits: number): Date {
+function predictNextAppointment(
+  lastVisit: Date,
+  avgDaysBetweenVisits: number,
+): Date {
   const predicted = new Date(lastVisit);
   predicted.setDate(predicted.getDate() + avgDaysBetweenVisits);
   return predicted;
@@ -92,7 +99,7 @@ export async function GET(request: NextRequest) {
         newClientsChange: -5.2,
         retentionRate: 89,
         retentionChange: 2.1,
-        avgTicket: 34.10,
+        avgTicket: 34.1,
         sensoryFriendlyBookings: 45,
       },
       timeRange,
@@ -102,9 +109,27 @@ export async function GET(request: NextRequest) {
 
   if (type === "stylists") {
     const stylists: StylistStats[] = [
-      { name: "Slayer", bookings: 156, revenue: 5200, rating: 4.9, specialty: "Sensory-Friendly" },
-      { name: "Maya", bookings: 52, revenue: 1820, rating: 4.8, specialty: "Creative Styles" },
-      { name: "Jordan", bookings: 39, revenue: 1400, rating: 4.7, specialty: "First Haircuts" },
+      {
+        name: "Slayer",
+        bookings: 156,
+        revenue: 5200,
+        rating: 4.9,
+        specialty: "Sensory-Friendly",
+      },
+      {
+        name: "Maya",
+        bookings: 52,
+        revenue: 1820,
+        rating: 4.8,
+        specialty: "Creative Styles",
+      },
+      {
+        name: "Jordan",
+        bookings: 39,
+        revenue: 1400,
+        rating: 4.7,
+        specialty: "First Haircuts",
+      },
     ];
 
     return NextResponse.json({ stylists, timeRange });
@@ -113,19 +138,64 @@ export async function GET(request: NextRequest) {
   if (type === "at-risk") {
     // Mock client data - In production, query clients and calculate risk
     const mockClients = [
-      { id: "1", name: "Emma S.", phone: "(702) 555-0123", email: "emma@example.com", lastVisitDays: 45, totalVisits: 8, avgDays: 28 },
-      { id: "2", name: "Liam T.", phone: "(702) 555-0456", email: "liam@example.com", lastVisitDays: 52, totalVisits: 5, avgDays: 35 },
-      { id: "3", name: "Sophia M.", phone: "(702) 555-0789", email: "sophia@example.com", lastVisitDays: 38, totalVisits: 12, avgDays: 25 },
-      { id: "4", name: "Noah K.", phone: "(702) 555-0321", email: "noah@example.com", lastVisitDays: 61, totalVisits: 3, avgDays: 30 },
-      { id: "5", name: "Olivia R.", phone: "(702) 555-0654", email: "olivia@example.com", lastVisitDays: 40, totalVisits: 6, avgDays: 28 },
+      {
+        id: "1",
+        name: "Emma S.",
+        phone: "(702) 555-0123",
+        email: "emma@example.com",
+        lastVisitDays: 45,
+        totalVisits: 8,
+        avgDays: 28,
+      },
+      {
+        id: "2",
+        name: "Liam T.",
+        phone: "(702) 555-0456",
+        email: "liam@example.com",
+        lastVisitDays: 52,
+        totalVisits: 5,
+        avgDays: 35,
+      },
+      {
+        id: "3",
+        name: "Sophia M.",
+        phone: "(702) 555-0789",
+        email: "sophia@example.com",
+        lastVisitDays: 38,
+        totalVisits: 12,
+        avgDays: 25,
+      },
+      {
+        id: "4",
+        name: "Noah K.",
+        phone: "(702) 555-0321",
+        email: "noah@example.com",
+        lastVisitDays: 61,
+        totalVisits: 3,
+        avgDays: 30,
+      },
+      {
+        id: "5",
+        name: "Olivia R.",
+        phone: "(702) 555-0654",
+        email: "olivia@example.com",
+        lastVisitDays: 40,
+        totalVisits: 6,
+        avgDays: 28,
+      },
     ];
 
-    const atRiskClients: AtRiskClient[] = mockClients.map(client => {
+    const atRiskClients: AtRiskClient[] = mockClients.map((client) => {
       const lastVisit = new Date();
       lastVisit.setDate(lastVisit.getDate() - client.lastVisitDays);
 
       const predictedNext = predictNextAppointment(lastVisit, client.avgDays);
-      const daysPastPredicted = Math.max(0, Math.floor((now.getTime() - predictedNext.getTime()) / (1000 * 60 * 60 * 24)));
+      const daysPastPredicted = Math.max(
+        0,
+        Math.floor(
+          (now.getTime() - predictedNext.getTime()) / (1000 * 60 * 60 * 24),
+        ),
+      );
 
       return {
         id: client.id,
@@ -137,7 +207,11 @@ export async function GET(request: NextRequest) {
         avgDaysBetweenVisits: client.avgDays,
         predictedNextVisit: predictedNext,
         daysPastPredicted,
-        churnRisk: calculateChurnRisk(client.lastVisitDays, client.avgDays, client.totalVisits),
+        churnRisk: calculateChurnRisk(
+          client.lastVisitDays,
+          client.avgDays,
+          client.totalVisits,
+        ),
       };
     });
 
@@ -146,8 +220,8 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({
       atRiskClients,
-      totalAtRisk: atRiskClients.filter(c => c.churnRisk >= 60).length,
-      timeRange
+      totalAtRisk: atRiskClients.filter((c) => c.churnRisk >= 60).length,
+      timeRange,
     });
   }
 
@@ -166,22 +240,55 @@ export async function GET(request: NextRequest) {
   if (type === "retention") {
     // Retention cohort analysis
     const cohorts = [
-      { month: "Aug 2024", newClients: 45, retained30: 38, retained60: 32, retained90: 28 },
-      { month: "Sep 2024", newClients: 52, retained30: 44, retained60: 39, retained90: 35 },
-      { month: "Oct 2024", newClients: 48, retained30: 42, retained60: 37, retained90: 33 },
-      { month: "Nov 2024", newClients: 61, retained30: 55, retained60: 48, retained90: null },
-      { month: "Dec 2024", newClients: 38, retained30: 35, retained60: null, retained90: null },
+      {
+        month: "Aug 2024",
+        newClients: 45,
+        retained30: 38,
+        retained60: 32,
+        retained90: 28,
+      },
+      {
+        month: "Sep 2024",
+        newClients: 52,
+        retained30: 44,
+        retained60: 39,
+        retained90: 35,
+      },
+      {
+        month: "Oct 2024",
+        newClients: 48,
+        retained30: 42,
+        retained60: 37,
+        retained90: 33,
+      },
+      {
+        month: "Nov 2024",
+        newClients: 61,
+        retained30: 55,
+        retained60: 48,
+        retained90: null,
+      },
+      {
+        month: "Dec 2024",
+        newClients: 38,
+        retained30: 35,
+        retained60: null,
+        retained90: null,
+      },
     ];
 
     return NextResponse.json({
       cohorts,
       overallRetention: 89,
       avgLifetimeValue: 245,
-      timeRange
+      timeRange,
     });
   }
 
-  return NextResponse.json({ error: "Invalid type parameter" }, { status: 400 });
+  return NextResponse.json(
+    { error: "Invalid type parameter" },
+    { status: 400 },
+  );
 }
 
 // POST endpoint to send outreach messages to at-risk clients
@@ -192,7 +299,7 @@ export async function POST(request: NextRequest) {
     if (!clientId || !type) {
       return NextResponse.json(
         { error: "Missing required fields" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -214,7 +321,7 @@ export async function POST(request: NextRequest) {
     console.error("Outreach error:", error);
     return NextResponse.json(
       { error: "Failed to send outreach" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

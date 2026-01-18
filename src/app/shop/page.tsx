@@ -5,8 +5,17 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ShoppingBag, Star, Heart, Filter, Search, ChevronRight,
-  Package, Truck, Shield, Brain, Sparkles, Baby, Gift
+  ShoppingBag,
+  Star,
+  Heart,
+  Search,
+  ChevronRight,
+  Package,
+  Truck,
+  Shield,
+  Brain,
+  Sparkles,
+  Gift,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -26,166 +35,194 @@ const products = [
   {
     id: "1",
     name: "Tear-Free Kids Shampoo",
-    description: "Gentle, sulfate-free formula that won't sting eyes. Smells like strawberries!",
+    description:
+      "Gentle, sulfate-free formula that won't sting eyes. Smells like strawberries!",
     price: 12.99,
     category: "hair-care",
-    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&h=400&fit=crop",
     rating: 4.9,
     reviews: 124,
     badge: "Best Seller",
-    inStock: true
+    inStock: true,
   },
   {
     id: "2",
     name: "Detangling Spray",
-    description: "Makes brushing pain-free! Works on all hair types, even the thickest curls.",
+    description:
+      "Makes brushing pain-free! Works on all hair types, even the thickest curls.",
     price: 9.99,
     category: "hair-care",
-    image: "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=400&h=400&fit=crop",
     rating: 4.8,
     reviews: 89,
     badge: "Popular",
-    inStock: true
+    inStock: true,
   },
   {
     id: "3",
     name: "Kids Styling Gel",
-    description: "Light hold gel perfect for mohawks, spikes, and fun styles. Washes out easily!",
+    description:
+      "Light hold gel perfect for mohawks, spikes, and fun styles. Washes out easily!",
     price: 8.99,
     category: "hair-care",
-    image: "https://images.unsplash.com/photo-1585751119414-ef2636f8aede?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1585751119414-ef2636f8aede?w=400&h=400&fit=crop",
     rating: 4.7,
     reviews: 56,
-    inStock: true
+    inStock: true,
   },
   // Sensory Tools
   {
     id: "4",
     name: "Noise-Canceling Kids Headphones",
-    description: "Professional-grade noise cancellation sized for children. Perfect for haircuts!",
+    description:
+      "Professional-grade noise cancellation sized for children. Perfect for haircuts!",
     price: 34.99,
     category: "sensory",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop",
     rating: 5.0,
     reviews: 203,
     badge: "Top Rated",
-    inStock: true
+    inStock: true,
   },
   {
     id: "5",
     name: "Weighted Lap Pad",
-    description: "Calming 3lb weighted pad provides deep pressure therapy during haircuts.",
+    description:
+      "Calming 3lb weighted pad provides deep pressure therapy during haircuts.",
     price: 29.99,
     category: "sensory",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
     rating: 4.9,
     reviews: 87,
     badge: "For Autism",
-    inStock: true
+    inStock: true,
   },
   {
     id: "6",
     name: "Fidget Toy Set (12 Pack)",
-    description: "Variety pack of quiet fidget toys to keep hands busy during haircuts.",
+    description:
+      "Variety pack of quiet fidget toys to keep hands busy during haircuts.",
     price: 19.99,
     category: "sensory",
-    image: "https://images.unsplash.com/photo-1611174743420-3d7df880ce32?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1611174743420-3d7df880ce32?w=400&h=400&fit=crop",
     rating: 4.8,
     reviews: 145,
-    inStock: true
+    inStock: true,
   },
   {
     id: "7",
     name: "Visual Timer",
-    description: "Helps kids understand how long the haircut will take. Reduces anxiety!",
+    description:
+      "Helps kids understand how long the haircut will take. Reduces anxiety!",
     price: 14.99,
     category: "sensory",
-    image: "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=400&h=400&fit=crop",
     rating: 4.7,
     reviews: 62,
-    inStock: true
+    inStock: true,
   },
   // Fun Accessories
   {
     id: "8",
     name: "Hair Tinsel Kit (100 strands)",
-    description: "Rainbow fairy hair tinsel with application tool. Lasts 4-8 weeks!",
+    description:
+      "Rainbow fairy hair tinsel with application tool. Lasts 4-8 weeks!",
     price: 16.99,
     category: "accessories",
-    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=400&h=400&fit=crop",
     rating: 4.9,
     reviews: 312,
     badge: "Fan Favorite",
-    inStock: true
+    inStock: true,
   },
   {
     id: "9",
     name: "Sparkle Hair Gems (24 Pack)",
-    description: "Press-on hair gems in multiple colors. Easy to apply, easy to remove!",
+    description:
+      "Press-on hair gems in multiple colors. Easy to apply, easy to remove!",
     price: 12.99,
     category: "accessories",
-    image: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=400&h=400&fit=crop",
     rating: 4.6,
     reviews: 78,
-    inStock: true
+    inStock: true,
   },
   {
     id: "10",
     name: "Temporary Hair Color Chalk",
-    description: "6 vibrant colors that wash out easily. Perfect for special occasions!",
+    description:
+      "6 vibrant colors that wash out easily. Perfect for special occasions!",
     price: 11.99,
     category: "accessories",
-    image: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=400&h=400&fit=crop",
     rating: 4.5,
     reviews: 94,
-    inStock: true
+    inStock: true,
   },
   {
     id: "11",
     name: "Unicorn Hair Clips Set",
-    description: "Adorable unicorn and rainbow clips. Set of 20 in various styles.",
+    description:
+      "Adorable unicorn and rainbow clips. Set of 20 in various styles.",
     price: 14.99,
     category: "accessories",
-    image: "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?w=400&h=400&fit=crop",
     rating: 4.8,
     reviews: 156,
-    inStock: true
+    inStock: true,
   },
   // Gift Sets
   {
     id: "12",
     name: "First Haircut Keepsake Box",
-    description: "Beautiful box to store a lock of hair from baby's first haircut. Includes certificate.",
+    description:
+      "Beautiful box to store a lock of hair from baby's first haircut. Includes certificate.",
     price: 24.99,
     category: "gifts",
-    image: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400&h=400&fit=crop",
     rating: 5.0,
     reviews: 89,
     badge: "Perfect Gift",
-    inStock: true
+    inStock: true,
   },
   {
     id: "13",
     name: "Kids Spa Day Bundle",
-    description: "Shampoo, conditioner, brush, and fun accessories in a gift bag!",
+    description:
+      "Shampoo, conditioner, brush, and fun accessories in a gift bag!",
     price: 39.99,
     category: "gifts",
-    image: "https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=400&h=400&fit=crop",
     rating: 4.9,
     reviews: 45,
-    inStock: true
+    inStock: true,
   },
   {
     id: "14",
     name: "Sensory-Friendly Hair Kit",
-    description: "Everything needed for stress-free home haircuts: headphones, fidgets, visual timer & more.",
+    description:
+      "Everything needed for stress-free home haircuts: headphones, fidgets, visual timer & more.",
     price: 79.99,
     category: "gifts",
-    image: "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=400&h=400&fit=crop",
+    image:
+      "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=400&h=400&fit=crop",
     rating: 5.0,
     reviews: 34,
     badge: "For Autism",
-    inStock: true
+    inStock: true,
   },
 ];
 
@@ -195,8 +232,10 @@ export default function ShopPage() {
   const [cart, setCart] = useState<string[]>([]);
 
   const filteredProducts = products.filter((product) => {
-    const matchesCategory = selectedCategory === "all" || product.category === selectedCategory;
-    const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    const matchesCategory =
+      selectedCategory === "all" || product.category === selectedCategory;
+    const matchesSearch =
+      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       product.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
@@ -223,7 +262,8 @@ export default function ShopPage() {
               Take the Fun <span className="gradient-text">Home!</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-              Kid-friendly hair products, sensory tools for children with autism, and fun accessories - all hand-picked by Slayer!
+              Kid-friendly hair products, sensory tools for children with
+              autism, and fun accessories - all hand-picked by Slayer!
             </p>
 
             {/* Trust Badges */}
@@ -267,7 +307,9 @@ export default function ShopPage() {
               {categories.map((category) => (
                 <Button
                   key={category.id}
-                  variant={selectedCategory === category.id ? "default" : "outline"}
+                  variant={
+                    selectedCategory === category.id ? "default" : "outline"
+                  }
                   className={`rounded-full px-5 ${
                     selectedCategory === category.id
                       ? "bg-gradient-to-r from-[#FF6B9D] via-[#9B5DE5] to-[#00BBF9] text-white border-0"
@@ -301,11 +343,13 @@ export default function ShopPage() {
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     {product.badge && (
-                      <Badge className={`absolute top-4 left-4 ${
-                        product.badge === "For Autism"
-                          ? "bg-[#00F5D4] text-white"
-                          : "bg-white/90 text-[#9B5DE5]"
-                      } font-medium`}>
+                      <Badge
+                        className={`absolute top-4 left-4 ${
+                          product.badge === "For Autism"
+                            ? "bg-[#00F5D4] text-white"
+                            : "bg-white/90 text-[#9B5DE5]"
+                        } font-medium`}
+                      >
                         {product.badge}
                       </Badge>
                     )}
@@ -327,10 +371,14 @@ export default function ShopPage() {
                           />
                         ))}
                       </div>
-                      <span className="text-sm text-gray-500">({product.reviews})</span>
+                      <span className="text-sm text-gray-500">
+                        ({product.reviews})
+                      </span>
                     </div>
                     <h3 className="font-bold text-lg mb-2">{product.name}</h3>
-                    <p className="text-sm text-gray-600 flex-1">{product.description}</p>
+                    <p className="text-sm text-gray-600 flex-1">
+                      {product.description}
+                    </p>
                     <div className="flex items-center justify-between mt-4">
                       <span className="text-2xl font-bold text-[#9B5DE5]">
                         ${product.price.toFixed(2)}
@@ -353,8 +401,12 @@ export default function ShopPage() {
           {filteredProducts.length === 0 && (
             <div className="text-center py-16">
               <ShoppingBag className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-              <h3 className="text-xl font-bold text-gray-600 mb-2">No products found</h3>
-              <p className="text-gray-500">Try adjusting your search or filters</p>
+              <h3 className="text-xl font-bold text-gray-600 mb-2">
+                No products found
+              </h3>
+              <p className="text-gray-500">
+                Try adjusting your search or filters
+              </p>
             </div>
           )}
         </div>
@@ -375,10 +427,14 @@ export default function ShopPage() {
                 Autism & Sensory Support
               </Badge>
               <h2 className="text-3xl sm:text-4xl font-bold">
-                Products That Make <span className="gradient-text">Haircuts Easier</span>
+                Products That Make{" "}
+                <span className="gradient-text">Haircuts Easier</span>
               </h2>
               <p className="text-lg text-gray-600">
-                Our sensory-friendly products are hand-selected by Slayer based on what actually works in the salon. Every item has been tested with real kids who have autism, ADHD, and sensory processing differences.
+                Our sensory-friendly products are hand-selected by Slayer based
+                on what actually works in the salon. Every item has been tested
+                with real kids who have autism, ADHD, and sensory processing
+                differences.
               </p>
               <ul className="space-y-3">
                 {[
@@ -435,10 +491,13 @@ export default function ShopPage() {
               Coming Soon
             </Badge>
             <h2 className="text-3xl font-bold mb-4">
-              Full E-Commerce <span className="gradient-text">Launching Soon!</span>
+              Full E-Commerce{" "}
+              <span className="gradient-text">Launching Soon!</span>
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              We&apos;re partnering with top fulfillment providers to bring you seamless checkout, fast shipping, and amazing customer service. Sign up to be notified when we launch!
+              We&apos;re partnering with top fulfillment providers to bring you
+              seamless checkout, fast shipping, and amazing customer service.
+              Sign up to be notified when we launch!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <Input
@@ -467,16 +526,24 @@ export default function ShopPage() {
               Can&apos;t Find What You Need?
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Visit our salon to see and try products in person, or ask Slayer for personalized recommendations!
+              Visit our salon to see and try products in person, or ask Slayer
+              for personalized recommendations!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/book">
-                <Button size="lg" className="bg-white text-[#9B5DE5] hover:bg-white/90 rounded-full px-8">
+                <Button
+                  size="lg"
+                  className="bg-white text-[#9B5DE5] hover:bg-white/90 rounded-full px-8"
+                >
                   Book Appointment
                 </Button>
               </Link>
               <Link href="/contact">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#9B5DE5] rounded-full px-8">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#9B5DE5] rounded-full px-8"
+                >
                   Contact Us
                 </Button>
               </Link>

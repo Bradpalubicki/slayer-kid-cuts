@@ -3,7 +3,15 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, Award, Users, Sparkles, CheckCircle2, Calendar, Star } from "lucide-react";
+import {
+  Heart,
+  Award,
+  Users,
+  Sparkles,
+  CheckCircle2,
+  Calendar,
+  Star,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -28,7 +36,9 @@ export default function AboutPage() {
                 Making Haircuts <span className="gradient-text">Fun Again</span>
               </h1>
               <p className="text-xl text-gray-600">
-                Hi! I&apos;m Carla, and I started this salon because I believe every kid deserves to love getting their haircut. No tears, no fears - just fun!
+                Hi! I&apos;m Carla, and I started this salon because I believe
+                every kid deserves to love getting their haircut. No tears, no
+                fears - just fun!
               </p>
               <div className="flex items-center gap-6 pt-4">
                 <div className="text-center">
@@ -79,10 +89,15 @@ export default function AboutPage() {
               Every Child Deserves to Feel Like a Superstar
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              After years of cutting hair at traditional salons, I noticed something: kids were often scared, parents were stressed, and haircuts felt like a chore. I knew there had to be a better way.
+              After years of cutting hair at traditional salons, I noticed
+              something: kids were often scared, parents were stressed, and
+              haircuts felt like a chore. I knew there had to be a better way.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed mt-4">
-              That&apos;s why I created Little Roots Studio - a place where kids actually WANT to come. With themed chairs, entertainment at every station, and endless patience, we&apos;ve turned haircuts from something kids dread into something they ask for.
+              That&apos;s why I created Little Roots Studio - a place where kids
+              actually WANT to come. With themed chairs, entertainment at every
+              station, and endless patience, we&apos;ve turned haircuts from
+              something kids dread into something they ask for.
             </p>
           </motion.div>
         </div>
@@ -107,26 +122,30 @@ export default function AboutPage() {
               {
                 icon: Heart,
                 title: "Patience First",
-                description: "Every child moves at their own pace. We never rush and always listen.",
-                color: "#6B5B4F"
+                description:
+                  "Every child moves at their own pace. We never rush and always listen.",
+                color: "#6B5B4F",
               },
               {
                 icon: Sparkles,
                 title: "Fun Always",
-                description: "From themed chairs to games and treats, we make every visit a celebration.",
-                color: "#5B8A8A"
+                description:
+                  "From themed chairs to games and treats, we make every visit a celebration.",
+                color: "#5B8A8A",
               },
               {
                 icon: Users,
                 title: "Inclusive Care",
-                description: "Special needs, sensory sensitivities, or just shy? We welcome all kids.",
-                color: "#A69080"
+                description:
+                  "Special needs, sensory sensitivities, or just shy? We welcome all kids.",
+                color: "#A69080",
               },
               {
                 icon: Award,
                 title: "Quality Results",
-                description: "Fun doesn't mean compromise. Every cut is professional and stylish.",
-                color: "#7BA3A3"
+                description:
+                  "Fun doesn't mean compromise. Every cut is professional and stylish.",
+                color: "#7BA3A3",
               },
             ].map((value, index) => (
               <motion.div
@@ -142,7 +161,10 @@ export default function AboutPage() {
                       className="w-16 h-16 rounded-2xl mx-auto mb-6 flex items-center justify-center"
                       style={{ backgroundColor: `${value.color}15` }}
                     >
-                      <value.icon className="w-8 h-8" style={{ color: value.color }} />
+                      <value.icon
+                        className="w-8 h-8"
+                        style={{ color: value.color }}
+                      />
                     </div>
                     <h3 className="text-xl font-bold mb-3">{value.title}</h3>
                     <p className="text-gray-600">{value.description}</p>
@@ -182,10 +204,16 @@ export default function AboutPage() {
                 Meet <span className="gradient-text">Carla</span>
               </h2>
               <p className="text-gray-600">
-                With over a decade of experience in children&apos;s hair styling, I&apos;ve had the joy of giving thousands of kids their perfect cuts. But what I love most isn&apos;t the cutting - it&apos;s the connections.
+                With over a decade of experience in children&apos;s hair
+                styling, I&apos;ve had the joy of giving thousands of kids their
+                perfect cuts. But what I love most isn&apos;t the cutting -
+                it&apos;s the connections.
               </p>
               <p className="text-gray-600">
-                I remember every kid who came in terrified and left beaming. I remember the parents who cried happy tears when their special needs child sat still for the first time. Those moments are why I do this.
+                I remember every kid who came in terrified and left beaming. I
+                remember the parents who cried happy tears when their special
+                needs child sat still for the first time. Those moments are why
+                I do this.
               </p>
 
               <div className="space-y-4 pt-4">
@@ -194,7 +222,7 @@ export default function AboutPage() {
                   "Licensed Cosmetologist - State of Nevada",
                   "Certified in Special Needs Hair Services",
                   "Sensory-Friendly Environment Training",
-                  "Pediatric First Aid Certified"
+                  "Pediatric First Aid Certified",
                 ].map((cert) => (
                   <div key={cert} className="flex items-center gap-3">
                     <CheckCircle2 className="w-5 h-5 text-[#7BA3A3]" />
@@ -226,13 +254,13 @@ export default function AboutPage() {
               {
                 text: "Carla has a gift. My daughter has autism and has never let anyone touch her hair. After one visit, she now asks when she can go back. Truly magical.",
                 name: "Amanda R.",
-                child: "Mom of Emma, 6"
+                child: "Mom of Emma, 6",
               },
               {
                 text: "We've tried every kids salon in Vegas. Nothing compares. The mobile service is incredible - Carla comes to us and my twins actually behave!",
                 name: "David M.",
-                child: "Dad of twins, 4"
-              }
+                child: "Dad of twins, 4",
+              },
             ].map((review, index) => (
               <motion.div
                 key={review.name}
@@ -245,10 +273,15 @@ export default function AboutPage() {
                   <CardContent className="p-8">
                     <div className="flex gap-1 mb-4">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                        <Star
+                          key={i}
+                          className="w-5 h-5 text-yellow-400 fill-yellow-400"
+                        />
                       ))}
                     </div>
-                    <p className="text-gray-600 italic mb-6">&quot;{review.text}&quot;</p>
+                    <p className="text-gray-600 italic mb-6">
+                      &quot;{review.text}&quot;
+                    </p>
                     <div>
                       <p className="font-bold">{review.name}</p>
                       <p className="text-sm text-gray-500">{review.child}</p>
@@ -274,10 +307,14 @@ export default function AboutPage() {
               Ready to See the Difference?
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Book an appointment and experience why families across Las Vegas love Little Roots Studio.
+              Book an appointment and experience why families across Las Vegas
+              love Little Roots Studio.
             </p>
             <Link href="/book">
-              <Button size="lg" className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8">
+              <Button
+                size="lg"
+                className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8"
+              >
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Your First Visit
               </Button>

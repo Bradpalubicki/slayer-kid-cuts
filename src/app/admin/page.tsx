@@ -3,9 +3,22 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  BarChart3, TrendingUp, Users, Calendar, DollarSign,
-  AlertTriangle, Star, Clock, ArrowUpRight, ArrowDownRight,
-  Phone, Mail, Scissors, Brain, Crown, RefreshCw
+  BarChart3,
+  TrendingUp,
+  Users,
+  Calendar,
+  DollarSign,
+  AlertTriangle,
+  Star,
+  Clock,
+  ArrowUpRight,
+  ArrowDownRight,
+  Phone,
+  Mail,
+  Scissors,
+  Brain,
+  Crown,
+  RefreshCw,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -24,24 +37,100 @@ const mockStats = {
 };
 
 const mockTopStylists = [
-  { name: "Slayer", bookings: 156, revenue: 5200, rating: 4.9, specialty: "Sensory-Friendly" },
-  { name: "Maya", bookings: 52, revenue: 1820, rating: 4.8, specialty: "Creative Styles" },
-  { name: "Jordan", bookings: 39, revenue: 1400, rating: 4.7, specialty: "First Haircuts" },
+  {
+    name: "Slayer",
+    bookings: 156,
+    revenue: 5200,
+    rating: 4.9,
+    specialty: "Sensory-Friendly",
+  },
+  {
+    name: "Maya",
+    bookings: 52,
+    revenue: 1820,
+    rating: 4.8,
+    specialty: "Creative Styles",
+  },
+  {
+    name: "Jordan",
+    bookings: 39,
+    revenue: 1400,
+    rating: 4.7,
+    specialty: "First Haircuts",
+  },
 ];
 
 const mockAtRiskClients = [
-  { name: "Emma S.", lastVisit: "45 days ago", visits: 8, predictedChurn: 78, phone: "(702) 555-0123" },
-  { name: "Liam T.", lastVisit: "52 days ago", visits: 5, predictedChurn: 85, phone: "(702) 555-0456" },
-  { name: "Sophia M.", lastVisit: "38 days ago", visits: 12, predictedChurn: 62, phone: "(702) 555-0789" },
-  { name: "Noah K.", lastVisit: "61 days ago", visits: 3, predictedChurn: 92, phone: "(702) 555-0321" },
-  { name: "Olivia R.", lastVisit: "40 days ago", visits: 6, predictedChurn: 71, phone: "(702) 555-0654" },
+  {
+    name: "Emma S.",
+    lastVisit: "45 days ago",
+    visits: 8,
+    predictedChurn: 78,
+    phone: "(702) 555-0123",
+  },
+  {
+    name: "Liam T.",
+    lastVisit: "52 days ago",
+    visits: 5,
+    predictedChurn: 85,
+    phone: "(702) 555-0456",
+  },
+  {
+    name: "Sophia M.",
+    lastVisit: "38 days ago",
+    visits: 12,
+    predictedChurn: 62,
+    phone: "(702) 555-0789",
+  },
+  {
+    name: "Noah K.",
+    lastVisit: "61 days ago",
+    visits: 3,
+    predictedChurn: 92,
+    phone: "(702) 555-0321",
+  },
+  {
+    name: "Olivia R.",
+    lastVisit: "40 days ago",
+    visits: 6,
+    predictedChurn: 71,
+    phone: "(702) 555-0654",
+  },
 ];
 
 const mockRecentBookings = [
-  { client: "Jackson W.", service: "Kids Haircut", time: "2:00 PM", stylist: "Slayer", type: "salon", specialNeeds: true },
-  { client: "Ava B.", service: "First Haircut", time: "2:30 PM", stylist: "Slayer", type: "salon", specialNeeds: false },
-  { client: "Mason L.", service: "VIP Home Visit", time: "4:00 PM", stylist: "Slayer", type: "mobile", specialNeeds: false },
-  { client: "Isabella C.", service: "Mom & Dad + 2 Kids", time: "5:00 PM", stylist: "Maya", type: "salon", specialNeeds: false },
+  {
+    client: "Jackson W.",
+    service: "Kids Haircut",
+    time: "2:00 PM",
+    stylist: "Slayer",
+    type: "salon",
+    specialNeeds: true,
+  },
+  {
+    client: "Ava B.",
+    service: "First Haircut",
+    time: "2:30 PM",
+    stylist: "Slayer",
+    type: "salon",
+    specialNeeds: false,
+  },
+  {
+    client: "Mason L.",
+    service: "VIP Home Visit",
+    time: "4:00 PM",
+    stylist: "Slayer",
+    type: "mobile",
+    specialNeeds: false,
+  },
+  {
+    client: "Isabella C.",
+    service: "Mom & Dad + 2 Kids",
+    time: "5:00 PM",
+    stylist: "Maya",
+    type: "salon",
+    specialNeeds: false,
+  },
 ];
 
 const mockServiceBreakdown = [
@@ -66,8 +155,12 @@ export default function AdminDashboard() {
         >
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
-              <h1 className="text-3xl font-bold gradient-text">Analytics Dashboard</h1>
-              <p className="text-gray-600">Track performance, retention, and revenue</p>
+              <h1 className="text-3xl font-bold gradient-text">
+                Analytics Dashboard
+              </h1>
+              <p className="text-gray-600">
+                Track performance, retention, and revenue
+              </p>
             </div>
             <div className="flex items-center gap-3">
               <select
@@ -91,10 +184,34 @@ export default function AdminDashboard() {
         {/* Key Metrics */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           {[
-            { label: "Total Bookings", value: mockStats.totalBookings, change: mockStats.bookingsChange, icon: Calendar, color: "#9B5DE5" },
-            { label: "Revenue", value: `$${mockStats.revenue.toLocaleString()}`, change: mockStats.revenueChange, icon: DollarSign, color: "#00F5D4" },
-            { label: "New Clients", value: mockStats.newClients, change: mockStats.newClientsChange, icon: Users, color: "#FF6B9D" },
-            { label: "Retention Rate", value: `${mockStats.retention}%`, change: mockStats.retentionChange, icon: TrendingUp, color: "#00BBF9" },
+            {
+              label: "Total Bookings",
+              value: mockStats.totalBookings,
+              change: mockStats.bookingsChange,
+              icon: Calendar,
+              color: "#9B5DE5",
+            },
+            {
+              label: "Revenue",
+              value: `$${mockStats.revenue.toLocaleString()}`,
+              change: mockStats.revenueChange,
+              icon: DollarSign,
+              color: "#00F5D4",
+            },
+            {
+              label: "New Clients",
+              value: mockStats.newClients,
+              change: mockStats.newClientsChange,
+              icon: Users,
+              color: "#FF6B9D",
+            },
+            {
+              label: "Retention Rate",
+              value: `${mockStats.retention}%`,
+              change: mockStats.retentionChange,
+              icon: TrendingUp,
+              color: "#00BBF9",
+            },
           ].map((metric, index) => (
             <motion.div
               key={metric.label}
@@ -109,7 +226,10 @@ export default function AdminDashboard() {
                       className="w-12 h-12 rounded-xl flex items-center justify-center"
                       style={{ backgroundColor: `${metric.color}20` }}
                     >
-                      <metric.icon className="w-6 h-6" style={{ color: metric.color }} />
+                      <metric.icon
+                        className="w-6 h-6"
+                        style={{ color: metric.color }}
+                      />
                     </div>
                     <Badge
                       className={`${
@@ -162,11 +282,15 @@ export default function AdminDashboard() {
                             <Crown className="w-4 h-4 text-yellow-400" />
                           )}
                         </div>
-                        <p className="text-xs text-gray-500">{stylist.specialty}</p>
+                        <p className="text-xs text-gray-500">
+                          {stylist.specialty}
+                        </p>
                       </div>
                       <div className="text-right">
                         <p className="font-semibold">${stylist.revenue}</p>
-                        <p className="text-xs text-gray-500">{stylist.bookings} cuts</p>
+                        <p className="text-xs text-gray-500">
+                          {stylist.bookings} cuts
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -193,8 +317,12 @@ export default function AdminDashboard() {
                   {mockServiceBreakdown.map((service) => (
                     <div key={service.name}>
                       <div className="flex items-center justify-between mb-1">
-                        <span className="text-sm font-medium">{service.name}</span>
-                        <span className="text-sm text-gray-500">{service.count}</span>
+                        <span className="text-sm font-medium">
+                          {service.name}
+                        </span>
+                        <span className="text-sm text-gray-500">
+                          {service.count}
+                        </span>
                       </div>
                       <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
                         <div
@@ -231,12 +359,16 @@ export default function AdminDashboard() {
                     >
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
-                          <p className="font-semibold text-sm">{booking.client}</p>
+                          <p className="font-semibold text-sm">
+                            {booking.client}
+                          </p>
                           {booking.specialNeeds && (
                             <Brain className="w-4 h-4 text-[#00F5D4]" />
                           )}
                         </div>
-                        <p className="text-xs text-gray-500">{booking.service}</p>
+                        <p className="text-xs text-gray-500">
+                          {booking.service}
+                        </p>
                       </div>
                       <div className="text-right">
                         <p className="text-sm font-medium">{booking.time}</p>
@@ -266,7 +398,8 @@ export default function AdminDashboard() {
                 <div>
                   <span className="text-xl">Clients At Risk of Churning</span>
                   <p className="text-sm font-normal text-gray-500 mt-1">
-                    These kids haven&apos;t booked in a while. Reach out to keep them coming back!
+                    These kids haven&apos;t booked in a while. Reach out to keep
+                    them coming back!
                   </p>
                 </div>
               </CardTitle>
@@ -289,16 +422,20 @@ export default function AdminDashboard() {
                         <td className="py-4">
                           <p className="font-semibold">{client.name}</p>
                         </td>
-                        <td className="py-4 text-gray-600">{client.lastVisit}</td>
-                        <td className="py-4 text-gray-600">{client.visits} visits</td>
+                        <td className="py-4 text-gray-600">
+                          {client.lastVisit}
+                        </td>
+                        <td className="py-4 text-gray-600">
+                          {client.visits} visits
+                        </td>
                         <td className="py-4">
                           <Badge
                             className={`${
                               client.predictedChurn >= 80
                                 ? "bg-red-100 text-red-700"
                                 : client.predictedChurn >= 60
-                                ? "bg-yellow-100 text-yellow-700"
-                                : "bg-green-100 text-green-700"
+                                  ? "bg-yellow-100 text-yellow-700"
+                                  : "bg-green-100 text-green-700"
                             }`}
                           >
                             {client.predictedChurn}% risk
@@ -306,11 +443,19 @@ export default function AdminDashboard() {
                         </td>
                         <td className="py-4">
                           <div className="flex items-center gap-2">
-                            <Button size="sm" variant="outline" className="gap-1">
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="gap-1"
+                            >
                               <Phone className="w-3 h-3" />
                               Call
                             </Button>
-                            <Button size="sm" variant="outline" className="gap-1">
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              className="gap-1"
+                            >
                               <Mail className="w-3 h-3" />
                               SMS
                             </Button>
@@ -328,7 +473,10 @@ export default function AdminDashboard() {
                   AI-Powered Prediction
                 </h4>
                 <p className="text-sm text-gray-600">
-                  Based on visit history and average booking intervals, our system predicts when each client is likely to need their next haircut. Clients who go 30+ days past their predicted date are flagged for outreach.
+                  Based on visit history and average booking intervals, our
+                  system predicts when each client is likely to need their next
+                  haircut. Clients who go 30+ days past their predicted date are
+                  flagged for outreach.
                 </p>
               </div>
             </CardContent>
@@ -347,19 +495,31 @@ export default function AdminDashboard() {
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <Button variant="outline" className="h-auto py-4 flex-col gap-2">
+                <Button
+                  variant="outline"
+                  className="h-auto py-4 flex-col gap-2"
+                >
                   <Calendar className="w-6 h-6 text-[#9B5DE5]" />
                   <span>View Full Calendar</span>
                 </Button>
-                <Button variant="outline" className="h-auto py-4 flex-col gap-2">
+                <Button
+                  variant="outline"
+                  className="h-auto py-4 flex-col gap-2"
+                >
                   <Users className="w-6 h-6 text-[#FF6B9D]" />
                   <span>Client Directory</span>
                 </Button>
-                <Button variant="outline" className="h-auto py-4 flex-col gap-2">
+                <Button
+                  variant="outline"
+                  className="h-auto py-4 flex-col gap-2"
+                >
                   <Scissors className="w-6 h-6 text-[#00BBF9]" />
                   <span>Manage Services</span>
                 </Button>
-                <Button variant="outline" className="h-auto py-4 flex-col gap-2">
+                <Button
+                  variant="outline"
+                  className="h-auto py-4 flex-col gap-2"
+                >
                   <BarChart3 className="w-6 h-6 text-[#00F5D4]" />
                   <span>Export Reports</span>
                 </Button>

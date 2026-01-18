@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react";
+import { Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
@@ -22,17 +22,27 @@ export function Footer() {
               </div>
               <div>
                 <h3 className="text-xl font-bold">Little Roots Studio</h3>
-                <p className="text-xs text-[#D4E5E5]">Sensory-Friendly Kids Hair</p>
+                <p className="text-xs text-[#D4E5E5]">
+                  Sensory-Friendly Kids Hair
+                </p>
               </div>
             </Link>
             <p className="text-[#D4E5E5] text-sm leading-relaxed">
-              Las Vegas&apos;s first sensory-friendly, judgment-free hair studio designed specifically for children who need a little more patience, privacy, and care.
+              Las Vegas&apos;s first sensory-friendly, judgment-free hair studio
+              designed specifically for children who need a little more
+              patience, privacy, and care.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#5B8A8A] transition-colors">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#5B8A8A] transition-colors"
+              >
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#5B8A8A] transition-colors">
+              <a
+                href="#"
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#5B8A8A] transition-colors"
+              >
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
@@ -51,7 +61,10 @@ export function Footer() {
                 { href: "/coming-soon", label: "Join Waitlist" },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-[#D4E5E5] hover:text-white transition-colors flex items-center gap-2">
+                  <Link
+                    href={link.href}
+                    className="text-[#D4E5E5] hover:text-white transition-colors flex items-center gap-2"
+                  >
                     <span className="w-1.5 h-1.5 rounded-full bg-[#5B8A8A]" />
                     {link.label}
                   </Link>
@@ -89,13 +102,17 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#7BA3A3] mt-0.5 flex-shrink-0" />
                 <span className="text-[#D4E5E5]">
-                  Las Vegas, NV<br />
+                  Las Vegas, NV
+                  <br />
                   <span className="text-sm">Location coming soon!</span>
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#7BA3A3] flex-shrink-0" />
-                <a href="mailto:hello@littlerootsstudio.com" className="text-[#D4E5E5] hover:text-white transition-colors">
+                <a
+                  href="mailto:hello@littlerootsstudio.com"
+                  className="text-[#D4E5E5] hover:text-white transition-colors"
+                >
                   hello@littlerootsstudio.com
                 </a>
               </li>
@@ -115,10 +132,23 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#D4E5E5]">
-            <p>&copy; {new Date().getFullYear()} Little Roots Studio. All rights reserved.</p>
+            <p>
+              &copy; {new Date().getFullYear()} Little Roots Studio. All rights
+              reserved.
+            </p>
             <div className="flex gap-6">
-              <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+              <Link
+                href="/privacy"
+                className="hover:text-white transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms"
+                className="hover:text-white transition-colors"
+              >
+                Terms of Service
+              </Link>
             </div>
           </div>
         </div>

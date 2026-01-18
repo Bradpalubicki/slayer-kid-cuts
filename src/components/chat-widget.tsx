@@ -2,7 +2,14 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, Send, Phone, MessageSquare, Sparkles } from "lucide-react";
+import {
+  MessageCircle,
+  X,
+  Send,
+  Phone,
+  MessageSquare,
+  Sparkles,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -22,12 +29,18 @@ const quickReplies = [
 ];
 
 const botResponses: Record<string, string> = {
-  "book an appointment": "I'd love to help you book an appointment! You can use our online booking system or I can have someone call/text you. Which would you prefer?",
-  "what are your hours?": "We're open Monday-Friday 9am-6pm, Saturday 9am-5pm, and Sunday 10am-4pm. Would you like to schedule a visit?",
-  "do you do home visits?": "Yes! Slayer offers mobile haircuts - she'll come right to your home! This is perfect for kids who are more comfortable in their own space. Want to book a home visit?",
-  "pricing info": "Kids haircuts start at $25, and our First Haircut Package with keepsakes is $35. Mobile home visits start at $40. Would you like to book?",
-  "talk to someone": "Of course! I can have someone call or text you right away. What's your preferred contact method and phone number?",
-  default: "Thanks for reaching out! I'm here to help with appointments, pricing, or any questions about Slayer Kid Cuts. What can I help you with today?",
+  "book an appointment":
+    "I'd love to help you book an appointment! You can use our online booking system or I can have someone call/text you. Which would you prefer?",
+  "what are your hours?":
+    "We're open Monday-Friday 9am-6pm, Saturday 9am-5pm, and Sunday 10am-4pm. Would you like to schedule a visit?",
+  "do you do home visits?":
+    "Yes! Slayer offers mobile haircuts - she'll come right to your home! This is perfect for kids who are more comfortable in their own space. Want to book a home visit?",
+  "pricing info":
+    "Kids haircuts start at $25, and our First Haircut Package with keepsakes is $35. Mobile home visits start at $40. Would you like to book?",
+  "talk to someone":
+    "Of course! I can have someone call or text you right away. What's your preferred contact method and phone number?",
+  default:
+    "Thanks for reaching out! I'm here to help with appointments, pricing, or any questions about Slayer Kid Cuts. What can I help you with today?",
 };
 
 export function ChatWidget() {
@@ -42,7 +55,9 @@ export function ChatWidget() {
   ]);
   const [inputValue, setInputValue] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-  const [contactMode, setContactMode] = useState<"chat" | "text" | "call">("chat");
+  const [contactMode, setContactMode] = useState<"chat" | "text" | "call">(
+    "chat",
+  );
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messageIdRef = useRef(1);
 
@@ -162,7 +177,9 @@ export function ChatWidget() {
                     key={mode}
                     onClick={() => setContactMode(mode)}
                     className={`flex-1 py-2 px-3 rounded-xl text-sm font-medium flex items-center justify-center gap-2 transition-colors ${
-                      contactMode === mode ? "bg-white text-[#9B5DE5]" : "bg-white/20 text-white hover:bg-white/30"
+                      contactMode === mode
+                        ? "bg-white text-[#9B5DE5]"
+                        : "bg-white/20 text-white hover:bg-white/30"
                     }`}
                   >
                     <Icon className="w-4 h-4" />
@@ -201,9 +218,18 @@ export function ChatWidget() {
                 >
                   <div className="bg-white p-4 rounded-2xl rounded-bl-md shadow-sm">
                     <div className="flex gap-1">
-                      <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
-                      <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
-                      <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                      <span
+                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                        style={{ animationDelay: "0ms" }}
+                      />
+                      <span
+                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                        style={{ animationDelay: "150ms" }}
+                      />
+                      <span
+                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+                        style={{ animationDelay: "300ms" }}
+                      />
                     </div>
                   </div>
                 </motion.div>
@@ -239,8 +265,8 @@ export function ChatWidget() {
                     contactMode === "text"
                       ? "Enter your phone for a text..."
                       : contactMode === "call"
-                      ? "Enter your phone for a callback..."
-                      : "Type your message..."
+                        ? "Enter your phone for a callback..."
+                        : "Type your message..."
                   }
                   className="flex-1 rounded-full border-gray-200 focus:border-[#9B5DE5] focus:ring-[#9B5DE5]"
                 />

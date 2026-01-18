@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, Calendar } from "lucide-react";
+import { Menu, X, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -39,8 +39,12 @@ export function Navigation() {
               />
             </motion.div>
             <div>
-              <h1 className="text-xl font-bold text-[#5B8A8A]">Little Roots Studio</h1>
-              <p className="text-xs text-[#8B7B6F]">Sensory-Friendly Kids Hair</p>
+              <h1 className="text-xl font-bold text-[#5B8A8A]">
+                Little Roots Studio
+              </h1>
+              <p className="text-xs text-[#8B7B6F]">
+                Sensory-Friendly Kids Hair
+              </p>
             </div>
           </Link>
 

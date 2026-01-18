@@ -43,13 +43,16 @@ async function sendSlackNotification(booking: BookingData, bookingId: string) {
     return;
   }
 
-  const childrenSummary = booking.children.map(child => {
-    const addOnsText = child.addOns.length > 0
-      ? ` + ${child.addOns.map(a => a.name).join(", ")}`
-      : "";
-    const specialNeedsText = child.specialNeeds ? " ⚠️ SENSORY-FRIENDLY" : "";
-    return `• ${child.name} (age ${child.age}): ${child.service.name}${addOnsText}${specialNeedsText}`;
-  }).join("\n");
+  const childrenSummary = booking.children
+    .map((child) => {
+      const addOnsText =
+        child.addOns.length > 0
+          ? ` + ${child.addOns.map((a) => a.name).join(", ")}`
+          : "";
+      const specialNeedsText = child.specialNeeds ? " ⚠️ SENSORY-FRIENDLY" : "";
+      return `• ${child.name} (age ${child.age}): ${child.service.name}${addOnsText}${specialNeedsText}`;
+    })
+    .join("\n");
 
   const message = {
     blocks: [
@@ -68,7 +71,10 @@ async function sendSlackNotification(booking: BookingData, bookingId: string) {
           { type: "mrkdwn", text: `*Total:*\n$${booking.total}` },
           { type: "mrkdwn", text: `*Date:*\n${booking.date}` },
           { type: "mrkdwn", text: `*Time:*\n${booking.time}` },
-          { type: "mrkdwn", text: `*Location:*\n${booking.locationType === "salon" ? "🏠 Salon" : "🚗 Mobile Visit"}` },
+          {
+            type: "mrkdwn",
+            text: `*Location:*\n${booking.locationType === "salon" ? "🏠 Salon" : "🚗 Mobile Visit"}`,
+          },
         ],
       },
       {
@@ -104,13 +110,18 @@ async function sendSlackNotification(booking: BookingData, bookingId: string) {
   }
 
   // Flag special needs bookings
-  const hasSpecialNeeds = booking.children.some(c => c.specialNeeds);
+  const hasSpecialNeeds = booking.children.some((c) => c.specialNeeds);
   if (hasSpecialNeeds) {
     message.blocks.push({
       type: "section",
       text: {
         type: "mrkdwn",
-        text: `⚠️ *SENSORY-FRIENDLY ACCOMMODATIONS REQUESTED*\n${booking.children.filter(c => c.specialNeeds).map(c => `${c.name}: ${c.specialNeedsNotes || "No specific notes"}`).join("\n")}`,
+        text: `⚠️ *SENSORY-FRIENDLY ACCOMMODATIONS REQUESTED*\n${booking.children
+          .filter((c) => c.specialNeeds)
+          .map(
+            (c) => `${c.name}: ${c.specialNeedsNotes || "No specific notes"}`,
+          )
+          .join("\n")}`,
       },
     });
   }
@@ -137,7 +148,7 @@ async function sendSMSConfirmation(booking: BookingData, bookingId: string) {
     return;
   }
 
-  const childrenNames = booking.children.map(c => c.name).join(", ");
+  const childrenNames = booking.children.map((c) => c.name).join(", ");
   const message = `Hi ${booking.parentName}! Your Little Roots Studio appointment is confirmed! ✂️
 
 📅 ${booking.date} at ${booking.time}
@@ -163,7 +174,7 @@ Reply RESCHEDULE to change or CANCEL to cancel. See you soon! 🎉`;
           From: twilioPhone,
           Body: message,
         }),
-      }
+      },
     );
 
     if (!response.ok) {
@@ -177,7 +188,12 @@ Reply RESCHEDULE to change or CANCEL to cancel. See you soon! 🎉`;
 // Send email confirmation
 async function sendEmailConfirmation(booking: BookingData, bookingId: string) {
   // This would integrate with SendGrid, Resend, or similar
-  console.log("Email confirmation would be sent to:", booking.email, "Booking ID:", bookingId);
+  console.log(
+    "Email confirmation would be sent to:",
+    booking.email,
+    "Booking ID:",
+    bookingId,
+  );
 }
 
 export async function POST(request: NextRequest) {
@@ -185,10 +201,18 @@ export async function POST(request: NextRequest) {
     const booking: BookingData = await request.json();
 
     // Validate required fields
-    if (!booking.children || booking.children.length === 0 || !booking.date || !booking.time || !booking.parentName || !booking.phone || !booking.email) {
+    if (
+      !booking.children ||
+      booking.children.length === 0 ||
+      !booking.date ||
+      !booking.time ||
+      !booking.parentName ||
+      !booking.phone ||
+      !booking.email
+    ) {
       return NextResponse.json(
         { error: "Missing required fields" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -197,7 +221,7 @@ export async function POST(request: NextRequest) {
       if (!child.name || !child.age || !child.service) {
         return NextResponse.json(
           { error: "Each child must have name, age, and service selected" },
-          { status: 400 }
+          { status: 400 },
         );
       }
     }
@@ -224,7 +248,7 @@ export async function POST(request: NextRequest) {
     console.error("Booking error:", error);
     return NextResponse.json(
       { error: "Failed to process booking" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

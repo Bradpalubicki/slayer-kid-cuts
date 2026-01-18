@@ -40,9 +40,15 @@ async function sendToSlack(contact: ContactData) {
         type: "section",
         fields: [
           { type: "mrkdwn", text: `*From:*\n${contact.name}` },
-          { type: "mrkdwn", text: `*Subject:*\n${subjectLabels[contact.subject] || contact.subject}` },
+          {
+            type: "mrkdwn",
+            text: `*Subject:*\n${subjectLabels[contact.subject] || contact.subject}`,
+          },
           { type: "mrkdwn", text: `*Email:*\n${contact.email}` },
-          { type: "mrkdwn", text: `*Phone:*\n${contact.phone || "Not provided"}` },
+          {
+            type: "mrkdwn",
+            text: `*Phone:*\n${contact.phone || "Not provided"}`,
+          },
         ],
       },
       {
@@ -81,10 +87,15 @@ export async function POST(request: NextRequest) {
     const contact: ContactData = await request.json();
 
     // Validate required fields
-    if (!contact.name || !contact.email || !contact.subject || !contact.message) {
+    if (
+      !contact.name ||
+      !contact.email ||
+      !contact.subject ||
+      !contact.message
+    ) {
       return NextResponse.json(
         { error: "Missing required fields" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -102,7 +113,7 @@ export async function POST(request: NextRequest) {
     console.error("Contact form error:", error);
     return NextResponse.json(
       { error: "Failed to send message" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

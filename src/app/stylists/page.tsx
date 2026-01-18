@@ -4,9 +4,19 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Scissors, CheckCircle2, ChevronRight, DollarSign, Users,
-  Clock, Building2, Sparkles, Heart, Shield, Calendar,
-  MapPin, Phone, Mail, DoorOpen, Brain, Star
+  Scissors,
+  CheckCircle2,
+  ChevronRight,
+  DollarSign,
+  Users,
+  Building2,
+  Sparkles,
+  Heart,
+  Shield,
+  Phone,
+  Mail,
+  Brain,
+  Star,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -31,8 +41,9 @@ export default function StylistsPage() {
               Booth Rental <span className="gradient-text">Opportunities</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Join Las Vegas&apos;s premier family-friendly salon! We&apos;re looking for experienced
-              stylists who love working with kids and families.
+              Join Las Vegas&apos;s premier family-friendly salon! We&apos;re
+              looking for experienced stylists who love working with kids and
+              families.
             </p>
           </motion.div>
         </div>
@@ -52,13 +63,15 @@ export default function StylistsPage() {
                 Build Your Business at Little Roots Studio
               </h2>
               <p className="text-lg text-gray-600">
-                We&apos;re creating something special in Las Vegas — a kid-focused salon that families
-                love to visit. Whether you specialize in kids, adults, or both, there&apos;s a place
-                for you here.
+                We&apos;re creating something special in Las Vegas — a
+                kid-focused salon that families love to visit. Whether you
+                specialize in kids, adults, or both, there&apos;s a place for
+                you here.
               </p>
               <p className="text-lg text-gray-600">
-                Benefit from Carla&apos;s reputation as Las Vegas&apos;s sensory-friendly specialist
-                while running your own independent practice.
+                Benefit from Carla&apos;s reputation as Las Vegas&apos;s
+                sensory-friendly specialist while running your own independent
+                practice.
               </p>
               <div className="space-y-3">
                 {[
@@ -126,11 +139,14 @@ export default function StylistsPage() {
                     <div className="w-12 h-12 rounded-xl bg-[#7BA3A3]/20 flex items-center justify-center">
                       <Brain className="w-6 h-6 text-[#7BA3A3]" />
                     </div>
-                    <h3 className="text-xl font-bold">Carla&apos;s Private Sensory Suite</h3>
+                    <h3 className="text-xl font-bold">
+                      Carla&apos;s Private Sensory Suite
+                    </h3>
                   </div>
                   <p className="text-gray-600 mb-4">
-                    Carla&apos;s dedicated space for her sensory-friendly clients. Features a private
-                    entrance and is designed specifically for children with autism and anxiety.
+                    Carla&apos;s dedicated space for her sensory-friendly
+                    clients. Features a private entrance and is designed
+                    specifically for children with autism and anxiety.
                   </p>
                   <Badge className="bg-white text-[#7BA3A3] border-[#7BA3A3]/30">
                     Not available for rent — Carla&apos;s dedicated suite
@@ -151,10 +167,13 @@ export default function StylistsPage() {
                     <div className="w-12 h-12 rounded-xl bg-[#5B8A8A]/20 flex items-center justify-center">
                       <Scissors className="w-6 h-6 text-[#5B8A8A]" />
                     </div>
-                    <h3 className="text-xl font-bold">Main Salon (Your Space)</h3>
+                    <h3 className="text-xl font-bold">
+                      Main Salon (Your Space)
+                    </h3>
                   </div>
                   <p className="text-gray-600 mb-4">
-                    The adjacent main salon is available for booth rentals. Choose from:
+                    The adjacent main salon is available for booth rentals.
+                    Choose from:
                   </p>
                   <div className="space-y-2">
                     {[
@@ -165,7 +184,10 @@ export default function StylistsPage() {
                       "Laundry facilities",
                       "Break room",
                     ].map((item) => (
-                      <div key={item} className="flex items-center gap-2 text-gray-700">
+                      <div
+                        key={item}
+                        className="flex items-center gap-2 text-gray-700"
+                      >
                         <CheckCircle2 className="w-4 h-4 text-[#5B8A8A]" />
                         <span>{item}</span>
                       </div>
@@ -183,7 +205,11 @@ export default function StylistsPage() {
             className="text-center"
           >
             <Link href="/our-space">
-              <Button size="lg" variant="outline" className="rounded-full px-8 border-2 border-[#5B8A8A] text-[#5B8A8A] hover:bg-[#5B8A8A] hover:text-white">
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full px-8 border-2 border-[#5B8A8A] text-[#5B8A8A] hover:bg-[#5B8A8A] hover:text-white"
+              >
                 View Full Floor Plan
                 <ChevronRight className="w-5 h-5 ml-2" />
               </Button>
@@ -211,26 +237,46 @@ export default function StylistsPage() {
               {
                 icon: Building2,
                 title: "Your Station",
-                items: ["Private suite or open chair", "Styling chair", "Mirror", "Storage cabinet"],
-                color: "#5B8A8A"
+                items: [
+                  "Private suite or open chair",
+                  "Styling chair",
+                  "Mirror",
+                  "Storage cabinet",
+                ],
+                color: "#5B8A8A",
               },
               {
                 icon: Sparkles,
                 title: "Shared Amenities",
-                items: ["Reception desk", "Waiting area", "Shampoo stations", "Laundry facilities"],
-                color: "#A69080"
+                items: [
+                  "Reception desk",
+                  "Waiting area",
+                  "Shampoo stations",
+                  "Laundry facilities",
+                ],
+                color: "#A69080",
               },
               {
                 icon: DollarSign,
                 title: "Business Support",
-                items: ["Appointment scheduling", "Card processing available", "Built-in foot traffic", "Marketing exposure"],
-                color: "#7BA3A3"
+                items: [
+                  "Appointment scheduling",
+                  "Card processing available",
+                  "Built-in foot traffic",
+                  "Marketing exposure",
+                ],
+                color: "#7BA3A3",
               },
               {
                 icon: Heart,
                 title: "Family-Friendly",
-                items: ["Kid-friendly environment", "Play area for children", "Themed chairs available", "Entertainment systems"],
-                color: "#6B5B4F"
+                items: [
+                  "Kid-friendly environment",
+                  "Play area for children",
+                  "Themed chairs available",
+                  "Entertainment systems",
+                ],
+                color: "#6B5B4F",
               },
             ].map((category, index) => (
               <motion.div
@@ -246,13 +292,22 @@ export default function StylistsPage() {
                       className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
                       style={{ backgroundColor: `${category.color}20` }}
                     >
-                      <category.icon className="w-6 h-6" style={{ color: category.color }} />
+                      <category.icon
+                        className="w-6 h-6"
+                        style={{ color: category.color }}
+                      />
                     </div>
                     <h3 className="text-lg font-bold mb-4">{category.title}</h3>
                     <div className="space-y-2">
                       {category.items.map((item) => (
-                        <div key={item} className="flex items-center gap-2 text-sm text-gray-600">
-                          <CheckCircle2 className="w-4 h-4" style={{ color: category.color }} />
+                        <div
+                          key={item}
+                          className="flex items-center gap-2 text-sm text-gray-600"
+                        >
+                          <CheckCircle2
+                            className="w-4 h-4"
+                            style={{ color: category.color }}
+                          />
                           <span>{item}</span>
                         </div>
                       ))}
@@ -293,7 +348,9 @@ export default function StylistsPage() {
                 <CardContent className="p-8">
                   <div className="text-center mb-6">
                     <h3 className="text-2xl font-bold mb-2">Private Suite</h3>
-                    <p className="text-gray-600">Your own room with door and sink</p>
+                    <p className="text-gray-600">
+                      Your own room with door and sink
+                    </p>
                   </div>
                   <div className="space-y-4">
                     {[
@@ -311,7 +368,9 @@ export default function StylistsPage() {
                   </div>
                   <div className="mt-8 text-center">
                     <p className="text-sm text-gray-500 mb-2">Starting at</p>
-                    <p className="text-4xl font-bold text-[#A69080]">Contact Us</p>
+                    <p className="text-4xl font-bold text-[#A69080]">
+                      Contact Us
+                    </p>
                     <p className="text-sm text-gray-500">for pricing</p>
                   </div>
                 </CardContent>
@@ -326,8 +385,12 @@ export default function StylistsPage() {
               <Card className="h-full border-2 border-[#6B5B4F]/30">
                 <CardContent className="p-8">
                   <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold mb-2">Open Floor Chair</h3>
-                    <p className="text-gray-600">Station on the main styling floor</p>
+                    <h3 className="text-2xl font-bold mb-2">
+                      Open Floor Chair
+                    </h3>
+                    <p className="text-gray-600">
+                      Station on the main styling floor
+                    </p>
                   </div>
                   <div className="space-y-4">
                     {[
@@ -345,7 +408,9 @@ export default function StylistsPage() {
                   </div>
                   <div className="mt-8 text-center">
                     <p className="text-sm text-gray-500 mb-2">Starting at</p>
-                    <p className="text-4xl font-bold text-[#6B5B4F]">Contact Us</p>
+                    <p className="text-4xl font-bold text-[#6B5B4F]">
+                      Contact Us
+                    </p>
                     <p className="text-sm text-gray-500">for pricing</p>
                   </div>
                 </CardContent>
@@ -371,12 +436,36 @@ export default function StylistsPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: Heart, text: "Love working with kids and families", required: true },
-              { icon: Shield, text: "Are patient and understanding", required: true },
-              { icon: Star, text: "Have a positive, fun energy", required: true },
-              { icon: Scissors, text: "Are licensed cosmetologists in Nevada", required: true },
-              { icon: Users, text: "Want to build their own clientele", required: false },
-              { icon: Brain, text: "Interest in sensory-friendly techniques (training available!)", required: false },
+              {
+                icon: Heart,
+                text: "Love working with kids and families",
+                required: true,
+              },
+              {
+                icon: Shield,
+                text: "Are patient and understanding",
+                required: true,
+              },
+              {
+                icon: Star,
+                text: "Have a positive, fun energy",
+                required: true,
+              },
+              {
+                icon: Scissors,
+                text: "Are licensed cosmetologists in Nevada",
+                required: true,
+              },
+              {
+                icon: Users,
+                text: "Want to build their own clientele",
+                required: false,
+              },
+              {
+                icon: Brain,
+                text: "Interest in sensory-friendly techniques (training available!)",
+                required: false,
+              },
             ].map((item) => (
               <motion.div
                 key={item.text}
@@ -413,18 +502,25 @@ export default function StylistsPage() {
               Ready to Join Our Team?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              We&apos;d love to hear from you! Contact us to schedule a tour of the space and
-              discuss rental options.
+              We&apos;d love to hear from you! Contact us to schedule a tour of
+              the space and discuss rental options.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
-                <Button size="lg" className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8">
+                <Button
+                  size="lg"
+                  className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8"
+                >
                   <Mail className="w-5 h-5 mr-2" />
                   Contact Us
                 </Button>
               </Link>
               <a href="tel:+17025551234">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#5B8A8A] rounded-full px-8">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-white text-white hover:bg-white hover:text-[#5B8A8A] rounded-full px-8"
+                >
                   <Phone className="w-5 h-5 mr-2" />
                   Call Now
                 </Button>
