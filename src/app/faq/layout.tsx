@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "FAQ | Common Questions",
+  title: "FAQ: Autism-Friendly Haircuts & Sensory-Processing",
   description:
-    "Frequently asked questions about sensory-friendly haircuts, pricing, what to expect, and how we help anxious children.",
+    "Common questions about sensory-friendly haircuts at Little Roots Studio. Learn about our autism accommodations, booking, pricing, and what makes us different.",
   alternates: {
     canonical: "/faq",
+  },
+  openGraph: {
+    title: "FAQ: Autism-Friendly Haircuts & Sensory-Processing",
+    description:
+      "Common questions about sensory-friendly haircuts at Little Roots Studio. Learn about our autism accommodations, booking, and pricing.",
+    url: "https://littleroots.studio/faq",
   },
 };
 

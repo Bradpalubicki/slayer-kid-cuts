@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pricing & Services",
+  title: "Kids Haircut Services | Autism & Sensory-Friendly",
   description:
-    "Kids haircut pricing: First Haircut $45, Kids Cut $35, Sensory-Adapted $50. Fun add-ons available. Sensory-friendly salon Henderson.",
+    "Sensory-friendly haircut services for kids ages 0-17 in Henderson NV. First haircuts $45, autism-adapted cuts, trauma-informed care. No rushing, breaks allowed.",
   alternates: {
     canonical: "/services",
+  },
+  openGraph: {
+    title: "Kids Haircut Services | Autism & Sensory-Friendly",
+    description:
+      "Sensory-friendly haircut services for kids ages 0-17 in Henderson NV. First haircuts, autism-adapted cuts, trauma-informed care by Carla.",
+    url: "https://littleroots.studio/services",
   },
 };
 

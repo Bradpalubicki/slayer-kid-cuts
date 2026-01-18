@@ -334,91 +334,106 @@ export default function Home() {
         className="min-h-screen relative flex flex-col justify-center items-center px-4 py-8 pt-24 sm:py-12 sm:pt-32"
         aria-labelledby="hero-heading"
       >
-        {/* Background Image with Calming Overlay */}
+        {/* Background Image - Serene Nature Scene */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1540479859555-17af45c78602?auto=format&fit=crop&w=1920&q=80"
-            alt="Happy children playing outdoors in a sunny park with green grass"
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80"
+            alt="Serene forest path with soft sunlight filtering through trees, representing calm and safety"
             fill
             className="object-cover"
             priority
             unoptimized
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-sage/50 via-sage/30 to-brown/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-sage/60 via-brown/30 to-sage/50"></div>
         </div>
 
         {/* Frosted Card Container */}
         <div
-          className="relative z-10 w-full max-w-[640px] mx-auto rounded-3xl p-8 sm:p-12"
+          className="relative z-10 w-full max-w-[640px] mx-auto rounded-3xl p-6 sm:p-10"
           style={{
-            background: "rgba(255, 253, 250, 0.92)",
+            background: "rgba(255, 253, 250, 0.95)",
             backdropFilter: "blur(20px)",
             WebkitBackdropFilter: "blur(20px)",
             boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
           }}
         >
           {/* Badge with Amber Gradient */}
-          <div className="text-center mb-6">
+          <div className="text-center mb-5">
             <span className="inline-block bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400 text-white px-5 py-2 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide shadow-md animate-pulse border border-amber-300">
               ✨ OPENING SPRING 2026 ✨
             </span>
           </div>
 
           {/* Logo */}
-          <div className="mb-6 text-center">
+          <div className="mb-5 text-center">
             <Image
               src="/images/little-roots-logo.webp"
-              alt="Little Roots Studio - Sensory-Friendly Kids Hair Salon"
+              alt="Little Roots Studio - Henderson's First Autism-Trained Sensory-Friendly Kids Hair Salon"
               width={350}
               height={175}
-              className="mx-auto w-[220px] sm:w-[300px] h-auto"
+              className="mx-auto w-[200px] sm:w-[280px] h-auto"
               priority
               unoptimized
             />
           </div>
 
-          {/* H1 - Primary Heading */}
+          {/* H1 - Emotional Hero Copy */}
           <h1
             id="hero-heading"
-            className="text-xl sm:text-3xl text-brown mb-3 font-bold text-center leading-tight"
+            className="text-xl sm:text-2xl md:text-3xl text-brown mb-4 font-bold text-center leading-tight"
           >
-            Sensory-Friendly Kids Hair Salon in Henderson, NV
+            Your Child Deserves to Feel Safe
           </h1>
 
-          <p className="text-brown/80 text-base sm:text-lg mb-6 text-center leading-relaxed">
-            Where every child is met with <strong className="text-sage-dark">patience</strong>,{" "}
-            <strong className="text-sage-dark">privacy</strong>, and <strong className="text-sage-dark">care</strong>. One family at a time.
+          <p className="text-brown/80 text-sm sm:text-base mb-4 text-center leading-relaxed">
+            <strong className="text-sage-dark">Autism-friendly</strong>, <strong className="text-sage-dark">trauma-informed</strong>, <strong className="text-sage-dark">sensory-safe</strong> haircuts for anxious, neurodivergent, and sensitive children in Henderson, NV.
           </p>
 
+          <p className="text-brown/70 text-sm mb-5 text-center">
+            No rushing. No judgment. No sensory overload.<br />
+            <span className="font-medium text-sage-dark">Just calm, care, and a haircut that matters.</span>
+          </p>
+
+          {/* Trust Badges */}
+          <div className="flex flex-wrap justify-center gap-2 mb-5">
+            <span className="bg-sage/15 text-sage-dark px-3 py-1 rounded-full text-xs font-medium">
+              🧩 Autism-Trained
+            </span>
+            <span className="bg-sage/15 text-sage-dark px-3 py-1 rounded-full text-xs font-medium">
+              💚 13+ Years Experience
+            </span>
+            <span className="bg-sage/15 text-sage-dark px-3 py-1 rounded-full text-xs font-medium">
+              🔇 One Family at a Time
+            </span>
+          </div>
+
           {/* Countdown */}
-          <div className="mb-6">
-            <p className="text-brown/70 text-sm mb-3 font-medium text-center">
+          <div className="mb-5">
+            <p className="text-brown/70 text-xs mb-2 font-medium text-center">
               🗓️ Opening in:
             </p>
             <CountdownTimer />
           </div>
 
           {/* Waitlist */}
-          <div className="mt-6">
+          <div className="mt-4">
             <WaitlistForm />
           </div>
         </div>
 
         {/* Message from Carla - Outside the card */}
-        <div className="relative z-10 mt-8 bg-white/20 backdrop-blur-sm rounded-2xl p-5 max-w-lg mx-auto border border-white/30">
-          <p className="text-white italic text-sm leading-relaxed text-center drop-shadow-sm">
-            &ldquo;After 13 years of working with children, I&apos;m finally
-            creating the space I&apos;ve always dreamed of — where no child is
-            rushed and every haircut is a positive experience.&rdquo;
+        <div className="relative z-10 mt-6 bg-white/25 backdrop-blur-sm rounded-2xl p-5 max-w-lg mx-auto border border-white/30">
+          <p className="text-white italic text-sm leading-relaxed text-center drop-shadow-md">
+            &ldquo;After 13 years working with children — including specialized autism training — I&apos;m finally creating the sanctuary every anxious, sensitive child deserves. A place where haircuts become confidence-building experiences.&rdquo;
           </p>
-          <p className="text-white font-medium mt-3 text-sm text-center drop-shadow-sm">
-            — Carla, Owner & Stylist 💚
+          <p className="text-white font-semibold mt-3 text-sm text-center drop-shadow-md">
+            — Carla, Autism-Trained Specialist & Owner 💚
           </p>
         </div>
 
         {/* Scroll indicator */}
         <div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce z-10"
           aria-hidden="true"
         >
           <div className="w-8 h-12 border-2 border-white/50 rounded-full flex justify-center">
@@ -508,11 +523,12 @@ export default function Home() {
               id="why-heading"
               className="text-3xl sm:text-4xl font-bold text-brown mt-3 mb-4"
             >
-              Haircuts Should Be Happy
+              Not Just Another Kids Salon
             </h2>
             <p className="text-brown/70 max-w-2xl mx-auto">
-              We believe every child deserves a calm, positive haircut
-              experience — no matter their needs.
+              We&apos;re not a &ldquo;fun&rdquo; kids salon with car chairs and flashy distractions.
+              We&apos;re a <strong className="text-sage-dark">sanctuary</strong> — designed specifically for children
+              who need calm, patience, and understanding.
             </p>
           </header>
 
@@ -530,14 +546,14 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <span className="text-3xl mb-3 block" aria-hidden="true">
-                  ⏰
+                  💚
                 </span>
                 <h3 className="font-bold text-brown text-lg mb-2">
-                  Never Rushed
+                  Trauma-Informed Care
                 </h3>
                 <p className="text-brown/60 text-sm">
-                  Time for breaks, regulation, and trust-building. Your child
-                  sets the pace.
+                  If past haircuts ended in tears, we specialize in rebuilding
+                  trust — one gentle experience at a time.
                 </p>
               </div>
             </article>
@@ -555,14 +571,14 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <span className="text-3xl mb-3 block" aria-hidden="true">
-                  🌿
+                  🔇
                 </span>
                 <h3 className="font-bold text-brown text-lg mb-2">
-                  Calm & Private
+                  True Privacy
                 </h3>
                 <p className="text-brown/60 text-sm">
-                  Earth-toned, sensory-friendly space. One family at a time,
-                  always.
+                  No other families. No waiting room chaos. Just you, your child,
+                  and Carla in a calm, private space.
                 </p>
               </div>
             </article>
@@ -580,14 +596,14 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <span className="text-3xl mb-3 block" aria-hidden="true">
-                  🧸
+                  🧩
                 </span>
                 <h3 className="font-bold text-brown text-lg mb-2">
-                  Sensory Tools
+                  Autism-Trained Specialist
                 </h3>
                 <p className="text-brown/60 text-sm">
-                  Fidgets, weighted lap pads, noise-canceling headphones —
-                  whatever helps.
+                  Carla has 13+ years working with neurodivergent children — not just accommodating,
+                  but truly understanding.
                 </p>
               </div>
             </article>
@@ -733,7 +749,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ========== OUR SPACE - VISUAL FLOOR PLAN ========== */}
+      {/* ========== OUR SPACE - SENSORY SUITE ========== */}
       <section
         className="py-20 px-4 bg-white"
         aria-labelledby="space-heading"
@@ -742,442 +758,104 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <header className="text-center mb-12">
             <span className="text-sage font-medium text-sm tracking-wider uppercase">
-              Our Studio Space
+              Our Private Suite
             </span>
             <h2
               id="space-heading"
               className="text-3xl sm:text-4xl font-bold text-brown mt-3 mb-4"
             >
-              Designed for Calm
+              Your Own Sensory Sanctuary
             </h2>
             <p className="text-brown/70 max-w-xl mx-auto">
-              Private suite • Separate entrance • Wait-in-car option
+              A private suite designed from the ground up for sensitive children.
+              No shared spaces. No sensory overload. Just calm.
             </p>
           </header>
 
-          {/* Visual Floor Plan */}
-          <div
-            className="bg-cream rounded-3xl p-4 sm:p-8 shadow-inner overflow-x-auto"
-            role="img"
-            aria-label="Studio floor plan showing private sensory suite and main salon areas with separate entrances from parking"
-          >
-            <p className="text-brown/60 text-xs text-center mb-3 sm:hidden">
-              👆 Scroll horizontally to see full floor plan
-            </p>
-            <svg
-              viewBox="0 0 800 450"
-              className="w-full h-auto min-w-[600px] sm:min-w-0"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Little Roots Studio Floor Plan</title>
-              <desc>
-                Floor plan showing parking area at top, private sensory suite on
-                left with calm features, and main salon on right with fun
-                features
-              </desc>
-
-              {/* Background */}
-              <rect x="0" y="0" width="800" height="450" fill="#F8F6F3" />
-
-              {/* Parking */}
-              <rect
-                x="50"
-                y="20"
-                width="700"
-                height="80"
-                rx="10"
-                fill="#E8E8E8"
-                stroke="#CCCCCC"
-                strokeWidth="2"
-              />
-              <text
-                x="400"
-                y="50"
-                textAnchor="middle"
-                fill="#666"
-                fontWeight="bold"
-                fontSize="14"
+          {/* Sensory Suite Features Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                emoji: "🚗",
+                title: "Wait-in-Car Option",
+                desc: "Avoid the waiting room entirely. We text when we&apos;re ready for you.",
+              },
+              {
+                emoji: "🚪",
+                title: "Private Entrance",
+                desc: "Skip the main entrance. Walk directly into your private suite.",
+              },
+              {
+                emoji: "💡",
+                title: "Dimmable Lighting",
+                desc: "Adjust brightness to your child&apos;s comfort level.",
+              },
+              {
+                emoji: "🎧",
+                title: "Noise-Canceling Headphones",
+                desc: "Block out clipper sounds and unexpected noises.",
+              },
+              {
+                emoji: "🪨",
+                title: "Weighted Lap Pads",
+                desc: "Calming deep pressure for anxious moments.",
+              },
+              {
+                emoji: "🧘",
+                title: "Calm Corner",
+                desc: "A cozy space for breaks whenever your child needs one.",
+              },
+              {
+                emoji: "📺",
+                title: "Favorite Shows/Tablet",
+                desc: "Bring their comfort show or use ours.",
+              },
+              {
+                emoji: "🧸",
+                title: "Fidget Tools",
+                desc: "A variety of sensory tools to help with regulation.",
+              },
+              {
+                emoji: "⏰",
+                title: "Visual Timers",
+                desc: "Help children understand how much time is left.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="bg-cream rounded-2xl p-5 border border-sage/10 hover:border-sage/30 transition-colors"
               >
-                🚗 PARKING
-              </text>
-              <text
-                x="400"
-                y="75"
-                textAnchor="middle"
-                fill="#888"
-                fontSize="12"
-              >
-                Wait in your car — we&apos;ll text when ready!
-              </text>
-
-              {/* Entrances */}
-              <path
-                d="M200 100 L200 145"
-                stroke="#5B8A8A"
-                strokeWidth="4"
-                fill="none"
-              />
-              <polygon points="200,155 193,140 207,140" fill="#5B8A8A" />
-              <text
-                x="200"
-                y="120"
-                textAnchor="middle"
-                fill="#5B8A8A"
-                fontWeight="bold"
-                fontSize="11"
-              >
-                PRIVATE
-              </text>
-
-              <path
-                d="M600 100 L600 145"
-                stroke="#8B7355"
-                strokeWidth="4"
-                fill="none"
-              />
-              <polygon points="600,155 593,140 607,140" fill="#8B7355" />
-              <text
-                x="600"
-                y="120"
-                textAnchor="middle"
-                fill="#8B7355"
-                fontWeight="bold"
-                fontSize="11"
-              >
-                MAIN
-              </text>
-
-              {/* Private Suite */}
-              <rect
-                x="50"
-                y="160"
-                width="340"
-                height="240"
-                rx="15"
-                fill="#D4E5E5"
-                stroke="#5B8A8A"
-                strokeWidth="4"
-              />
-              <text
-                x="220"
-                y="195"
-                textAnchor="middle"
-                fill="#4A7373"
-                fontWeight="bold"
-                fontSize="16"
-              >
-                🌙 PRIVATE SENSORY SUITE
-              </text>
-
-              <rect
-                x="80"
-                y="220"
-                width="90"
-                height="70"
-                rx="10"
-                fill="#5B8A8A"
-                opacity="0.25"
-              />
-              <text
-                x="125"
-                y="255"
-                textAnchor="middle"
-                fill="#4A7373"
-                fontSize="12"
-                fontWeight="600"
-              >
-                💇 Chair
-              </text>
-
-              <rect
-                x="190"
-                y="220"
-                width="70"
-                height="55"
-                rx="10"
-                fill="#5B8A8A"
-                opacity="0.2"
-              />
-              <text
-                x="225"
-                y="252"
-                textAnchor="middle"
-                fill="#4A7373"
-                fontSize="11"
-              >
-                📺 TV
-              </text>
-
-              <rect
-                x="280"
-                y="220"
-                width="90"
-                height="70"
-                rx="10"
-                fill="#5B8A8A"
-                opacity="0.25"
-              />
-              <text
-                x="325"
-                y="250"
-                textAnchor="middle"
-                fill="#4A7373"
-                fontSize="11"
-                fontWeight="600"
-              >
-                🧘 Calm
-              </text>
-              <text
-                x="325"
-                y="268"
-                textAnchor="middle"
-                fill="#4A7373"
-                fontSize="11"
-                fontWeight="600"
-              >
-                Corner
-              </text>
-
-              <text
-                x="120"
-                y="320"
-                textAnchor="middle"
-                fill="#4A7373"
-                fontSize="11"
-              >
-                💡 Dim lights
-              </text>
-              <text
-                x="220"
-                y="320"
-                textAnchor="middle"
-                fill="#4A7373"
-                fontSize="11"
-              >
-                🎧 Headphones
-              </text>
-              <text
-                x="320"
-                y="320"
-                textAnchor="middle"
-                fill="#4A7373"
-                fontSize="11"
-              >
-                🧸 Sensory toys
-              </text>
-              <text
-                x="170"
-                y="350"
-                textAnchor="middle"
-                fill="#4A7373"
-                fontSize="11"
-              >
-                🪨 Weighted items
-              </text>
-              <text
-                x="280"
-                y="350"
-                textAnchor="middle"
-                fill="#4A7373"
-                fontSize="11"
-              >
-                🤫 Quiet & calm
-              </text>
-
-              {/* Dividing Wall */}
-              <rect x="400" y="160" width="20" height="240" fill="#888" />
-
-              {/* Main Salon */}
-              <rect
-                x="430"
-                y="160"
-                width="320"
-                height="240"
-                rx="15"
-                fill="#FEF7E7"
-                stroke="#8B7355"
-                strokeWidth="4"
-              />
-              <text
-                x="590"
-                y="195"
-                textAnchor="middle"
-                fill="#6B5B4F"
-                fontWeight="bold"
-                fontSize="16"
-              >
-                🎨 MAIN SALON
-              </text>
-
-              <rect
-                x="460"
-                y="220"
-                width="80"
-                height="55"
-                rx="10"
-                fill="#8B7355"
-                opacity="0.2"
-              />
-              <text
-                x="500"
-                y="252"
-                textAnchor="middle"
-                fill="#6B5B4F"
-                fontSize="11"
-              >
-                🛋️ Welcome
-              </text>
-
-              <rect
-                x="555"
-                y="220"
-                width="90"
-                height="70"
-                rx="10"
-                fill="#8B7355"
-                opacity="0.25"
-              />
-              <text
-                x="600"
-                y="255"
-                textAnchor="middle"
-                fill="#6B5B4F"
-                fontSize="12"
-                fontWeight="600"
-              >
-                💇 Chair
-              </text>
-
-              <rect
-                x="660"
-                y="220"
-                width="70"
-                height="55"
-                rx="10"
-                fill="#8B7355"
-                opacity="0.2"
-              />
-              <text
-                x="695"
-                y="252"
-                textAnchor="middle"
-                fill="#6B5B4F"
-                fontSize="11"
-              >
-                🎮 Games
-              </text>
-
-              <text
-                x="500"
-                y="320"
-                textAnchor="middle"
-                fill="#6B5B4F"
-                fontSize="11"
-              >
-                🎵 Fun music
-              </text>
-              <text
-                x="595"
-                y="320"
-                textAnchor="middle"
-                fill="#6B5B4F"
-                fontSize="11"
-              >
-                📺 Shows & movies
-              </text>
-              <text
-                x="695"
-                y="320"
-                textAnchor="middle"
-                fill="#6B5B4F"
-                fontSize="11"
-              >
-                🎁 Prizes!
-              </text>
-              <text
-                x="545"
-                y="350"
-                textAnchor="middle"
-                fill="#6B5B4F"
-                fontSize="11"
-              >
-                ⚡ Energetic vibe
-              </text>
-              <text
-                x="660"
-                y="350"
-                textAnchor="middle"
-                fill="#6B5B4F"
-                fontSize="11"
-              >
-                🎉 Fun & social
-              </text>
-
-              {/* Legend */}
-              <rect
-                x="50"
-                y="415"
-                width="24"
-                height="24"
-                rx="6"
-                fill="#D4E5E5"
-                stroke="#5B8A8A"
-                strokeWidth="2"
-              />
-              <text
-                x="82"
-                y="432"
-                fill="#4A7373"
-                fontSize="12"
-                fontWeight="500"
-              >
-                Sensory Suite — quiet, calm, private entrance
-              </text>
-
-              <rect
-                x="430"
-                y="415"
-                width="24"
-                height="24"
-                rx="6"
-                fill="#FEF7E7"
-                stroke="#8B7355"
-                strokeWidth="2"
-              />
-              <text
-                x="462"
-                y="432"
-                fill="#6B5B4F"
-                fontSize="12"
-                fontWeight="500"
-              >
-                Main Salon — fun, energetic, social
-              </text>
-            </svg>
+                <span className="text-3xl mb-2 block" aria-hidden="true">
+                  {item.emoji}
+                </span>
+                <h3 className="font-bold text-brown mb-1">{item.title}</h3>
+                <p className="text-brown/60 text-sm">{item.desc}</p>
+              </div>
+            ))}
           </div>
 
-          {/* Quick Info */}
-          <div className="grid sm:grid-cols-3 gap-4 mt-8">
-            <div className="bg-sage/10 rounded-2xl p-5 text-center hover:bg-sage/20 transition-colors">
-              <span className="text-4xl" aria-hidden="true">
-                🚗
-              </span>
-              <p className="font-bold text-brown mt-2">Wait in Car</p>
-              <p className="text-sm text-brown/60">We text when ready</p>
-            </div>
-            <div className="bg-sage/10 rounded-2xl p-5 text-center hover:bg-sage/20 transition-colors">
-              <span className="text-4xl" aria-hidden="true">
-                🚪
-              </span>
-              <p className="font-bold text-brown mt-2">Private Entrance</p>
-              <p className="text-sm text-brown/60">Skip the lobby</p>
-            </div>
+          {/* Quick Stats */}
+          <div className="grid sm:grid-cols-3 gap-4">
             <div className="bg-sage/10 rounded-2xl p-5 text-center hover:bg-sage/20 transition-colors">
               <span className="text-4xl" aria-hidden="true">
                 👨‍👩‍👧
               </span>
-              <p className="font-bold text-brown mt-2">One Family</p>
-              <p className="text-sm text-brown/60">Your space, your time</p>
+              <p className="font-bold text-brown mt-2">One Family at a Time</p>
+              <p className="text-sm text-brown/60">The entire space is yours</p>
+            </div>
+            <div className="bg-sage/10 rounded-2xl p-5 text-center hover:bg-sage/20 transition-colors">
+              <span className="text-4xl" aria-hidden="true">
+                🤫
+              </span>
+              <p className="font-bold text-brown mt-2">No Other Children</p>
+              <p className="text-sm text-brown/60">No distractions or triggers</p>
+            </div>
+            <div className="bg-sage/10 rounded-2xl p-5 text-center hover:bg-sage/20 transition-colors">
+              <span className="text-4xl" aria-hidden="true">
+                💚
+              </span>
+              <p className="font-bold text-brown mt-2">Just You & Carla</p>
+              <p className="text-sm text-brown/60">Consistent, trusted care</p>
             </div>
           </div>
         </div>
@@ -1280,42 +958,60 @@ export default function Home() {
                 id="about-heading"
                 className="text-3xl font-bold text-brown mt-2 mb-6"
               >
-                Hi, I&apos;m Carla! 👋
+                Hi, I&apos;m Carla 💚
               </h2>
 
               <div className="space-y-4 text-brown/80">
                 <p>
-                  For over <strong>13 years</strong>, I&apos;ve worked with
-                  children of all kinds — including specialized training in{" "}
-                  <strong className="text-sage">
-                    autism-friendly haircutting
-                  </strong>
-                  .
+                  For over <strong>13 years</strong>, I&apos;ve dedicated my career to
+                  working with children — especially those who need a little extra
+                  patience, understanding, and care.
                 </p>
                 <p>
-                  I&apos;ve seen the panic when clippers are too loud. The
-                  meltdowns when there&apos;s no time for a break. The shame
-                  parents feel when their child &ldquo;can&apos;t handle&rdquo;
-                  a haircut.
+                  I&apos;ve held the hands of kids who trembled at the sight of scissors.
+                  I&apos;ve waited through meltdowns without judgment. I&apos;ve seen parents
+                  cry with relief when their child — for the first time ever — sat through
+                  an entire haircut.
                 </p>
                 <p className="text-sage-dark font-medium">
-                  But I&apos;ve also seen the magic when a child is given time,
-                  choice, and understanding.
+                  Every child deserves someone who understands them. That&apos;s why I built
+                  Little Roots Studio.
                 </p>
-                <p>
-                  That&apos;s why I&apos;m building{" "}
-                  <strong>Little Roots Studio</strong> — where every haircut is
-                  a<strong> positive experience</strong>, no matter what your
-                  child needs.
-                </p>
+              </div>
+
+              {/* Credentials */}
+              <div className="mt-6 p-4 bg-sage/10 rounded-2xl">
+                <p className="font-bold text-brown mb-3 text-sm">Training & Credentials:</p>
+                <ul className="space-y-2 text-sm text-brown/80">
+                  <li className="flex items-start gap-2">
+                    <span className="text-sage mt-0.5">✓</span>
+                    <span>Licensed Cosmetologist — State of Nevada</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-sage mt-0.5">✓</span>
+                    <span>Autism-Friendly Haircutting Certification</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-sage mt-0.5">✓</span>
+                    <span>Trauma-Informed Care Training</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-sage mt-0.5">✓</span>
+                    <span>Sensory Processing Disorder Awareness</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-sage mt-0.5">✓</span>
+                    <span>13+ Years Experience with Children of All Abilities</span>
+                  </li>
+                </ul>
               </div>
 
               <div className="flex flex-wrap gap-2 mt-6">
                 {[
-                  "Autism-Trained",
-                  "Sensory-Aware",
-                  "Trauma-Informed",
-                  "Endlessly Patient",
+                  "🧩 Autism-Trained",
+                  "💚 Trauma-Informed",
+                  "🎧 Sensory-Aware",
+                  "⏰ Endlessly Patient",
                 ].map((badge) => (
                   <span
                     key={badge}

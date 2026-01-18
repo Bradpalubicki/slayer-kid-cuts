@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Space | Private Sensory Suite",
+  title: "Private Sensory-Friendly Salon Suite | Calm Kids Haircuts",
   description:
-    "Private sensory-friendly suite with separate entrance. Calm environment, weighted blankets, noise-canceling headphones. One family at a time.",
+    "Tour Little Roots Studio's private sensory suite in Henderson NV. Private entrance, wait-in-car option, calm corner for breaks. One family at a time, always.",
   alternates: {
     canonical: "/our-space",
+  },
+  openGraph: {
+    title: "Private Sensory-Friendly Salon Suite | Calm Kids Haircuts",
+    description:
+      "Tour Little Roots Studio's private sensory suite in Henderson NV. Private entrance, wait-in-car option, calm corner for breaks.",
+    url: "https://littleroots.studio/our-space",
   },
 };
 

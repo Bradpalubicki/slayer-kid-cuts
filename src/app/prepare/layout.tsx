@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Prepare for Your Visit",
+  title: "How to Prepare Your Child for a Sensory-Friendly Haircut",
   description:
-    "Tips to prepare your child for a sensory-friendly haircut. Social stories, what to expect, and how we make haircuts stress-free.",
+    "Prepare your anxious or autistic child for their haircut at Little Roots Studio. Social stories, what to bring, day-of tips, and how our private suite works.",
   alternates: {
     canonical: "/prepare",
+  },
+  openGraph: {
+    title: "How to Prepare Your Child for a Sensory-Friendly Haircut",
+    description:
+      "Prepare your anxious or autistic child for their haircut at Little Roots Studio. Social stories, what to bring, and day-of tips.",
+    url: "https://littleroots.studio/prepare",
   },
 };
 

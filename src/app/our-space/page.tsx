@@ -18,17 +18,13 @@ import {
   Shield,
   MapPin,
   Phone,
-  Scissors,
-  Users,
-  Baby,
   Sparkles,
-  Coffee,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
-// SVG Floor Plan Components
+// SVG Floor Plan Component
 function SensorySuiteFloorPlan() {
   return (
     <div className="bg-gradient-to-br from-[#5B8A8A]/5 to-[#7BA3A3]/5 rounded-3xl p-8 border-2 border-[#5B8A8A]/20">
@@ -127,115 +123,6 @@ function SensorySuiteFloorPlan() {
   );
 }
 
-function MainSalonFloorPlan() {
-  return (
-    <div className="bg-gradient-to-br from-[#6B5B4F]/5 to-[#A69080]/5 rounded-3xl p-8 border-2 border-gray-200">
-      <div className="space-y-6">
-        {/* Main Entrance */}
-        <div className="flex items-center gap-3 bg-gray-100 rounded-xl p-4 border-2 border-gray-200">
-          <DoorOpen className="w-8 h-8 text-gray-600" />
-          <div>
-            <p className="font-bold text-gray-900">Main Entrance</p>
-            <p className="text-sm text-gray-600">Standard salon entry</p>
-          </div>
-        </div>
-
-        {/* Reception & Waiting */}
-        <div className="bg-white rounded-xl p-6 border-2 border-gray-200 shadow-sm">
-          <h4 className="font-bold text-gray-900 mb-3">
-            Reception & Waiting Area
-          </h4>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {[
-              { icon: Users, label: "Check-in desk" },
-              { icon: Armchair, label: "Parent seating" },
-              { icon: Baby, label: "Kids play area" },
-              { icon: Sparkles, label: "Retail display" },
-              { icon: Coffee, label: "Refreshments" },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="flex items-center gap-2 text-sm text-gray-600"
-              >
-                <item.icon className="w-4 h-4 text-[#5B8A8A]" />
-                <span>{item.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Open Styling Floor */}
-        <div className="bg-[#6B5B4F]/10 rounded-xl p-6 border-2 border-[#6B5B4F]/30">
-          <h4 className="font-bold text-[#6B5B4F] mb-3">
-            Open Styling Floor (4 Chairs)
-          </h4>
-          <div className="grid grid-cols-4 gap-3 mb-4">
-            {[1, 2, 3, 4].map((num) => (
-              <div
-                key={num}
-                className="bg-white rounded-lg p-3 text-center border border-gray-200"
-              >
-                <Scissors className="w-6 h-6 mx-auto text-[#6B5B4F] mb-1" />
-                <span className="text-xs text-gray-600">Chair {num}</span>
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-2 gap-2 text-sm text-gray-600">
-            <span>• Fun themed chairs (cars, princesses)</span>
-            <span>• Individual tablets at each station</span>
-            <span>• Kid-height mirrors</span>
-            <span>• Booster seats available</span>
-          </div>
-        </div>
-
-        {/* Private Suites */}
-        <div className="bg-[#A69080]/10 rounded-xl p-6 border-2 border-[#A69080]/30">
-          <h4 className="font-bold text-[#A69080] mb-3">
-            Private Suites (4 Suites)
-          </h4>
-          <div className="grid grid-cols-4 gap-3 mb-4">
-            {[1, 2, 3, 4].map((num) => (
-              <div
-                key={num}
-                className="bg-white rounded-lg p-3 text-center border border-gray-200"
-              >
-                <DoorOpen className="w-5 h-5 mx-auto text-[#A69080] mb-1" />
-                <span className="text-xs text-gray-600">Suite {num}</span>
-                <p className="text-xs text-gray-400">w/Sink</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-sm text-gray-600">
-            <p>• Each suite is a private room with door</p>
-            <p>• Full sink and styling setup</p>
-            <p>• Available for rent by independent stylists</p>
-          </div>
-        </div>
-
-        {/* Shared Amenities */}
-        <div className="bg-gray-100 rounded-xl p-4 border-2 border-gray-200">
-          <h4 className="font-bold text-gray-900 mb-2">Shared Amenities</h4>
-          <div className="grid grid-cols-2 gap-2 text-sm text-gray-600">
-            <span>• Shampoo stations</span>
-            <span>• Family restrooms</span>
-            <span>• Staff break room</span>
-            <span>• Laundry facilities</span>
-          </div>
-        </div>
-
-        {/* Connection Note */}
-        <div className="bg-[#5B8A8A]/10 rounded-xl p-4 border-l-4 border-[#5B8A8A]">
-          <p className="text-sm text-gray-700">
-            <strong>Interior Door</strong> → Connects to Carla&apos;s Private
-            Sensory Suite (staff access only). Clients using the private suite
-            never need to enter the main salon.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function OurSpacePage() {
   return (
     <div className="min-h-screen pt-24 pb-16">
@@ -249,22 +136,79 @@ export default function OurSpacePage() {
           >
             <Badge className="bg-[#5B8A8A]/10 text-[#5B8A8A] border-[#5B8A8A]/20 mb-4">
               <MapPin className="w-4 h-4 mr-2" />
-              Our Space
+              Our Private Suite
             </Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Designed for{" "}
-              <span className="gradient-text">Sensory Comfort</span>
+              Your Own{" "}
+              <span className="gradient-text">Sensory Sanctuary</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Little Roots Studio was designed from the ground up with
-              sensory-friendly experiences in mind. Here&apos;s a look at our
-              layout so you know exactly what to expect.
+              Little Roots Studio is a private suite — not a busy salon.
+              Just you, your child, and Carla in a calm, controlled environment
+              designed specifically for sensitive children.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Carla's Private Sensory Suite */}
+      {/* What Makes Us Different */}
+      <section className="py-16 bg-cream">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-brown">
+              Not a Salon. A Sanctuary.
+            </h2>
+            <p className="text-lg text-brown/70">
+              Unlike traditional salons — even &ldquo;kid-friendly&rdquo; ones — Little Roots Studio
+              is designed from the ground up for children who need calm, privacy, and predictability.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "No Waiting Room",
+                desc: "Wait in your car until we text you. Walk directly into your private suite.",
+                icon: "🚗",
+              },
+              {
+                title: "No Other Families",
+                desc: "One appointment at a time. The entire space is yours.",
+                icon: "👨‍👩‍👧",
+              },
+              {
+                title: "No Background Noise",
+                desc: "No music, no other clippers, no other children. Just calm.",
+                icon: "🤫",
+              },
+              {
+                title: "No Rushing",
+                desc: "Take breaks whenever needed. Your child sets the pace.",
+                icon: "⏰",
+              },
+            ].map((item) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl p-6 shadow-lg border border-sage/10"
+              >
+                <span className="text-4xl mb-3 block">{item.icon}</span>
+                <h3 className="font-bold text-brown text-lg mb-2">{item.title}</h3>
+                <p className="text-brown/60">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Private Sensory Suite */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -275,17 +219,15 @@ export default function OurSpacePage() {
           >
             <Badge className="bg-[#7BA3A3]/10 text-[#7BA3A3] border-[#7BA3A3]/20 mb-4">
               <Brain className="w-4 h-4 mr-2" />
-              Carla&apos;s Private Sensory Suite
+              The Space
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               Complete Privacy & Calm
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl">
-              <strong>Location:</strong> Separate entrance on the side of the
-              building
+              <strong>Location:</strong> Private entrance in Henderson, NV
               <br />
-              <strong>Access:</strong> Private door directly from parking lot —
-              no need to enter main salon
+              <strong>Access:</strong> Walk directly from your car into the suite — no lobby, no waiting room
             </p>
           </motion.div>
 
@@ -315,28 +257,28 @@ export default function OurSpacePage() {
                     icon: DoorOpen,
                     feature: "Private Entrance",
                     details:
-                      "Direct access from parking lot, no main salon exposure",
+                      "Direct access from parking — skip the lobby entirely",
                   },
                   {
                     icon: Lightbulb,
-                    feature: "Lighting",
+                    feature: "Dimmable Lighting",
                     details:
-                      "Dimmable LED panels, no harsh fluorescents, natural light option",
+                      "Adjustable LED panels, no harsh fluorescents, natural light option",
                   },
                   {
                     icon: VolumeX,
-                    feature: "Sound",
+                    feature: "Soundproofed",
                     details:
-                      "Soundproofed walls, white noise machine available, no background music",
+                      "Quiet environment, white noise available, no background music",
                   },
                   {
                     icon: Thermometer,
-                    feature: "Temperature",
-                    details: "Individual climate control",
+                    feature: "Climate Control",
+                    details: "Temperature adjusted to your child's comfort",
                   },
                   {
                     icon: Armchair,
-                    feature: "Seating",
+                    feature: "Flexible Seating",
                     details:
                       "Adjustable styling chair + parent seating + calm corner",
                   },
@@ -344,25 +286,25 @@ export default function OurSpacePage() {
                     icon: Tv,
                     feature: "Entertainment",
                     details:
-                      "Wall-mounted tablet, headphones, favorite shows welcome",
+                      "Tablet with shows, headphones available, bring your own if preferred",
                   },
                   {
                     icon: Brain,
                     feature: "Sensory Tools",
                     details:
-                      "Weighted lap pad, blanket, fidgets, noise-canceling headphones, chewy jewelry",
+                      "Weighted lap pad, blanket, fidgets, noise-canceling headphones",
                   },
                   {
                     icon: Timer,
                     feature: "Visual Supports",
                     details:
-                      'Posted schedule, "first-then" board, timer display',
+                      'Posted schedule, "first-then" board, visual timer',
                   },
                   {
                     icon: Shield,
-                    feature: "Escape Option",
+                    feature: "Break Anytime",
                     details:
-                      "Break anytime in calm corner, or exit directly to car",
+                      "Calm corner for breaks, or exit directly to your car",
                   },
                 ].map((item) => (
                   <div
@@ -397,7 +339,7 @@ export default function OurSpacePage() {
               The &quot;Wait in Car&quot; Experience
             </h2>
             <p className="text-xl text-white/90">
-              Here&apos;s exactly how a private suite appointment works
+              Here&apos;s exactly how your appointment works
             </p>
           </motion.div>
 
@@ -407,7 +349,7 @@ export default function OurSpacePage() {
                 step: 1,
                 icon: Car,
                 title: "Drive & Park",
-                desc: "Pull into our parking lot. Dedicated spots near Carla's private entrance.",
+                desc: "Pull into our parking lot. Park near the private entrance.",
               },
               {
                 step: 2,
@@ -418,7 +360,7 @@ export default function OurSpacePage() {
               {
                 step: 3,
                 icon: Sparkles,
-                title: "We Prepare",
+                title: "Carla Prepares",
                 desc: "Carla sets up the suite exactly how your child likes it.",
               },
               {
@@ -476,40 +418,7 @@ export default function OurSpacePage() {
         </div>
       </section>
 
-      {/* Main Salon */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-12"
-          >
-            <Badge className="bg-[#6B5B4F]/10 text-[#6B5B4F] border-[#6B5B4F]/20 mb-4">
-              <Scissors className="w-4 h-4 mr-2" />
-              The Main Salon
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Fun & Kid-Friendly Environment
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl">
-              For families comfortable with a traditional salon environment, or
-              when siblings need haircuts too, our main salon offers a fun,
-              kid-friendly experience.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <MainSalonFloorPlan />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Choosing the Right Space */}
+      {/* Is This Right For Your Child? */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -519,84 +428,36 @@ export default function OurSpacePage() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Choosing the Right Space for Your Child
+              Is Little Roots Right for Your Child?
             </h2>
+            <p className="text-lg text-gray-600">
+              Our private sensory suite is ideal for children who:
+            </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="overflow-x-auto"
-          >
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="bg-gray-100">
-                  <th className="text-left p-4 font-bold">If your child...</th>
-                  <th className="text-left p-4 font-bold">We recommend...</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  {
-                    condition: "Gets overwhelmed in busy environments",
-                    recommendation: "Private Sensory Suite",
-                    suite: true,
-                  },
-                  {
-                    condition: "Has had traumatic haircut experiences",
-                    recommendation: "Private Sensory Suite",
-                    suite: true,
-                  },
-                  {
-                    condition: "Needs a completely predictable routine",
-                    recommendation: "Private Sensory Suite",
-                    suite: true,
-                  },
-                  {
-                    condition: "Does well with some activity around them",
-                    recommendation: "Main Salon",
-                    suite: false,
-                  },
-                  {
-                    condition: "Enjoys watching other kids",
-                    recommendation: "Main Salon",
-                    suite: false,
-                  },
-                  {
-                    condition: "Has siblings getting cuts at the same time",
-                    recommendation: "Main Salon (or both!)",
-                    suite: false,
-                  },
-                  {
-                    condition: "Is trying a haircut for the first time",
-                    recommendation: "Private Sensory Suite (recommended)",
-                    suite: true,
-                  },
-                  {
-                    condition: "Has graduated from needing full accommodation",
-                    recommendation: "Main Salon with Carla",
-                    suite: false,
-                  },
-                ].map((row, index) => (
-                  <tr key={index} className="border-b">
-                    <td className="p-4 text-gray-700">{row.condition}</td>
-                    <td className="p-4">
-                      <Badge
-                        className={
-                          row.suite
-                            ? "bg-[#7BA3A3]/10 text-[#7BA3A3] border-[#7BA3A3]/20"
-                            : "bg-[#6B5B4F]/10 text-[#6B5B4F] border-[#6B5B4F]/20"
-                        }
-                      >
-                        {row.recommendation}
-                      </Badge>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </motion.div>
+          <div className="grid md:grid-cols-2 gap-4">
+            {[
+              "Get overwhelmed in busy or loud environments",
+              "Have had traumatic haircut experiences",
+              "Need a completely predictable routine",
+              "Are autistic or neurodivergent",
+              "Experience sensory processing differences",
+              "Have anxiety around new experiences",
+              "Need extra time and patience",
+              "Are trying a haircut for the first time",
+            ].map((item) => (
+              <motion.div
+                key={item}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="flex items-center gap-3 p-4 bg-sage/10 rounded-xl"
+              >
+                <CheckCircle2 className="w-5 h-5 text-sage flex-shrink-0" />
+                <span className="text-gray-700">{item}</span>
+              </motion.div>
+            ))}
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -605,8 +466,8 @@ export default function OurSpacePage() {
             className="text-center mt-8"
           >
             <p className="text-gray-600 mb-4">
-              Not sure? Contact us and we&apos;ll help you decide what&apos;s
-              best for your child.
+              Not sure if Little Roots is right for your family? Reach out — Carla is
+              happy to chat about your child&apos;s needs.
             </p>
             <Link href="/contact">
               <Button

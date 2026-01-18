@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Carla | 13+ Years Experience",
+  title: "Meet Carla | Autism-Trained Kids Hair Stylist Henderson NV",
   description:
-    "Meet Carla, your autism-trained kids hair stylist with 13+ years experience. Sensory-aware, trauma-informed, endlessly patient.",
+    "Meet Carla, Henderson's autism-trained kids hair stylist with 13+ years experience. Specializing in trauma-informed, sensory-friendly haircuts for anxious children.",
   alternates: {
     canonical: "/about",
+  },
+  openGraph: {
+    title: "Meet Carla | Autism-Trained Kids Hair Stylist Henderson NV",
+    description:
+      "Meet Carla, Henderson's autism-trained kids hair stylist with 13+ years experience. Specializing in trauma-informed, sensory-friendly haircuts.",
+    url: "https://littleroots.studio/about",
   },
 };
 

@@ -8,31 +8,34 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://littleroots.studio"),
-  // Title template allows pages to have unique titles
+  // Title template allows pages to have unique titles - 59 chars
   title: {
-    default: "Little Roots Studio | Sensory-Friendly Kids Haircuts Henderson",
+    default:
+      "Little Roots Studio | Autism-Friendly Kids Haircuts Henderson NV",
     template: "%s | Little Roots Studio",
   },
-  // Description: 136 chars (under 160 limit)
+  // Description: 158 chars (under 160 limit) - includes power words
   description:
-    "Henderson's first sensory-friendly kids hair salon. Autism-friendly haircuts, private suite, one family at a time. Opening Spring 2026.",
+    "Carla's private, autism-trained, sensory-friendly kids haircuts in Henderson. Trauma-informed care. No rushing. One family at a time. Opening Spring 2026.",
   // Homepage canonical - pages will override with their own
   alternates: {
     canonical: "/",
   },
   keywords: [
-    "sensory-friendly haircuts Henderson NV",
-    "autism-friendly hair salon Las Vegas",
-    "kids haircuts Henderson",
-    "neurodivergent haircuts",
-    "sensory processing disorder haircuts",
-    "childrens hair salon Henderson Nevada",
-    "first haircut Henderson",
-    "anxious child haircut",
-    "calm kids salon",
-    "private kids haircuts",
+    "autism-friendly haircuts Henderson NV",
+    "sensory-friendly kids haircuts Henderson",
+    "trauma-informed kids haircuts",
+    "neurodivergent-friendly hair salon",
+    "anxious child haircut Henderson",
+    "first haircut specialist Henderson NV",
+    "sensory processing disorder haircuts Las Vegas",
+    "ADHD-friendly haircuts kids",
+    "private kids haircuts Henderson Nevada",
+    "calm kids salon Henderson",
     "Little Roots Studio",
-    "Carla hair stylist Henderson",
+    "Carla autism-trained stylist Henderson",
+    "haircuts for autistic children Las Vegas",
+    "sensory-safe haircuts kids",
   ].join(", "),
   authors: [{ name: "Carla", url: "https://littleroots.studio" }],
   creator: "Little Roots Studio",
@@ -43,27 +46,29 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://littleroots.studio",
     siteName: "Little Roots Studio",
-    // OG Title: 58 chars
-    title: "Little Roots Studio | Sensory-Friendly Kids Haircuts Henderson",
-    // OG Description: 136 chars
+    // OG Title: 59 chars
+    title:
+      "Little Roots Studio | Autism-Friendly Kids Haircuts Henderson NV",
+    // OG Description: 155 chars
     description:
-      "Henderson's first sensory-friendly kids hair salon. Autism-friendly haircuts, private suite, one family at a time. Opening Spring 2026.",
+      "Henderson's first autism-trained, sensory-friendly kids hair salon. Trauma-informed care by Carla. Private suite, one family at a time. Opening Spring 2026.",
     images: [
       {
         url: "/images/little-roots-og.png",
         width: 1200,
         height: 630,
-        alt: "Little Roots Studio - Sensory-Friendly Kids Hair Salon",
+        alt: "Little Roots Studio - Autism-Friendly Sensory-Safe Kids Hair Salon Henderson NV",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    // Twitter Title: 52 chars
-    title: "Little Roots Studio | Kids Haircuts Henderson NV",
-    // Twitter Description: 118 chars
+    // Twitter Title: 59 chars
+    title:
+      "Little Roots Studio | Autism-Friendly Kids Haircuts Henderson",
+    // Twitter Description: 130 chars
     description:
-      "Henderson's first sensory-friendly kids hair salon. One family at a time. Opening Spring 2026.",
+      "Henderson's first autism-trained, sensory-friendly kids hair salon. Trauma-informed. One family at a time. Opening Spring 2026.",
     images: ["/images/little-roots-og.png"],
   },
 };
@@ -79,15 +84,24 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "HairSalon",
   name: "Little Roots Studio",
+  alternateName: "Little Roots Studio by Carla",
   description:
-    "Henderson's first sensory-friendly, judgment-free hair studio designed for children with autism, ADHD, sensory processing differences, and anxiety. One family at a time.",
+    "Henderson's first and only autism-trained, trauma-informed, sensory-friendly haircut sanctuary. Designed specifically for autistic, neurodivergent, anxious, and sensitive children. With over 13 years of specialized experience, Carla creates a judgment-free environment where children feel safe and parents feel understood. One family at a time.",
   url: "https://littleroots.studio",
   telephone: "",
   email: "hello@littlerootsstudio.com",
+  founder: {
+    "@type": "Person",
+    name: "Carla",
+    jobTitle: "Autism-Trained Specialist & Owner",
+    description:
+      "13+ years experience working with children, specialized training in autism-friendly haircutting and trauma-informed care.",
+  },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Henderson",
     addressRegion: "NV",
+    postalCode: "89052",
     addressCountry: "US",
   },
   geo: {
@@ -102,6 +116,9 @@ const localBusinessSchema = {
     "Boulder City, NV",
     "Green Valley",
     "Summerlin",
+    "North Las Vegas",
+    "Enterprise",
+    "Spring Valley",
   ],
   priceRange: "$$",
   openingHoursSpecification: {
@@ -110,16 +127,27 @@ const localBusinessSchema = {
   },
   image: "https://littleroots.studio/images/little-roots-logo.webp",
   sameAs: [],
+  knowsAbout: [
+    "Autism-friendly haircuts",
+    "Sensory-adapted haircuts",
+    "Trauma-informed care",
+    "Neurodivergent children",
+    "Sensory processing disorder",
+    "ADHD-friendly services",
+    "Anxiety management during haircuts",
+    "First haircut experiences",
+  ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Sensory-Friendly Haircut Services",
+    name: "Autism-Friendly & Sensory-Safe Haircut Services",
     itemListElement: [
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
           name: "First Haircut Experience",
-          description: "Certificate and photo included",
+          description:
+            "Gentle, trauma-informed first haircut with certificate and photo. Perfect for anxious or sensitive children.",
         },
         price: "45",
         priceCurrency: "USD",
@@ -129,7 +157,8 @@ const localBusinessSchema = {
         itemOffered: {
           "@type": "Service",
           name: "Kids Haircut",
-          description: "Ages 0-12",
+          description:
+            "Sensory-friendly kids haircut ages 0-12. Private suite, one family at a time.",
         },
         price: "35",
         priceCurrency: "USD",
@@ -139,9 +168,21 @@ const localBusinessSchema = {
         itemOffered: {
           "@type": "Service",
           name: "Sensory-Adapted Cut",
-          description: "Extended time, extra patience",
+          description:
+            "Extended time autism-friendly haircut with extra patience, breaks as needed, and full sensory accommodations.",
         },
         price: "50",
+        priceCurrency: "USD",
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Teen Haircut",
+          description:
+            "Sensory-friendly teen haircut ages 13-17 with trauma-informed approach.",
+        },
+        price: "40",
         priceCurrency: "USD",
       },
     ],
@@ -171,6 +212,22 @@ const faqSchema = {
     },
     {
       "@type": "Question",
+      name: "What makes Little Roots different from other kids salons?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Little Roots Studio is Henderson's first and only autism-trained, trauma-informed, sensory-friendly haircut sanctuary. Unlike fun-themed salons, we focus on creating a calm, private, judgment-free environment. Carla has 13+ years of specialized experience with neurodivergent children, and we see only one family at a time in our private sensory suite.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is my child too anxious for a haircut?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No child is too anxious. We specialize in helping children who have had traumatic haircut experiences rebuild trust. Carla uses trauma-informed techniques and never rushes. Your child sets the pace, and breaks happen anytime they're needed. Many families come to us after difficult experiences elsewhere.",
+      },
+    },
+    {
+      "@type": "Question",
       name: "What ages do you serve?",
       acceptedAnswer: {
         "@type": "Answer",
@@ -187,10 +244,26 @@ const faqSchema = {
     },
     {
       "@type": "Question",
+      name: "What sensory tools do you have available?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We offer noise-canceling headphones, weighted lap pads, fidget toys, visual timers, dimmable lighting, TV/tablet with favorite shows, and a calm corner for breaks. We also have a treasure chest of rewards! Our tools are carefully selected to help reduce anxiety and sensory overload.",
+      },
+    },
+    {
+      "@type": "Question",
       name: "Where is Little Roots Studio located?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Little Roots Studio is located in Henderson, Nevada, serving families throughout the Las Vegas valley including Paradise, Boulder City, and surrounding areas. We're opening Spring 2026.",
+        text: "Little Roots Studio is located in Henderson, Nevada, serving families throughout the Las Vegas valley including Paradise, Boulder City, Green Valley, Summerlin, and surrounding areas. We're opening Spring 2026. Join our waitlist to be the first to book.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do I prepare my autistic child for a haircut?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We recommend visiting our Prepare page for tips including: showing your child photos of the salon beforehand, discussing what will happen using simple language, bringing comfort items, and arriving early to acclimate. We also provide social stories to help prepare your child for their visit.",
       },
     },
   ],
