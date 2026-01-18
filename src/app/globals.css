@@ -45,48 +45,51 @@
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
 
-  /* Custom Slayer Kid Cuts Colors */
-  --color-pink: #FF6B9D;
-  --color-purple: #9B5DE5;
-  --color-blue: #00BBF9;
-  --color-green: #00F5D4;
-  --color-yellow: #FEE440;
-  --color-orange: #F15BB5;
+  /* Little Roots Studio Brand Colors */
+  --color-sage: #5B8A8A;
+  --color-sage-light: #7BA3A3;
+  --color-sage-dark: #4A7272;
+  --color-brown: #6B5B4F;
+  --color-brown-light: #8B7B6F;
+  --color-cream: #F8F6F3;
+  --color-seafoam: #D4E5E5;
+  --color-warm-white: #FDFCFA;
+  --color-earth: #A69080;
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(0.99 0 0);
-  --foreground: oklch(0.2 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: #9B5DE5;
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: #00BBF9;
-  --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.5 0 0);
-  --accent: #FF6B9D;
-  --accent-foreground: oklch(1 0 0);
+  --background: #FDFCFA;
+  --foreground: #6B5B4F;
+  --card: #FFFFFF;
+  --card-foreground: #6B5B4F;
+  --popover: #FFFFFF;
+  --popover-foreground: #6B5B4F;
+  --primary: #5B8A8A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #D4E5E5;
+  --secondary-foreground: #4A7272;
+  --muted: #F8F6F3;
+  --muted-foreground: #8B7B6F;
+  --accent: #A69080;
+  --accent-foreground: #FFFFFF;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.9 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: #9B5DE5;
-  --chart-1: #FF6B9D;
-  --chart-2: #9B5DE5;
-  --chart-3: #00BBF9;
-  --chart-4: #00F5D4;
-  --chart-5: #FEE440;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: #9B5DE5;
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: #9B5DE5;
+  --border: #E8E4DF;
+  --input: #F8F6F3;
+  --ring: #5B8A8A;
+  --chart-1: #5B8A8A;
+  --chart-2: #6B5B4F;
+  --chart-3: #A69080;
+  --chart-4: #D4E5E5;
+  --chart-5: #7BA3A3;
+  --sidebar: #F8F6F3;
+  --sidebar-foreground: #6B5B4F;
+  --sidebar-primary: #5B8A8A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #D4E5E5;
+  --sidebar-accent-foreground: #4A7272;
+  --sidebar-border: #E8E4DF;
+  --sidebar-ring: #5B8A8A;
 }
 
 @layer base {
@@ -95,6 +98,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: system-ui, -apple-system, sans-serif;
   }
 }
 
@@ -109,9 +113,9 @@
   50% { transform: translateY(-10px); }
 }
 
-@keyframes wiggle {
-  0%, 100% { transform: rotate(-3deg); }
-  50% { transform: rotate(3deg); }
+@keyframes gentle-sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
 }
 
 @keyframes gradient-x {
@@ -119,14 +123,19 @@
   50% { background-position: 100% 50%; }
 }
 
-@keyframes sparkle {
+@keyframes breathe {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.2); }
+  50% { opacity: 0.8; transform: scale(1.02); }
 }
 
 @keyframes slide-up {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes leaf-fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100px) rotate(45deg); opacity: 0; }
 }
 
 .animate-float {
@@ -137,8 +146,8 @@
   animation: bounce-slow 3s ease-in-out infinite;
 }
 
-.animate-wiggle {
-  animation: wiggle 2s ease-in-out infinite;
+.animate-gentle-sway {
+  animation: gentle-sway 4s ease-in-out infinite;
 }
 
 .animate-gradient-x {
@@ -146,51 +155,95 @@
   animation: gradient-x 3s ease infinite;
 }
 
-.animate-sparkle {
-  animation: sparkle 2s ease-in-out infinite;
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
 }
 
 .animate-slide-up {
   animation: slide-up 0.6s ease-out forwards;
 }
 
-/* Gradient backgrounds */
+/* Earth-toned gradient backgrounds */
 .gradient-hero {
-  background: linear-gradient(135deg, #FF6B9D 0%, #9B5DE5 50%, #00BBF9 100%);
+  background: linear-gradient(135deg, #5B8A8A 0%, #7BA3A3 50%, #D4E5E5 100%);
+}
+
+.gradient-warm {
+  background: linear-gradient(135deg, #6B5B4F 0%, #A69080 50%, #D4C4B4 100%);
+}
+
+.gradient-calm {
+  background: linear-gradient(180deg, #F8F6F3 0%, #D4E5E5 100%);
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #FF6B9D 0%, #9B5DE5 50%, #00BBF9 100%);
+  background: linear-gradient(135deg, #5B8A8A 0%, #4A7272 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #6B5B4F 0%, #A69080 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-border {
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   background: linear-gradient(white, white) padding-box,
-              linear-gradient(135deg, #FF6B9D, #9B5DE5, #00BBF9) border-box;
+              linear-gradient(135deg, #5B8A8A, #D4E5E5) border-box;
 }
 
-/* Fun shapes */
+/* Organic shapes */
 .blob {
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
 }
 
-/* Glass effect */
+.leaf-shape {
+  border-radius: 5% 95% 5% 95% / 95% 5% 95% 5%;
+}
+
+/* Glass effect - softer for earth tones */
 .glass {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(253, 252, 250, 0.9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
-/* Confetti pattern overlay */
-.confetti-bg {
+/* Leaf pattern overlay - subtle earth tones */
+.leaf-bg {
   background-image:
-    radial-gradient(circle at 20% 30%, #FF6B9D 2px, transparent 2px),
-    radial-gradient(circle at 80% 20%, #9B5DE5 2px, transparent 2px),
-    radial-gradient(circle at 40% 70%, #00BBF9 2px, transparent 2px),
-    radial-gradient(circle at 90% 80%, #00F5D4 2px, transparent 2px),
-    radial-gradient(circle at 10% 90%, #FEE440 2px, transparent 2px);
-  background-size: 100px 100px;
+    radial-gradient(circle at 20% 30%, #5B8A8A 1.5px, transparent 1.5px),
+    radial-gradient(circle at 80% 20%, #A69080 1.5px, transparent 1.5px),
+    radial-gradient(circle at 40% 70%, #D4E5E5 2px, transparent 2px),
+    radial-gradient(circle at 90% 80%, #7BA3A3 1.5px, transparent 1.5px),
+    radial-gradient(circle at 10% 90%, #6B5B4F 1px, transparent 1px);
+  background-size: 120px 120px;
+}
+
+/* Calming texture overlay */
+.texture-paper {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+}
+
+/* Little Roots specific styles */
+.roots-shadow {
+  box-shadow: 0 4px 20px rgba(91, 138, 138, 0.15);
+}
+
+.roots-shadow-warm {
+  box-shadow: 0 4px 20px rgba(107, 91, 79, 0.12);
+}
+
+/* Soft card hover effect */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(91, 138, 138, 0.2);
 }
