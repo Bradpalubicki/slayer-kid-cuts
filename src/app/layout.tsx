@@ -5,6 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://littleroots.studio'),
   title: 'Little Roots Studio | Coming Soon | Sensory-Friendly Kids Hair Salon Henderson NV',
   description: 'Henderson\'s first sensory-friendly, judgment-free hair studio designed for children. Specialized in autism-friendly haircuts, neurodivergent care, and kids who need extra patience. One family at a time. Coming Spring 2025.',
   keywords: [

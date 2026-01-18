@@ -50,7 +50,7 @@ function RotatingHeroBackground() {
           />
         </div>
       ))}
-      <div className="absolute inset-0 bg-gradient-to-b from-brown/70 via-sage/60 to-brown/80"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-brown/85 via-sage/75 to-brown/90"></div>
     </>
   );
 }
