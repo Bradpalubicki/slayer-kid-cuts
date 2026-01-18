@@ -340,14 +340,14 @@ export default function Home() {
         {/* Background Image with Calming Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1920&q=80"
-            alt="Bright, calm hair salon with natural light and warm, welcoming atmosphere"
+            src="https://images.unsplash.com/photo-1540479859555-17af45c78602?auto=format&fit=crop&w=1920&q=80"
+            alt="Happy children playing outdoors in a sunny park with green grass"
             fill
             className="object-cover"
             priority
             unoptimized
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-sage/50 via-cream/30 to-seafoam/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-sage/60 via-sage/40 to-brown/50"></div>
         </div>
         <div className="max-w-4xl mx-auto text-center relative z-10 pt-8">
           {/* Badge */}
