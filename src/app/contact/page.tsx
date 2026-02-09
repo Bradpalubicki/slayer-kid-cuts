@@ -86,15 +86,15 @@ export default function ContactPage() {
                       <Phone className="w-6 h-6 text-[#6B5B4F]" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg mb-1">Call or Text</h3>
+                      <h3 className="font-bold text-lg mb-1">Text or Call</h3>
                       <a
-                        href="tel:+17025551234"
+                        href="tel:+17029172350"
                         className="text-gray-600 hover:text-[#5B8A8A] transition-colors"
                       >
-                        (702) 555-1234
+                        (702) 917-2350
                       </a>
                       <p className="text-sm text-gray-500 mt-1">
-                        We respond to texts within minutes!
+                        Text preferred — please allow time for responses during appointments.
                       </p>
                     </div>
                   </div>
@@ -116,13 +116,13 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-bold text-lg mb-1">Email Us</h3>
                       <a
-                        href="mailto:hello@slayerkidcuts.com"
+                        href="mailto:littlerootscuts333@gmail.com"
                         className="text-gray-600 hover:text-[#5B8A8A] transition-colors"
                       >
-                        hello@slayerkidcuts.com
+                        littlerootscuts333@gmail.com
                       </a>
                       <p className="text-sm text-gray-500 mt-1">
-                        We reply within 24 hours
+                        Please allow time for responses during business hours.
                       </p>
                     </div>
                   </div>
@@ -144,12 +144,14 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-bold text-lg mb-1">Visit Us</h3>
                       <p className="text-gray-600">
-                        1234 Fun Street, Suite 100
+                        Sunset Suites
                         <br />
-                        Las Vegas, NV 89014
+                        2895 N Green Valley Pkwy #G
+                        <br />
+                        Henderson, NV 89014
                       </p>
                       <a
-                        href="https://maps.google.com/?q=Las Vegas+NV"
+                        href="https://maps.google.com/?q=2895+N+Green+Valley+Pkwy+Henderson+NV+89014"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm text-[#5B8A8A] hover:underline mt-2 inline-block"
@@ -176,9 +178,9 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-bold text-lg mb-1">Hours</h3>
                       <div className="text-gray-600 text-sm space-y-1">
-                        <p>Monday - Friday: 9am - 6pm</p>
-                        <p>Saturday: 9am - 5pm</p>
-                        <p>Sunday: 10am - 4pm</p>
+                        <p>Tuesday – Saturday: 10am – 6pm</p>
+                        <p>Closed daily 1pm – 2pm</p>
+                        <p>Sunday & Monday: Closed</p>
                       </div>
                     </div>
                   </div>
@@ -282,8 +284,8 @@ export default function ContactPage() {
                             Reschedule Appointment
                           </option>
                           <option value="pricing">Pricing & Services</option>
-                          <option value="mobile">Mobile Service Inquiry</option>
-                          <option value="party">Birthday Party</option>
+                          <option value="sensory">Sensory Accommodations</option>
+                          <option value="intake">Intake Form Question</option>
                           <option value="other">Other</option>
                         </select>
                       </div>
@@ -341,7 +343,7 @@ export default function ContactPage() {
         >
           <div className="rounded-3xl overflow-hidden shadow-xl h-[400px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103073.28897988795!2d-115.07382!3d36.0397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8d0f9c2f5f5f5%3A0x0!2sLas Vegas%2C%20NV!5e0!3m2!1sen!2sus!4v1621234567890!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.5!2d-115.0628!3d36.0825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s2895+N+Green+Valley+Pkwy+Henderson+NV+89014!5e0!3m2!1sen!2sus"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -364,16 +366,16 @@ export default function ContactPage() {
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { q: "How do I book?", a: "Use our online booking or text us!" },
+              { q: "How do I book?", a: "Text or call (702) 917-2350 to schedule an appointment." },
               {
                 q: "Do you do walk-ins?",
-                a: "Yes, but appointments are preferred",
+                a: "By appointment only. One family at a time.",
               },
               {
-                q: "What ages do you serve?",
-                a: "All kids from babies to teens!",
+                q: "What if my child can't finish?",
+                a: "If your child is unable to complete the haircut, you will not be charged.",
               },
-              { q: "Cancellation policy?", a: "24 hours notice appreciated" },
+              { q: "How do I enter?", a: "Text when you arrive. You'll receive the building entry code when your suite is ready." },
             ].map((faq) => (
               <Card key={faq.q} className="text-left">
                 <CardContent className="p-4">

@@ -14,7 +14,7 @@ const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/prepare", label: "Prepare" },
   { href: "/faq", label: "FAQ" },
-  { href: "/coming-soon", label: "Coming Soon", highlight: true },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Navigation() {
@@ -67,12 +67,12 @@ export function Navigation() {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link href="/coming-soon">
+            <a href="tel:+17029172350">
               <Button className="bg-[#5B8A8A] hover:bg-[#4A7272] text-white border-0 rounded-full px-6 shadow-lg hover:shadow-xl transition-all">
                 <Calendar className="w-4 h-4 mr-2" />
-                Join Waitlist
+                Text or Call to Book
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -106,12 +106,12 @@ export function Navigation() {
                 </Link>
               ))}
               <div className="pt-4">
-                <Link href="/coming-soon" onClick={() => setIsOpen(false)}>
+                <a href="tel:+17029172350" onClick={() => setIsOpen(false)}>
                   <Button className="w-full bg-[#5B8A8A] hover:bg-[#4A7272] text-white border-0 rounded-xl py-6 shadow-lg">
                     <Calendar className="w-5 h-5 mr-2" />
-                    Join Waitlist
+                    Text or Call to Book
                   </Button>
-                </Link>
+                </a>
               </div>
             </nav>
           </motion.div>

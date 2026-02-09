@@ -88,8 +88,8 @@ const localBusinessSchema = {
   description:
     "Henderson's first and only autism-trained, trauma-informed, sensory-friendly haircut sanctuary. Designed specifically for autistic, neurodivergent, anxious, and sensitive children. With over 13 years of specialized experience, Carla creates a judgment-free environment where children feel safe and parents feel understood. One family at a time.",
   url: "https://littleroots.studio",
-  telephone: "",
-  email: "hello@littlerootsstudio.com",
+  telephone: "+1-702-917-2350",
+  email: "littlerootscuts333@gmail.com",
   founder: {
     "@type": "Person",
     name: "Carla",
@@ -99,9 +99,10 @@ const localBusinessSchema = {
   },
   address: {
     "@type": "PostalAddress",
+    streetAddress: "2895 N Green Valley Pkwy #G",
     addressLocality: "Henderson",
     addressRegion: "NV",
-    postalCode: "89052",
+    postalCode: "89014",
     addressCountry: "US",
   },
   geo: {
@@ -121,10 +122,20 @@ const localBusinessSchema = {
     "Spring Valley",
   ],
   priceRange: "$$",
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    description: "By appointment only. Opening Spring 2026.",
-  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "10:00",
+      closes: "13:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "14:00",
+      closes: "18:00",
+    },
+  ],
   image: "https://littleroots.studio/images/little-roots-logo.webp",
   sameAs: [],
   knowsAbout: [
@@ -139,15 +150,15 @@ const localBusinessSchema = {
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Autism-Friendly & Sensory-Safe Haircut Services",
+    name: "Sensory-Friendly Children's Haircut Services",
     itemListElement: [
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "First Haircut Experience",
+          name: "Sensory-Friendly Haircut",
           description:
-            "Gentle, trauma-informed first haircut with certificate and photo. Perfect for anxious or sensitive children.",
+            "60-minute sensory-friendly haircut with full accommodations. Intake questionnaire, calm environment, and patience at every step.",
         },
         price: "45",
         priceCurrency: "USD",
@@ -158,31 +169,31 @@ const localBusinessSchema = {
           "@type": "Service",
           name: "Kids Haircut",
           description:
-            "Sensory-friendly kids haircut ages 0-12. Private suite, one family at a time.",
+            "30-minute kids haircut in a private, calm suite. One family at a time.",
         },
-        price: "35",
+        price: "30",
         priceCurrency: "USD",
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Sensory-Adapted Cut",
+          name: "Buzz Cut / Ends Trimmed",
           description:
-            "Extended time autism-friendly haircut with extra patience, breaks as needed, and full sensory accommodations.",
+            "Quick buzz cut or ends trim in a sensory-friendly environment.",
         },
-        price: "50",
+        price: "20",
         priceCurrency: "USD",
       },
       {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Teen Haircut",
+          name: "Bang Trim",
           description:
-            "Sensory-friendly teen haircut ages 13-17 with trauma-informed approach.",
+            "Quick bang trim in a calm, private environment.",
         },
-        price: "40",
+        price: "15",
         priceCurrency: "USD",
       },
     ],

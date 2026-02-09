@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
@@ -99,31 +99,67 @@ export function Footer() {
           <div>
             <h4 className="font-bold text-lg mb-6">Get in Touch</h4>
             <ul className="space-y-4">
+              <li className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-[#7BA3A3] flex-shrink-0" />
+                <a
+                  href="tel:+17029172350"
+                  className="text-[#D4E5E5] hover:text-white transition-colors"
+                >
+                  (702) 917-2350
+                  <span className="text-xs block text-[#A69080]">Text or Call</span>
+                </a>
+              </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#7BA3A3] mt-0.5 flex-shrink-0" />
                 <span className="text-[#D4E5E5]">
-                  Las Vegas, NV
+                  Sunset Suites
                   <br />
-                  <span className="text-sm">Location coming soon!</span>
+                  2895 N Green Valley Pkwy #G
+                  <br />
+                  Henderson, NV 89014
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[#7BA3A3] flex-shrink-0" />
                 <a
-                  href="mailto:hello@littlerootsstudio.com"
+                  href="mailto:littlerootscuts333@gmail.com"
                   className="text-[#D4E5E5] hover:text-white transition-colors"
                 >
-                  hello@littlerootsstudio.com
+                  littlerootscuts333@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="w-5 h-5 text-[#7BA3A3] mt-0.5 flex-shrink-0" />
                 <div className="text-[#D4E5E5] text-sm">
-                  <p>Hours coming soon</p>
+                  <p>Tue – Sat: 10am – 6pm</p>
+                  <p>Closed daily 1pm – 2pm</p>
                   <p className="text-xs mt-1">By appointment only</p>
                 </div>
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Powered by NuStack */}
+      <div className="border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-center gap-2">
+            <span className="text-xs text-[#D4E5E5]/60">Powered by</span>
+            <a
+              href="https://nustackdigital.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity"
+            >
+              <Image
+                src="/images/nustack-logo.png"
+                alt="NuStack Digital Ventures"
+                width={100}
+                height={28}
+                className="h-6 w-auto object-contain"
+              />
+            </a>
           </div>
         </div>
       </div>
