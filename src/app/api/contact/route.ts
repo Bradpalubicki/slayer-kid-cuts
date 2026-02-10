@@ -21,8 +21,8 @@ async function sendToSlack(contact: ContactData) {
     booking: "Booking Question",
     reschedule: "Reschedule Request",
     pricing: "Pricing Inquiry",
-    mobile: "Mobile Service",
-    party: "Birthday Party",
+    sensory: "Sensory Accommodations",
+    intake: "Intake Form Question",
     other: "General Inquiry",
   };
 

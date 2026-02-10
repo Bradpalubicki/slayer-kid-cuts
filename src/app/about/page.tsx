@@ -257,7 +257,7 @@ export default function AboutPage() {
                 child: "Mom of Emma, 6",
               },
               {
-                text: "We've tried every kids salon in Vegas. Nothing compares. The mobile service is incredible - Carla comes to us and my twins actually behave!",
+                text: "We've tried every kids salon in Vegas. Nothing compares. The private suite experience is incredible — my twins felt so safe and comfortable the whole time!",
                 name: "David M.",
                 child: "Dad of twins, 4",
               },

@@ -262,7 +262,7 @@ export default function SensoryFriendlyPage() {
         </div>
       </section>
 
-      {/* Mobile Service Highlight */}
+      {/* Arrival & Entry Process */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-r from-[#7BA3A3] to-[#5B8A8A] rounded-3xl p-12 lg:p-16">
@@ -274,25 +274,23 @@ export default function SensoryFriendlyPage() {
                 className="text-white space-y-6"
               >
                 <Badge className="bg-white/20 text-white border-white/30">
-                  <Moon className="w-4 h-4 mr-2" />
-                  Mobile Service
+                  Arrival & Entry
                 </Badge>
                 <h2 className="text-3xl sm:text-4xl font-bold">
-                  Haircuts in Your Safe Space
+                  A Calm, Private Arrival
                 </h2>
                 <p className="text-xl text-white/90">
-                  For many children with sensory needs, their home is their
-                  safest environment. Our mobile service brings the haircut to
-                  them - in their familiar surroundings, with their comfort
-                  items nearby.
+                  Little Roots Studio is located inside a secured building
+                  with no waiting room — maintaining a quiet, private,
+                  low-stimulation environment for every child.
                 </p>
                 <ul className="space-y-3">
                   {[
-                    "No overwhelming new environment",
-                    "All their comfort items available",
-                    "Siblings can be nearby for support",
-                    "You control the lighting and sounds",
-                    "No waiting room anxiety",
+                    "Text (702) 917-2350 when you arrive",
+                    "Receive the building entry code when your suite is ready",
+                    "No waiting room — no overwhelm",
+                    "Your child's space is already prepared",
+                    "One family at a time — always",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3">
                       <CheckCircle2 className="w-5 h-5 text-white" />
@@ -300,28 +298,40 @@ export default function SensoryFriendlyPage() {
                     </li>
                   ))}
                 </ul>
-                <Link href="/book">
+                <a href="tel:+17029172350">
                   <Button
                     size="lg"
                     className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8 shadow-lg"
                   >
-                    Book Mobile Visit
+                    Text or Call to Book
                   </Button>
-                </Link>
+                </a>
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
+                className="text-white space-y-6"
               >
-                <Image
-                  src="https://images.unsplash.com/photo-1484665754804-74b091211472?w=500&h=400&fit=crop"
-                  alt="Comfortable home environment for mobile haircut service"
-                  width={500}
-                  height={400}
-                  className="rounded-2xl shadow-xl"
-                />
+                <h3 className="text-2xl font-bold">The Studio Environment</h3>
+                <ul className="space-y-3">
+                  {[
+                    "Earth-toned, calming decor",
+                    "Light-controlled and low-noise",
+                    "One-family-at-a-time scheduling",
+                    "TV with favorite shows or videos",
+                    "Nintendo Switch gaming option",
+                    "Sensory toys and regulation tools",
+                    "Weighted capes available",
+                    "Flexible seating options",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-white" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             </div>
           </div>

@@ -38,7 +38,7 @@ const mockStats = {
 
 const mockTopStylists = [
   {
-    name: "Slayer",
+    name: "Carla",
     bookings: 156,
     revenue: 5200,
     rating: 4.9,
@@ -103,7 +103,7 @@ const mockRecentBookings = [
     client: "Jackson W.",
     service: "Kids Haircut",
     time: "2:00 PM",
-    stylist: "Slayer",
+    stylist: "Carla",
     type: "salon",
     specialNeeds: true,
   },
@@ -111,21 +111,21 @@ const mockRecentBookings = [
     client: "Ava B.",
     service: "First Haircut",
     time: "2:30 PM",
-    stylist: "Slayer",
+    stylist: "Carla",
     type: "salon",
     specialNeeds: false,
   },
   {
     client: "Mason L.",
-    service: "VIP Home Visit",
+    service: "Sensory-Friendly Haircut",
     time: "4:00 PM",
-    stylist: "Slayer",
+    stylist: "Carla",
     type: "mobile",
     specialNeeds: false,
   },
   {
     client: "Isabella C.",
-    service: "Mom & Dad + 2 Kids",
+    service: "Kids Haircut",
     time: "5:00 PM",
     stylist: "Maya",
     type: "salon",
@@ -137,7 +137,7 @@ const mockServiceBreakdown = [
   { name: "Kids Haircuts", count: 124, percentage: 50 },
   { name: "Sensory-Friendly", count: 45, percentage: 18 },
   { name: "First Haircuts", count: 32, percentage: 13 },
-  { name: "Mom & Dad Cuts", count: 28, percentage: 11 },
+  { name: "Buzz Cut / Trim", count: 28, percentage: 11 },
   { name: "VIP Home Service", count: 18, percentage: 8 },
 ];
 

@@ -40,9 +40,9 @@ export default function KidsHaircutsHendersonPage() {
                 <span className="gradient-text">Henderson, NV</span>
               </h1>
               <p className="text-xl text-gray-600">
-                Henderson&apos;s most fun kids hair salon! Slayer Kid Cuts makes
-                haircuts an adventure with themed chairs, entertainment, and
-                expert stylists who specialize in children.
+                Henderson&apos;s first sensory-friendly children&apos;s salon suite. Little Roots Studio
+                provides a calm, private, patient experience for every child —
+                especially those who need a little more understanding.
               </p>
 
               <div className="flex items-center gap-6">
@@ -129,21 +129,21 @@ export default function KidsHaircutsHendersonPage() {
               },
               {
                 icon: Baby,
-                title: "First Haircuts",
-                price: "$35",
-                desc: "Certificate & keepsake included",
-              },
-              {
-                icon: Car,
-                title: "Mobile Service",
-                price: "From $40",
-                desc: "We come to your Henderson home",
+                title: "Kids Haircut",
+                price: "$30",
+                desc: "30-minute calm, private experience",
               },
               {
                 icon: Shield,
                 title: "Sensory-Friendly",
-                price: "$30",
-                desc: "For children with special needs",
+                price: "$45",
+                desc: "60-minute full accommodation",
+              },
+              {
+                icon: Shield,
+                title: "Buzz Cut / Trim",
+                price: "$15–$20",
+                desc: "Bang trims and buzz cuts",
               },
             ].map((service, index) => (
               <motion.div
@@ -182,20 +182,20 @@ export default function KidsHaircutsHendersonPage() {
           >
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               Why Henderson Parents Choose{" "}
-              <span className="gradient-text">Slayer Kid Cuts</span>
+              <span className="gradient-text">Little Roots Studio</span>
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
             {[
-              "TVs and tablets at every station",
-              "Themed styling chairs kids love",
-              "Patient stylists trained for children",
-              "Sensory-friendly accommodations",
-              "Mobile service across Henderson",
-              "First haircut packages with keepsakes",
-              "No appointment rushed - ever",
-              "Fun atmosphere that reduces anxiety",
+              "Private sensory suite — one family at a time",
+              "Intake questionnaire before every appointment",
+              "Patient, trauma-informed approach",
+              "Sensory-friendly accommodations throughout",
+              "Flexible seating — chair, lap, or floor",
+              "Nintendo Switch, TV, sensory toys available",
+              "No appointment rushed — ever",
+              "No charge if child cannot complete the haircut",
             ].map((item, index) => (
               <motion.div
                 key={item}
@@ -314,16 +314,16 @@ export default function KidsHaircutsHendersonPage() {
                 a: "We cut hair for children of all ages, from babies having their first haircut to teenagers. Our expertise is making haircuts fun for kids who may be nervous or have had bad experiences at other salons.",
               },
               {
-                q: "Do you offer mobile haircuts in Henderson?",
-                a: "Yes! Our mobile service covers all of Henderson and the Las Vegas valley. We bring all our professional equipment to your home - perfect for kids who are more comfortable in their own environment.",
+                q: "What makes this different from other kids salons?",
+                a: "Little Roots Studio is Henderson's first sensory-friendly children's salon suite. It's a private, one-family-at-a-time experience with intake questionnaires, flexible seating, and no rushing.",
               },
               {
-                q: "Are you trained for special needs children?",
-                a: "Absolutely. Slayer is certified in sensory-friendly haircut techniques and has extensive experience working with children who have autism, ADHD, sensory processing differences, and anxiety.",
+                q: "Are you trained for neurodivergent children?",
+                a: "Absolutely. Carla is a licensed cosmetologist with over 13 years of experience, including specialized work with autistic, ADHD, and sensory-sensitive children.",
               },
               {
                 q: "Do I need an appointment?",
-                a: "While we accept walk-ins when possible, appointments are strongly recommended to ensure we have time dedicated just for your child without rushing.",
+                a: "Yes, appointments are required. Text or call (702) 917-2350 to schedule. One family at a time ensures every child gets undivided attention.",
               },
             ].map((faq, index) => (
               <motion.div
@@ -359,7 +359,7 @@ export default function KidsHaircutsHendersonPage() {
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
               Join hundreds of happy Henderson families who&apos;ve discovered
-              the Slayer Kid Cuts difference!
+              the Little Roots Studio difference!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/book">

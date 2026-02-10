@@ -23,24 +23,24 @@ interface Message {
 const quickReplies = [
   "Book an appointment",
   "What are your hours?",
-  "Do you do home visits?",
+  "Sensory accommodations?",
   "Pricing info",
   "Talk to someone",
 ];
 
 const botResponses: Record<string, string> = {
   "book an appointment":
-    "I'd love to help you book an appointment! You can use our online booking system or I can have someone call/text you. Which would you prefer?",
+    "I'd love to help you book! Please text or call Carla at (702) 917-2350 to schedule your appointment.",
   "what are your hours?":
-    "We're open Monday-Friday 9am-6pm, Saturday 9am-5pm, and Sunday 10am-4pm. Would you like to schedule a visit?",
-  "do you do home visits?":
-    "Yes! Slayer offers mobile haircuts - she'll come right to your home! This is perfect for kids who are more comfortable in their own space. Want to book a home visit?",
+    "We're open Tuesday through Saturday, 10am to 6pm (closed 1-2pm daily). Would you like to schedule a visit?",
+  "sensory accommodations":
+    "Every appointment starts with an intake questionnaire so we can prepare the space specifically for your child. We have weighted capes, sensory toys, a Nintendo Switch, and flexible seating. Your child sets the pace!",
   "pricing info":
-    "Kids haircuts start at $25, and our First Haircut Package with keepsakes is $35. Mobile home visits start at $40. Would you like to book?",
+    "Sensory-Friendly Haircut (60 min) is $45, Kids Haircut (30 min) is $30, Buzz Cut/Ends Trimmed is $20, and Bang Trim is $15. Text (702) 917-2350 to book!",
   "talk to someone":
-    "Of course! I can have someone call or text you right away. What's your preferred contact method and phone number?",
+    "Of course! You can text or call Carla directly at (702) 917-2350. Text is preferred as she stays fully present with each child.",
   default:
-    "Thanks for reaching out! I'm here to help with appointments, pricing, or any questions about Slayer Kid Cuts. What can I help you with today?",
+    "Thanks for reaching out! I'm here to help with appointments, pricing, or any questions about Little Roots Studio. What can I help you with today?",
 };
 
 export function ChatWidget() {
@@ -48,7 +48,7 @@ export function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-      text: "Hi there! Welcome to Slayer Kid Cuts! I'm here to help you book appointments, answer questions, or connect you with our team. How can I help you today?",
+      text: "Hi there! Welcome to Little Roots Studio! I'm here to help you with appointments, pricing, or any questions about our sensory-friendly services. How can I help you today?",
       sender: "bot",
       timestamp: new Date(),
     },
@@ -96,7 +96,6 @@ export function ChatWidget() {
     setInputValue("");
     setIsTyping(true);
 
-    // Simulate bot typing
     setTimeout(() => {
       messageIdRef.current += 1;
       const botMessageId = `bot-${messageIdRef.current}`;
@@ -151,7 +150,7 @@ export function ChatWidget() {
                     <Sparkles className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg">Slayer Kid Cuts</h3>
+                    <h3 className="font-bold text-lg">Little Roots Studio</h3>
                     <p className="text-white/80 text-sm flex items-center gap-1">
                       <span className="w-2 h-2 bg-green-400 rounded-full" />
                       Online now
@@ -178,7 +177,7 @@ export function ChatWidget() {
                     onClick={() => setContactMode(mode)}
                     className={`flex-1 py-2 px-3 rounded-xl text-sm font-medium flex items-center justify-center gap-2 transition-colors ${
                       contactMode === mode
-                        ? "bg-white text-[#9B5DE5]"
+                        ? "bg-white text-[#5B8A8A]"
                         : "bg-white/20 text-white hover:bg-white/30"
                     }`}
                   >
@@ -201,7 +200,7 @@ export function ChatWidget() {
                   <div
                     className={`max-w-[80%] p-4 rounded-2xl ${
                       message.sender === "user"
-                        ? "bg-[#9B5DE5] text-white rounded-br-md"
+                        ? "bg-[#5B8A8A] text-white rounded-br-md"
                         : "bg-white text-gray-800 rounded-bl-md shadow-sm"
                     }`}
                   >
@@ -246,7 +245,7 @@ export function ChatWidget() {
                     <button
                       key={reply}
                       onClick={() => sendMessage(reply)}
-                      className="px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-xs font-medium hover:bg-[#9B5DE5] hover:text-white transition-colors"
+                      className="px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-xs font-medium hover:bg-[#5B8A8A] hover:text-white transition-colors"
                     >
                       {reply}
                     </button>
@@ -268,12 +267,12 @@ export function ChatWidget() {
                         ? "Enter your phone for a callback..."
                         : "Type your message..."
                   }
-                  className="flex-1 rounded-full border-gray-200 focus:border-[#9B5DE5] focus:ring-[#9B5DE5]"
+                  className="flex-1 rounded-full border-gray-200 focus:border-[#5B8A8A] focus:ring-[#5B8A8A]"
                 />
                 <Button
                   type="submit"
                   size="icon"
-                  className="rounded-full bg-[#9B5DE5] hover:bg-[#8B4DD5] w-10 h-10 flex-shrink-0"
+                  className="rounded-full bg-[#5B8A8A] hover:bg-[#4A7272] w-10 h-10 flex-shrink-0"
                 >
                   <Send className="w-4 h-4" />
                 </Button>

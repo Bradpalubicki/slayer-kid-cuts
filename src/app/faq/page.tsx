@@ -74,20 +74,20 @@ const faqCategories = [
     color: "#6B5B4F",
     questions: [
       {
-        q: "How much does a kids haircut cost?",
-        a: "Kids haircuts start at $25. First Haircut Packages (with certificate and keepsake) are $35. Sensory-friendly accommodations are included at no extra charge.",
+        q: "How much does a haircut cost?",
+        a: "Sensory-Friendly Haircut (60 min) is $45, Kids Haircut (30 min) is $30, Buzz Cut/Ends Trimmed is $20, and Bang Trim is $15. If your child is unable to complete the haircut, you will not be charged.",
       },
       {
-        q: "Do you cut adults' hair too?",
-        a: "Yes! Mom and Dad can get haircuts too. Adult cuts are $30-35. It's a great way to make it a family outing!",
+        q: "Do you cut adults' hair?",
+        a: "Parents and adults are by request only, unless they are in need of a sensory-friendly haircut. Little Roots Studio is primarily designed for children.",
       },
       {
-        q: "What's included in the First Haircut Package?",
-        a: "Our First Haircut Package includes the haircut, an official certificate, a lock of hair in a keepsake envelope, photo opportunity, and a special first haircut bib. It's a wonderful way to commemorate this milestone!",
+        q: "What if my child won't sit in the chair?",
+        a: "That is completely okay! Haircuts can be done while sitting on a parent's lap, being held, playing on the floor, or wherever your child feels safest. There is no restraining and no forcing.",
       },
       {
-        q: "Do you offer hair tinsel and fun styles?",
-        a: "Yes! We offer hair tinsel, temporary color streaks, creative updos, and braids. Hair tinsel starts at $10 and typically lasts 4-8 weeks.",
+        q: "What happens before the appointment?",
+        a: "After booking, you will receive a short intake questionnaire asking about your child's past experiences, sensitivities, dislikes, comforts, and favorites. This allows Carla to prepare the space specifically for your child.",
       },
     ],
   },
@@ -125,11 +125,11 @@ const faqCategories = [
       },
       {
         q: "What are your hours?",
-        a: "Our hours will be announced when we open. Expect family-friendly hours including evenings and weekends.",
+        a: "Tuesday through Saturday, 10am to 6pm. Closed daily from 1pm to 2pm. Closed Sunday and Monday.",
       },
       {
-        q: "Do you offer mobile services?",
-        a: "At this time, we're focused on providing the best in-salon experience. All services are performed at our salon location.",
+        q: "How do I enter the building?",
+        a: "Little Roots Studio is inside a secured building with no waiting room. When you arrive, text (702) 917-2350. Once your suite is ready, you'll receive the entry code.",
       },
     ],
   },

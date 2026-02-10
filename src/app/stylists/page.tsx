@@ -65,7 +65,7 @@ export default function StylistsPage() {
               <p className="text-lg text-gray-600">
                 We&apos;re creating something special in Las Vegas — a
                 kid-focused salon that families love to visit. Whether you
-                specialize in kids, adults, or both, there&apos;s a place for
+                specialize in children&apos;s hair or sensory-friendly services, there&apos;s a place for
                 you here.
               </p>
               <p className="text-lg text-gray-600">

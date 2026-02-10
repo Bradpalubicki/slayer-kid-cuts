@@ -110,7 +110,7 @@ export async function GET(request: NextRequest) {
   if (type === "stylists") {
     const stylists: StylistStats[] = [
       {
-        name: "Slayer",
+        name: "Carla",
         bookings: 156,
         revenue: 5200,
         rating: 4.9,
@@ -227,11 +227,10 @@ export async function GET(request: NextRequest) {
 
   if (type === "services") {
     const services: ServiceStats[] = [
-      { name: "Kids Haircuts", count: 124, revenue: 3100, percentage: 50 },
-      { name: "Sensory-Friendly", count: 45, revenue: 1350, percentage: 18 },
-      { name: "First Haircuts", count: 32, revenue: 1120, percentage: 13 },
-      { name: "Mom & Dad Cuts", count: 28, revenue: 840, percentage: 11 },
-      { name: "VIP Home Service", count: 18, revenue: 2700, percentage: 8 },
+      { name: "Sensory-Friendly Haircut", count: 124, revenue: 5580, percentage: 50 },
+      { name: "Kids Haircut", count: 65, revenue: 1950, percentage: 26 },
+      { name: "Buzz Cut / Ends Trimmed", count: 38, revenue: 760, percentage: 15 },
+      { name: "Bang Trim", count: 22, revenue: 330, percentage: 9 },
     ];
 
     return NextResponse.json({ services, timeRange });
