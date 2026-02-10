@@ -122,28 +122,28 @@ export default function KidsHaircutsHendersonPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: Scissors,
-                title: "Kids Haircuts",
-                price: "From $25",
-                desc: "Expert cuts with entertainment",
+                icon: Shield,
+                title: "Sensory-Friendly Haircut",
+                price: "$45",
+                desc: "60-minute full accommodation",
               },
               {
-                icon: Baby,
+                icon: Scissors,
                 title: "Kids Haircut",
                 price: "$30",
                 desc: "30-minute calm, private experience",
               },
               {
-                icon: Shield,
-                title: "Sensory-Friendly",
-                price: "$45",
-                desc: "60-minute full accommodation",
+                icon: Scissors,
+                title: "Buzz Cut / Ends Trimmed",
+                price: "$20",
+                desc: "Quick 15-20 minute cut",
               },
               {
-                icon: Shield,
-                title: "Buzz Cut / Trim",
-                price: "$15–$20",
-                desc: "Bang trims and buzz cuts",
+                icon: Scissors,
+                title: "Bang Trim",
+                price: "$15",
+                desc: "Quick 10-15 minute trim",
               },
             ].map((service, index) => (
               <motion.div

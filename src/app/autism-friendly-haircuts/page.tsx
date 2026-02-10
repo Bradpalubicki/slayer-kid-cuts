@@ -369,17 +369,17 @@ export default function AutismFriendlyHaircutsPage() {
             <Card className="border-2 border-sage/20">
               <CardContent className="p-8">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-brown">Sensory-Adapted Cut</h3>
-                  <span className="text-2xl font-bold text-sage">$50</span>
+                  <h3 className="text-xl font-bold text-brown">Sensory-Friendly Haircut</h3>
+                  <span className="text-2xl font-bold text-sage">$45</span>
                 </div>
                 <p className="text-brown/70 mb-4">
                   Our signature service for autistic and sensory-sensitive children.
-                  Extended appointment time with all accommodations included.
+                  60-minute appointment with all accommodations included.
                 </p>
                 <ul className="space-y-2 text-sm text-brown/70">
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-sage" />
-                    Extended time — never rushed
+                    60 minutes — never rushed
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-sage" />
@@ -397,32 +397,77 @@ export default function AutismFriendlyHaircutsPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-2 border-brown/20">
+            <Card className="border-2 border-sage/20">
               <CardContent className="p-8">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-brown">First Haircut Experience</h3>
-                  <span className="text-2xl font-bold text-sage">$45</span>
+                  <h3 className="text-xl font-bold text-brown">Kids Haircut</h3>
+                  <span className="text-2xl font-bold text-sage">$30</span>
                 </div>
                 <p className="text-brown/70 mb-4">
-                  Perfect for autistic children who have never had a haircut or have
-                  significant anxiety around the experience.
+                  A calm, private 30-minute haircut experience in our
+                  sensory-friendly suite. One family at a time.
                 </p>
                 <ul className="space-y-2 text-sm text-brown/70">
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-sage" />
-                    Gentle, trauma-informed approach
+                    30-minute private session
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-sage" />
-                    Certificate and photo keepsake
+                    Calm, quiet environment
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-sage" />
-                    Pre-visit social story
+                    Patient, gentle approach
                   </li>
                   <li className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-sage" />
-                    All sensory accommodations
+                    One family at a time
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-brown/20">
+              <CardContent className="p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-bold text-brown">Buzz Cut / Ends Trimmed</h3>
+                  <span className="text-2xl font-bold text-sage">$20</span>
+                </div>
+                <p className="text-brown/70 mb-4">
+                  A quick 15-20 minute buzz cut or ends trim in our
+                  calm, sensory-friendly environment.
+                </p>
+                <ul className="space-y-2 text-sm text-brown/70">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-sage" />
+                    15-20 minutes
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-sage" />
+                    Sensory-friendly setting
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-brown/20">
+              <CardContent className="p-8">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-bold text-brown">Bang Trim</h3>
+                  <span className="text-2xl font-bold text-sage">$15</span>
+                </div>
+                <p className="text-brown/70 mb-4">
+                  A quick 10-15 minute bang trim in our calm, private suite.
+                </p>
+                <ul className="space-y-2 text-sm text-brown/70">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-sage" />
+                    10-15 minutes
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-sage" />
+                    Sensory-friendly setting
                   </li>
                 </ul>
               </CardContent>

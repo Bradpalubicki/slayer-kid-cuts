@@ -7,33 +7,21 @@ import { useState } from "react";
 const heroOptions = [
   {
     id: 1,
-    name: "Modern Salon Interior",
-    description: "Bright modern salon with natural light, clean minimalist aesthetic",
-    url: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1920&q=80",
+    name: "Serene Forest Path",
+    description: "Peaceful forest path with soft sunlight filtering through trees",
+    url: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1920&q=80",
   },
   {
     id: 2,
-    name: "Cozy Salon with Plants",
-    description: "Warm salon interior with greenery, earth tones and natural elements",
-    url: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1920&q=80",
+    name: "Calm Interior Space",
+    description: "Warm, calm interior with soft natural lighting and earthy tones",
+    url: "https://images.unsplash.com/photo-1540479859555-17af45c78602?auto=format&fit=crop&w=1920&q=80",
   },
   {
     id: 3,
-    name: "Soft Natural Light Studio",
-    description: "Soft diffused natural lighting, clean white/cream tones, spa-like",
-    url: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1920&q=80",
-  },
-  {
-    id: 4,
-    name: "Warm Inviting Space",
-    description: "Warm, inviting salon with soft lighting and earthy colors",
-    url: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80",
-  },
-  {
-    id: 5,
-    name: "Minimalist Calm Interior",
-    description: "Minimalist modern design with neutral calming tones",
-    url: "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=1920&q=80",
+    name: "Nature & Flowers",
+    description: "Soft nature scene with flowers and gentle natural light",
+    url: "https://images.unsplash.com/photo-1476234251651-f353703a034d?auto=format&fit=crop&w=1920&q=80",
   },
 ];
 

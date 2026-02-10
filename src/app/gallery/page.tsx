@@ -54,39 +54,27 @@ const galleryImages = [
   },
   {
     id: 7,
-    src: "https://images.unsplash.com/photo-1484665754804-74b091211472?w=800&h=600&fit=crop",
-    alt: "Comfortable home environment for haircuts",
-    category: "mobile",
+    src: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&h=600&fit=crop",
+    alt: "Child smiling after a great haircut",
+    category: "boys",
   },
   {
     id: 8,
-    src: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=800&h=600&fit=crop",
-    alt: "Joyful kids celebration",
+    src: "https://images.unsplash.com/photo-1587654780291-39c9404d7dd0?w=800&h=600&fit=crop",
+    alt: "Happy child enjoying a calm experience",
     category: "fun",
   },
   {
     id: 9,
-    src: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=800&h=600&fit=crop",
-    alt: "Professional stylist at work",
-    category: "salon",
+    src: "https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?w=800&h=600&fit=crop",
+    alt: "Joyful child playing and having fun",
+    category: "fun",
   },
   {
     id: 10,
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop",
-    alt: "Peaceful salon environment",
-    category: "girls",
-  },
-  {
-    id: 11,
     src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop",
     alt: "Serene nature-inspired atmosphere",
     category: "boys",
-  },
-  {
-    id: 12,
-    src: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&h=600&fit=crop",
-    alt: "Calm and welcoming space",
-    category: "girls",
   },
 ];
 
@@ -154,7 +142,6 @@ export default function GalleryPage() {
               { value: "girls", label: "Girls" },
               { value: "first", label: "First Haircuts" },
               { value: "fun", label: "Fun Styles" },
-              { value: "mobile", label: "Mobile Visits" },
             ].map((tab) => (
               <TabsTrigger
                 key={tab.value}

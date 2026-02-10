@@ -263,8 +263,8 @@ export default function Home() {
             <article className="rounded-3xl overflow-hidden shadow-lg border border-sage/10 bg-white hover:shadow-xl transition-shadow">
               <div className="h-52 relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
-                  alt="Peaceful, private room with soft natural lighting representing calm sanctuary"
+                  src="https://images.unsplash.com/photo-1540479859555-17af45c78602?auto=format&fit=crop&w=600&q=80"
+                  alt="Calm, peaceful private space with soft natural lighting"
                   fill
                   className="object-cover"
                   unoptimized
