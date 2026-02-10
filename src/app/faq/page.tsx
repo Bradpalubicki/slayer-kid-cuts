@@ -105,11 +105,7 @@ const faqCategories = [
       },
       {
         q: "What age kids do you serve?",
-        a: "We serve children of all ages - from first haircuts (typically around 1-2 years old) through teens. We also cut parents' hair!",
-      },
-      {
-        q: "Do you do birthday parties?",
-        a: "Yes! We offer birthday party packages with hair styling, tinsel, temporary color, and party favors. Contact us for custom quotes.",
+        a: "We serve children of all ages — from first haircuts (typically around 1-2 years old) through teens.",
       },
     ],
   },
