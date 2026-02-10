@@ -10,7 +10,6 @@ import {
   Phone,
   Brain,
   Scissors,
-  Gift,
   DollarSign,
   MapPin,
 } from "lucide-react";
@@ -121,7 +120,7 @@ const faqCategories = [
     questions: [
       {
         q: "Where are you located?",
-        a: "We're coming soon to Las Vegas, Nevada! Sign up for our newsletter on our Grand Opening page to be the first to know our exact location.",
+        a: "We're located at Sunset Suites, 2895 N Green Valley Pkwy #G, Henderson, NV 89014. Text or call (702) 917-2350 to book.",
       },
       {
         q: "What are your hours?",
@@ -271,16 +270,16 @@ export default function FAQPage() {
                   Contact Us
                 </Button>
               </Link>
-              <Link href="/coming-soon">
+              <a href="tel:+17029172350">
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-2 border-white text-white hover:bg-white hover:text-[#5B8A8A] rounded-full px-8"
                 >
-                  <Gift className="w-5 h-5 mr-2" />
-                  Grand Opening Info
+                  <Phone className="w-5 h-5 mr-2" />
+                  Text or Call to Book
                 </Button>
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>

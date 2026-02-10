@@ -14,7 +14,7 @@ import {
   Hand,
   Users,
   Star,
-  Calendar,
+  Phone,
   MapPin,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -55,15 +55,15 @@ export default function AutismFriendlyHaircutsPage() {
               Private suite. Trained specialist. No rushing. No judgment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/coming-soon">
+              <a href="tel:+17029172350">
                 <Button
                   size="lg"
                   className="bg-white text-sage hover:bg-white/90 rounded-full px-8 shadow-lg"
                 >
-                  <Calendar className="w-5 h-5 mr-2" />
-                  Join the Waitlist
+                  <Phone className="w-5 h-5 mr-2" />
+                  Text or Call to Book
                 </Button>
-              </Link>
+              </a>
               <Link href="/sensory-friendly">
                 <Button
                   size="lg"
@@ -452,7 +452,7 @@ export default function AutismFriendlyHaircutsPage() {
               surrounding areas.
             </p>
             <p className="text-sage-dark font-semibold text-lg">
-              Opening Spring 2026
+              Now Open in Henderson, NV
             </p>
           </motion.div>
         </div>
@@ -471,19 +471,18 @@ export default function AutismFriendlyHaircutsPage() {
               Your Child Deserves a Positive Haircut Experience
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Join our waitlist to be the first to know when we open.
-              Priority booking for waitlist families.
+              Text or call (702) 917-2350 to book your appointment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/coming-soon">
+              <a href="tel:+17029172350">
                 <Button
                   size="lg"
                   className="bg-white text-sage hover:bg-white/90 rounded-full px-8"
                 >
-                  <Calendar className="w-5 h-5 mr-2" />
-                  Join the Waitlist
+                  <Phone className="w-5 h-5 mr-2" />
+                  Text or Call to Book
                 </Button>
-              </Link>
+              </a>
               <Link href="/prepare">
                 <Button
                   size="lg"

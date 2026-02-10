@@ -1,18 +1,11 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Coming Soon | Opening Spring 2026",
+  title: "Little Roots Studio",
   description:
-    "Little Roots Studio opening Spring 2026 in Henderson NV. Join waitlist for first access to sensory-friendly kids haircuts.",
-  alternates: {
-    canonical: "/coming-soon",
-  },
+    "Sensory-friendly kids haircuts in Henderson, NV. Text or call (702) 917-2350 to book.",
 };
 
-export default function ComingSoonLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <>{children}</>;
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return children;
 }

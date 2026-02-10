@@ -1,247 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
-
-// Countdown Timer Component
-function CountdownTimer() {
-  // Store target date in state so it's stable across renders
-  const [targetDate] = useState(() => {
-    const date = new Date();
-    date.setDate(date.getDate() + 60);
-    return date;
-  });
-
-  // Calculate time left helper function
-  const calculateTimeLeft = (target: Date) => {
-    const now = new Date().getTime();
-    const distance = target.getTime() - now;
-    if (distance > 0) {
-      return {
-        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-        hours: Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-        ),
-        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((distance % (1000 * 60)) / 1000),
-      };
-    }
-    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-  };
-
-  // Initialize with calculated values immediately
-  const [timeLeft, setTimeLeft] = useState(() => calculateTimeLeft(targetDate));
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft(targetDate));
-    }, 1000);
-    return () => clearInterval(timer);
-  }, [targetDate]);
-
-  return (
-    <div
-      className="flex justify-center gap-2 sm:gap-3"
-      role="timer"
-      aria-label="Countdown to opening"
-    >
-      {[
-        { value: timeLeft.days, label: "Days" },
-        { value: timeLeft.hours, label: "Hours" },
-        { value: timeLeft.minutes, label: "Min" },
-        { value: timeLeft.seconds, label: "Sec" },
-      ].map((item) => (
-        <div key={item.label} className="text-center">
-          <div className="bg-sage/10 rounded-xl p-2 sm:p-3 min-w-[55px] sm:min-w-[70px] border border-sage/20">
-            <span
-              className="text-xl sm:text-2xl font-bold text-sage"
-              aria-label={`${item.value} ${item.label}`}
-            >
-              {item.value.toString().padStart(2, "0")}
-            </span>
-          </div>
-          <span className="text-xs text-brown/60 mt-1 block font-medium">
-            {item.label}
-          </span>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-// Giveaway Registration Form
-function GiveawayForm() {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Giveaway entry:", { name, email, phone });
-    setSubmitted(true);
-  };
-
-  if (submitted) {
-    return (
-      <div
-        className="bg-sage/20 border-2 border-sage rounded-2xl p-6 text-center"
-        role="alert"
-      >
-        <div className="text-4xl mb-3">🎉</div>
-        <p className="text-sage-dark font-bold text-xl">You&apos;re Entered!</p>
-        <p className="text-brown/70 text-sm mt-2">
-          Come back next week for another chance to win!
-        </p>
-        <p className="text-sage font-medium text-sm mt-3">
-          Drawing every Friday 🍀
-        </p>
-      </div>
-    );
-  }
-
-  return (
-    <form
-      onSubmit={handleSubmit}
-      className="space-y-3"
-      aria-label="Giveaway entry form"
-    >
-      <div>
-        <label htmlFor="giveaway-name" className="sr-only">
-          Your name
-        </label>
-        <input
-          id="giveaway-name"
-          type="text"
-          placeholder="Your name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          className="w-full px-4 py-3 rounded-xl border-2 border-sage/30 focus:border-sage focus:ring-2 focus:ring-sage/20 outline-none text-brown placeholder-brown/50 bg-white/90"
-        />
-      </div>
-      <div>
-        <label htmlFor="giveaway-email" className="sr-only">
-          Your email
-        </label>
-        <input
-          id="giveaway-email"
-          type="email"
-          placeholder="Your email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-          className="w-full px-4 py-3 rounded-xl border-2 border-sage/30 focus:border-sage focus:ring-2 focus:ring-sage/20 outline-none text-brown placeholder-brown/50 bg-white/90"
-        />
-      </div>
-      <div>
-        <label htmlFor="giveaway-phone" className="sr-only">
-          Phone number (optional)
-        </label>
-        <input
-          id="giveaway-phone"
-          type="tel"
-          placeholder="Phone (optional - for winner notification)"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border-2 border-sage/30 focus:border-sage focus:ring-2 focus:ring-sage/20 outline-none text-brown placeholder-brown/50 bg-white/90"
-        />
-      </div>
-      <button
-        type="submit"
-        className="w-full bg-sage hover:bg-sage-dark text-white font-bold px-6 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg"
-      >
-        🎁 Enter to Win + Join Waitlist
-      </button>
-      <p className="text-xs text-brown/60 text-center">
-        Enter once per week. Drawing every Friday!
-      </p>
-    </form>
-  );
-}
-
-// Waitlist Form
-function WaitlistForm() {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Waitlist signup:", { name, email });
-    setSubmitted(true);
-  };
-
-  if (submitted) {
-    return (
-      <div
-        className="bg-sage/20 rounded-2xl p-6 text-center border border-sage/30"
-        role="alert"
-      >
-        <p className="text-sage-dark font-bold text-lg">🌱 You&apos;re on the list!</p>
-        <p className="text-brown/70 text-sm mt-2">We&apos;ll email you when booking opens.</p>
-      </div>
-    );
-  }
-
-  return (
-    <div className="space-y-4">
-      {/* Urgency text */}
-      <p className="text-sage-dark font-medium text-sm">
-        🌿 Join 50+ families already on our waitlist
-      </p>
-
-      {/* Incentive */}
-      <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-2 text-sm">
-        <span className="text-amber-700 font-medium">✨ Waitlist members get early booking + 15% off first visit</span>
-      </div>
-
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col gap-3"
-        aria-label="Waitlist signup form"
-      >
-        <div className="flex flex-col sm:flex-row gap-3">
-          <label htmlFor="waitlist-name" className="sr-only">
-            Name
-          </label>
-          <input
-            id="waitlist-name"
-            type="text"
-            placeholder="Your name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-            className="flex-1 px-4 py-3 rounded-xl border-2 border-sage/20 text-brown placeholder-brown/50 bg-white focus:border-sage focus:ring-2 focus:ring-sage/20 outline-none transition-all"
-          />
-          <label htmlFor="waitlist-email" className="sr-only">
-            Email
-          </label>
-          <input
-            id="waitlist-email"
-            type="email"
-            placeholder="Your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="flex-1 px-4 py-3 rounded-xl border-2 border-sage/20 text-brown placeholder-brown/50 bg-white focus:border-sage focus:ring-2 focus:ring-sage/20 outline-none transition-all"
-          />
-        </div>
-        <button
-          type="submit"
-          className="w-full bg-sage hover:bg-sage-dark text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg"
-        >
-          🌱 Join the Waitlist
-        </button>
-      </form>
-
-      {/* Trust line */}
-      <p className="text-brown/50 text-xs text-center">
-        🔒 We respect your privacy. Unsubscribe anytime.
-      </p>
-    </div>
-  );
-}
 
 // FAQ Accordion Component
 function FAQAccordion() {
@@ -276,12 +36,12 @@ function FAQAccordion() {
     {
       question: "Where is Little Roots Studio located?",
       answer:
-        "Little Roots Studio is located in Henderson, Nevada, serving families throughout the Las Vegas valley including Paradise, Boulder City, and surrounding areas. We're opening Spring 2026. Join our waitlist to be notified of our exact location and opening date.",
+        "Little Roots Studio is located at Sunset Suites, 2895 N Green Valley Pkwy #G, Henderson, NV 89014. We serve families throughout the Las Vegas valley including Paradise, Boulder City, Green Valley, Summerlin, and surrounding areas.",
     },
     {
       question: "How do I book an appointment?",
       answer:
-        "Online booking will be available when we open in Spring 2026. For now, join our waitlist at littleroots.studio to get first access to appointments and be notified as soon as booking opens.",
+        "Text or call us at (702) 917-2350 to book your appointment. We'll find a time that works for your family.",
     },
     {
       question: "What sensory tools do you have available?",
@@ -357,10 +117,10 @@ export default function Home() {
             boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
           }}
         >
-          {/* Badge with Amber Gradient */}
+          {/* Badge */}
           <div className="text-center mb-5">
-            <span className="inline-block bg-gradient-to-r from-amber-400 via-amber-500 to-amber-400 text-white px-5 py-2 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide shadow-md animate-pulse border border-amber-300">
-              ✨ OPENING SPRING 2026 ✨
+            <span className="inline-block bg-sage text-white px-5 py-2 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide shadow-md">
+              NOW OPEN IN HENDERSON, NV
             </span>
           </div>
 
@@ -395,7 +155,7 @@ export default function Home() {
           </p>
 
           {/* Trust Badges */}
-          <div className="flex flex-wrap justify-center gap-2 mb-5">
+          <div className="flex flex-wrap justify-center gap-2 mb-6">
             <span className="bg-sage/15 text-sage-dark px-3 py-1 rounded-full text-xs font-medium">
               🧩 Autism-Trained
             </span>
@@ -407,24 +167,35 @@ export default function Home() {
             </span>
           </div>
 
-          {/* Countdown */}
-          <div className="mb-5">
-            <p className="text-brown/70 text-xs mb-2 font-medium text-center">
-              🗓️ Opening in:
-            </p>
-            <CountdownTimer />
-          </div>
-
-          {/* Waitlist */}
-          <div className="mt-4">
-            <WaitlistForm />
+          {/* CTA Buttons */}
+          <div className="space-y-3">
+            <a
+              href="tel:+17029172350"
+              className="block w-full bg-sage hover:bg-sage-dark text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-lg text-center"
+            >
+              Text or Call to Book — (702) 917-2350
+            </a>
+            <div className="flex gap-3">
+              <a
+                href="/services"
+                className="flex-1 bg-white border-2 border-sage/30 hover:border-sage text-sage-dark font-semibold px-4 py-3 rounded-xl transition-all text-center text-sm"
+              >
+                View Services
+              </a>
+              <a
+                href="/contact"
+                className="flex-1 bg-white border-2 border-sage/30 hover:border-sage text-sage-dark font-semibold px-4 py-3 rounded-xl transition-all text-center text-sm"
+              >
+                Contact Us
+              </a>
+            </div>
           </div>
         </div>
 
         {/* Message from Carla - Outside the card */}
         <div className="relative z-10 mt-6 bg-white/25 backdrop-blur-sm rounded-2xl p-5 max-w-lg mx-auto border border-white/30">
           <p className="text-white italic text-sm leading-relaxed text-center drop-shadow-md">
-            &ldquo;After 13 years working with children — including specialized autism training — I&apos;m finally creating the sanctuary every anxious, sensitive child deserves. A place where haircuts become confidence-building experiences.&rdquo;
+            &ldquo;After 13 years working with children — including specialized autism training — I&apos;ve finally created the sanctuary every anxious, sensitive child deserves. A place where haircuts become confidence-building experiences.&rdquo;
           </p>
           <p className="text-white font-semibold mt-3 text-sm text-center drop-shadow-md">
             — Carla, Autism-Trained Specialist & Owner 💚
@@ -438,76 +209,6 @@ export default function Home() {
         >
           <div className="w-8 h-12 border-2 border-white/50 rounded-full flex justify-center">
             <div className="w-2 h-3 bg-white/70 rounded-full mt-2"></div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========== GIVEAWAY SECTION ========== */}
-      <section
-        className="py-16 px-4 bg-gradient-to-br from-seafoam/50 to-sage/20"
-        aria-labelledby="giveaway-heading"
-      >
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Prizes */}
-            <div className="text-center md:text-left">
-              <span className="bg-sage text-white text-xs font-bold px-4 py-1.5 rounded-full">
-                🎉 WEEKLY GIVEAWAY
-              </span>
-              <h2
-                id="giveaway-heading"
-                className="text-3xl sm:text-4xl font-bold text-brown mt-4 mb-4"
-              >
-                Win Free Prizes Every Week!
-              </h2>
-              <p className="text-brown/70 mb-6">
-                Enter once a week for a chance to win sensory tools, free
-                haircuts, and more! Winners announced every Friday.
-              </p>
-
-              <div className="bg-white rounded-2xl p-6 shadow-sm">
-                <p className="font-semibold text-brown mb-4">
-                  🏆 This Week&apos;s Prizes:
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-3">
-                    <span className="text-2xl" aria-hidden="true">
-                      🥇
-                    </span>
-                    <span className="text-brown/80">
-                      <strong>FREE First Haircut</strong> ($45 value)
-                    </span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="text-2xl" aria-hidden="true">
-                      🥈
-                    </span>
-                    <span className="text-brown/80">
-                      <strong>Weighted Lap Pad</strong> ($40 value)
-                    </span>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <span className="text-2xl" aria-hidden="true">
-                      🥉
-                    </span>
-                    <span className="text-brown/80">
-                      <strong>Sensory Fidget Kit</strong> ($25 value)
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Entry Form */}
-            <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-xl border border-sage/20">
-              <h3 className="text-lg sm:text-xl font-bold text-brown mb-2 text-center">
-                🍀 Enter to Win!
-              </h3>
-              <p className="text-brown/60 text-xs sm:text-sm mb-4 sm:mb-6 text-center">
-                Plus get first access when we open
-              </p>
-              <GiveawayForm />
-            </div>
           </div>
         </div>
       </section>
@@ -628,9 +329,6 @@ export default function Home() {
             >
               Kids Haircut Services in Henderson, NV
             </h2>
-            <p className="text-brown/60 text-sm">
-              * Pricing subject to change at opening
-            </p>
           </header>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -657,10 +355,10 @@ export default function Home() {
                 <li className="flex justify-between items-center py-3 border-b border-sage/10">
                   <div>
                     <p className="font-medium text-brown">
-                      First Haircut Experience
+                      Sensory-Friendly Haircut
                     </p>
                     <p className="text-sm text-brown/60">
-                      Certificate + photo included
+                      Extended time, extra patience (60 min)
                     </p>
                   </div>
                   <span className="text-sage font-bold text-lg">$45</span>
@@ -668,32 +366,32 @@ export default function Home() {
                 <li className="flex justify-between items-center py-3 border-b border-sage/10">
                   <div>
                     <p className="font-medium text-brown">Kids Haircut</p>
-                    <p className="text-sm text-brown/60">Ages 0-12</p>
+                    <p className="text-sm text-brown/60">Standard cut (30 min)</p>
                   </div>
-                  <span className="text-sage font-bold text-lg">$35</span>
+                  <span className="text-sage font-bold text-lg">$30</span>
                 </li>
                 <li className="flex justify-between items-center py-3 border-b border-sage/10">
                   <div>
                     <p className="font-medium text-brown">
-                      Sensory-Adapted Cut
+                      Buzz Cut / Ends Trimmed
                     </p>
                     <p className="text-sm text-brown/60">
-                      Extended time, extra patience
+                      Quick & easy (15-20 min)
                     </p>
                   </div>
-                  <span className="text-sage font-bold text-lg">$50</span>
+                  <span className="text-sage font-bold text-lg">$20</span>
                 </li>
                 <li className="flex justify-between items-center py-3">
                   <div>
-                    <p className="font-medium text-brown">Teen Haircut</p>
-                    <p className="text-sm text-brown/60">Ages 13-17</p>
+                    <p className="font-medium text-brown">Bang Trim</p>
+                    <p className="text-sm text-brown/60">Quick touch-up (10-15 min)</p>
                   </div>
-                  <span className="text-sage font-bold text-lg">$40</span>
+                  <span className="text-sage font-bold text-lg">$15</span>
                 </li>
               </ul>
             </div>
 
-            {/* Add-Ons */}
+            {/* What's Included */}
             <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-lg border border-sage/20">
               <div className="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6">
                 <div
@@ -704,44 +402,42 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-lg sm:text-xl font-bold text-brown">
-                    Add-Ons & Extras
+                    Every Visit Includes
                   </h3>
                   <p className="text-sage text-xs sm:text-sm font-medium">
-                    Make It Special
+                    No Extra Charge
                   </p>
                 </div>
               </div>
 
               <ul className="space-y-4">
-                <li className="flex justify-between items-center py-3 border-b border-sage/10">
+                <li className="flex items-start gap-3 py-3 border-b border-sage/10">
+                  <span className="text-sage mt-0.5 text-lg">✓</span>
                   <div>
-                    <p className="font-medium text-brown">Fun Color Streak</p>
-                    <p className="text-sm text-brown/60">
-                      Temporary, wash-out color
-                    </p>
+                    <p className="font-medium text-brown">Private Suite</p>
+                    <p className="text-sm text-brown/60">One family at a time — the entire space is yours</p>
                   </div>
-                  <span className="text-sage font-bold text-lg">$10</span>
                 </li>
-                <li className="flex justify-between items-center py-3 border-b border-sage/10">
+                <li className="flex items-start gap-3 py-3 border-b border-sage/10">
+                  <span className="text-sage mt-0.5 text-lg">✓</span>
                   <div>
-                    <p className="font-medium text-brown">Glitter & Gems</p>
-                    <p className="text-sm text-brown/60">Hair-safe sparkle</p>
+                    <p className="font-medium text-brown">Sensory Tools</p>
+                    <p className="text-sm text-brown/60">Headphones, weighted pads, fidgets, visual timers</p>
                   </div>
-                  <span className="text-sage font-bold text-lg">$8</span>
                 </li>
-                <li className="flex justify-between items-center py-3 border-b border-sage/10">
+                <li className="flex items-start gap-3 py-3 border-b border-sage/10">
+                  <span className="text-sage mt-0.5 text-lg">✓</span>
                   <div>
-                    <p className="font-medium text-brown">Braids & Styling</p>
-                    <p className="text-sm text-brown/60">Simple styles</p>
+                    <p className="font-medium text-brown">Patience & Flexibility</p>
+                    <p className="text-sm text-brown/60">Breaks as needed, no rushing, child-led pace</p>
                   </div>
-                  <span className="text-sage font-bold text-lg">$15+</span>
                 </li>
-                <li className="flex justify-between items-center py-3">
+                <li className="flex items-start gap-3 py-3">
+                  <span className="text-sage mt-0.5 text-lg">✓</span>
                   <div>
-                    <p className="font-medium text-brown">Buzz Cut</p>
-                    <p className="text-sm text-brown/60">Quick & easy</p>
+                    <p className="font-medium text-brown">Treasure Chest Reward</p>
+                    <p className="text-sm text-brown/60">Every child picks a prize after their haircut</p>
                   </div>
-                  <span className="text-sage font-bold text-lg">$25</span>
                 </li>
               </ul>
             </div>
@@ -778,7 +474,7 @@ export default function Home() {
               {
                 emoji: "🚗",
                 title: "Wait-in-Car Option",
-                desc: "Avoid the waiting room entirely. We text when we&apos;re ready for you.",
+                desc: "Avoid the waiting room entirely. We text when we're ready for you.",
               },
               {
                 emoji: "🚪",
@@ -788,7 +484,7 @@ export default function Home() {
               {
                 emoji: "💡",
                 title: "Dimmable Lighting",
-                desc: "Adjust brightness to your child&apos;s comfort level.",
+                desc: "Adjust brightness to your child's comfort level.",
               },
               {
                 emoji: "🎧",
@@ -1093,50 +789,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ========== COMING SOON FEATURES ========== */}
-      <section className="py-16 px-4 bg-cream" aria-labelledby="coming-heading">
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="text-sage font-medium text-sm tracking-wider uppercase">
-            Stay Tuned
-          </span>
-          <h2
-            id="coming-heading"
-            className="text-2xl sm:text-3xl font-bold text-brown mt-3 mb-8"
-          >
-            Coming Soon
-          </h2>
-          <div className="grid sm:grid-cols-3 gap-6">
-            <div className="bg-white/80 rounded-2xl p-6 border-2 border-dashed border-sage/30">
-              <span className="text-4xl" aria-hidden="true">
-                🎥
-              </span>
-              <p className="font-bold text-brown mt-3">Virtual Studio Tour</p>
-              <p className="text-sm text-brown/50 mt-1">Video coming soon</p>
-            </div>
-            <div className="bg-white/80 rounded-2xl p-6 border-2 border-dashed border-sage/30">
-              <span className="text-4xl" aria-hidden="true">
-                📅
-              </span>
-              <p className="font-bold text-brown mt-3">Online Booking</p>
-              <p className="text-sm text-brown/50 mt-1">Available at opening</p>
-            </div>
-            <div className="bg-white/80 rounded-2xl p-6 border-2 border-dashed border-sage/30">
-              <span className="text-4xl" aria-hidden="true">
-                📖
-              </span>
-              <p className="font-bold text-brown mt-3">Prep Resources</p>
-              <p className="text-sm text-brown/50 mt-1">
-                Social stories & guides
-              </p>
-            </div>
-          </div>
-          <p className="text-brown/60 text-sm mt-8">
-            ✨ Check back weekly for updates — and don&apos;t forget to enter
-            our giveaway!
-          </p>
-        </div>
-      </section>
-
       {/* ========== FINAL CTA ========== */}
       <section className="py-12 sm:py-20 px-4 bg-sage" aria-labelledby="cta-heading">
         <div className="max-w-3xl mx-auto text-center">
@@ -1144,23 +796,25 @@ export default function Home() {
             id="cta-heading"
             className="text-2xl sm:text-4xl font-bold text-white mb-3 sm:mb-4"
           >
-            Don&apos;t Miss Out!
+            Ready to Book?
           </h2>
           <p className="text-white/90 text-base sm:text-lg mb-6 sm:mb-8 px-2">
-            Join our waitlist for opening day access + enter to win this
-            week&apos;s prizes!
+            Give your child the calm, patient haircut experience they deserve.
           </p>
 
-          <div className="bg-white rounded-3xl p-5 sm:p-8 shadow-2xl">
-            <GiveawayForm />
-          </div>
+          <a
+            href="tel:+17029172350"
+            className="inline-block bg-white text-sage-dark font-bold px-10 py-5 rounded-2xl shadow-2xl hover:shadow-xl hover:-translate-y-0.5 transition-all text-xl"
+          >
+            Text or Call — (702) 917-2350
+          </a>
 
           <div className="mt-8 flex flex-wrap justify-center gap-4 sm:gap-6 text-white/80 text-sm">
             <span>📍 Henderson, NV</span>
             <span className="hidden sm:inline" aria-hidden="true">
               •
             </span>
-            <span>🌱 Spring 2026</span>
+            <span>🕐 Tue–Sat 10am–6pm</span>
             <span className="hidden sm:inline" aria-hidden="true">
               •
             </span>

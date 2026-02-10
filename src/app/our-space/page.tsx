@@ -483,7 +483,7 @@ export default function OurSpacePage() {
         </div>
       </section>
 
-      {/* Coming Soon Sections */}
+      {/* Photo & Video Sections */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-8">
@@ -499,15 +499,14 @@ export default function OurSpacePage() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">Photo Gallery</h3>
                   <p className="text-gray-600 mb-4">
-                    Coming Soon! We&apos;ll share photos of our space before we
-                    open so you can show your child exactly what they&apos;ll
-                    see.
+                    Photos of our space are on the way! In the meantime,
+                    text or call to schedule a visit and see it in person.
                   </p>
-                  <Link href="/coming-soon">
+                  <a href="tel:+17029172350">
                     <Button className="rounded-full bg-[#5B8A8A] text-white">
-                      Join the Waitlist
+                      Text or Call to Book
                     </Button>
-                  </Link>
+                  </a>
                 </CardContent>
               </Card>
             </motion.div>
@@ -525,14 +524,14 @@ export default function OurSpacePage() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">Virtual Tour</h3>
                   <p className="text-gray-600 mb-4">
-                    Coming Soon! A video walkthrough so your child can
+                    A video walkthrough will be available soon so your child can
                     &quot;visit&quot; before their first appointment.
                   </p>
-                  <Link href="/coming-soon">
+                  <a href="tel:+17029172350">
                     <Button className="rounded-full bg-[#7BA3A3] text-gray-900">
-                      Get Notified
+                      Text or Call to Book
                     </Button>
-                  </Link>
+                  </a>
                 </CardContent>
               </Card>
             </motion.div>
@@ -553,18 +552,17 @@ export default function OurSpacePage() {
               Ready to Visit?
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Join our waitlist to be notified when we open and get priority
-              booking!
+              Text or call (702) 917-2350 to book your appointment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/coming-soon">
+              <a href="tel:+17029172350">
                 <Button
                   size="lg"
                   className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8"
                 >
-                  Join the Waitlist
+                  Text or Call to Book
                 </Button>
-              </Link>
+              </a>
               <Link href="/prepare">
                 <Button
                   size="lg"

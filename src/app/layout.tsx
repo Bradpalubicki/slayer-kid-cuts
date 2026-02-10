@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   // Description: 158 chars (under 160 limit) - includes power words
   description:
-    "Carla's private, autism-trained, sensory-friendly kids haircuts in Henderson. Trauma-informed care. No rushing. One family at a time. Opening Spring 2026.",
+    "Carla's private, autism-trained, sensory-friendly kids haircuts in Henderson. Trauma-informed care. No rushing. One family at a time. Text or call (702) 917-2350 to book.",
   // Homepage canonical - pages will override with their own
   alternates: {
     canonical: "/",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
       "Little Roots Studio | Autism-Friendly Kids Haircuts Henderson NV",
     // OG Description: 155 chars
     description:
-      "Henderson's first autism-trained, sensory-friendly kids hair salon. Trauma-informed care by Carla. Private suite, one family at a time. Opening Spring 2026.",
+      "Henderson's first autism-trained, sensory-friendly kids hair salon. Trauma-informed care by Carla. Private suite, one family at a time. Now open!",
     images: [
       {
         url: "/images/little-roots-og.png",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
       "Little Roots Studio | Autism-Friendly Kids Haircuts Henderson",
     // Twitter Description: 130 chars
     description:
-      "Henderson's first autism-trained, sensory-friendly kids hair salon. Trauma-informed. One family at a time. Opening Spring 2026.",
+      "Henderson's first autism-trained, sensory-friendly kids hair salon. Trauma-informed. One family at a time. Now open!",
     images: ["/images/little-roots-og.png"],
   },
 };
@@ -266,7 +266,7 @@ const faqSchema = {
       name: "Where is Little Roots Studio located?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Little Roots Studio is located in Henderson, Nevada, serving families throughout the Las Vegas valley including Paradise, Boulder City, Green Valley, Summerlin, and surrounding areas. We're opening Spring 2026. Join our waitlist to be the first to book.",
+        text: "Little Roots Studio is located at Sunset Suites, 2895 N Green Valley Pkwy #G, Henderson, NV 89014, serving families throughout the Las Vegas valley including Paradise, Boulder City, Green Valley, Summerlin, and surrounding areas. Text or call (702) 917-2350 to book.",
       },
     },
     {

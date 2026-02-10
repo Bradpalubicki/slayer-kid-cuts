@@ -114,7 +114,7 @@ export default function HeroPreview() {
               {/* Sample content overlay */}
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
                 <span className="bg-white/20 backdrop-blur-sm text-white px-6 py-2 rounded-full text-sm font-semibold tracking-wide border border-white/30 mb-6">
-                  ✨ OPENING SPRING 2026 • HENDERSON, NV ✨
+                  NOW OPEN • HENDERSON, NV
                 </span>
                 <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 mb-4">
                   <p className="text-sage font-bold text-2xl">Little Roots Studio</p>

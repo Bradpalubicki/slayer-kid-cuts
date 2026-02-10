@@ -548,17 +548,17 @@ export default function PreparePage() {
               Ready to Book?
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Join our waitlist for grand opening and get priority booking!
+              Text or call (702) 917-2350 to book your appointment.
             </p>
-            <Link href="/coming-soon">
+            <a href="tel:+17029172350">
               <Button
                 size="lg"
                 className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8"
               >
-                Join the Waitlist
-                <ChevronRight className="w-5 h-5 ml-2" />
+                <Phone className="w-5 h-5 mr-2" />
+                Text or Call to Book
               </Button>
-            </Link>
+            </a>
           </motion.div>
         </div>
       </section>
