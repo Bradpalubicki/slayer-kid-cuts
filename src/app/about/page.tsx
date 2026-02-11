@@ -36,9 +36,9 @@ export default function AboutPage() {
                 Meet <span className="gradient-text">Carla</span>
               </h1>
               <p className="text-xl text-gray-600">
-                Hi! I&apos;m Carla, and I started this salon because I believe
-                every kid deserves to love getting their haircut. No tears, no
-                fears - just fun!
+                Hi, I&apos;m Carla — the heart behind Little Roots Studio.
+                I&apos;ve been a licensed cosmetologist for over 13 years, and
+                every child deserves to feel safe while in my chair.
               </p>
               <div className="flex items-center gap-6 pt-4">
                 <div className="text-center">
@@ -86,18 +86,13 @@ export default function AboutPage() {
               Our Mission
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-              Every Child Deserves to Feel Like a Superstar
+              Because Care Should Never Be Rushed
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              After years of cutting hair at traditional salons, I noticed
-              something: kids were often scared, parents were stressed, and
-              haircuts felt like a chore. I knew there had to be a better way.
+              Little Roots Studio was created to slow things down. After years of working in rushed environments where children were treated like numbers, I chose to build a space rooted in patience, safety, and care.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed mt-4">
-              That&apos;s why I created Little Roots Studio - a place where kids
-              actually WANT to come. With themed chairs, entertainment at every
-              station, and endless patience, we&apos;ve turned haircuts from
-              something kids dread into something they ask for.
+              As the first sensory-friendly children&apos;s salon suite of its kind in the Las Vegas Valley, this studio was created to serve autistic and neurodivergent children, children who experience difficulties with haircuts, and to provide a fun, private experience for kids who love the process.
             </p>
           </motion.div>
         </div>
@@ -128,9 +123,9 @@ export default function AboutPage() {
               },
               {
                 icon: Sparkles,
-                title: "Fun Always",
+                title: "Safety & Comfort",
                 description:
-                  "From themed chairs to games and treats, we make every visit a celebration.",
+                  "Providing safety and comfort for children is deeply important — every child deserves to feel seen and respected.",
                 color: "#5B8A8A",
               },
               {
@@ -142,9 +137,9 @@ export default function AboutPage() {
               },
               {
                 icon: Award,
-                title: "Quality Results",
+                title: "A Safe Place",
                 description:
-                  "Fun doesn't mean compromise. Every cut is professional and stylish.",
+                  "Little Roots Studio is more than a haircut — it's a safe place where children move at their own pace.",
                 color: "#7BA3A3",
               },
             ].map((value, index) => (
@@ -204,25 +199,19 @@ export default function AboutPage() {
                 Meet <span className="gradient-text">Carla</span>
               </h2>
               <p className="text-gray-600">
-                With over a decade of experience in children&apos;s hair
-                styling, I&apos;ve had the joy of giving thousands of kids their
-                perfect cuts. But what I love most isn&apos;t the cutting -
-                it&apos;s the connections.
+                Throughout my career, I&apos;ve worked in three different children&apos;s salons and have served hundreds of kids and families. Over the years, I&apos;ve learned that every child is different — and every child deserves to feel safe while in my chair.
               </p>
               <p className="text-gray-600">
-                I remember every kid who came in terrified and left beaming. I
-                remember the parents who cried happy tears when their special
-                needs child sat still for the first time. Those moments are why
-                I do this.
+                Creating Little Roots Studio wasn&apos;t just a business decision. It was personal. Providing safety and comfort for children is deeply important to me because it&apos;s something I didn&apos;t always get to experience growing up. I know how much it matters to feel seen, respected, and allowed to move at your own pace. That understanding guides everything I do.
               </p>
 
               <div className="space-y-4 pt-4">
                 <h3 className="font-bold text-lg">Certifications & Training</h3>
                 {[
-                  "Licensed Cosmetologist - State of Nevada",
-                  "Certified in Special Needs Hair Services",
-                  "Sensory-Friendly Environment Training",
-                  "Pediatric First Aid Certified",
+                  "Licensed Cosmetologist - State of Nevada (not a barber)",
+                  "13+ Years Experience Across Three Children's Salons",
+                  "Hundreds of Kids and Families Served",
+                  "First Sensory-Friendly Children's Salon Suite in the Las Vegas Valley",
                 ].map((cert) => (
                   <div key={cert} className="flex items-center gap-3">
                     <CheckCircle2 className="w-5 h-5 text-[#7BA3A3]" />

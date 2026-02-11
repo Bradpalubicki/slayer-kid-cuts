@@ -25,55 +25,55 @@ import { Badge } from "@/components/ui/badge";
 const accommodations = [
   {
     icon: Clock,
-    title: "Extra Time & Patience",
+    title: "Nothing Is Rushed or Forced",
     description:
-      "We never rush. Appointments can take as long as needed, with breaks whenever your child needs them.",
+      "We take time to connect. I gently introduce myself and my tools at your child's pace. Nothing is rushed and nothing is forced.",
     color: "#6B5B4F",
   },
   {
     icon: Volume2,
-    title: "Noise Control",
+    title: "Low-Noise Environment",
     description:
-      "Quieter clippers available, noise-canceling headphones offered, and we can minimize background sounds.",
+      "The space remains quiet and light-controlled. Your child's favorite show, song, or sound can already be playing when they arrive.",
     color: "#5B8A8A",
   },
   {
     icon: Eye,
-    title: "Visual Supports",
+    title: "Intake Questionnaire",
     description:
-      "Social stories, visual schedules, and step-by-step picture guides to help your child know what to expect.",
+      "After booking, you receive a short questionnaire about your child's past experiences, sensitivities, dislikes, comforts, and favorites — so the space is prepared specifically for them.",
     color: "#A69080",
   },
   {
     icon: Hand,
-    title: "Sensory Tools",
+    title: "No Restraining, No Forcing",
     description:
-      "Fidget toys, weighted lap pads, and textured items available to help with self-regulation.",
+      "There is no restraining and no forcing a child to hold still. Only patience, flexibility, and gentle supportive positioning when needed.",
     color: "#7BA3A3",
   },
   {
     icon: Sun,
-    title: "Lighting Options",
+    title: "Flexible Seating",
     description:
-      "Dimmable lights and natural lighting options. We can adjust to what's most comfortable.",
+      "If your child does not want to sit in the barber chair, that is completely okay. Haircuts can be done on a parent's lap, being held, on the floor, or wherever your child feels safest.",
     color: "#D4E5E5",
   },
   {
     icon: Headphones,
-    title: "Communication Flexibility",
+    title: "No Charge If Unable to Complete",
     description:
-      "We follow your child's communication style - verbal, non-verbal, AAC devices, or any combination.",
+      "If your child is unable to complete the haircut, you will not be charged. Comfort and trust always come first.",
     color: "#F15BB5",
   },
 ];
 
 const tips = [
-  "Visit the salon beforehand for a 'practice run' - no haircut, just exploration",
+  "After booking, complete the intake questionnaire so Carla can prepare the space for your child",
   "Bring a favorite comfort item or toy from home",
-  "Show your child pictures or videos of Carla before the visit",
-  "Schedule during quieter times (early morning or mid-week)",
-  "Let us know specific triggers to avoid",
-  "Mobile visits can be perfect for kids more comfortable at home",
+  "Let your child know their favorite show, song, or sound can be playing when they arrive",
+  "Text (702) 917-2350 when you arrive — you'll receive the entry code when the suite is ready",
+  "Let us know specific triggers to avoid in the intake questionnaire",
+  "Remember: if your child is unable to complete the haircut, you will not be charged",
 ];
 
 export default function SensoryFriendlyPage() {
@@ -97,9 +97,7 @@ export default function SensoryFriendlyPage() {
                 Great Haircut
               </h1>
               <p className="text-xl text-gray-600">
-                Specially trained in sensory-friendly haircuts for children with
-                autism, ADHD, sensory processing differences, and anxiety. No
-                judgement, just patience and understanding.
+                As the first sensory-friendly children&apos;s salon suite of its kind in the Las Vegas Valley, Little Roots Studio was created to serve autistic and neurodivergent children, children who experience difficulties with haircuts, and to provide a fun, private experience for kids who love the process. Because care should never be rushed.
               </p>
 
               <div className="flex items-center gap-4 pt-4">
@@ -121,7 +119,7 @@ export default function SensoryFriendlyPage() {
                     Book Sensory-Friendly Cut
                   </Button>
                 </Link>
-                <a href="tel:+17025551234">
+                <a href="tel:+17029172350">
                   <Button
                     size="lg"
                     variant="outline"
@@ -183,25 +181,13 @@ export default function SensoryFriendlyPage() {
             </h2>
             <div className="bg-gray-50 rounded-3xl p-8 text-left">
               <p className="text-lg text-gray-600 mb-4">
-                &quot;I started offering sensory-friendly services because I saw
-                too many kids leaving salons in tears. Traditional salons
-                aren&apos;t designed for children who experience the world
-                differently - the buzzing clippers, the unfamiliar touches, the
-                bright lights, the overwhelming sounds.&quot;
+                &quot;Little Roots Studio was created to slow things down. After years of working in rushed environments where children were treated like numbers, I chose to build a space rooted in patience, safety, and care.&quot;
               </p>
               <p className="text-lg text-gray-600 mb-4">
-                &quot;I&apos;ve taken specialized training in working with
-                children on the autism spectrum and those with sensory
-                processing differences. But more than any certification,
-                I&apos;ve learned the most from the families I&apos;ve worked
-                with. Every child is unique, and I adjust my approach for each
-                one.&quot;
+                &quot;Providing safety and comfort for children is deeply important to me because it&apos;s something I didn&apos;t always get to experience growing up. I know how much it matters to feel seen, respected, and allowed to move at your own pace. That understanding guides everything I do.&quot;
               </p>
               <p className="text-lg text-gray-600">
-                &quot;My goal isn&apos;t just to get through a haircut -
-                it&apos;s to help your child build positive associations with
-                the experience. Many of my sensory-friendly clients now actually
-                look forward to their appointments.&quot;
+                &quot;My goal is simple: to offer children a space where they feel comfortable, supported, and never rushed. Little Roots Studio is more than a haircut — it&apos;s a safe place.&quot;
               </p>
               <p className="text-right text-[#5B8A8A] font-bold mt-4">
                 - Carla
@@ -462,7 +448,7 @@ export default function SensoryFriendlyPage() {
                   Book Appointment
                 </Button>
               </Link>
-              <a href="tel:+17025551234">
+              <a href="tel:+17029172350">
                 <Button
                   size="lg"
                   variant="outline"

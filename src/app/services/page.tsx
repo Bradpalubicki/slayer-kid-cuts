@@ -123,8 +123,7 @@ export default function ServicesPage() {
               <span className="gradient-text">Kids Happy</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From first haircuts to fun styles, we offer everything to make
-              your child&apos;s haircut experience amazing!
+              Every service is provided in a calm, private suite. If your child is unable to complete the haircut, you will not be charged. Comfort and trust always come first.
             </p>
           </motion.div>
         </div>
@@ -311,6 +310,33 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Important Notes */}
+      <section className="py-12 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-[#5B8A8A]/5 rounded-3xl p-8 border border-[#5B8A8A]/20"
+          >
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Important Notes</h3>
+            <div className="space-y-3">
+              {[
+                "If your child is unable to complete the haircut, you will not be charged. Comfort and trust always come first.",
+                "Parents and adults by request only, unless in need of a sensory-friendly haircut.",
+                "Licensed Cosmetologist (not a barber). Lowest fade offered is a #1. A #0.5 may be done under special circumstances. Zero fades are not offered.",
+                "No product sales.",
+              ].map((note) => (
+                <div key={note} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#5B8A8A] flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">{note}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -324,7 +350,7 @@ export default function ServicesPage() {
               Ready to Book?
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Schedule your child&apos;s next fun haircut experience today!
+              Text or call Carla to schedule your child&apos;s appointment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/book">

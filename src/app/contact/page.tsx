@@ -10,6 +10,7 @@ import {
   Send,
   MessageCircle,
   CheckCircle2,
+  ClipboardList,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -94,7 +95,7 @@ export default function ContactPage() {
                         (702) 917-2350
                       </a>
                       <p className="text-sm text-gray-500 mt-1">
-                        Text preferred — please allow time for responses during appointments.
+                        Text preferred — please allow time for responses during business hours, as I remain fully present with each child in my care.
                       </p>
                     </div>
                   </div>
@@ -122,7 +123,7 @@ export default function ContactPage() {
                         littlerootscuts333@gmail.com
                       </a>
                       <p className="text-sm text-gray-500 mt-1">
-                        Please allow time for responses during business hours.
+                        Please allow time for responses during business hours, as I remain fully present with each child in my care.
                       </p>
                     </div>
                   </div>
@@ -182,6 +183,36 @@ export default function ContactPage() {
                         <p>Closed daily 1pm – 2pm</p>
                         <p>Sunday & Monday: Closed</p>
                       </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              <Card className="hover:shadow-lg transition-shadow border-[#5B8A8A]/20 bg-[#5B8A8A]/5">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-[#5B8A8A]/10 flex items-center justify-center flex-shrink-0">
+                      <ClipboardList className="w-6 h-6 text-[#5B8A8A]" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-1">Intake Questionnaire</h3>
+                      <p className="text-gray-600 text-sm mb-2">
+                        Already booked? Complete the intake form so Carla can prepare the space for your child.
+                      </p>
+                      <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLSetWpeKLI6A_HaWhivbO3BuWvgoVwqDgtrJzz7jqU-GLdP5EQ/viewform"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-[#5B8A8A] font-semibold hover:underline inline-block"
+                      >
+                        Complete Intake Form &rarr;
+                      </a>
                     </div>
                   </div>
                 </CardContent>

@@ -24,23 +24,23 @@ const faqCategories = [
     questions: [
       {
         q: "What makes your salon sensory-friendly?",
-        a: "We specialize in working with children who have autism, ADHD, sensory processing differences, and anxiety. We offer noise-canceling headphones, whisper-quiet clippers, weighted lap pads, visual timers, and most importantly - no time pressure. Our stylists are trained and certified in sensory-friendly techniques.",
+        a: "Every appointment begins with understanding. After booking, you receive a short intake questionnaire about your child's past experiences, sensitivities, dislikes, comforts, and favorites. This allows Carla to prepare the space specifically for your child. The studio features earth-toned calming decor, a light-controlled and low-noise environment, sensory toys, weighted capes, flexible seating, and a Nintendo Switch. Nothing is rushed and nothing is forced.",
       },
       {
-        q: "Do you charge extra for sensory-friendly haircuts?",
-        a: "No! Our sensory-friendly accommodations are included at no extra charge. We believe every child deserves a comfortable haircut experience.",
+        q: "What if my child can't complete the haircut?",
+        a: "If your child is unable to complete the haircut, you will not be charged. Comfort and trust always come first. There is no restraining and no forcing a child to hold still — only patience, flexibility, and gentle supportive positioning when needed.",
       },
       {
-        q: "Can we take breaks during the haircut?",
-        a: "Absolutely! We never rush. If your child needs a break, we pause. Some haircuts take 15 minutes, others take an hour - and that's perfectly okay.",
+        q: "Does my child have to sit in the barber chair?",
+        a: "No! If your child does not want to sit in the barber chair, that is completely okay. Haircuts can be done while sitting on a parent's lap, being held, playing on the floor, or wherever your child feels safest. The traditional barber chair is available but never required.",
       },
       {
         q: "What if my child has never completed a haircut before?",
-        a: "You're in the right place! Many families come to us after struggling at other salons. We've helped hundreds of children who previously couldn't sit through a haircut. We'll work at your child's pace.",
+        a: "You're in the right place! Carla has served hundreds of kids and families across three children's salons over 13+ years. She gently introduces herself and her tools at your child's pace. Nothing is rushed and nothing is forced.",
       },
       {
         q: "Can I stay with my child during the haircut?",
-        a: "Yes! Parents are always welcome to stay. You can sit right next to your child, hold their hand, or even have them sit on your lap if that helps.",
+        a: "Yes! Parents are always welcome to stay. You can sit right next to your child, hold their hand, or have them sit on your lap if that helps.",
       },
     ],
   },
@@ -51,19 +51,19 @@ const faqCategories = [
     questions: [
       {
         q: "How do I book an appointment?",
-        a: "You can book online through our website or call us directly. We recommend booking at least a few days in advance, especially for weekend appointments.",
+        a: "Text or call Carla at (702) 917-2350 to schedule your appointment. After booking, you will receive a short intake questionnaire so Carla can prepare the space specifically for your child.",
       },
       {
-        q: "What's your cancellation policy?",
-        a: "We understand life with kids is unpredictable! We ask for at least 24 hours notice for cancellations. Last-minute cancellations due to illness are always understood.",
+        q: "What happens after I book?",
+        a: "After booking, you will receive a short intake questionnaire asking about your child's past experiences, sensitivities, dislikes, comforts, and favorites. This allows Carla to prepare the space — including having their favorite show, song, or sound ready to play when they arrive.",
       },
       {
-        q: "Can I book multiple kids at the same time?",
-        a: "Yes! Our booking system lets you add multiple children to one appointment. It's a great way to get everyone done in one trip.",
+        q: "How do I enter the building?",
+        a: "Little Roots Studio is located inside a secured building and does not have a waiting room. When you arrive, please send a text to (702) 917-2350. If Carla does not respond immediately, she is still with the previous family. Once your appointment time begins and the suite is ready, you will receive the entry code. This system helps maintain a quiet, private, low-stimulation environment for every child.",
       },
       {
         q: "Do you take walk-ins?",
-        a: "We accept walk-ins when availability allows, but we recommend booking ahead to guarantee your spot and minimize wait time.",
+        a: "By appointment only. One family at a time. Text or call (702) 917-2350 to schedule.",
       },
     ],
   },
@@ -96,16 +96,20 @@ const faqCategories = [
     color: "#A69080",
     questions: [
       {
-        q: "What entertainment do you have for kids?",
-        a: "Every station has a TV with cartoons, tablets with games, and fun themed chairs. We want kids to be so entertained they forget they're getting a haircut!",
+        q: "What does the studio environment include?",
+        a: "Earth-toned, calming decor with a light-controlled and low-noise environment. One-family-at-a-time scheduling. TV with favorite shows or videos, Nintendo Switch gaming option, sensory toys and regulation tools, weighted capes, flexible seating options, and a traditional barber chair (available but not required).",
       },
       {
-        q: "Do kids get a treat after their haircut?",
-        a: "Yes! Every child gets a lollipop (or alternative treat) after their haircut. We believe in ending on a sweet note!",
+        q: "Is Carla a barber or cosmetologist?",
+        a: "Carla is a licensed cosmetologist (not a barber). She has over 13 years of experience across three children's salons. Lowest fade offered is a #1. A #0.5 may be done under special circumstances. Zero fades are not offered.",
       },
       {
-        q: "What age kids do you serve?",
-        a: "We serve children of all ages — from first haircuts (typically around 1-2 years old) through teens.",
+        q: "Do you cut adults' hair?",
+        a: "Parents and adults are by request only, unless they are in need of a sensory-friendly haircut. Little Roots Studio is primarily designed for children.",
+      },
+      {
+        q: "Do you sell hair products?",
+        a: "No. Little Roots Studio does not offer product sales. Our focus is entirely on providing safe, comfortable haircut experiences for children.",
       },
     ],
   },
@@ -124,7 +128,7 @@ const faqCategories = [
       },
       {
         q: "How do I enter the building?",
-        a: "Little Roots Studio is inside a secured building with no waiting room. When you arrive, text (702) 917-2350. Once your suite is ready, you'll receive the entry code.",
+        a: "Little Roots Studio is located inside a secured building and does not have a waiting room. When you arrive, please send a text to (702) 917-2350. If Carla does not respond immediately, she is still with the previous family. Once your appointment time begins and the suite is ready, you will receive the entry code.",
       },
     ],
   },

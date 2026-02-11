@@ -47,9 +47,7 @@ export default function PreparePage() {
               Setting Up for <span className="gradient-text">Success</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A little preparation can make a big difference! Here&apos;s how to
-              help your child feel comfortable and confident before their
-              haircut.
+              Every appointment begins with understanding. Here&apos;s what to expect from booking through arrival so your child feels comfortable and safe.
             </p>
           </motion.div>
         </div>
@@ -77,44 +75,44 @@ export default function PreparePage() {
             {[
               {
                 icon: Book,
-                title: "Read Social Stories",
+                title: "Complete the Intake Questionnaire",
                 description:
-                  'Use picture books or create a simple story about going to the salon. "First we drive, then we go inside, then we sit in a special chair..."',
+                  "After booking, you will receive a short intake questionnaire asking about your child's past experiences, sensitivities, dislikes, comforts, and favorites. This allows Carla to prepare the space specifically for your child.",
                 color: "#5B8A8A",
               },
               {
                 icon: Tv,
-                title: "Watch Videos",
+                title: "Pick Their Favorite Show or Song",
                 description:
-                  "Show your child videos of other kids getting haircuts. We can send you a video of Carla working if it helps!",
+                  "Let us know your child's favorite show, song, or sound — it can already be playing when they arrive in the suite.",
                 color: "#A69080",
               },
               {
                 icon: Camera,
-                title: "Show Photos of Our Space",
+                title: "Share Comforts & Sensitivities",
                 description:
-                  'Visit our "Our Space" page to see the salon layout. Familiarity reduces anxiety about the unknown.',
+                  "The intake questionnaire covers what helps your child feel safe. The more we know, the better prepared the space will be.",
                 color: "#6B5B4F",
               },
               {
                 icon: Sparkles,
-                title: 'Play "Haircut"',
+                title: "Talk About the Visit",
                 description:
-                  "Practice at home with pretend haircuts on stuffed animals or dolls. Let your child be the stylist too!",
+                  "Let your child know they'll be going to a calm, private space where they can watch their favorite show and play with toys. Nothing will be rushed or forced.",
                 color: "#7BA3A3",
               },
               {
                 icon: Timer,
-                title: "Practice Sitting Still",
+                title: "Know There's No Pressure",
                 description:
-                  "Work up to sitting still for short periods while watching a favorite show. Start with 2-3 minutes.",
+                  "If your child does not want to sit in the barber chair, that's okay. Haircuts can happen on a parent's lap, the floor, or wherever they feel safest.",
                 color: "#D4E5E5",
               },
               {
                 icon: Gift,
-                title: "Plan a Reward",
+                title: "No Charge If Unable to Complete",
                 description:
-                  "Let your child know there's something to look forward to after — ice cream, park time, a small toy, etc.",
+                  "If your child is unable to complete the haircut, you will not be charged. Comfort and trust always come first.",
                 color: "#F15BB5",
               },
             ].map((item, index) => (
@@ -180,13 +178,13 @@ export default function PreparePage() {
               </h3>
               <div className="space-y-3">
                 {[
-                  "Noise-canceling headphones",
-                  "Weighted lap pad",
-                  "Fidget toys & spinners",
-                  "Visual timers",
-                  "Tablets with shows & games",
-                  "Lollipops (or alternative treats)",
-                  "Cape options (light touch or none)",
+                  "Earth-toned, calming decor",
+                  "Light-controlled and low-noise environment",
+                  "TV with favorite shows or videos",
+                  "Nintendo Switch gaming option",
+                  "Sensory toys and regulation tools",
+                  "Weighted capes available",
+                  "Flexible seating options (chair, lap, floor)",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <CheckCircle2 className="w-5 h-5 text-[#7BA3A3] flex-shrink-0" />
@@ -246,38 +244,38 @@ export default function PreparePage() {
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                title: "Timing Matters",
+                title: "Arriving at the Studio",
                 tips: [
-                  "Schedule when your child is usually well-rested",
-                  "Avoid right before nap time or meal time",
-                  "Morning appointments often work best",
-                  "Allow extra travel time so you're not rushed",
+                  "Little Roots Studio is inside a secured building with no waiting room",
+                  "When you arrive, send a text to (702) 917-2350",
+                  "If Carla does not respond immediately, she is still with the previous family",
+                  "Once your appointment time begins and the suite is ready, you will receive the entry code",
                 ],
               },
               {
-                title: "Getting Ready",
+                title: "When You Enter",
                 tips: [
-                  "Dress in comfortable, easy-to-clean clothes",
-                  "Avoid favorite shirts (hair can be itchy!)",
-                  'Use simple language: "We\'re going to see Carla for a haircut"',
-                  "Stay calm — kids pick up on our anxiety!",
+                  "Your child will be welcomed into a calm, private environment",
+                  "Their favorite show, song, or sound can already be playing",
+                  "Toys and sensory-friendly items will be available",
+                  "The space will remain quiet and light-controlled",
                 ],
               },
               {
-                title: "During the Visit",
+                title: "During the Haircut",
                 tips: [
-                  "Let Carla lead the interaction at first",
-                  "It's OK to hold their hand or have them on your lap",
-                  'Celebrate small wins ("You\'re doing great!")',
-                  "If they need a break, we take a break",
+                  "Carla gently introduces herself and her tools at your child's pace",
+                  "Nothing is rushed and nothing is forced",
+                  "Haircuts can be done on a parent's lap, being held, or on the floor",
+                  "Only patience, flexibility, and gentle supportive positioning",
                 ],
               },
               {
                 title: "If Things Get Hard",
                 tips: [
-                  "Breaks are always OK — even long ones",
-                  "We can stop and try again another day",
-                  "Partial haircuts are fine — we finish next time",
+                  "There is no restraining and no forcing a child to hold still",
+                  "If your child is unable to complete the haircut, you will not be charged",
+                  "Comfort and trust always come first",
                   "There's no judgment here, ever",
                 ],
               },

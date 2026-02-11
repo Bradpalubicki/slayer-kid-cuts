@@ -25,20 +25,29 @@ const quickReplies = [
   "What are your hours?",
   "Sensory accommodations?",
   "Pricing info",
+  "Intake form",
   "Talk to someone",
 ];
 
 const botResponses: Record<string, string> = {
   "book an appointment":
-    "I'd love to help you book! Please text or call Carla at (702) 917-2350 to schedule your appointment.",
+    "I'd love to help you book! Please text or call Carla at (702) 917-2350 to schedule your appointment. After booking, you'll receive a short intake questionnaire so Carla can prepare the space specifically for your child.",
   "what are your hours?":
-    "We're open Tuesday through Saturday, 10am to 6pm (closed 1-2pm daily). Would you like to schedule a visit?",
+    "We're open Tuesday through Saturday, 10am to 6pm (closed 1-2pm daily). Would you like to schedule a visit? Text or call (702) 917-2350.",
   "sensory accommodations":
-    "Every appointment starts with an intake questionnaire so we can prepare the space specifically for your child. We have weighted capes, sensory toys, a Nintendo Switch, and flexible seating. Your child sets the pace!",
+    "Every appointment begins with understanding. After booking, you receive a short intake questionnaire about your child's sensitivities, comforts, and favorites. The studio features earth-toned calming decor, light-controlled environment, sensory toys, weighted capes, Nintendo Switch, and flexible seating. Nothing is rushed and nothing is forced. If your child is unable to complete the haircut, you will not be charged.",
   "pricing info":
-    "Sensory-Friendly Haircut (60 min) is $45, Kids Haircut (30 min) is $30, Buzz Cut/Ends Trimmed is $20, and Bang Trim is $15. Text (702) 917-2350 to book!",
+    "Sensory-Friendly Haircut (60 min) is $45, Kids Haircut (30 min) is $30, Buzz Cut/Ends Trimmed is $20, and Bang Trim is $15. If your child is unable to complete the haircut, you will not be charged. Text (702) 917-2350 to book!",
   "talk to someone":
-    "Of course! You can text or call Carla directly at (702) 917-2350. Text is preferred as she stays fully present with each child.",
+    "Of course! You can text or call Carla directly at (702) 917-2350. Please allow time for responses during business hours, as she remains fully present with each child in her care.",
+  intake:
+    "You can complete the intake questionnaire here: https://docs.google.com/forms/d/e/1FAIpQLSetWpeKLI6A_HaWhivbO3BuWvgoVwqDgtrJzz7jqU-GLdP5EQ/viewform — This helps Carla prepare the space specifically for your child.",
+  arrive:
+    "Little Roots Studio is inside a secured building with no waiting room. When you arrive, text (702) 917-2350. If Carla doesn't respond immediately, she's still with the previous family. Once your suite is ready, you'll receive the entry code.",
+  enter:
+    "Little Roots Studio is inside a secured building with no waiting room. When you arrive, text (702) 917-2350. Once your suite is ready, you'll receive the entry code.",
+  charge:
+    "If your child is unable to complete the haircut, you will not be charged. Comfort and trust always come first.",
   default:
     "Thanks for reaching out! I'm here to help with appointments, pricing, or any questions about Little Roots Studio. What can I help you with today?",
 };

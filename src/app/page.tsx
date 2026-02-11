@@ -11,42 +11,42 @@ function FAQAccordion() {
     {
       question: "What is a sensory-friendly haircut?",
       answer:
-        "A sensory-friendly haircut is designed for children who may be sensitive to sounds, lights, textures, or touch. We offer dimmed lighting, noise-canceling headphones, weighted lap pads, fidget toys, and a calm environment. We never rush and allow breaks as needed.",
+        "Every appointment begins with understanding. After booking, you receive a short intake questionnaire about your child's past experiences, sensitivities, dislikes, comforts, and favorites. This allows Carla to prepare the space specifically for your child. Nothing is rushed and nothing is forced. There is no restraining and no forcing a child to hold still — only patience, flexibility, and gentle supportive positioning when needed.",
     },
     {
       question: "Do you specialize in haircuts for autistic children?",
       answer:
-        "Yes! Our stylist Carla has 13+ years of experience working with children and specialized training in autism-friendly haircutting. We understand sensory sensitivities and adapt our approach to each child's needs.",
+        "Yes! Little Roots Studio is the first sensory-friendly children's salon suite of its kind in the Las Vegas Valley. It was created to serve autistic and neurodivergent children, children who experience difficulties with haircuts, and to provide a fun, private experience for kids who love the process.",
     },
     {
-      question: "What ages do you serve?",
+      question: "What if my child can't sit in the barber chair?",
       answer:
-        "We serve children from infants (first haircuts) through teens (ages 0-17). We specialize in making haircuts a positive experience for children of all ages and abilities.",
+        "That is completely okay! Haircuts can be done while sitting on a parent's lap, being held, playing on the floor, or wherever your child feels safest. If your child is unable to complete the haircut, you will not be charged. Comfort and trust always come first.",
     },
     {
-      question: "Is it really one family at a time?",
+      question: "How do I enter the building?",
       answer:
-        "Yes! Your family will have the entire private suite to yourselves. No other families, no waiting room overwhelm. We also offer a wait-in-car option where we text you when we're ready.",
+        "Little Roots Studio is located inside a secured building and does not have a waiting room. When you arrive, please send a text to (702) 917-2350. If Carla does not respond immediately, she is still with the previous family. Once your appointment time begins and the suite is ready, you will receive the entry code.",
     },
     {
-      question: "What if my child has had bad haircut experiences before?",
+      question: "Do you cut adults' hair?",
       answer:
-        "We specialize in helping children rebuild trust around haircuts. We go at your child's pace, offer choices, and never force anything. Many families come to us after traumatic experiences elsewhere.",
+        "Parents and adults are by request only, unless they are in need of a sensory-friendly haircut. Little Roots Studio is primarily designed for children.",
     },
     {
       question: "Where is Little Roots Studio located?",
       answer:
-        "Little Roots Studio is located at Sunset Suites, 2895 N Green Valley Pkwy #G, Henderson, NV 89014. We serve families throughout the Las Vegas valley including Paradise, Boulder City, Green Valley, Summerlin, and surrounding areas.",
+        "Little Roots Studio is located at Sunset Suites, 2895 N Green Valley Pkwy #G, Henderson, NV 89014. We serve families throughout the Las Vegas Valley including Paradise, Boulder City, Green Valley, Summerlin, and surrounding areas.",
     },
     {
       question: "How do I book an appointment?",
       answer:
-        "Text or call us at (702) 917-2350 to book your appointment. We'll find a time that works for your family.",
+        "Text or call (702) 917-2350 to book your appointment. After booking, you'll receive a short intake questionnaire so Carla can prepare the space specifically for your child.",
     },
     {
-      question: "What sensory tools do you have available?",
+      question: "What does the studio environment include?",
       answer:
-        "We offer noise-canceling headphones, weighted lap pads, fidget toys, visual timers, dimmable lighting, TV/tablet with favorite shows, and a calm corner for breaks. We also have a treasure chest of rewards!",
+        "Earth-toned, calming decor with light-controlled and low-noise environment. One-family-at-a-time scheduling. TV with favorite shows or videos, Nintendo Switch gaming option, sensory toys and regulation tools, weighted capes, flexible seating options, and a traditional barber chair (available but not required).",
     },
   ];
 
@@ -195,10 +195,10 @@ export default function Home() {
         {/* Message from Carla - Outside the card */}
         <div className="relative z-10 mt-6 bg-white/25 backdrop-blur-sm rounded-2xl p-5 max-w-lg mx-auto border border-white/30">
           <p className="text-white italic text-sm leading-relaxed text-center drop-shadow-md">
-            &ldquo;After 13 years working with children — including specialized autism training — I&apos;ve finally created the sanctuary every anxious, sensitive child deserves. A place where haircuts become confidence-building experiences.&rdquo;
+            &ldquo;Little Roots Studio was created to slow things down. As the first sensory-friendly children&apos;s salon suite of its kind in the Las Vegas Valley, this studio was created to serve autistic and neurodivergent children, children who experience difficulties with haircuts, and to provide a fun, private experience for kids who love the process. Because care should never be rushed.&rdquo;
           </p>
           <p className="text-white font-semibold mt-3 text-sm text-center drop-shadow-md">
-            — Carla, Autism-Trained Specialist & Owner 💚
+            — Carla, Licensed Cosmetologist & Owner
           </p>
         </div>
 
@@ -422,21 +422,28 @@ export default function Home() {
                   <span className="text-sage mt-0.5 text-lg">✓</span>
                   <div>
                     <p className="font-medium text-brown">Sensory Tools</p>
-                    <p className="text-sm text-brown/60">Headphones, weighted pads, fidgets, visual timers</p>
+                    <p className="text-sm text-brown/60">Weighted capes, sensory toys, Nintendo Switch, and more</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3 py-3 border-b border-sage/10">
                   <span className="text-sage mt-0.5 text-lg">✓</span>
                   <div>
                     <p className="font-medium text-brown">Patience & Flexibility</p>
-                    <p className="text-sm text-brown/60">Breaks as needed, no rushing, child-led pace</p>
+                    <p className="text-sm text-brown/60">No restraining, no forcing — only patience and gentle support</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3 py-3 border-b border-sage/10">
+                  <span className="text-sage mt-0.5 text-lg">✓</span>
+                  <div>
+                    <p className="font-medium text-brown">No Charge If Unable to Complete</p>
+                    <p className="text-sm text-brown/60">If your child is unable to complete the haircut, you will not be charged</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3 py-3">
                   <span className="text-sage mt-0.5 text-lg">✓</span>
                   <div>
-                    <p className="font-medium text-brown">Treasure Chest Reward</p>
-                    <p className="text-sm text-brown/60">Every child picks a prize after their haircut</p>
+                    <p className="font-medium text-brown">Adults by Request Only</p>
+                    <p className="text-sm text-brown/60">Parents and adults by request only, unless in need of a sensory-friendly haircut</p>
                   </div>
                 </li>
               </ul>
@@ -472,49 +479,49 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {[
               {
-                emoji: "🚗",
-                title: "Wait-in-Car Option",
-                desc: "Avoid the waiting room entirely. We text when we're ready for you.",
-              },
-              {
-                emoji: "🚪",
-                title: "Private Entrance",
-                desc: "Skip the main entrance. Walk directly into your private suite.",
+                emoji: "🌿",
+                title: "Earth-Toned Decor",
+                desc: "Calming, natural colors throughout the space.",
               },
               {
                 emoji: "💡",
-                title: "Dimmable Lighting",
-                desc: "Adjust brightness to your child's comfort level.",
+                title: "Light-Controlled",
+                desc: "Adjustable lighting for your child's comfort level.",
               },
               {
-                emoji: "🎧",
-                title: "Noise-Canceling Headphones",
-                desc: "Block out clipper sounds and unexpected noises.",
-              },
-              {
-                emoji: "🪨",
-                title: "Weighted Lap Pads",
-                desc: "Calming deep pressure for anxious moments.",
-              },
-              {
-                emoji: "🧘",
-                title: "Calm Corner",
-                desc: "A cozy space for breaks whenever your child needs one.",
+                emoji: "👨‍👩‍👧",
+                title: "One Family at a Time",
+                desc: "No other families. The entire space is yours.",
               },
               {
                 emoji: "📺",
-                title: "Favorite Shows/Tablet",
-                desc: "Bring their comfort show or use ours.",
+                title: "Favorite Shows & Videos",
+                desc: "TV ready with their comfort show, song, or sound.",
+              },
+              {
+                emoji: "🎮",
+                title: "Nintendo Switch",
+                desc: "Gaming option to keep kids engaged and comfortable.",
               },
               {
                 emoji: "🧸",
-                title: "Fidget Tools",
-                desc: "A variety of sensory tools to help with regulation.",
+                title: "Sensory Toys & Tools",
+                desc: "Regulation tools available throughout the visit.",
               },
               {
-                emoji: "⏰",
-                title: "Visual Timers",
-                desc: "Help children understand how much time is left.",
+                emoji: "🧥",
+                title: "Weighted Capes",
+                desc: "Calming deep pressure option available.",
+              },
+              {
+                emoji: "🪑",
+                title: "Flexible Seating",
+                desc: "Chair, parent's lap, floor — wherever your child feels safest.",
+              },
+              {
+                emoji: "💈",
+                title: "Traditional Barber Chair",
+                desc: "Available but never required.",
               },
             ].map((item) => (
               <div
@@ -659,19 +666,13 @@ export default function Home() {
 
               <div className="space-y-4 text-brown/80">
                 <p>
-                  For over <strong>13 years</strong>, I&apos;ve dedicated my career to
-                  working with children — especially those who need a little extra
-                  patience, understanding, and care.
+                  I&apos;ve been a licensed cosmetologist for over <strong>13 years</strong>. Throughout my career, I&apos;ve worked in three different children&apos;s salons and have served hundreds of kids and families. Over the years, I&apos;ve learned that every child is different — and every child deserves to feel safe while in my chair.
                 </p>
                 <p>
-                  I&apos;ve held the hands of kids who trembled at the sight of scissors.
-                  I&apos;ve waited through meltdowns without judgment. I&apos;ve seen parents
-                  cry with relief when their child — for the first time ever — sat through
-                  an entire haircut.
+                  Creating Little Roots Studio wasn&apos;t just a business decision. It was personal. Providing safety and comfort for children is deeply important to me because it&apos;s something I didn&apos;t always get to experience growing up. I know how much it matters to feel seen, respected, and allowed to move at your own pace.
                 </p>
                 <p className="text-sage-dark font-medium">
-                  Every child deserves someone who understands them. That&apos;s why I built
-                  Little Roots Studio.
+                  My goal is simple: to offer children a space where they feel comfortable, supported, and never rushed. Little Roots Studio is more than a haircut — it&apos;s a safe place.
                 </p>
               </div>
 
@@ -685,19 +686,15 @@ export default function Home() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-sage mt-0.5">✓</span>
-                    <span>Autism-Friendly Haircutting Certification</span>
+                    <span>13+ Years Experience Across Three Children&apos;s Salons</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-sage mt-0.5">✓</span>
-                    <span>Trauma-Informed Care Training</span>
+                    <span>Hundreds of Kids and Families Served</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-sage mt-0.5">✓</span>
-                    <span>Sensory Processing Disorder Awareness</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-sage mt-0.5">✓</span>
-                    <span>13+ Years Experience with Children of All Abilities</span>
+                    <span>First Sensory-Friendly Children&apos;s Salon Suite in the Las Vegas Valley</span>
                   </li>
                 </ul>
               </div>
