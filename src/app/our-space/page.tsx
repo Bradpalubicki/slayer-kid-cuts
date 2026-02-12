@@ -110,7 +110,7 @@ export default function OurSpacePage() {
             Ready to Visit?
           </h2>
           <p className="text-brown/70 mb-6">
-            Text or call to book your appointment. Carla is happy to answer any questions about your child's needs.
+            Text or call to book your appointment. Carla is happy to answer any questions about your child&apos;s needs.
           </p>
           <a
             href="tel:+17029172350"

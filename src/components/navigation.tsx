@@ -67,12 +67,12 @@ export function Navigation() {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+17029172350">
+            <Link href="/book">
               <Button className="bg-[#5B8A8A] hover:bg-[#4A7272] text-white border-0 rounded-full px-6 shadow-lg hover:shadow-xl transition-all">
                 <Calendar className="w-4 h-4 mr-2" />
-                Text or Call to Book
+                Book Now
               </Button>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -106,12 +106,12 @@ export function Navigation() {
                 </Link>
               ))}
               <div className="pt-4">
-                <a href="tel:+17029172350" onClick={() => setIsOpen(false)}>
+                <Link href="/book" onClick={() => setIsOpen(false)}>
                   <Button className="w-full bg-[#5B8A8A] hover:bg-[#4A7272] text-white border-0 rounded-xl py-6 shadow-lg">
                     <Calendar className="w-5 h-5 mr-2" />
-                    Text or Call to Book
+                    Book Now
                   </Button>
-                </a>
+                </Link>
               </div>
             </nav>
           </motion.div>
