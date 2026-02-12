@@ -1,146 +1,179 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { useChat } from "@ai-sdk/react";
+import { DefaultChatTransport } from "ai";
 import {
   MessageCircle,
   X,
   Send,
   Phone,
   MessageSquare,
+  Mail,
+  Clock,
   Sparkles,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { motion, AnimatePresence } from "framer-motion";
 
-interface Message {
-  id: string;
-  text: string;
-  sender: "user" | "bot";
-  timestamp: Date;
+// ------------------------------------------------------------------
+// Keyword fallback (used when AI is unavailable)
+// ------------------------------------------------------------------
+
+const FALLBACK_RESPONSES: Record<string, string> = {
+  book: "You can book online at littleroots.studio/book or text Carla at (702) 917-2350. After booking, you'll receive a short intake questionnaire so Carla can prepare the space for your child.",
+  appointment: "You can book online at littleroots.studio/book or text Carla at (702) 917-2350. She'll find the perfect time for your family.",
+  price: "Sensory-Friendly Haircut is $45 (60 min), Kids Haircut is $30 (30 min), Buzz Cut/Ends Trimmed is $20 (15-20 min), and Bang Trim is $15 (10-15 min). If your child is unable to complete the haircut, you will not be charged.",
+  cost: "Sensory-Friendly Haircut is $45 (60 min), Kids Haircut is $30 (30 min), Buzz Cut/Ends Trimmed is $20 (15-20 min), and Bang Trim is $15 (10-15 min). If your child is unable to complete the haircut, you will not be charged.",
+  hour: "We're open Tuesday through Saturday, 10 AM – 6 PM (closed 1–2 PM daily for lunch). Closed Sunday & Monday. By appointment only.",
+  open: "We're open Tuesday through Saturday, 10 AM – 6 PM (closed 1–2 PM daily for lunch). Closed Sunday & Monday.",
+  sensory: "Every appointment begins with understanding. You'll receive an intake questionnaire about your child's sensitivities, comforts, and favorites. The studio features dimmable lighting, sound control, sensory tools, weighted capes, Nintendo Switch, and flexible seating. Nothing is rushed and nothing is forced.",
+  autism: "Little Roots Studio specializes in sensory-friendly haircuts for children with autism and sensory differences. Carla is trained in trauma-informed care and creates a calm, predictable environment. If your child is unable to complete the haircut, you will not be charged.",
+  anxiety: "It's completely normal for children to feel anxious about haircuts. Carla takes a gentle, never-forced approach with breaks as needed. The private suite is designed to be calming — no fluorescents, no other families, just your child at their own pace.",
+  scared: "It's completely okay if your child is nervous! Carla is patient, gentle, and experienced. Practice visits are available at no charge so your child can see the space first. Nothing is ever forced.",
+  first: "For first haircuts, Carla sends an intake questionnaire beforehand to learn about your child. The private suite is calm and quiet. Practice visits are available at no charge. Take your time — there's never any rush.",
+  intake: "The intake questionnaire helps Carla prepare the space for your child: https://docs.google.com/forms/d/e/1FAIpQLSetWpeKLI6A_HaWhivbO3BuWvgoVwqDgtrJzz7jqU-GLdP5EQ/viewform",
+  where: "Little Roots Studio is inside Sunset Suites at 2895 N Green Valley Pkwy, Suite G, Henderson, NV 89014. It's a secured building — text (702) 917-2350 when you arrive for the entry code.",
+  location: "We're at 2895 N Green Valley Pkwy, Suite G, Henderson, NV 89014 (inside Sunset Suites). Text (702) 917-2350 when you arrive.",
+  arrive: "When you arrive, text (702) 917-2350. The studio is inside a secured building with no waiting room. Carla will send the entry code when your suite is ready.",
+  charge: "If your child is unable to complete the haircut, you will not be charged. Comfort and trust always come first.",
+  practice: "Practice visits are available at no charge! Your child can come see the space, sit in the chair, and get comfortable — no haircut required. Text (702) 917-2350 to schedule one.",
+};
+
+function matchFallback(input: string): string {
+  const lower = input.toLowerCase();
+  for (const [keyword, response] of Object.entries(FALLBACK_RESPONSES)) {
+    if (lower.includes(keyword)) return response;
+  }
+  return "Thanks for reaching out! I can help with services, pricing, booking, sensory accommodations, or anything about Little Roots Studio. What would you like to know?";
 }
 
-const quickReplies = [
+const QUICK_REPLIES = [
   "Book an appointment",
   "What are your hours?",
   "Sensory accommodations?",
   "Pricing info",
-  "Intake form",
-  "Talk to someone",
+  "First haircut tips",
 ];
 
-const botResponses: Record<string, string> = {
-  "book an appointment":
-    "I'd love to help you book! Please text or call Carla at (702) 917-2350 to schedule your appointment. After booking, you'll receive a short intake questionnaire so Carla can prepare the space specifically for your child.",
-  "what are your hours?":
-    "We're open Tuesday through Saturday, 10am to 6pm (closed 1-2pm daily). Would you like to schedule a visit? Text or call (702) 917-2350.",
-  "sensory accommodations":
-    "Every appointment begins with understanding. After booking, you receive a short intake questionnaire about your child's sensitivities, comforts, and favorites. The studio features earth-toned calming decor, light-controlled environment, sensory toys, weighted capes, Nintendo Switch, and flexible seating. Nothing is rushed and nothing is forced. If your child is unable to complete the haircut, you will not be charged.",
-  "pricing info":
-    "Sensory-Friendly Haircut (60 min) is $45, Kids Haircut (30 min) is $30, Buzz Cut/Ends Trimmed is $20, and Bang Trim is $15. If your child is unable to complete the haircut, you will not be charged. Text (702) 917-2350 to book!",
-  "talk to someone":
-    "Of course! You can text or call Carla directly at (702) 917-2350. Please allow time for responses during business hours, as she remains fully present with each child in her care.",
-  intake:
-    "You can complete the intake questionnaire here: https://docs.google.com/forms/d/e/1FAIpQLSetWpeKLI6A_HaWhivbO3BuWvgoVwqDgtrJzz7jqU-GLdP5EQ/viewform — This helps Carla prepare the space specifically for your child.",
-  arrive:
-    "Little Roots Studio is inside a secured building with no waiting room. When you arrive, text (702) 917-2350. If Carla doesn't respond immediately, she's still with the previous family. Once your suite is ready, you'll receive the entry code.",
-  enter:
-    "Little Roots Studio is inside a secured building with no waiting room. When you arrive, text (702) 917-2350. Once your suite is ready, you'll receive the entry code.",
-  charge:
-    "If your child is unable to complete the haircut, you will not be charged. Comfort and trust always come first.",
-  default:
-    "Thanks for reaching out! I'm here to help with appointments, pricing, or any questions about Little Roots Studio. What can I help you with today?",
-};
+const WELCOME_MESSAGE =
+  "Hi there! I'm the Little Roots Studio assistant. I can help with booking, pricing, sensory accommodations, and anything about our studio. What would you like to know?";
+
+// ------------------------------------------------------------------
+// Component
+// ------------------------------------------------------------------
+
+interface FallbackMessage {
+  id: string;
+  text: string;
+  sender: "user" | "bot";
+}
 
 export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: "1",
-      text: "Hi there! Welcome to Little Roots Studio! I'm here to help you with appointments, pricing, or any questions about our sensory-friendly services. How can I help you today?",
-      sender: "bot",
-      timestamp: new Date(),
-    },
-  ]);
-  const [inputValue, setInputValue] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
-  const [contactMode, setContactMode] = useState<"chat" | "text" | "call">(
-    "chat",
-  );
+  const [mode, setMode] = useState<"chat" | "contact">("chat");
+  const [useAI, setUseAI] = useState(true);
+  const [input, setInput] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const messageIdRef = useRef(1);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  // AI chat via Vercel AI SDK
+  const { messages: aiMessages, sendMessage, status } = useChat({
+    transport: new DefaultChatTransport({ api: "/api/chat" }),
+    messages: [
+      {
+        id: "welcome",
+        role: "assistant" as const,
+        content: WELCOME_MESSAGE,
+        parts: [{ type: "text" as const, text: WELCOME_MESSAGE }],
+      },
+    ],
+    onError: () => {
+      setUseAI(false);
+    },
+  });
+
+  const aiLoading = status === "submitted" || status === "streaming";
+
+  // Fallback keyword chat state
+  const [fallbackMessages, setFallbackMessages] = useState<FallbackMessage[]>([
+    { id: "welcome", text: WELCOME_MESSAGE, sender: "bot" },
+  ]);
+  const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [aiMessages, fallbackMessages, aiLoading, isTyping]);
 
-  const getBotResponse = (userMessage: string): string => {
-    const lowerMessage = userMessage.toLowerCase();
-    for (const [key, response] of Object.entries(botResponses)) {
-      if (lowerMessage.includes(key)) {
-        return response;
-      }
-    }
-    return botResponses.default;
-  };
-
-  const sendMessage = useCallback((text: string) => {
+  function sendFallbackMessage(text: string) {
     if (!text.trim()) return;
-
-    messageIdRef.current += 1;
-    const userMessageId = `user-${messageIdRef.current}`;
-
-    const userMessage: Message = {
-      id: userMessageId,
-      text: text.trim(),
-      sender: "user",
-      timestamp: new Date(),
-    };
-
-    setMessages((prev) => [...prev, userMessage]);
-    setInputValue("");
+    setFallbackMessages((prev) => [
+      ...prev,
+      { id: crypto.randomUUID(), text: text.trim(), sender: "user" },
+    ]);
+    setInput("");
     setIsTyping(true);
 
     setTimeout(() => {
-      messageIdRef.current += 1;
-      const botMessageId = `bot-${messageIdRef.current}`;
-
-      const botMessage: Message = {
-        id: botMessageId,
-        text: getBotResponse(text),
-        sender: "bot",
-        timestamp: new Date(),
-      };
-      setMessages((prev) => [...prev, botMessage]);
+      setFallbackMessages((prev) => [
+        ...prev,
+        { id: crypto.randomUUID(), text: matchFallback(text), sender: "bot" },
+      ]);
       setIsTyping(false);
     }, 1000);
-  }, []);
+  }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Unified message list
+  const displayMessages = useAI
+    ? aiMessages.map((m) => ({
+        id: m.id,
+        text: m.content,
+        sender: (m.role as string) === "user" ? ("user" as const) : ("bot" as const),
+      }))
+    : fallbackMessages;
+
+  const showTyping = useAI ? aiLoading : isTyping;
+
+  function handleSend(e: React.FormEvent) {
     e.preventDefault();
-    sendMessage(inputValue);
-  };
+    const text = input.trim();
+    if (!text) return;
+
+    if (useAI) {
+      sendMessage({ text });
+      setInput("");
+    } else {
+      sendFallbackMessage(text);
+    }
+  }
+
+  function handleQuickReply(reply: string) {
+    if (useAI) {
+      sendMessage({ text: reply });
+    } else {
+      sendFallbackMessage(reply);
+    }
+  }
 
   return (
     <>
-      {/* Chat Button */}
-      <motion.button
-        onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full shadow-2xl flex items-center justify-center gradient-hero ${isOpen ? "hidden" : "flex"}`}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-      >
-        <MessageCircle className="w-7 h-7 text-white" />
-        <span className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
-          <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
-        </span>
-      </motion.button>
+      {/* Toggle Button */}
+      <AnimatePresence>
+        {!isOpen && (
+          <motion.button
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0 }}
+            onClick={() => setIsOpen(true)}
+            className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full shadow-2xl flex items-center justify-center gradient-hero"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <MessageCircle className="w-7 h-7 text-white" />
+            <span className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white flex items-center justify-center">
+              <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+            </span>
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       {/* Chat Window */}
       <AnimatePresence>
@@ -149,7 +182,8 @@ export function ChatWidget() {
             initial={{ opacity: 0, y: 100, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.9 }}
-            className="fixed bottom-6 right-6 z-50 w-[380px] max-w-[calc(100vw-48px)] bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100"
+            className="fixed bottom-6 right-6 z-50 w-[380px] max-w-[calc(100vw-48px)] bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col"
+            style={{ height: "520px", maxHeight: "calc(100vh - 6rem)" }}
           >
             {/* Header */}
             <div className="gradient-hero p-5 text-white">
@@ -162,131 +196,160 @@ export function ChatWidget() {
                     <h3 className="font-bold text-lg">Little Roots Studio</h3>
                     <p className="text-white/80 text-sm flex items-center gap-1">
                       <span className="w-2 h-2 bg-green-400 rounded-full" />
-                      Online now
+                      {mode === "chat" ? "Ask us anything!" : "Contact us directly"}
                     </p>
                   </div>
                 </div>
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-
-              {/* Contact Mode Toggle */}
-              <div className="flex gap-2 mt-4">
-                {[
-                  { mode: "chat" as const, icon: MessageSquare, label: "Chat" },
-                  { mode: "text" as const, icon: MessageCircle, label: "Text" },
-                  { mode: "call" as const, icon: Phone, label: "Call" },
-                ].map(({ mode, icon: Icon, label }) => (
+                <div className="flex items-center gap-1">
                   <button
-                    key={mode}
-                    onClick={() => setContactMode(mode)}
-                    className={`flex-1 py-2 px-3 rounded-xl text-sm font-medium flex items-center justify-center gap-2 transition-colors ${
-                      contactMode === mode
-                        ? "bg-white text-[#5B8A8A]"
-                        : "bg-white/20 text-white hover:bg-white/30"
-                    }`}
+                    onClick={() => setMode(mode === "chat" ? "contact" : "chat")}
+                    className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors"
+                    title={mode === "chat" ? "Contact info" : "Back to chat"}
                   >
-                    <Icon className="w-4 h-4" />
-                    {label}
+                    {mode === "chat" ? (
+                      <Phone className="w-4 h-4" />
+                    ) : (
+                      <MessageSquare className="w-4 h-4" />
+                    )}
                   </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Messages Area */}
-            <div className="h-80 overflow-y-auto p-4 space-y-4 bg-gray-50">
-              {messages.map((message) => (
-                <motion.div
-                  key={message.id}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}
-                >
-                  <div
-                    className={`max-w-[80%] p-4 rounded-2xl ${
-                      message.sender === "user"
-                        ? "bg-[#5B8A8A] text-white rounded-br-md"
-                        : "bg-white text-gray-800 rounded-bl-md shadow-sm"
-                    }`}
+                  <button
+                    onClick={() => setIsOpen(false)}
+                    className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors"
                   >
-                    <p className="text-sm">{message.text}</p>
-                  </div>
-                </motion.div>
-              ))}
-
-              {isTyping && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="flex justify-start"
-                >
-                  <div className="bg-white p-4 rounded-2xl rounded-bl-md shadow-sm">
-                    <div className="flex gap-1">
-                      <span
-                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
-                        style={{ animationDelay: "0ms" }}
-                      />
-                      <span
-                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
-                        style={{ animationDelay: "150ms" }}
-                      />
-                      <span
-                        className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
-                        style={{ animationDelay: "300ms" }}
-                      />
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-
-              <div ref={messagesEndRef} />
-            </div>
-
-            {/* Quick Replies */}
-            {messages.length < 3 && (
-              <div className="p-3 border-t bg-white">
-                <div className="flex flex-wrap gap-2">
-                  {quickReplies.map((reply) => (
-                    <button
-                      key={reply}
-                      onClick={() => sendMessage(reply)}
-                      className="px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 text-xs font-medium hover:bg-[#5B8A8A] hover:text-white transition-colors"
-                    >
-                      {reply}
-                    </button>
-                  ))}
+                    <X className="w-5 h-5" />
+                  </button>
                 </div>
               </div>
-            )}
+            </div>
 
-            {/* Input Area */}
-            <form onSubmit={handleSubmit} className="p-4 border-t bg-white">
-              <div className="flex gap-2">
-                <Input
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
-                  placeholder={
-                    contactMode === "text"
-                      ? "Enter your phone for a text..."
-                      : contactMode === "call"
-                        ? "Enter your phone for a callback..."
-                        : "Type your message..."
-                  }
-                  className="flex-1 rounded-full border-gray-200 focus:border-[#5B8A8A] focus:ring-[#5B8A8A]"
-                />
-                <Button
-                  type="submit"
-                  size="icon"
-                  className="rounded-full bg-[#5B8A8A] hover:bg-[#4A7272] w-10 h-10 flex-shrink-0"
+            {mode === "contact" ? (
+              /* Contact Mode */
+              <div className="flex-1 p-5 space-y-3 overflow-y-auto">
+                <p className="text-sm text-gray-500 text-center mb-4">
+                  Reach out directly — we&apos;d love to hear from you!
+                </p>
+                <a
+                  href="tel:+17029172350"
+                  className="flex items-center gap-3 p-4 rounded-xl bg-[#5B8A8A]/5 hover:bg-[#5B8A8A]/10 transition-colors"
                 >
-                  <Send className="w-4 h-4" />
-                </Button>
+                  <div className="w-10 h-10 rounded-full bg-[#5B8A8A]/10 flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-[#5B8A8A]" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-sm text-gray-900">(702) 917-2350</p>
+                    <p className="text-xs text-gray-500">Text or Call (text preferred)</p>
+                  </div>
+                </a>
+                <a
+                  href="mailto:littlerootscuts333@gmail.com"
+                  className="flex items-center gap-3 p-4 rounded-xl bg-[#5B8A8A]/5 hover:bg-[#5B8A8A]/10 transition-colors"
+                >
+                  <div className="w-10 h-10 rounded-full bg-[#5B8A8A]/10 flex items-center justify-center">
+                    <Mail className="w-5 h-5 text-[#5B8A8A]" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-sm text-gray-900">
+                      littlerootscuts333@gmail.com
+                    </p>
+                    <p className="text-xs text-gray-500">Email Us</p>
+                  </div>
+                </a>
+                <div className="pt-3 text-center">
+                  <div className="flex items-center justify-center gap-1.5 text-gray-500 mb-1">
+                    <Clock className="w-4 h-4" />
+                    <span className="text-xs font-medium">Hours</span>
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    Tue–Sat: 10 AM – 6 PM (closed 1–2 PM)
+                    <br />
+                    Closed Sunday & Monday
+                    <br />
+                    By appointment only
+                  </p>
+                </div>
               </div>
-            </form>
+            ) : (
+              /* Chat Mode */
+              <>
+                {/* Messages */}
+                <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50">
+                  {displayMessages.map((msg) => (
+                    <motion.div
+                      key={msg.id}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
+                    >
+                      <div
+                        className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
+                          msg.sender === "user"
+                            ? "bg-[#5B8A8A] text-white rounded-br-md"
+                            : "bg-white text-gray-800 rounded-bl-md shadow-sm"
+                        }`}
+                      >
+                        {msg.text}
+                      </div>
+                    </motion.div>
+                  ))}
+
+                  {showTyping && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="flex justify-start"
+                    >
+                      <div className="bg-white rounded-2xl rounded-bl-md shadow-sm px-4 py-3">
+                        <div className="flex gap-1.5">
+                          <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                          <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                          <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+
+                  <div ref={messagesEndRef} />
+                </div>
+
+                {/* Quick Replies */}
+                {displayMessages.length <= 2 && (
+                  <div className="px-4 py-2 border-t bg-white">
+                    <div className="flex flex-wrap gap-1.5">
+                      {QUICK_REPLIES.map((reply) => (
+                        <button
+                          key={reply}
+                          onClick={() => handleQuickReply(reply)}
+                          className="text-xs px-3 py-1.5 rounded-full bg-gray-100 text-gray-700 hover:bg-[#5B8A8A] hover:text-white transition-colors font-medium"
+                        >
+                          {reply}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Input */}
+                <div className="p-3 border-t bg-white">
+                  <form onSubmit={handleSend} className="flex items-center gap-2">
+                    <input
+                      type="text"
+                      value={input}
+                      onChange={(e) => setInput(e.target.value)}
+                      aria-label="Type a message"
+                      placeholder="Type a message..."
+                      className="flex-1 px-4 py-2.5 rounded-full bg-gray-100 text-sm focus:outline-none focus:ring-2 focus:ring-[#5B8A8A]/30"
+                    />
+                    <button
+                      type="submit"
+                      disabled={!input.trim() || showTyping}
+                      className="w-10 h-10 rounded-full bg-[#5B8A8A] text-white flex items-center justify-center hover:bg-[#4A7272] transition-colors disabled:opacity-50 flex-shrink-0"
+                    >
+                      <Send className="w-4 h-4" />
+                    </button>
+                  </form>
+                </div>
+              </>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
