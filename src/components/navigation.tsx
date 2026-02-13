@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/our-space", label: "Our Space" },
   { href: "/sensory-friendly", label: "Sensory-Friendly", highlight: true },
   { href: "/services", label: "Services" },
+  { href: "/reviews", label: "Reviews" },
   { href: "/prepare", label: "Prepare" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },

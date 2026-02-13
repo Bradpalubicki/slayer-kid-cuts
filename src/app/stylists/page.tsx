@@ -1,532 +1,335 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Scissors,
   CheckCircle2,
-  ChevronRight,
-  DollarSign,
-  Users,
-  Building2,
-  Sparkles,
   Heart,
   Shield,
-  Phone,
-  Mail,
   Brain,
   Star,
+  Send,
+  Loader2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
-export default function StylistsPage() {
+type FormStatus = "idle" | "submitting" | "success" | "error";
+
+export default function CareersPage() {
+  const [formStatus, setFormStatus] = useState<FormStatus>("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setFormStatus("submitting");
+    setErrorMsg("");
+
+    const fd = new FormData(e.currentTarget);
+    const payload = {
+      name: fd.get("name") as string,
+      email: fd.get("email") as string,
+      phone: fd.get("phone") as string,
+      experience: fd.get("experience") as string,
+      message: fd.get("message") as string,
+    };
+
+    try {
+      const res = await fetch("/api/careers", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Failed to submit");
+      }
+      setFormStatus("success");
+    } catch (err) {
+      setErrorMsg(err instanceof Error ? err.message : "Something went wrong");
+      setFormStatus("error");
+    }
+  }
+
   return (
     <div className="min-h-screen pt-24 pb-16">
-      {/* Hero Section */}
+      {/* Hero */}
       <section className="bg-gradient-to-b from-[#5B8A8A]/5 to-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center"
           >
             <Badge className="bg-[#5B8A8A]/10 text-[#5B8A8A] border-[#5B8A8A]/20 mb-4">
-              <Scissors className="w-4 h-4 mr-2" />
-              For Stylists
+              <Heart className="w-4 h-4 mr-2" />
+              Join Our Team
             </Badge>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              Booth Rental <span className="gradient-text">Opportunities</span>
+            <h1 className="text-4xl sm:text-5xl font-bold mb-6">
+              Work at <span className="gradient-text">Little Roots Studio</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Join Las Vegas&apos;s premier family-friendly salon! We&apos;re
-              looking for experienced stylists who love working with kids and
-              families.
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              We&apos;re growing! If you love working with children and want to be part of
+              Henderson&apos;s first sensory-friendly children&apos;s salon suite, we&apos;d love to hear from you.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* The Opportunity */}
+      {/* Who We Are */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="grid lg:grid-cols-2 gap-12 items-center"
+            className="grid md:grid-cols-2 gap-12 items-center"
           >
             <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl font-bold">
-                Build Your Business at Little Roots Studio
+              <h2 className="text-3xl font-bold text-brown">
+                More Than a Salon — A Safe Space
               </h2>
-              <p className="text-lg text-gray-600">
-                We&apos;re creating something special in Las Vegas — a
-                kid-focused salon that families love to visit. Whether you
-                specialize in children&apos;s hair or sensory-friendly services, there&apos;s a place for
-                you here.
+              <p className="text-brown/70">
+                Little Roots Studio is a private suite inside Sunset Suites in Henderson, NV.
+                We specialize in sensory-friendly haircuts for children with autism, anxiety,
+                sensory processing differences, and all kids who deserve a calm, patient experience.
               </p>
-              <p className="text-lg text-gray-600">
-                Benefit from Carla&apos;s reputation as Las Vegas&apos;s
-                sensory-friendly specialist while running your own independent
-                practice.
+              <p className="text-brown/70">
+                Owner Carla has 13+ years of experience working with children across three
+                different salons. As the studio grows, we&apos;re looking for compassionate,
+                patient stylists and assistants who share our mission.
               </p>
-              <div className="space-y-3">
+            </div>
+
+            <div className="bg-cream rounded-3xl p-8 border border-sage/10">
+              <h3 className="font-bold text-brown text-lg mb-4">Our Values</h3>
+              <div className="space-y-4">
                 {[
-                  "Keep 100% of your service revenue",
-                  "Set your own hours and prices",
-                  "Built-in family traffic",
-                  "Professional, kid-friendly environment",
-                  "Shared reception and amenities",
+                  { icon: Heart, text: "Children\u2019s comfort always comes first" },
+                  { icon: Shield, text: "Trauma-informed, never-forced approach" },
+                  { icon: Brain, text: "Understanding over accommodation" },
+                  { icon: Star, text: "Patience is not optional \u2014 it\u2019s the standard" },
                 ].map((item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#7BA3A3] flex-shrink-0" />
-                    <span className="text-gray-700">{item}</span>
+                  <div key={item.text} className="flex items-start gap-3">
+                    <item.icon className="w-5 h-5 text-sage flex-shrink-0 mt-0.5" />
+                    <span className="text-brown/80 text-sm">{item.text}</span>
                   </div>
                 ))}
               </div>
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="absolute inset-0 gradient-hero rounded-3xl rotate-3 opacity-20" />
-              <Image
-                src="https://images.unsplash.com/photo-1540479859555-17af45c78602?w=600&h=500&fit=crop"
-                alt="Calm, welcoming studio space for families"
-                width={600}
-                height={500}
-                className="relative rounded-3xl shadow-2xl"
-              />
-            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* The Space */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* What We Look For */}
+      <section className="py-16 bg-cream">
+        <div className="max-w-5xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-12"
           >
-            <Badge className="bg-[#A69080]/10 text-[#A69080] border-[#A69080]/20 mb-4">
-              <Building2 className="w-4 h-4 mr-2" />
-              The Space
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Two Distinct Areas
+            <h2 className="text-3xl font-bold text-brown mb-8 text-center">
+              Who We&apos;re Looking For
             </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {/* Carla's Suite */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <Card className="h-full border-2 border-[#7BA3A3]/30 bg-[#7BA3A3]/5">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#7BA3A3]/20 flex items-center justify-center">
-                      <Brain className="w-6 h-6 text-[#7BA3A3]" />
-                    </div>
-                    <h3 className="text-xl font-bold">
-                      Carla&apos;s Private Sensory Suite
-                    </h3>
-                  </div>
-                  <p className="text-gray-600 mb-4">
-                    Carla&apos;s dedicated space for her sensory-friendly
-                    clients. Features a private entrance and is designed
-                    specifically for children with autism and anxiety.
-                  </p>
-                  <Badge className="bg-white text-[#7BA3A3] border-[#7BA3A3]/30">
-                    Not available for rent — Carla&apos;s dedicated suite
-                  </Badge>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Main Salon */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <Card className="h-full border-2 border-[#5B8A8A]/30 bg-[#5B8A8A]/5">
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#5B8A8A]/20 flex items-center justify-center">
-                      <Scissors className="w-6 h-6 text-[#5B8A8A]" />
-                    </div>
-                    <h3 className="text-xl font-bold">
-                      Main Salon (Your Space)
-                    </h3>
-                  </div>
-                  <p className="text-gray-600 mb-4">
-                    The adjacent main salon is available for booth rentals.
-                    Choose from:
-                  </p>
-                  <div className="space-y-2">
-                    {[
-                      "4 private suites with sinks",
-                      "4 styling chairs on open floor",
-                      "Shared reception and waiting area",
-                      "Shampoo stations",
-                      "Laundry facilities",
-                      "Break room",
-                    ].map((item) => (
-                      <div
-                        key={item}
-                        className="flex items-center gap-2 text-gray-700"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-[#5B8A8A]" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <Link href="/our-space">
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-full px-8 border-2 border-[#5B8A8A] text-[#5B8A8A] hover:bg-[#5B8A8A] hover:text-white"
-              >
-                View Full Floor Plan
-                <ChevronRight className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* What's Included */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-12 text-center"
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              What&apos;s Included
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                icon: Building2,
-                title: "Your Station",
-                items: [
-                  "Private suite or open chair",
-                  "Styling chair",
-                  "Mirror",
-                  "Storage cabinet",
-                ],
-                color: "#5B8A8A",
-              },
-              {
-                icon: Sparkles,
-                title: "Shared Amenities",
-                items: [
-                  "Reception desk",
-                  "Waiting area",
-                  "Shampoo stations",
-                  "Laundry facilities",
-                ],
-                color: "#A69080",
-              },
-              {
-                icon: DollarSign,
-                title: "Business Support",
-                items: [
-                  "Appointment scheduling",
-                  "Card processing available",
-                  "Built-in foot traffic",
-                  "Marketing exposure",
-                ],
-                color: "#7BA3A3",
-              },
-              {
-                icon: Heart,
-                title: "Family-Friendly",
-                items: [
-                  "Kid-friendly environment",
-                  "Play area for children",
-                  "Themed chairs available",
-                  "Entertainment systems",
-                ],
-                color: "#6B5B4F",
-              },
-            ].map((category, index) => (
-              <motion.div
-                key={category.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="h-full border-2 border-gray-100 hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <div
-                      className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-                      style={{ backgroundColor: `${category.color}20` }}
-                    >
-                      <category.icon
-                        className="w-6 h-6"
-                        style={{ color: category.color }}
-                      />
-                    </div>
-                    <h3 className="text-lg font-bold mb-4">{category.title}</h3>
-                    <div className="space-y-2">
-                      {category.items.map((item) => (
-                        <div
-                          key={item}
-                          className="flex items-center gap-2 text-sm text-gray-600"
-                        >
-                          <CheckCircle2
-                            className="w-4 h-4"
-                            style={{ color: category.color }}
-                          />
-                          <span>{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Rental Options */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-12 text-center"
-          >
-            <Badge className="bg-[#D4E5E5]/20 text-yellow-700 border-[#D4E5E5]/30 mb-4">
-              <DollarSign className="w-4 h-4 mr-2" />
-              Rental Options
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Flexible Terms to Fit Your Business
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <Card className="h-full border-2 border-[#A69080]/30">
-                <CardContent className="p-8">
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold mb-2">Private Suite</h3>
-                    <p className="text-gray-600">
-                      Your own room with door and sink
-                    </p>
-                  </div>
-                  <div className="space-y-4">
-                    {[
-                      "Complete privacy with clients",
-                      "Personal sink and styling setup",
-                      "Lockable storage",
-                      "Climate control",
-                      "Great for building clientele",
-                    ].map((item) => (
-                      <div key={item} className="flex items-center gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-[#A69080] flex-shrink-0" />
-                        <span className="text-gray-700">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-8 text-center">
-                    <p className="text-sm text-gray-500 mb-2">Starting at</p>
-                    <p className="text-4xl font-bold text-[#A69080]">
-                      Contact Us
-                    </p>
-                    <p className="text-sm text-gray-500">for pricing</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <Card className="h-full border-2 border-[#6B5B4F]/30">
-                <CardContent className="p-8">
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold mb-2">
-                      Open Floor Chair
-                    </h3>
-                    <p className="text-gray-600">
-                      Station on the main styling floor
-                    </p>
-                  </div>
-                  <div className="space-y-4">
-                    {[
-                      "Fun, social environment",
-                      "Shared shampoo stations",
-                      "Great energy and vibe",
-                      "Lower overhead",
-                      "Perfect for walk-ins",
-                    ].map((item) => (
-                      <div key={item} className="flex items-center gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-[#6B5B4F] flex-shrink-0" />
-                        <span className="text-gray-700">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-8 text-center">
-                    <p className="text-sm text-gray-500 mb-2">Starting at</p>
-                    <p className="text-4xl font-bold text-[#6B5B4F]">
-                      Contact Us
-                    </p>
-                    <p className="text-sm text-gray-500">for pricing</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Ideal Candidates */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-12"
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              We&apos;re Looking For Stylists Who...
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                icon: Heart,
-                text: "Love working with kids and families",
-                required: true,
-              },
-              {
-                icon: Shield,
-                text: "Are patient and understanding",
-                required: true,
-              },
-              {
-                icon: Star,
-                text: "Have a positive, fun energy",
-                required: true,
-              },
-              {
-                icon: Scissors,
-                text: "Are licensed cosmetologists in Nevada",
-                required: true,
-              },
-              {
-                icon: Users,
-                text: "Want to build their own clientele",
-                required: false,
-              },
-              {
-                icon: Brain,
-                text: "Interest in sensory-friendly techniques (training available!)",
-                required: false,
-              },
-            ].map((item) => (
-              <motion.div
-                key={item.text}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl"
-              >
-                <item.icon className="w-6 h-6 text-[#5B8A8A] flex-shrink-0" />
-                <div>
-                  <p className="text-gray-700">{item.text}</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                {
+                  icon: Scissors,
+                  title: "Licensed Stylists",
+                  desc: "Nevada cosmetology license required. Experience with children preferred.",
+                  required: true,
+                },
+                {
+                  icon: Heart,
+                  title: "Patient & Compassionate",
+                  desc: "Comfort with anxious, neurodivergent, or scared children is essential.",
+                  required: true,
+                },
+                {
+                  icon: Shield,
+                  title: "Dependable & Professional",
+                  desc: "Families trust us with their children. Reliability matters.",
+                  required: true,
+                },
+                {
+                  icon: Brain,
+                  title: "Open to Learning",
+                  desc: "Sensory-friendly training provided. Willingness to learn is key.",
+                  required: false,
+                },
+                {
+                  icon: Star,
+                  title: "Salon Assistants",
+                  desc: "Help maintain the studio, assist during appointments, and welcome families.",
+                  required: false,
+                },
+                {
+                  icon: Heart,
+                  title: "Share Our Mission",
+                  desc: "You believe every child deserves to feel safe during a haircut.",
+                  required: true,
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-white rounded-2xl p-5 border border-sage/10 hover:shadow-md transition-shadow"
+                >
+                  <item.icon className="w-6 h-6 text-sage mb-3" />
+                  <h3 className="font-bold text-brown mb-1">{item.title}</h3>
+                  <p className="text-brown/60 text-sm">{item.desc}</p>
                   {item.required && (
-                    <Badge className="mt-2 bg-[#7BA3A3]/10 text-[#7BA3A3] border-[#7BA3A3]/20 text-xs">
+                    <Badge className="mt-2 bg-sage/10 text-sage border-sage/20 text-xs">
                       Required
                     </Badge>
                   )}
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Application Form */}
+      <section className="py-16 bg-white">
+        <div className="max-w-2xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="gradient-hero rounded-3xl p-12 text-center text-white"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Ready to Join Our Team?
+            <h2 className="text-3xl font-bold text-brown mb-2 text-center">
+              Apply Now
             </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              We&apos;d love to hear from you! Contact us to schedule a tour of
-              the space and discuss rental options.
+            <p className="text-brown/70 text-center mb-8">
+              Tell us about yourself. Carla will reach out if there&apos;s a good fit.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+
+            {formStatus === "success" ? (
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                className="text-center py-12"
+              >
+                <div className="w-16 h-16 rounded-full bg-sage/10 flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle2 className="w-8 h-8 text-sage" />
+                </div>
+                <h3 className="text-xl font-bold text-brown mb-2">Application Received!</h3>
+                <p className="text-brown/70">
+                  Thank you for your interest. Carla will review your application
+                  and reach out if there&apos;s a good fit.
+                </p>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="name">Full Name *</Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      required
+                      placeholder="Your name"
+                      className="mt-1"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="phone">Phone *</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      required
+                      placeholder="(702) 555-0000"
+                      className="mt-1"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <Label htmlFor="email">Email *</Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="you@example.com"
+                    className="mt-1"
+                  />
+                </div>
+
+                <div>
+                  <Label htmlFor="experience">
+                    Experience with Children / Relevant Background *
+                  </Label>
+                  <Textarea
+                    id="experience"
+                    name="experience"
+                    required
+                    placeholder="Tell us about your experience working with kids, any licenses you hold, and your background in hair/beauty..."
+                    rows={4}
+                    className="mt-1"
+                  />
+                </div>
+
+                <div>
+                  <Label htmlFor="message">
+                    Why Little Roots Studio?
+                  </Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="What draws you to our mission? (Optional)"
+                    rows={3}
+                    className="mt-1"
+                  />
+                </div>
+
+                {formStatus === "error" && (
+                  <div className="bg-red-50 text-red-700 p-3 rounded-xl text-sm">
+                    {errorMsg}
+                  </div>
+                )}
+
                 <Button
-                  size="lg"
-                  className="bg-white text-[#5B8A8A] hover:bg-white/90 rounded-full px-8"
+                  type="submit"
+                  disabled={formStatus === "submitting"}
+                  className="w-full bg-sage hover:bg-sage-dark text-white rounded-full py-6 text-lg"
                 >
-                  <Mail className="w-5 h-5 mr-2" />
-                  Contact Us
+                  {formStatus === "submitting" ? (
+                    <>
+                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5 mr-2" />
+                      Submit Application
+                    </>
+                  )}
                 </Button>
-              </Link>
-              <a href="tel:+17025551234">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-[#5B8A8A] rounded-full px-8"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Call Now
-                </Button>
-              </a>
-            </div>
+              </form>
+            )}
           </motion.div>
+        </div>
+      </section>
+
+      {/* CTA for clients */}
+      <section className="py-12 bg-cream">
+        <div className="max-w-2xl mx-auto px-4 text-center">
+          <p className="text-brown/60 mb-3">Looking to book an appointment instead?</p>
+          <Link href="/book">
+            <Button
+              variant="outline"
+              className="rounded-full border-sage text-sage hover:bg-sage hover:text-white"
+            >
+              Book an Appointment →
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

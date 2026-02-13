@@ -786,6 +786,76 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ========== REVIEWS ========== */}
+      <section className="py-20 px-4 bg-cream" aria-labelledby="reviews-heading">
+        <div className="max-w-5xl mx-auto">
+          <header className="text-center mb-12">
+            <span className="text-sage font-medium text-sm tracking-wider uppercase">
+              Parent Reviews
+            </span>
+            <h2
+              id="reviews-heading"
+              className="text-3xl sm:text-4xl font-bold text-brown mt-3 mb-4"
+            >
+              What Families Are Saying
+            </h2>
+            <div className="flex items-center justify-center gap-1 mb-2">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <span key={i} className="text-yellow-400 text-xl">&#9733;</span>
+              ))}
+            </div>
+            <p className="text-brown/70">5.0 out of 5 — from families like yours</p>
+          </header>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            {[
+              {
+                name: "Jessica M.",
+                text: "My son is autistic and haircuts have always been a nightmare. Carla was the first person to actually listen to what he needs. He sat through the entire haircut. I cried happy tears in the car.",
+                service: "Sensory-Friendly Haircut",
+              },
+              {
+                name: "Amanda R.",
+                text: "The private suite makes ALL the difference. My daughter gets overstimulated by noise and other kids. At Little Roots it\u2019s just us and Carla in a calm, quiet space. She actually asked when she can go back.",
+                service: "Kids Haircut",
+              },
+              {
+                name: "Michael T.",
+                text: "Carla sent us an intake questionnaire before the appointment and had everything ready \u2014 his favorite music was playing, lights were dimmed, sensory toys out. The level of preparation blew us away.",
+                service: "Sensory-Friendly Haircut",
+              },
+            ].map((review) => (
+              <article
+                key={review.name}
+                className="bg-white rounded-2xl p-6 shadow-sm border border-sage/10"
+              >
+                <div className="flex gap-0.5 mb-3">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <span key={i} className="text-yellow-400 text-sm">&#9733;</span>
+                  ))}
+                </div>
+                <p className="text-brown/70 text-sm leading-relaxed mb-4">
+                  &ldquo;{review.text}&rdquo;
+                </p>
+                <div className="pt-3 border-t border-sage/10">
+                  <p className="font-semibold text-brown text-sm">{review.name}</p>
+                  <p className="text-xs text-sage">{review.service}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <a
+              href="/reviews"
+              className="inline-block bg-white border-2 border-sage/30 hover:border-sage text-sage-dark font-semibold px-8 py-3 rounded-xl transition-all text-sm"
+            >
+              Read All Reviews →
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ========== FINAL CTA ========== */}
       <section className="py-12 sm:py-20 px-4 bg-sage" aria-labelledby="cta-heading">
         <div className="max-w-3xl mx-auto text-center">
